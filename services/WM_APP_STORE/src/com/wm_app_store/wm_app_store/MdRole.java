@@ -23,11 +23,11 @@ import javax.persistence.Table;
 public class MdRole implements Serializable {
 
     private Integer id;
-    private String label;
     private String createdBy;
     private String creationDate;
-    private String updatedBy;
+    private String label;
     private String lastUpdateDate;
+    private String updatedBy;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,15 +38,6 @@ public class MdRole implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @Column(name = "`LABEL`", nullable = true, length = 255)
-    public String getLabel() {
-        return this.label;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
     }
 
     @Column(name = "`CREATED_BY`", nullable = true, length = 255)
@@ -67,13 +58,13 @@ public class MdRole implements Serializable {
         this.creationDate = creationDate;
     }
 
-    @Column(name = "`UPDATED_BY`", nullable = true, length = 255)
-    public String getUpdatedBy() {
-        return this.updatedBy;
+    @Column(name = "`LABEL`", nullable = true, length = 255)
+    public String getLabel() {
+        return this.label;
     }
 
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     @Column(name = "`LAST_UPDATE_DATE`", nullable = true, length = 255)
@@ -83,6 +74,15 @@ public class MdRole implements Serializable {
 
     public void setLastUpdateDate(String lastUpdateDate) {
         this.lastUpdateDate = lastUpdateDate;
+    }
+
+    @Column(name = "`UPDATED_BY`", nullable = true, length = 255)
+    public String getUpdatedBy() {
+        return this.updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
     }
 
 

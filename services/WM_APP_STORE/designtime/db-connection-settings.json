@@ -12,31 +12,31 @@
   "port" : "",
   "schemaName" : null,
   "tableFilter" : [ {
+    "table" : "APP_D0WNLOAD_HOSTORY",
+    "schema" : null
+  }, {
     "table" : "APP_INFO",
     "schema" : null
   }, {
     "table" : "APP_RATING",
     "schema" : null
   }, {
-    "table" : "APP_SOURCE",
-    "schema" : null
-  }, {
-    "table" : "APP_D0WNLOAD_HOSTORY",
-    "schema" : null
-  }, {
     "table" : "APP_SCREEN",
     "schema" : null
   }, {
-    "table" : "MD_ROLE",
-    "schema" : null
-  }, {
-    "table" : "USER_ROLE",
+    "table" : "APP_SOURCE",
     "schema" : null
   }, {
     "table" : "MD_CATEGORY",
     "schema" : null
   }, {
+    "table" : "MD_ROLE",
+    "schema" : null
+  }, {
     "table" : "USER",
+    "schema" : null
+  }, {
+    "table" : "USER_ROLE",
     "schema" : null
   } ],
   "schemaFilter" : [ ],

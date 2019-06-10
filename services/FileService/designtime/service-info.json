@@ -1,0 +1,7 @@
+{
+  "id" : "FileService",
+  "type" : "JavaService",
+  "packageNames" : [ "com.wm_app_store.fileservice" ],
+  "serviceClassNames" : [ "com.wm_app_store.fileservice.FileService" ],
+  "title" : "FileService"
+}

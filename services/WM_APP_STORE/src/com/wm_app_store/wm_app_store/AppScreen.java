@@ -7,7 +7,7 @@ package com.wm_app_store.wm_app_store;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -36,8 +36,8 @@ public class AppScreen implements Serializable {
     private Integer appSourceId;
     private String createdBy;
     private Date creationDate;
+    private Timestamp lastUpdateDate;
     private String updatedBy;
-    private LocalDateTime lastUpdateDate;
     private AppInfo appInfo;
 
     @Id
@@ -87,6 +87,15 @@ public class AppScreen implements Serializable {
         this.creationDate = creationDate;
     }
 
+    @Column(name = "`LAST_UPDATE_DATE`", nullable = false)
+    public Timestamp getLastUpdateDate() {
+        return this.lastUpdateDate;
+    }
+
+    public void setLastUpdateDate(Timestamp lastUpdateDate) {
+        this.lastUpdateDate = lastUpdateDate;
+    }
+
     @Column(name = "`UPDATED_BY`", nullable = true, length = 255)
     public String getUpdatedBy() {
         return this.updatedBy;
@@ -94,15 +103,6 @@ public class AppScreen implements Serializable {
 
     public void setUpdatedBy(String updatedBy) {
         this.updatedBy = updatedBy;
-    }
-
-    @Column(name = "`LAST_UPDATE_DATE`", nullable = true)
-    public LocalDateTime getLastUpdateDate() {
-        return this.lastUpdateDate;
-    }
-
-    public void setLastUpdateDate(LocalDateTime lastUpdateDate) {
-        this.lastUpdateDate = lastUpdateDate;
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
