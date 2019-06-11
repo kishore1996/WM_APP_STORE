@@ -15,7 +15,15 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "PrefabList",
+  "name" : "PrefabDetails",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "PrefabUpload",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "carousal",
   "type" : "PARTIAL",
   "params" : [ ]
 }, {

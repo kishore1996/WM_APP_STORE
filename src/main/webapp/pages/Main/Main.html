@@ -4,7 +4,18 @@
     <wm-content name="content">
         <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
         <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px">
-            <wm-container name="container3" content="FileUpload"></wm-container>
+            <wm-layoutgrid name="layoutgrid3">
+                <wm-gridrow name="gridrow62">
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn147">
+                        <wm-search name="search2" searchon="typing"></wm-search>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn148">
+                        <wm-button class="btn-default" caption="Upload" type="button" margin="unset 0.5em" name="button1" backgroundcolor="#0f09e3" color="#ede8e8" on-click="Actions.goToPage_PrefabUpload.invoke()"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid><br><br>
+            <wm-container name="container3" height="200" content="carousal"></wm-container><br><br>
+            <wm-container name="container2" content="prefab"></wm-container>
         </wm-page-content>
         <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>
