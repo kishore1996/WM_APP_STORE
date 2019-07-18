@@ -3,6 +3,10 @@
   "type" : "PARTIAL",
   "params" : [ ]
 }, {
+  "name" : "Downloadpage",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
   "name" : "FileUpload",
   "type" : "PARTIAL",
   "params" : [ ]

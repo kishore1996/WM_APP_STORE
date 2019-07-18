@@ -33,7 +33,7 @@ import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
-import com.wm_app_store.wm_app_store.AppD0wnloadHostory;
+import com.wm_app_store.wm_app_store.AppDownloadHistory;
 import com.wm_app_store.wm_app_store.AppSource;
 
 
@@ -50,8 +50,8 @@ public class AppSourceServiceImpl implements AppSourceService {
 
     @Lazy
     @Autowired
-    @Qualifier("WM_APP_STORE.AppD0wnloadHostoryService")
-    private AppD0wnloadHostoryService appD0wnloadHostoryService;
+    @Qualifier("WM_APP_STORE.AppDownloadHistoryService")
+    private AppDownloadHistoryService appDownloadHistoryService;
 
     @Autowired
     @Qualifier("WM_APP_STORE.AppSourceDao")
@@ -197,22 +197,22 @@ public class AppSourceServiceImpl implements AppSourceService {
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public Page<AppD0wnloadHostory> findAssociatedAppD0wnloadHostories(Integer id, Pageable pageable) {
-        LOGGER.debug("Fetching all associated appD0wnloadHostories");
+    public Page<AppDownloadHistory> findAssociatedAppDownloadHistories(Integer id, Pageable pageable) {
+        LOGGER.debug("Fetching all associated appDownloadHistories");
 
         StringBuilder queryBuilder = new StringBuilder();
         queryBuilder.append("appSource.id = '" + id + "'");
 
-        return appD0wnloadHostoryService.findAll(queryBuilder.toString(), pageable);
+        return appDownloadHistoryService.findAll(queryBuilder.toString(), pageable);
     }
 
     /**
      * This setter method should only be used by unit tests
      *
-     * @param service AppD0wnloadHostoryService instance
+     * @param service AppDownloadHistoryService instance
      */
-    protected void setAppD0wnloadHostoryService(AppD0wnloadHostoryService service) {
-        this.appD0wnloadHostoryService = service;
+    protected void setAppDownloadHistoryService(AppDownloadHistoryService service) {
+        this.appDownloadHistoryService = service;
     }
 
 }

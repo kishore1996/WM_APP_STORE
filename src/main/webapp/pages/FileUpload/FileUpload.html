@@ -30,15 +30,49 @@
                 <wm-label padding="unset 0.5em" name="label4" caption="Choose prefab:" fontweight="bold"></wm-label>
             </wm-gridcolumn>
             <wm-gridcolumn columnwidth="10" name="gridcolumn6">
-                <wm-fileupload name="fileupload2" on-select="Variables.FileServiceUploadFile1.invoke()"></wm-fileupload>
+                <wm-fileupload name="fileupload3" on-select="Variables.FileServiceUploadFile2.invoke()" contenttype=".zip"></wm-fileupload>
             </wm-gridcolumn>
         </wm-gridrow>
         <wm-gridrow name="gridrow4">
-            <wm-gridcolumn columnwidth="5" name="gridcolumn7"></wm-gridcolumn>
-            <wm-gridcolumn columnwidth="7" name="gridcolumn8">
+            <wm-gridcolumn columnwidth="11" name="gridcolumn7">
+                <wm-label padding="unset 0.5em" name="label5" caption="Upload screenshots:" fontweight="bold"></wm-label>
+                <wm-picture name="picture2"></wm-picture>
+                <wm-picture name="picture3"></wm-picture>
+                <wm-picture name="picture5"></wm-picture>
+                <wm-picture name="picture1"></wm-picture>
+                <wm-picture name="picture6"></wm-picture>
+                <wm-picture name="picture4"></wm-picture>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="1" name="gridcolumn8"></wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+    <wm-layoutgrid name="layoutgrid3" columns="6">
+        <wm-gridrow name="gridrow7">
+            <wm-gridcolumn columnwidth="2" name="gridcolumn13">
+                <wm-label padding="unset 0.5em" name="label6" caption="Version id:" fontweight="bold"></wm-label>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn14">
+                <wm-label padding="unset 0.5em" name="label7" caption=""></wm-label>
+                <wm-label padding="unset 0.5em" name="label8" caption="bind:Variables.Version.dataSet.versionId"></wm-label>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn15"></wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn16"></wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn17"></wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn18"></wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+    <wm-layoutgrid name="layoutgrid4" columns="6">
+        <wm-gridrow name="gridrow8">
+            <wm-gridcolumn columnwidth="2" name="gridcolumn19"></wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn20"></wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn21"></wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn22">
                 <wm-button class="btn-default" caption="Cancel" type="button" margin="unset 0.5em" name="button1"></wm-button>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn23">
                 <wm-button class="btn-default" caption="Save" type="button" margin="unset 0.5em" name="button2"></wm-button>
             </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="2" name="gridcolumn24"></wm-gridcolumn>
         </wm-gridrow>
     </wm-layoutgrid>
 </wm-partial>

@@ -15,14 +15,14 @@ import org.springframework.stereotype.Repository;
 import com.wavemaker.runtime.data.dao.WMGenericDaoImpl;
 import com.wavemaker.runtime.data.dao.query.types.wmql.WMQLTypeHelper;
 
-import com.wm_app_store.wm_app_store.AppD0wnloadHostory;
+import com.wm_app_store.wm_app_store.AppDownloadHistory;
 
 /**
- * Specifies methods used to obtain and modify AppD0wnloadHostory related information
+ * Specifies methods used to obtain and modify AppDownloadHistory related information
  * which is stored in the database.
  */
-@Repository("WM_APP_STORE.AppD0wnloadHostoryDao")
-public class AppD0wnloadHostoryDao extends WMGenericDaoImpl<AppD0wnloadHostory, Integer> {
+@Repository("WM_APP_STORE.AppDownloadHistoryDao")
+public class AppDownloadHistoryDao extends WMGenericDaoImpl<AppDownloadHistory, Integer> {
 
     @Autowired
     @Qualifier("WM_APP_STORETemplate")

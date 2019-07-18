@@ -32,111 +32,111 @@ import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
-import com.wm_app_store.wm_app_store.AppD0wnloadHostory;
+import com.wm_app_store.wm_app_store.AppDownloadHistory;
 
 
 /**
- * ServiceImpl object for domain model class AppD0wnloadHostory.
+ * ServiceImpl object for domain model class AppDownloadHistory.
  *
- * @see AppD0wnloadHostory
+ * @see AppDownloadHistory
  */
-@Service("WM_APP_STORE.AppD0wnloadHostoryService")
+@Service("WM_APP_STORE.AppDownloadHistoryService")
 @Validated
-public class AppD0wnloadHostoryServiceImpl implements AppD0wnloadHostoryService {
+public class AppDownloadHistoryServiceImpl implements AppDownloadHistoryService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AppD0wnloadHostoryServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AppDownloadHistoryServiceImpl.class);
 
 
     @Autowired
-    @Qualifier("WM_APP_STORE.AppD0wnloadHostoryDao")
-    private WMGenericDao<AppD0wnloadHostory, Integer> wmGenericDao;
+    @Qualifier("WM_APP_STORE.AppDownloadHistoryDao")
+    private WMGenericDao<AppDownloadHistory, Integer> wmGenericDao;
 
     @Autowired
     @Qualifier("wmAppObjectMapper")
     private ObjectMapper objectMapper;
 
 
-    public void setWMGenericDao(WMGenericDao<AppD0wnloadHostory, Integer> wmGenericDao) {
+    public void setWMGenericDao(WMGenericDao<AppDownloadHistory, Integer> wmGenericDao) {
         this.wmGenericDao = wmGenericDao;
     }
 
     @Transactional(value = "WM_APP_STORETransactionManager")
     @Override
-    public AppD0wnloadHostory create(AppD0wnloadHostory appD0wnloadHostory) {
-        LOGGER.debug("Creating a new AppD0wnloadHostory with information: {}", appD0wnloadHostory);
+    public AppDownloadHistory create(AppDownloadHistory appDownloadHistory) {
+        LOGGER.debug("Creating a new AppDownloadHistory with information: {}", appDownloadHistory);
 
-        AppD0wnloadHostory appD0wnloadHostoryCreated = this.wmGenericDao.create(appD0wnloadHostory);
+        AppDownloadHistory appDownloadHistoryCreated = this.wmGenericDao.create(appDownloadHistory);
         // reloading object from database to get database defined & server defined values.
-        return this.wmGenericDao.refresh(appD0wnloadHostoryCreated);
+        return this.wmGenericDao.refresh(appDownloadHistoryCreated);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public AppD0wnloadHostory getById(Integer appd0wnloadhostoryId) {
-        LOGGER.debug("Finding AppD0wnloadHostory by id: {}", appd0wnloadhostoryId);
-        return this.wmGenericDao.findById(appd0wnloadhostoryId);
+    public AppDownloadHistory getById(Integer appdownloadhistoryId) {
+        LOGGER.debug("Finding AppDownloadHistory by id: {}", appdownloadhistoryId);
+        return this.wmGenericDao.findById(appdownloadhistoryId);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public AppD0wnloadHostory findById(Integer appd0wnloadhostoryId) {
-        LOGGER.debug("Finding AppD0wnloadHostory by id: {}", appd0wnloadhostoryId);
+    public AppDownloadHistory findById(Integer appdownloadhistoryId) {
+        LOGGER.debug("Finding AppDownloadHistory by id: {}", appdownloadhistoryId);
         try {
-            return this.wmGenericDao.findById(appd0wnloadhostoryId);
+            return this.wmGenericDao.findById(appdownloadhistoryId);
         } catch (EntityNotFoundException ex) {
-            LOGGER.debug("No AppD0wnloadHostory found with id: {}", appd0wnloadhostoryId, ex);
+            LOGGER.debug("No AppDownloadHistory found with id: {}", appdownloadhistoryId, ex);
             return null;
         }
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public List<AppD0wnloadHostory> findByMultipleIds(List<Integer> appd0wnloadhostoryIds, boolean orderedReturn) {
-        LOGGER.debug("Finding AppD0wnloadHostories by ids: {}", appd0wnloadhostoryIds);
+    public List<AppDownloadHistory> findByMultipleIds(List<Integer> appdownloadhistoryIds, boolean orderedReturn) {
+        LOGGER.debug("Finding AppDownloadHistories by ids: {}", appdownloadhistoryIds);
 
-        return this.wmGenericDao.findByMultipleIds(appd0wnloadhostoryIds, orderedReturn);
+        return this.wmGenericDao.findByMultipleIds(appdownloadhistoryIds, orderedReturn);
     }
 
 
     @Transactional(rollbackFor = EntityNotFoundException.class, value = "WM_APP_STORETransactionManager")
     @Override
-    public AppD0wnloadHostory update(AppD0wnloadHostory appD0wnloadHostory) {
-        LOGGER.debug("Updating AppD0wnloadHostory with information: {}", appD0wnloadHostory);
+    public AppDownloadHistory update(AppDownloadHistory appDownloadHistory) {
+        LOGGER.debug("Updating AppDownloadHistory with information: {}", appDownloadHistory);
 
-        this.wmGenericDao.update(appD0wnloadHostory);
-        this.wmGenericDao.refresh(appD0wnloadHostory);
+        this.wmGenericDao.update(appDownloadHistory);
+        this.wmGenericDao.refresh(appDownloadHistory);
 
-        return appD0wnloadHostory;
+        return appDownloadHistory;
     }
 
     @Transactional(value = "WM_APP_STORETransactionManager")
     @Override
-    public AppD0wnloadHostory partialUpdate(Integer appd0wnloadhostoryId, Map<String, Object>appD0wnloadHostoryPatch) {
-        LOGGER.debug("Partially Updating the AppD0wnloadHostory with id: {}", appd0wnloadhostoryId);
+    public AppDownloadHistory partialUpdate(Integer appdownloadhistoryId, Map<String, Object>appDownloadHistoryPatch) {
+        LOGGER.debug("Partially Updating the AppDownloadHistory with id: {}", appdownloadhistoryId);
 
-        AppD0wnloadHostory appD0wnloadHostory = getById(appd0wnloadhostoryId);
+        AppDownloadHistory appDownloadHistory = getById(appdownloadhistoryId);
 
         try {
-            ObjectReader appD0wnloadHostoryReader = this.objectMapper.reader().forType(AppD0wnloadHostory.class).withValueToUpdate(appD0wnloadHostory);
-            appD0wnloadHostory = appD0wnloadHostoryReader.readValue(this.objectMapper.writeValueAsString(appD0wnloadHostoryPatch));
+            ObjectReader appDownloadHistoryReader = this.objectMapper.reader().forType(AppDownloadHistory.class).withValueToUpdate(appDownloadHistory);
+            appDownloadHistory = appDownloadHistoryReader.readValue(this.objectMapper.writeValueAsString(appDownloadHistoryPatch));
         } catch (IOException ex) {
-            LOGGER.debug("There was a problem in applying the patch: {}", appD0wnloadHostoryPatch, ex);
+            LOGGER.debug("There was a problem in applying the patch: {}", appDownloadHistoryPatch, ex);
             throw new InvalidInputException("Could not apply patch",ex);
         }
 
-        appD0wnloadHostory = update(appD0wnloadHostory);
+        appDownloadHistory = update(appDownloadHistory);
 
-        return appD0wnloadHostory;
+        return appDownloadHistory;
     }
 
     @Transactional(value = "WM_APP_STORETransactionManager")
     @Override
-    public AppD0wnloadHostory delete(Integer appd0wnloadhostoryId) {
-        LOGGER.debug("Deleting AppD0wnloadHostory with id: {}", appd0wnloadhostoryId);
-        AppD0wnloadHostory deleted = this.wmGenericDao.findById(appd0wnloadhostoryId);
+    public AppDownloadHistory delete(Integer appdownloadhistoryId) {
+        LOGGER.debug("Deleting AppDownloadHistory with id: {}", appdownloadhistoryId);
+        AppDownloadHistory deleted = this.wmGenericDao.findById(appdownloadhistoryId);
         if (deleted == null) {
-            LOGGER.debug("No AppD0wnloadHostory found with id: {}", appd0wnloadhostoryId);
-            throw new EntityNotFoundException(MessageResource.create("com.wavemaker.runtime.entity.not.found"), AppD0wnloadHostory.class.getSimpleName(), appd0wnloadhostoryId);
+            LOGGER.debug("No AppDownloadHistory found with id: {}", appdownloadhistoryId);
+            throw new EntityNotFoundException(MessageResource.create("com.wavemaker.runtime.entity.not.found"), AppDownloadHistory.class.getSimpleName(), appdownloadhistoryId);
         }
         this.wmGenericDao.delete(deleted);
         return deleted;
@@ -144,36 +144,36 @@ public class AppD0wnloadHostoryServiceImpl implements AppD0wnloadHostoryService 
 
     @Transactional(value = "WM_APP_STORETransactionManager")
     @Override
-    public void delete(AppD0wnloadHostory appD0wnloadHostory) {
-        LOGGER.debug("Deleting AppD0wnloadHostory with {}", appD0wnloadHostory);
-        this.wmGenericDao.delete(appD0wnloadHostory);
+    public void delete(AppDownloadHistory appDownloadHistory) {
+        LOGGER.debug("Deleting AppDownloadHistory with {}", appDownloadHistory);
+        this.wmGenericDao.delete(appDownloadHistory);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public Page<AppD0wnloadHostory> findAll(QueryFilter[] queryFilters, Pageable pageable) {
-        LOGGER.debug("Finding all AppD0wnloadHostories");
+    public Page<AppDownloadHistory> findAll(QueryFilter[] queryFilters, Pageable pageable) {
+        LOGGER.debug("Finding all AppDownloadHistories");
         return this.wmGenericDao.search(queryFilters, pageable);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public Page<AppD0wnloadHostory> findAll(String query, Pageable pageable) {
-        LOGGER.debug("Finding all AppD0wnloadHostories");
+    public Page<AppDownloadHistory> findAll(String query, Pageable pageable) {
+        LOGGER.debug("Finding all AppDownloadHistories");
         return this.wmGenericDao.searchByQuery(query, pageable);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager", timeout = 300)
     @Override
     public Downloadable export(ExportType exportType, String query, Pageable pageable) {
-        LOGGER.debug("exporting data in the service WM_APP_STORE for table AppD0wnloadHostory to {} format", exportType);
+        LOGGER.debug("exporting data in the service WM_APP_STORE for table AppDownloadHistory to {} format", exportType);
         return this.wmGenericDao.export(exportType, query, pageable);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager", timeout = 300)
     @Override
     public void export(DataExportOptions options, Pageable pageable, OutputStream outputStream) {
-        LOGGER.debug("exporting data in the service WM_APP_STORE for table AppD0wnloadHostory to {} format", options.getExportType());
+        LOGGER.debug("exporting data in the service WM_APP_STORE for table AppDownloadHistory to {} format", options.getExportType());
         this.wmGenericDao.export(options, pageable, outputStream);
     }
 

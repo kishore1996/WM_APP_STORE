@@ -264,6 +264,28 @@
     "inputFields" : { },
     "package" : "com.wm_app_store.wm_app_store.AppInfo"
   },
+  "ListVar" : {
+    "_id" : "wm-ListVar-wm.ServiceVariable-1560330891537",
+    "name" : "ListVar",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wm_app_store.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "File"
+  },
   "WM_APP_STOREAppInfoData" : {
     "_id" : "wm-WM_APP_STOREAppInfoData-wm.LiveVariable-1560145111450",
     "name" : "WM_APP_STOREAppInfoData",
