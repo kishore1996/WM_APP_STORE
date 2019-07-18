@@ -414,12 +414,12 @@
         <profile.props.file>development.properties</profile.props.file>
         <spring.version>5.1.4.RELEASE</spring.version>
         <spring.security.version>5.0.8.RELEASE</spring.security.version>
-        <wavemaker.studio.version>10.0.3</wavemaker.studio.version>
+        <wavemaker.studio.version>10.0.4</wavemaker.studio.version>
         <wavemaker.artifactType>wmapp</wavemaker.artifactType>
         <wavemaker.artifactStaticFolder>wmapp</wavemaker.artifactStaticFolder>
         <wavemaker.artifacts.single.excludes>wmapp/,pages/,themes/,index.html,app.css,app.js,app.variables.json</wavemaker.artifacts.single.excludes>
         <wavemaker.artifacts.separate.excludes>wmapp/,pages/,themes/,index.html,app.css,app.js,print.css,app.variables.json,favicon.png
         </wavemaker.artifacts.separate.excludes>
-        <wavemaker.studio.release.version>10.0.3</wavemaker.studio.release.version>
+        <wavemaker.studio.release.version>10.0.4</wavemaker.studio.release.version>
     </properties>
 </project>
