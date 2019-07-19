@@ -1,0 +1,71 @@
+<wm-page pagetitle="User Management" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-tabs name="tabs1" horizontalalign="left" height="80%">
+                <wm-tabpane name="tabpane1" title="add user" padding="unset unset unset 25%">
+                    <wm-form errormessage="" captionposition="left" title="Create New Users" enctype="application/x-www-form-urlencoded" method="get" dataset="bind:Variables.createUserVariable.dataSet" captionalign="left" name="executeInsertUserForm1" width="600">
+                        <wm-layoutgrid columns="1" name="layoutgrid2">
+                            <wm-gridrow name="gridrow3">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                                    <wm-form-field name="uname" readonly="false" displayname="Username" key="uname" type="string" show="true" widget="text" inputtype="text" placeholder="Enter value" required="true"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow4">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn6">
+                                    <wm-form-field name="password" readonly="false" displayname="Password" key="password" type="string" show="true" widget="password" inputtype="password" placeholder="Enter value" required="true"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow5">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                                    <wm-form-field name="user_role" readonly="false" displayname="User Role" key="user_role" type="string" show="true" widget="select" placeholder="Select value" dataset="admin,user,inactive" datafield="All Fields" required="true"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                        <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-secondary" iconclass="wi wi-refresh" title="Reset" disabled="false" widget-type="button" type="reset" update-mode="true"></wm-form-action>
+                        <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="Variables.createUserVariable.invoke()" disabled="false" widget-type="button"
+                            type="submit" update-mode="true"></wm-form-action>
+                    </wm-form>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane2" title="view users" on-select="tabpane2Select($event, widget)">
+                    <wm-table name="CredentialsTable1" title="View User Details" dataset="bind:Variables.viewUsersVariable.dataSet" navigation="Classic">
+                        <wm-table-column binding="id" caption="Id" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
+                        <wm-table-column binding="username" caption="Username" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="password" caption="Password" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="userRole" caption="User Role" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane4" title="edit users" padding="unset unset unset 25%">
+                    <wm-form errormessage="" captionposition="left" title="Edit User Credentials" enctype="application/x-www-form-urlencoded" method="put" dataset="bind:Variables.editUserVariable.dataSet" captionalign="left" name="executeEditUserForm1" width="600">
+                        <wm-layoutgrid columns="1" name="layoutgrid3">
+                            <wm-gridrow name="gridrow8">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                                    <wm-form-field name="currentusername" readonly="false" displayname="Current Username" key="currentusername" type="string" show="true" widget="text" inputtype="text" placeholder="Enter value"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow9">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                                    <wm-form-field name="newusername" readonly="false" displayname="New Username" key="newusername" type="string" show="true" widget="text" inputtype="text" placeholder="Enter value"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow10">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                                    <wm-form-field name="password" readonly="false" displayname="New Password" key="password" type="string" show="true" widget="text" inputtype="text" placeholder="Enter value"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow11">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                                    <wm-form-field name="Urole" displayname="New User Role" key="urole" type="string" show="true" widget="select" dataset="admin,user,inactive" datafield="All Fields"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                        <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-secondary" iconclass="wi wi-refresh" title="Reset" action="" disabled="false" widget-type="button" type="reset" update-mode="true"></wm-form-action>
+                        <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="Variables.editUserVariable.invoke()" disabled="false" widget-type="button" type="submit"
+                            update-mode="true"></wm-form-action>
+                    </wm-form>
+                </wm-tabpane>
+            </wm-tabs>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

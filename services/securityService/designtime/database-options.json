@@ -1,0 +1,19 @@
+{
+  "modelName" : "WM_APP_STORE",
+  "entityName" : "Credentials",
+  "tableName" : "CREDENTIALS",
+  "unamePropertyName" : "username",
+  "unameColumnName" : "USERNAME",
+  "uidPropertyName" : "id",
+  "uidColumnName" : "ID",
+  "pwPropertyName" : "password",
+  "pwColumnName" : "PASSWORD",
+  "rolePropertyName" : "userRole",
+  "roleColumnName" : "USER_ROLE",
+  "useRolesQuery" : false,
+  "rolesByUsernameQuery" : "",
+  "tenantIdField" : null,
+  "defTenantId" : 0,
+  "tenantIdPropertyName" : null,
+  "queryType" : "HQL"
+}

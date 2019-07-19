@@ -1,272 +1,57 @@
 {
-  "APP_INFO" : {
-    "name" : "APP_INFO",
-    "description" : "APP_INFO",
+  "editUser" : {
+    "name" : "editUser",
+    "description" : "Edit user credentials",
     "version" : "V2",
-    "queryString" : "select * from APP_INFO",
-    "countQueryString" : "select count(*) from (select * from APP_INFO) wmTempTable",
+    "queryString" : "UPDATE CREDENTIALS SET USERNAME = :newusername, PASSWORD = :password, USER_ROLE = :urole  WHERE USERNAME = :currentusername",
+    "countQueryString" : null,
     "offlineQueryString" : null,
     "nativeSql" : true,
-    "fetchCount" : true,
-    "type" : "SELECT",
-    "parameters" : [ ],
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "newusername",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "admin",
+      "required" : true
+    }, {
+      "name" : "password",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "admin",
+      "required" : true
+    }, {
+      "name" : "urole",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "admin",
+      "required" : true
+    }, {
+      "name" : "currentusername",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "admin",
+      "required" : true
+    } ],
     "request" : {
-      "wrapped" : false,
-      "typeRef" : null,
-      "method" : "GET"
-    },
-    "identifiers" : [ "ID", "DESC", "CATEGORY_ID", "CREATED_BY", "CREATION_DATE", "LAST_UPDATE_DATE", "NAME", "UPDATED_BY" ],
-    "response" : {
-      "typeRef" : "com.wm_app_store.wm_app_store.models.query.AppInfoResponse",
-      "returns" : "CUSTOM",
-      "responseType" : "PAGINATED",
-      "properties" : [ {
-        "name" : "ID",
-        "fieldName" : "id",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.Integer",
-          "list" : false
-        }
-      }, {
-        "name" : "DESC",
-        "fieldName" : "_desc",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      }, {
-        "name" : "CATEGORY_ID",
-        "fieldName" : "categoryId",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.Integer",
-          "list" : false
-        }
-      }, {
-        "name" : "CREATED_BY",
-        "fieldName" : "createdBy",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      }, {
-        "name" : "CREATION_DATE",
-        "fieldName" : "creationDate",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.sql.Timestamp",
-          "list" : false
-        }
-      }, {
-        "name" : "IMAGE",
-        "fieldName" : "image",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "byte[]",
-          "list" : false
-        }
-      }, {
-        "name" : "LAST_UPDATE_DATE",
-        "fieldName" : "lastUpdateDate",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.sql.Timestamp",
-          "list" : false
-        }
-      }, {
-        "name" : "NAME",
-        "fieldName" : "name",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      }, {
-        "name" : "UPDATED_BY",
-        "fieldName" : "updatedBy",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      } ]
-    }
-  },
-  "APP_SCREENSHOTS" : {
-    "name" : "APP_SCREENSHOTS",
-    "description" : "APP_SCREENSHOTS",
-    "version" : "V2",
-    "queryString" : "select * from APP_SCREENSHOTS",
-    "countQueryString" : "select count(*) from (select * from APP_SCREENSHOTS) wmTempTable",
-    "offlineQueryString" : null,
-    "nativeSql" : true,
-    "fetchCount" : true,
-    "type" : "SELECT",
-    "parameters" : [ ],
-    "request" : {
-      "wrapped" : false,
-      "typeRef" : null,
-      "method" : "GET"
+      "wrapped" : true,
+      "typeRef" : "com.wm_app_store.wm_app_store.models.query.EditUserRequest",
+      "method" : "PUT"
     },
     "identifiers" : [ ],
     "response" : {
-      "typeRef" : "com.wm_app_store.wm_app_store.models.query.AppScreenshotsResponse",
-      "returns" : "CUSTOM",
-      "responseType" : "PAGINATED",
-      "properties" : [ {
-        "name" : "ID",
-        "fieldName" : "id",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.Integer",
-          "list" : false
-        }
-      }, {
-        "name" : "APP_INFO_ID",
-        "fieldName" : "appInfoId",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.Integer",
-          "list" : false
-        }
-      }, {
-        "name" : "SCREENSHOTS",
-        "fieldName" : "screenshots",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      } ]
-    }
-  },
-  "APP_SOURCE" : {
-    "name" : "APP_SOURCE",
-    "description" : "APP_SOURCE",
-    "version" : "V2",
-    "queryString" : "select * from APP_SOURCE",
-    "countQueryString" : "select count(*) from (select * from APP_SOURCE) wmTempTable",
-    "offlineQueryString" : null,
-    "nativeSql" : true,
-    "fetchCount" : true,
-    "type" : "SELECT",
-    "parameters" : [ ],
-    "request" : {
-      "wrapped" : false,
-      "typeRef" : null,
-      "method" : "GET"
-    },
-    "identifiers" : [ ],
-    "response" : {
-      "typeRef" : "com.wm_app_store.wm_app_store.models.query.AppSourceResponse",
-      "returns" : "CUSTOM",
-      "responseType" : "PAGINATED",
-      "properties" : [ {
-        "name" : "ID",
-        "fieldName" : "id",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.Integer",
-          "list" : false
-        }
-      }, {
-        "name" : "FILE_PATH",
-        "fieldName" : "filePath",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      }, {
-        "name" : "APP_INFO_ID",
-        "fieldName" : "appInfoId",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.Integer",
-          "list" : false
-        }
-      }, {
-        "name" : "CREATED_BY",
-        "fieldName" : "createdBy",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      }, {
-        "name" : "CREATION_DATE",
-        "fieldName" : "creationDate",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.sql.Timestamp",
-          "list" : false
-        }
-      }, {
-        "name" : "LAST_UPDATE_DATE",
-        "fieldName" : "lastUpdateDate",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.sql.Timestamp",
-          "list" : false
-        }
-      }, {
-        "name" : "PRICE",
-        "fieldName" : "price",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.Integer",
-          "list" : false
-        }
-      }, {
-        "name" : "UPDATED_BY",
-        "fieldName" : "updatedBy",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      }, {
-        "name" : "VERSION_ID",
-        "fieldName" : "versionId",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.Integer",
-          "list" : false
-        }
-      }, {
-        "name" : "FILE_NAME",
-        "fieldName" : "fileName",
-        "optional" : false,
-        "fieldType" : {
-          "type" : "PRIMITIVE",
-          "typeRef" : "java.lang.String",
-          "list" : false
-        }
-      } ]
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
     }
   }
 }

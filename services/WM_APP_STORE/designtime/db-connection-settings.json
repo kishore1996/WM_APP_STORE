@@ -9,9 +9,12 @@
   "dbType" : "MySQL",
   "host" : "{WM_CLOUD_MYSQL_HOST}",
   "dbName" : "WM_APP_STORE",
-  "port" : "",
+  "port" : null,
   "schemaName" : null,
   "tableFilter" : [ {
+    "table" : "APP_DOWNLOAD_HISTORY",
+    "schema" : null
+  }, {
     "table" : "APP_INFO",
     "schema" : null
   }, {
@@ -36,7 +39,7 @@
     "table" : "USER_ROLE",
     "schema" : null
   }, {
-    "table" : "APP_DOWNLOAD_HISTORY",
+    "table" : "CREDENTIALS",
     "schema" : null
   } ],
   "schemaFilter" : [ ],
