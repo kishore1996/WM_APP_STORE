@@ -2,6 +2,42 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    <sql-query name="SELECTFROM_APPINFO">
+        <![CDATA[
+        select * from APP_INFO
+        ]]>
+    </sql-query>
+
+    <sql-query name="SELECTFROM_APPINFO__count">
+        <![CDATA[
+        select count(*) from (select * from APP_INFO) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SELECTFROM_APPSCREENSHOTS">
+        <![CDATA[
+        select * from APP_SCREENSHOTS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SELECTFROM_APPSCREENSHOTS__count">
+        <![CDATA[
+        select count(*) from (select * from APP_SCREENSHOTS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SELECTFROM_APPSOURCE">
+        <![CDATA[
+        select * from APP_SOURCE
+        ]]>
+    </sql-query>
+
+    <sql-query name="SELECTFROM_APPSOURCE__count">
+        <![CDATA[
+        select count(*) from (select * from APP_SOURCE) wmTempTable
+        ]]>
+    </sql-query>
+
     <sql-query name="deleteUser">
         <![CDATA[
         DELETE FROM CREDENTIALS WHERE USERNAME = :uname AND ID = :id AND USERNAME != :loggedinuser

@@ -16,6 +16,18 @@ import com.wm_app_store.wm_app_store.models.query.*;
 
 public interface WM_APP_STOREQueryExecutorService {
 
+    Page<SelectfromAppinfoResponse> executeSELECTFROM_APPINFO(Pageable pageable);
+
+    void exportSELECTFROM_APPINFO(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<SelectfromAppscreenshotsResponse> executeSELECTFROM_APPSCREENSHOTS(Pageable pageable);
+
+    void exportSELECTFROM_APPSCREENSHOTS(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<SelectfromAppsourceResponse> executeSELECTFROM_APPSOURCE(Pageable pageable);
+
+    void exportSELECTFROM_APPSOURCE(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
     Integer executeDeleteUser(String uname, Integer id, String loggedinuser);
 
     Integer executeEditUser(EditUserRequest editUserRequest);

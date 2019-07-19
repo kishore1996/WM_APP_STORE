@@ -12,9 +12,6 @@
   "port" : null,
   "schemaName" : null,
   "tableFilter" : [ {
-    "table" : "APP_D0WNLOAD_HOSTORY",
-    "schema" : null
-  }, {
     "table" : "APP_DOWNLOAD_HISTORY",
     "schema" : null
   }, {
@@ -31,9 +28,6 @@
     "schema" : null
   }, {
     "table" : "APP_SOURCE",
-    "schema" : null
-  }, {
-    "table" : "CREDENTIALS",
     "schema" : null
   }, {
     "table" : "MD_CATEGORY",

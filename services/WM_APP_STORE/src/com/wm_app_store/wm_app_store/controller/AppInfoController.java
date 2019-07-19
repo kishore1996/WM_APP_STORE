@@ -7,10 +7,6 @@ package com.wm_app_store.wm_app_store.controller;
 
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.hibernate.TypeMismatchException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.wavemaker.commons.wrapper.StringWrapper;
 import com.wavemaker.runtime.data.export.DataExportOptions;
@@ -33,11 +26,8 @@ import com.wavemaker.runtime.data.export.ExportType;
 import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.manager.ExportedFileManager;
-import com.wavemaker.runtime.file.model.DownloadResponse;
 import com.wavemaker.runtime.file.model.Downloadable;
 import com.wavemaker.runtime.security.xss.XssDisable;
-import com.wavemaker.runtime.util.WMMultipartUtils;
-import com.wavemaker.runtime.util.WMRuntimeUtils;
 import com.wavemaker.tools.api.core.annotations.MapTo;
 import com.wavemaker.tools.api.core.annotations.WMAccessVisibility;
 import com.wavemaker.tools.api.core.models.AccessSpecifier;
@@ -72,12 +62,11 @@ public class AppInfoController {
 	private ExportedFileManager exportedFileManager;
 
 	@ApiOperation(value = "Creates a new AppInfo instance.")
-    @RequestMapping(method = RequestMethod.POST, consumes = "multipart/form-data")
+    @RequestMapping(method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public AppInfo createAppInfo(@RequestPart("wm_data_json") AppInfo appInfo, @RequestPart(value = "image", required = false) MultipartFile _image) {
+    public AppInfo createAppInfo(@RequestBody AppInfo appInfo) {
 		LOGGER.debug("Create AppInfo with information: {}" , appInfo);
 
-    appInfo.setImage(WMMultipartUtils.toByteArray(_image));
 		appInfo = appInfoService.create(appInfo);
 		LOGGER.debug("Created AppInfo with information: {}" , appInfo);
 
@@ -94,21 +83,6 @@ public class AppInfoController {
         LOGGER.debug("AppInfo details with id: {}" , foundAppInfo);
 
         return foundAppInfo;
-    }
-
-    @ApiOperation(value = "Retrieves content for the given BLOB field in AppInfo instance" )
-    @RequestMapping(value = "/{id}/content/{fieldName}", method = RequestMethod.GET, produces="application/octet-stream")
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public DownloadResponse getAppInfoBLOBContent(@PathVariable("id") Integer id, @PathVariable("fieldName") String fieldName, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, @RequestParam(value="download", defaultValue = "false") boolean download) {
-
-        LOGGER.debug("Retrieves content for the given BLOB field {} in AppInfo instance" , fieldName);
-
-        if(!WMRuntimeUtils.isLob(AppInfo.class, fieldName)) {
-            throw new TypeMismatchException("Given field " + fieldName + " is not a valid BLOB type");
-        }
-        AppInfo appInfo = appInfoService.getById(id);
-
-        return WMMultipartUtils.buildDownloadResponseForBlob(appInfo, fieldName, httpServletRequest, download);
     }
 
     @ApiOperation(value = "Updates the AppInfo instance associated with the given id.")
@@ -134,20 +108,6 @@ public class AppInfoController {
         LOGGER.debug("AppInfo details after partial update: {}" , appInfo);
 
         return appInfo;
-    }
-
-    @ApiOperation(value = "Updates the AppInfo instance associated with the given id.This API should be used when AppInfo instance fields that require multipart data.") 
-    @RequestMapping(value = "/{id:.+}", method = RequestMethod.POST, consumes = {"multipart/form-data"})
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public AppInfo editAppInfo(@PathVariable("id") Integer id, MultipartHttpServletRequest multipartHttpServletRequest) {
-        AppInfo newAppInfo = WMMultipartUtils.toObject(multipartHttpServletRequest, AppInfo.class, "WM_APP_STORE");
-        newAppInfo.setId(id);
-
-        AppInfo oldAppInfo = appInfoService.getById(id);
-        WMMultipartUtils.updateLobsContent(oldAppInfo, newAppInfo);
-        LOGGER.debug("Updating AppInfo with information: {}" , newAppInfo);
-
-        return appInfoService.update(newAppInfo);
     }
 
     @ApiOperation(value = "Deletes the AppInfo instance associated with the given id.")

@@ -46,6 +46,93 @@ public class QueryExecutionController {
     @Autowired
 	private ExportedFileManager exportedFileManager;
 
+    @RequestMapping(value = "/queries/SELECTFROM_APPINFO", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "SELECTFROM_APPINFO")
+    public Page<SelectfromAppinfoResponse> executeSELECTFROM_APPINFO(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SELECTFROM_APPINFO");
+        Page<SelectfromAppinfoResponse> _result = queryService.executeSELECTFROM_APPINFO(pageable);
+        LOGGER.debug("got the result for named query: SELECTFROM_APPINFO, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query SELECTFROM_APPINFO")
+    @RequestMapping(value = "/queries/SELECTFROM_APPINFO/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportSELECTFROM_APPINFO(@RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: SELECTFROM_APPINFO");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "SELECTFROM_APPINFO";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportSELECTFROM_APPINFO( exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/SELECTFROM_APPSCREENSHOTS", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "SELECTFROM_APPSCREENSHOTS")
+    public Page<SelectfromAppscreenshotsResponse> executeSELECTFROM_APPSCREENSHOTS(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SELECTFROM_APPSCREENSHOTS");
+        Page<SelectfromAppscreenshotsResponse> _result = queryService.executeSELECTFROM_APPSCREENSHOTS(pageable);
+        LOGGER.debug("got the result for named query: SELECTFROM_APPSCREENSHOTS, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query SELECTFROM_APPSCREENSHOTS")
+    @RequestMapping(value = "/queries/SELECTFROM_APPSCREENSHOTS/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportSELECTFROM_APPSCREENSHOTS(@RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: SELECTFROM_APPSCREENSHOTS");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "SELECTFROM_APPSCREENSHOTS";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportSELECTFROM_APPSCREENSHOTS( exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/SELECTFROM_APPSOURCE", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "SELECTFROM_APPSOURCE")
+    public Page<SelectfromAppsourceResponse> executeSELECTFROM_APPSOURCE(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SELECTFROM_APPSOURCE");
+        Page<SelectfromAppsourceResponse> _result = queryService.executeSELECTFROM_APPSOURCE(pageable);
+        LOGGER.debug("got the result for named query: SELECTFROM_APPSOURCE, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query SELECTFROM_APPSOURCE")
+    @RequestMapping(value = "/queries/SELECTFROM_APPSOURCE/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportSELECTFROM_APPSOURCE(@RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: SELECTFROM_APPSOURCE");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "SELECTFROM_APPSOURCE";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportSELECTFROM_APPSOURCE( exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
     @RequestMapping(value = "/queries/deleteUser", method = RequestMethod.DELETE)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "delete users")

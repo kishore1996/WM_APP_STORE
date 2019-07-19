@@ -33,6 +33,66 @@ public class WM_APP_STOREQueryExecutorServiceImpl implements WM_APP_STOREQueryEx
     @Qualifier("WM_APP_STOREWMQueryExecutor")
     private WMQueryExecutor queryExecutor;
 
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
+    public Page<SelectfromAppinfoResponse> executeSELECTFROM_APPINFO(Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        return queryExecutor.executeNamedQuery("SELECTFROM_APPINFO", params, SelectfromAppinfoResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportSELECTFROM_APPINFO(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        QueryProcedureInput<SelectfromAppinfoResponse> queryInput = new QueryProcedureInput<>("SELECTFROM_APPINFO", params, SelectfromAppinfoResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
+    public Page<SelectfromAppscreenshotsResponse> executeSELECTFROM_APPSCREENSHOTS(Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        return queryExecutor.executeNamedQuery("SELECTFROM_APPSCREENSHOTS", params, SelectfromAppscreenshotsResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportSELECTFROM_APPSCREENSHOTS(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        QueryProcedureInput<SelectfromAppscreenshotsResponse> queryInput = new QueryProcedureInput<>("SELECTFROM_APPSCREENSHOTS", params, SelectfromAppscreenshotsResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
+    public Page<SelectfromAppsourceResponse> executeSELECTFROM_APPSOURCE(Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        return queryExecutor.executeNamedQuery("SELECTFROM_APPSOURCE", params, SelectfromAppsourceResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportSELECTFROM_APPSOURCE(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        QueryProcedureInput<SelectfromAppsourceResponse> queryInput = new QueryProcedureInput<>("SELECTFROM_APPSOURCE", params, SelectfromAppsourceResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
     @Transactional(value = "WM_APP_STORETransactionManager")
     @Override
     public Integer executeDeleteUser(String uname, Integer id, String loggedinuser) {
