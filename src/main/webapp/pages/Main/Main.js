@@ -20,3 +20,20 @@ Page.continuebuttonClick = function($event, widget) {
     Page.Variables.insert_into_appinfo.invoke();
     Page.Actions.timerAction_prefab.invoke();
 };
+img = ["https://lh3.googleusercontent.com/8r-ZTPoTIywU_aK2OXmLKg5WOdzXRxv7UUpiIk7kY7Du12fXKDwxUb2M_vBFp4pPvmpK=s180-rw", "https://lh3.googleusercontent.com/nYhPnY2I-e9rpqnid9u9aAODz4C04OycEGxqHG5vxFnA35OGmLMrrUmhM9eaHKJ7liB-=s180-rw"]
+var jsondata = []
+Page.WM_APP_STOREAppInfoDataonSuccess = function(variable, data) {
+    console.log(data)
+    for (var i = 0; i < data.length; i++) {
+        jsondata.push({
+            "category": data[i]["categoryId"],
+            "CreatedBy": data[i]["createdBy"],
+            "CreatedOn": data[i]["creationDate"],
+            "Icon": data[i]["image"],
+            "PrefabName": data[i]["name"]
+        })
+    }
+    console.log(jsondata)
+    Page.Variables.Prefabs.setData(jsondata)
+
+};

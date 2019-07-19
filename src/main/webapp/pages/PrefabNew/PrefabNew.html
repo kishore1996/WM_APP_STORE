@@ -1,0 +1,31 @@
+<wm-partial name="partial1">
+    <wm-container name="container1">
+        <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="staticVariable1List2" dataset="bind:Variables.staticVariable1.dataSet" navigation="Scroll">
+            <wm-listtemplate layout="media" name="listtemplate2">
+                <wm-card name="card2">
+                    <wm-card-content fontsize="0.8" fontunit="em" name="card_content2">
+                        <wm-layoutgrid columns="2" name="layoutgrid2">
+                            <wm-gridrow name="gridrow2">
+                                <wm-gridcolumn colwidth="6" columnwidth="6" class="col-xs-6" name="gridcolumn3">
+                                    <wm-picture name="Picture" width="100%" picturesource="bind:Variables.staticVariable1.dataSet.Icon"></wm-picture>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn colwidth="6" columnwidth="6" padding="unset 1.25em" class="col-xs-6" name="gridcolumn4" horizontalalign="left">
+                                    <wm-label name="ID" caption="bind:Variables.staticVariable1.dataSet[$i].CreatedOn" class="text-muted p" margin="unset unset 0em unset" whitespace="nowrap" padding="unset unset unset 3em"></wm-label>
+                                    <wm-label name="Name" caption="bind:Variables.staticVariable1.dataSet[$i].PrefabName" class="h4" margin="0px unset" whitespace="nowrap"></wm-label>
+                                    <wm-label name="Department" caption="bind:Variables.staticVariable1.dataSet[$i].category" class="p text-muted" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
+                                    <wm-anchor name="PhoneNumber" caption="" class="h5" hyperlink="tel:" margin="0px unset" whitespace="nowrap"></wm-anchor>
+                                    <wm-anchor name="EmailID" class="p text-muted" hyperlink="mailto://" caption="" whitespace="nowrap"></wm-anchor>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow3">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                                    <wm-label padding="unset 0.5em" name="label12" caption="bind:Variables.staticVariable1.dataSet[$i].CreatedBy"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-card-content>
+                </wm-card>
+            </wm-listtemplate>
+        </wm-list>
+    </wm-container>
+</wm-partial>

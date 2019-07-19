@@ -22,6 +22,10 @@
   "type" : "PARTIAL",
   "params" : [ ]
 }, {
+  "name" : "PrefabNew",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
   "name" : "PrefabUpload",
   "type" : "PAGE",
   "params" : [ ]

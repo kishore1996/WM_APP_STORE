@@ -13,9 +13,44 @@
                         <wm-button class="btn-default" caption="Upload" type="button" margin="unset 0.5em" name="button1" backgroundcolor="#0f09e3" color="#ede8e8" on-click="Actions.goToPage_PrefabUpload.invoke()"></wm-button>
                     </wm-gridcolumn>
                 </wm-gridrow>
-            </wm-layoutgrid><br><br>
-            <wm-container name="container3" height="200" content="carousal"></wm-container><br><br>
-            <wm-container name="container2" content="prefab"></wm-container>
+                <wm-gridrow name="gridrow6_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn9">
+                        <wm-picture name="picture2" picturesource="resources/images/imagelists/carousel1.jpg" pictureplaceholder="resources/images/imagelists/carousel1.jpg" width="100%" height="auto"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow7_1">
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn11_1">
+                        <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="PrefabsList1" dataset="bind:Variables.Prefabs.dataSet" navigation="Scroll" padding="5% unset unset 5%">
+                            <wm-listtemplate layout="media" name="listtemplate1">
+                                <wm-card name="card1" width="auto" height="auto">
+                                    <wm-card-content fontsize="0.8" fontunit="em" name="card_content1">
+                                        <wm-layoutgrid columns="2" name="layoutgrid4_1" width="auto" height="auto">
+                                            <wm-gridrow name="gridrow8">
+                                                <wm-gridcolumn colwidth="6" columnwidth="4" class="col-xs-6" name="gridcolumn11_2">
+                                                    <wm-picture name="Picture" width="100%" picturesource="bind:Variables.Prefabs.dataSet.Icon"></wm-picture>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn colwidth="6" columnwidth="8" padding="unset unset unset 1em" class="col-xs-6" name="gridcolumn12_1" horizontalalign="left">
+                                                    <wm-label name="ID" caption="bind:Variables.Prefabs.dataSet.CreatedOn" class="text-muted p" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
+                                                    <wm-label name="Name" caption="bind:Variables.Prefabs.dataSet.PrefabName" class="h4" margin="0px unset" whitespace="nowrap"></wm-label>
+                                                    <wm-label name="Department" caption="bind:Variables.Prefabs.dataSet.category" class="p text-muted" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
+                                                    <wm-anchor name="PhoneNumber" caption="" class="h5" hyperlink="tel:" margin="0px unset" whitespace="nowrap"></wm-anchor>
+                                                    <wm-anchor name="EmailID" class="p text-muted" hyperlink="mailto://" caption="" whitespace="nowrap"></wm-anchor>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow9">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                                                    <wm-label padding="unset 0.5em" name="label9" caption="bind:Variables.Prefabs.dataSet[$i].CreatedBy"></wm-label>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-card-content>
+                                </wm-card>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid><br><br><br><br>
+            <wm-container name="container2" content="prefab" show="false"></wm-container>
         </wm-page-content>
         <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>

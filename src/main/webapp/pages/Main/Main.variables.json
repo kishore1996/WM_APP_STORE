@@ -1,56 +1,4 @@
 {
-  "FileServiceUploadFile2" : {
-    "_id" : "wm-FileServiceUploadFile2-wm.ServiceVariable-1563512307360",
-    "name" : "FileServiceUploadFile2",
-    "owner" : "Page",
-    "category" : "wm.ServiceVariable",
-    "dataBinding" : [ {
-      "target" : "files",
-      "value" : "bind:Widgets.fileupload1.selectedFiles",
-      "type" : "java.lang.String"
-    } ],
-    "type" : "com.wm_app_store.fileservice.FileService.FileUploadResponse",
-    "service" : "FileService",
-    "operation" : "uploadFile",
-    "operationId" : "FileController_uploadFile",
-    "serviceType" : "JavaService",
-    "dataSet" : [ ],
-    "isList" : false,
-    "maxResults" : 20,
-    "startUpdate" : false,
-    "autoUpdate" : false,
-    "inFlightBehavior" : "executeLast",
-    "transformationRequired" : false,
-    "saveInPhonegap" : false,
-    "isDefault" : true,
-    "controller" : "File"
-  },
-  "FileServiceUploadFile3" : {
-    "_id" : "wm-FileServiceUploadFile3-wm.ServiceVariable-1563512583848",
-    "name" : "FileServiceUploadFile3",
-    "owner" : "Page",
-    "category" : "wm.ServiceVariable",
-    "dataBinding" : [ {
-      "target" : "files",
-      "value" : "bind:Widgets.fileupload2.selectedFiles",
-      "type" : "java.lang.String"
-    } ],
-    "type" : "com.wm_app_store.fileservice.FileService.FileUploadResponse",
-    "service" : "FileService",
-    "operation" : "uploadFile",
-    "operationId" : "FileController_uploadFile",
-    "serviceType" : "JavaService",
-    "dataSet" : [ ],
-    "isList" : false,
-    "maxResults" : 20,
-    "startUpdate" : false,
-    "autoUpdate" : false,
-    "inFlightBehavior" : "executeLast",
-    "transformationRequired" : false,
-    "saveInPhonegap" : false,
-    "isDefault" : true,
-    "controller" : "File"
-  },
   "FileServiceUploadFile4" : {
     "_id" : "wm-FileServiceUploadFile4-wm.ServiceVariable-1563513546555",
     "name" : "FileServiceUploadFile4",
@@ -71,7 +19,7 @@
     "dataSet" : [ ],
     "isList" : true,
     "maxResults" : 20,
-    "startUpdate" : true,
+    "startUpdate" : false,
     "autoUpdate" : false,
     "inFlightBehavior" : "executeLast",
     "transformationRequired" : false,
@@ -619,6 +567,72 @@
     "saveInPhonegap" : false,
     "controller" : "File"
   },
+  "Prefabs" : {
+    "_id" : "wm-Prefabs-wm.Variable-1563534457870",
+    "name" : "Prefabs",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
   "timerAction_prefab" : {
     "_id" : "wm-timerAction_prefab-wm.TimerVariable-1563518228844",
     "name" : "timerAction_prefab",
@@ -641,6 +655,7 @@
     "saveInPhonegap" : false,
     "maxResults" : 20,
     "designMaxResults" : 10,
+    "onSuccess" : "WM_APP_STOREAppInfoDataonSuccess(variable, data, options)",
     "inFlightBehavior" : "executeLast",
     "startUpdate" : true,
     "autoUpdate" : true,
@@ -866,7 +881,18 @@
       "watchOn" : "WM_APP_STOREMdCategoryData",
       "package" : "com.wm_app_store.wm_app_store.AppInfo"
     } ],
-    "filterExpressions" : { },
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
     "package" : "com.wm_app_store.wm_app_store.AppInfo"
   }
 }
