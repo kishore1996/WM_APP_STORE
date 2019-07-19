@@ -19,7 +19,7 @@
     "dataSet" : [ ],
     "isList" : true,
     "maxResults" : 20,
-    "startUpdate" : true,
+    "startUpdate" : false,
     "autoUpdate" : false,
     "inFlightBehavior" : "executeLast",
     "transformationRequired" : false,
@@ -47,7 +47,7 @@
     "dataSet" : [ ],
     "isList" : true,
     "maxResults" : 20,
-    "startUpdate" : true,
+    "startUpdate" : false,
     "autoUpdate" : false,
     "inFlightBehavior" : "executeLast",
     "transformationRequired" : false,
@@ -55,8 +55,92 @@
     "isDefault" : true,
     "controller" : "File"
   },
+  "FileServiceUploadFile2" : {
+    "_id" : "wm-FileServiceUploadFile2-wm.ServiceVariable-1563511214483",
+    "name" : "FileServiceUploadFile2",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.fileupload3.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "com.wm_app_store.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "FileServiceUploadFile3" : {
+    "_id" : "wm-FileServiceUploadFile3-wm.ServiceVariable-1563521915342",
+    "name" : "FileServiceUploadFile3",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.icon_upload.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "com.wm_app_store.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "filesuploaded" : {
+    "_id" : "wm-filesuploaded-wm.NotificationVariable-1563527468526",
+    "name" : "filesuploaded",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Files are Uploaded Successfully",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "2000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "center center",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
   "insert_into_appinfo" : {
-    "_id" : "wm-insert_into_appinfo-wm.LiveVariable-1563451201671",
+    "_id" : "wm-insert_into_appinfo-wm.LiveVariable-1563522118628",
     "name" : "insert_into_appinfo",
     "owner" : "Page",
     "category" : "wm.LiveVariable",
@@ -66,7 +150,11 @@
       "type" : "string"
     }, {
       "target" : "name",
-      "value" : "bind:Widgets.prefab_name.datavalue",
+      "value" : "bind:Widgets.prefabname.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "image",
+      "value" : "bind:Variables.FileServiceUploadFile3.dataSet[$i].inlinePath",
       "type" : "string"
     } ],
     "operation" : "insert",
@@ -76,7 +164,7 @@
     "saveInPhonegap" : false,
     "maxResults" : 20,
     "designMaxResults" : 10,
-    "onSuccess" : "Variables.insert_into_appsource.createRecord()",
+    "onSuccess" : "Actions.prefab_created.invoke()",
     "inFlightBehavior" : "executeLast",
     "startUpdate" : false,
     "autoUpdate" : false,
@@ -234,18 +322,6 @@
         "isRelated" : false,
         "scale" : 0
       }, {
-        "fieldName" : "image",
-        "type" : "blob",
-        "fullyQualifiedType" : "blob",
-        "columnName" : "IMAGE",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 255,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "scale" : 0
-      }, {
         "fieldName" : "lastUpdateDate",
         "type" : "timestamp",
         "fullyQualifiedType" : "timestamp",
@@ -283,6 +359,19 @@
         "isRelated" : false,
         "systemInserted" : true,
         "systemUpdated" : true,
+        "scale" : 0
+      }, {
+        "fieldName" : "image",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "IMAGE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "AppInfo",
@@ -334,6 +423,7 @@
     "saveInPhonegap" : false,
     "maxResults" : 20,
     "designMaxResults" : 10,
+    "onSuccess" : "Actions.filesuploaded.invoke()",
     "inFlightBehavior" : "executeLast",
     "startUpdate" : false,
     "autoUpdate" : false,
@@ -429,18 +519,6 @@
           "isRelated" : false,
           "scale" : 0
         }, {
-          "fieldName" : "image",
-          "type" : "blob",
-          "fullyQualifiedType" : "blob",
-          "columnName" : "IMAGE",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : 255,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "scale" : 0
-        }, {
           "fieldName" : "lastUpdateDate",
           "type" : "timestamp",
           "fullyQualifiedType" : "timestamp",
@@ -478,6 +556,19 @@
           "isRelated" : false,
           "systemInserted" : true,
           "systemUpdated" : true,
+          "scale" : 0
+        }, {
+          "fieldName" : "image",
+          "type" : "string",
+          "fullyQualifiedType" : "string",
+          "columnName" : "IMAGE",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : 255,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "defaultValue" : "",
           "scale" : 0
         } ]
       }, {
@@ -637,6 +728,7 @@
     "saveInPhonegap" : false,
     "maxResults" : 20,
     "designMaxResults" : 10,
+    "onSuccess" : "Variables.insert_into_appsource.createRecord()",
     "inFlightBehavior" : "executeLast",
     "startUpdate" : false,
     "autoUpdate" : false,
@@ -731,18 +823,6 @@
           "isRelated" : false,
           "scale" : 0
         }, {
-          "fieldName" : "image",
-          "type" : "blob",
-          "fullyQualifiedType" : "blob",
-          "columnName" : "IMAGE",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : 255,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "scale" : 0
-        }, {
           "fieldName" : "lastUpdateDate",
           "type" : "timestamp",
           "fullyQualifiedType" : "timestamp",
@@ -780,6 +860,19 @@
           "isRelated" : false,
           "systemInserted" : true,
           "systemUpdated" : true,
+          "scale" : 0
+        }, {
+          "fieldName" : "image",
+          "type" : "string",
+          "fullyQualifiedType" : "string",
+          "columnName" : "IMAGE",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : 255,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "defaultValue" : "",
           "scale" : 0
         } ]
       }, {
@@ -827,5 +920,67 @@
     "filterExpressions" : { },
     "inputFields" : { },
     "package" : "com.wm_app_store.wm_app_store.AppScreenshots"
+  },
+  "nuotnullnotify" : {
+    "_id" : "wm-nuotnullnotify-wm.NotificationVariable-1563526525180",
+    "name" : "nuotnullnotify",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Fields should not be blank",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Warning",
+      "type" : "string"
+    }, {
+      "target" : "okButtonText",
+      "value" : "Okay",
+      "type" : "string"
+    }, {
+      "target" : "alerttype",
+      "value" : "warning",
+      "type" : "string"
+    } ],
+    "operation" : "alert",
+    "onOk" : "Widgets.dialog1.open()"
+  },
+  "prefab_created" : {
+    "_id" : "wm-prefab_created-wm.NotificationVariable-1563527381929",
+    "name" : "prefab_created",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Prefab has been created",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "2000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "center center",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "timerAction1" : {
+    "_id" : "wm-timerAction1-wm.TimerVariable-1563522544017",
+    "name" : "timerAction1",
+    "owner" : "Page",
+    "category" : "wm.TimerVariable",
+    "startUpdate" : false,
+    "repeating" : false,
+    "delay" : 500
   }
 }

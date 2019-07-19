@@ -13,7 +13,10 @@
 }, {
   "name" : "Main",
   "type" : "PAGE",
-  "params" : [ ]
+  "params" : [ {
+    "name" : "APP_INFO_ID",
+    "type" : "integer"
+  } ]
 }, {
   "name" : "PrefabDetails",
   "type" : "PARTIAL",
@@ -33,6 +36,10 @@
 }, {
   "name" : "UserManagement",
   "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Upload_Prefab",
+  "type" : "PARTIAL",
   "params" : [ ]
 }, {
   "name" : "carousal",

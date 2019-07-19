@@ -24,6 +24,9 @@
     "table" : "APP_SCREEN",
     "schema" : null
   }, {
+    "table" : "APP_SCREENSHOTS",
+    "schema" : null
+  }, {
     "table" : "APP_SOURCE",
     "schema" : null
   }, {
@@ -37,9 +40,6 @@
     "schema" : null
   }, {
     "table" : "USER_ROLE",
-    "schema" : null
-  }, {
-    "table" : "CREDENTIALS",
     "schema" : null
   } ],
   "schemaFilter" : [ ],
