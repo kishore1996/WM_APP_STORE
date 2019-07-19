@@ -113,7 +113,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -172,17 +172,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -208,6 +207,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -249,22 +261,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -408,7 +420,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -467,17 +479,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -503,6 +514,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -544,22 +568,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -703,7 +727,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -762,17 +786,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -798,6 +821,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -839,22 +875,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -998,7 +1034,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -1057,17 +1093,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -1093,6 +1128,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -1134,22 +1182,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -1293,7 +1341,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -1352,17 +1400,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -1388,6 +1435,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -1429,22 +1489,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -1588,7 +1648,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -1647,17 +1707,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -1683,6 +1742,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -1724,22 +1796,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -1883,7 +1955,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -1942,17 +2014,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -1978,6 +2049,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -2019,22 +2103,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -2178,7 +2262,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -2237,17 +2321,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -2273,6 +2356,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -2314,22 +2410,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -2473,7 +2569,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -2532,17 +2628,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -2568,6 +2663,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -2609,22 +2717,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -2768,7 +2876,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -2827,17 +2935,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -2863,6 +2970,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -2904,22 +3024,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -3063,7 +3183,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -3122,17 +3242,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -3158,6 +3277,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -3199,22 +3331,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -3358,7 +3490,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -3417,17 +3549,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -3453,6 +3584,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -3494,22 +3638,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -3653,7 +3797,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -3712,17 +3856,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -3748,6 +3891,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -3789,22 +3945,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -3948,7 +4104,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -4007,17 +4163,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -4043,6 +4198,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -4084,22 +4252,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -4243,7 +4411,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -4302,17 +4470,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -4338,6 +4505,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -4379,22 +4559,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -4538,7 +4718,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -4597,17 +4777,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -4633,6 +4812,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -4674,22 +4866,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -4833,7 +5025,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -4892,17 +5084,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -4928,6 +5119,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -4969,22 +5173,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -5128,7 +5332,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -5187,17 +5391,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -5223,6 +5426,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -5264,22 +5480,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -5423,7 +5639,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -5482,17 +5698,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -5518,6 +5733,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -5559,22 +5787,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -5718,7 +5946,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -5777,17 +6005,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -5813,6 +6040,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -5854,22 +6094,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -6013,7 +6253,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -6072,17 +6312,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -6108,6 +6347,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -6149,22 +6401,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -6308,7 +6560,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -6367,17 +6619,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -6403,6 +6654,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -6444,22 +6708,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -6603,7 +6867,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -6662,17 +6926,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -6698,6 +6961,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -6739,22 +7015,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -6898,7 +7174,7 @@
           "columnName" : "IMAGE",
           "isPrimaryKey" : false,
           "notNull" : false,
-          "length" : 255,
+          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -6957,17 +7233,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -6993,6 +7268,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -7034,22 +7322,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,

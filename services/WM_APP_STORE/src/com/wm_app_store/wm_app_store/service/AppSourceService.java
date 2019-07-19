@@ -21,6 +21,7 @@ import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
+import com.wm_app_store.wm_app_store.AppDownloadHistory;
 import com.wm_app_store.wm_app_store.AppSource;
 
 /**
@@ -195,5 +196,16 @@ public interface AppSourceService {
 	 */
     Page<Map<String, Object>> getAggregatedValues(AggregationInfo aggregationInfo, Pageable pageable);
 
+    /*
+     * Returns the associated appDownloadHistories for given AppSource id.
+     *
+     * @param id value of id; value cannot be null
+     * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
+     * @return Paginated list of associated AppDownloadHistory instances.
+     *
+     * @see Pageable
+     * @see Page
+     */
+    Page<AppDownloadHistory> findAssociatedAppDownloadHistories(Integer id, Pageable pageable);
 
 }

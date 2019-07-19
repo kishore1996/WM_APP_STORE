@@ -30,6 +30,9 @@
     "table" : "APP_SOURCE",
     "schema" : null
   }, {
+    "table" : "CREDENTIALS",
+    "schema" : null
+  }, {
     "table" : "MD_CATEGORY",
     "schema" : null
   }, {

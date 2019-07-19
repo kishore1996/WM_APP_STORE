@@ -124,6 +124,30 @@
     "redirectTo" : "Login",
     "useDefaultSuccessHandler" : true
   },
+  "Revert_update" : {
+    "_id" : "wm-Revert_update-wm.NotificationVariable-1563522076332",
+    "name" : "Revert_update",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Do you really want to revert prefab? By reverting prefab, the source code and it's associative archived branches will be reverted.",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Revert Prefab",
+      "type" : "string"
+    }, {
+      "target" : "okButtonText",
+      "value" : "Proceed",
+      "type" : "string"
+    }, {
+      "target" : "cancelButtonText",
+      "value" : "Cancel",
+      "type" : "string"
+    } ],
+    "operation" : "confirm"
+  },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",
     "name" : "supportedLocale",

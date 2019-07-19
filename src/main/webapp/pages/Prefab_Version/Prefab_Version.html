@@ -1,18 +1,18 @@
-<wm-page pagetitle="Prefab Version">
-    <wm-header content="header"></wm-header>
-    <wm-content>
-        <wm-left-panel columnwidth="2" content="leftnav"></wm-left-panel>
-        <wm-page-content columnwidth="10">
+<wm-page pagetitle="Prefab Version" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
             <wm-gridrow name="gridrow7" padding="2em unset unset 1em">
                 <wm-gridcolumn columnwidth="12" name="gridcolumn16">
                     <wm-container name="container1">
                         <wm-layoutgrid name="layoutgrid4">
                             <wm-gridrow name="gridrow10" height="30">
                                 <wm-gridcolumn columnwidth="4" name="gridcolumn14">
-                                    <wm-label padding="unset 0.5em" name="label7" caption="Id"></wm-label>
+                                    <wm-label padding="unset 0.5em" name="label7" caption="Version Id"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="8" name="gridcolumn15_2">
-                                    <wm-label padding="unset 0.5em" name="label13"></wm-label>
+                                    <wm-label padding="unset 0.5em" name="label13" caption="bind:Variables.read_appinfo.dataSet[$i].id"></wm-label>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                             <wm-gridrow name="gridrow11_1" height="100">
@@ -20,7 +20,7 @@
                                     <wm-label padding="unset 0.5em" name="label8_1" caption="Description"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="8" name="gridcolumn17_1">
-                                    <wm-textarea name="textarea1"></wm-textarea>
+                                    <wm-textarea name="textarea1" datavalue="bind:Variables.read_appinfo.dataSet[$i].description"></wm-textarea>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                         </wm-layoutgrid>
@@ -28,33 +28,38 @@
                     <wm-layoutgrid name="layoutgrid5_1">
                         <wm-gridrow name="gridrow12">
                             <wm-gridcolumn columnwidth="4" name="gridcolumn18">
-                                <wm-label padding="unset 0.5em" name="label9_1" caption="Upload"></wm-label>
+                                <wm-label padding="unset 0.5em" name="label9_1" caption="Upload prefab"></wm-label>
                             </wm-gridcolumn>
                             <wm-gridcolumn columnwidth="8" name="gridcolumn19">
                                 <wm-fileupload name="fileupload1" on-select="Variables.FileServiceUploadFile.invoke()" contenttype=".zip"></wm-fileupload>
                             </wm-gridcolumn>
                         </wm-gridrow>
-                        <wm-gridrow name="gridrow13" height="100">
+                        <wm-gridrow name="gridrow13" height="300">
                             <wm-gridcolumn columnwidth="4" name="gridcolumn20">
-                                <wm-label padding="unset 0.5em" name="label10" caption="Screenshots"></wm-label>
+                                <wm-label padding="unset 0.5em" name="label10" caption="Upload screenshots"></wm-label>
                             </wm-gridcolumn>
                             <wm-gridcolumn columnwidth="8" name="gridcolumn21">
-                                <wm-fileupload name="fileupload2" on-select="Variables.FileServiceUploadFile1.invoke()" contenttype="image/*" multiple="true"></wm-fileupload>
+                                <wm-fileupload name="fileupload2" on-select="Variables.FileServiceUploadFile1.invoke()" contenttype=".jpg .png" multiple="true"></wm-fileupload>
                             </wm-gridcolumn>
                         </wm-gridrow>
                     </wm-layoutgrid>
-                    <wm-layoutgrid name="layoutgrid6">
-                        <wm-gridrow name="gridrow14">
-                            <wm-gridcolumn columnwidth="9" name="gridcolumn22"></wm-gridcolumn>
-                            <wm-gridcolumn columnwidth="3" name="gridcolumn23">
-                                <wm-button class="btn-default" caption="Update" type="button" margin="unset 0.5em" name="button2"></wm-button>
-                                <wm-button class="btn-default" caption="Cancel" type="button" margin="unset 0.5em" name="button3"></wm-button>
-                            </wm-gridcolumn>
-                        </wm-gridrow>
-                    </wm-layoutgrid>
+                    <wm-layoutgrid name="layoutgrid6"></wm-layoutgrid>
                 </wm-gridcolumn>
             </wm-gridrow>
+            <wm-layoutgrid name="layoutgrid5">
+                <wm-gridrow name="gridrow8">
+                    <wm-gridcolumn columnwidth="9" name="gridcolumn14_1"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn15">
+                        <wm-button class="btn-default" caption="Save" type="button" margin="unset 0.5em" name="button1"></wm-button>
+                        <wm-button class="btn-default" caption="Cancel" type="button" margin="unset 0.5em" name="button2" on-click="Actions.goToPage_Prefab_Preview.invoke()"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow9">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn16_2"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn17"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
         </wm-page-content>
     </wm-content>
-    <wm-footer content="footer"></wm-footer>
+    <wm-footer content="footer" name="footer1"></wm-footer>
 </wm-page>
