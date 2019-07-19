@@ -1,5 +1,5 @@
 <wm-page pagetitle="Prefab Preview" name="page1">
-    <wm-header content="header" name="header1"></wm-header>
+    <wm-header content="header" name="header1" backgroundcolor="#2396F3"></wm-header>
     <wm-content name="content1">
         <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
         <wm-page-content columnwidth="10" name="page_content1">
@@ -26,19 +26,32 @@
                         <wm-layoutgrid name="layoutgrid2">
                             <wm-gridrow name="gridrow4" padding="1em unset unset 1em">
                                 <wm-gridcolumn columnwidth="12" name="gridcolumn7">
-                                    <wm-composite name="composite2" textdecoration="underline">
-                                        <wm-container class="col-md-9" name="container2" width="auto" height="auto">
-                                            <wm-text name="text2" width="auto" placeholder="" datavalue="bind:Variables.PrefabData.dataSet.Name" backgroundcolor="#ffffff00" textalign="left" fontsize="22" readonly="true" disabled="false"></wm-text>
+                                    <wm-composite name="composite2" textdecoration="underline" width="100%" height="100%">
+                                        <wm-container class="col-md-9" name="container2" width="auto" height="auto" borderwidth="0px" padding="0px" margin="0px">
+                                            <wm-text name="text2" width="auto" placeholder="" datavalue="bind:Variables.PrefabData.dataSet.Name" backgroundcolor="#ffffff00" textalign="left" fontsize="22" readonly="true" disabled="false" class="no-border"
+                                                margin="0px"></wm-text>
                                         </wm-container>
+                                        <wm-button class="btn-default" caption="" type="button" margin="0px" name="edit" iconclass="wi wi-mode-edit fa-lg fa-fw" backgroundcolor="#ffffff00" bordercolor="#ffffff00" padding="0px" color="#000000" borderwidth="0px"
+                                            on-click="editClick($event, widget)"></wm-button>
+                                        <wm-button class="btn-default" caption="" type="button" margin="0em" name="save" iconclass="wi wi-done fa-fw fa-lg" color="#000000" backgroundcolor="#ffffff00" bordercolor="#ffffff00" borderwidth="0px"
+                                            padding="0px" on-click="saveClick($event, widget)"></wm-button>
+                                        <wm-button class="btn-default" caption="" type="button" margin="0em" name="cancel" color="#000000" backgroundcolor="#ffffff00" bordercolor="#ffffff00" borderwidth="0px" padding="0px" iconclass="wi wi-close fa-lg fa-fw"
+                                            on-click="cancelClick($event, widget)"></wm-button>
                                     </wm-composite>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                             <wm-gridrow name="gridrow9" padding="1em unset unset 1em">
                                 <wm-gridcolumn columnwidth="12" name="gridcolumn13_2">
                                     <wm-composite name="composite7">
-                                        <wm-container class="col-md-9" name="container7" width="85%" height="auto" margin="unset unset unset 15%">
-                                            <wm-textarea name="textarea2" backgroundcolor="#ffffff00" fontsize="14" placeholder="" datavalue="bind:Variables.PrefabData.dataSet.Description" disabled="false" readonly="true"></wm-textarea>
+                                        <wm-container class="col-md-9" name="container7" width="85%" margin="unset unset unset 8%">
+                                            <wm-textarea name="textarea2" backgroundcolor="#ffffff00" fontsize="14" placeholder="" datavalue="bind:Variables.PrefabData.dataSet.Description" disabled="false" readonly="true" class="input-sm"></wm-textarea>
                                         </wm-container>
+                                        <wm-button class="btn-default" caption="" type="button" margin="0px" iconclass="wi wi-mode-edit fa-lg fa-fw" backgroundcolor="#ffffff00" bordercolor="#ffffff00" padding="0px" color="#000000" borderwidth="0px" name="edit1"
+                                            on-click="edit1Click($event, widget)"></wm-button>
+                                        <wm-button class="btn-default" caption="" type="button" margin="0em" iconclass="wi wi-done fa-fw fa-lg" color="#000000" backgroundcolor="#ffffff00" bordercolor="#ffffff00" borderwidth="0px" padding="0px"
+                                            name="save1" on-click="save1Click($event, widget)"></wm-button>
+                                        <wm-button class="btn-default" caption="" type="button" margin="0em" color="#000000" backgroundcolor="#ffffff00" bordercolor="#ffffff00" borderwidth="0px" padding="0px" iconclass="wi wi-close fa-lg fa-fw"
+                                            name="cancel1" on-click="cancel1Click($event, widget)"></wm-button>
                                     </wm-composite>
                                 </wm-gridcolumn>
                             </wm-gridrow>
@@ -53,8 +66,8 @@
                             </wm-gridrow>
                             <wm-gridrow name="gridrow6" padding="2em unset unset unset">
                                 <wm-gridcolumn columnwidth="12" name="gridcolumn13" class="pull-right" horizontalalign="right" padding="unset 2em unset unset">
-                                    <wm-button class="btn-default" caption="Update" type="button" margin="unset 0.5em" name="button2" backgroundcolor="#8BC34A" bordercolor="#ffffff00" color="#ffffff" fontsize="14" textalign="center"></wm-button>
-                                    <wm-button class="btn-default" caption="Download" type="button" margin="unset 2em unset 0.5em" name="button1" textalign="center" backgroundcolor="#8BC34A" color="#ffffff" bordercolor="#ffffff00" fontsize="14"></wm-button>
+                                    <wm-button class="btn-default" caption="Update" type="button" margin="unset 0.5em" name="button2" backgroundcolor="#2296F3" bordercolor="#ffffff00" color="#ffffff" fontsize="14" textalign="center"></wm-button>
+                                    <wm-button class="btn-default" caption="Download" type="button" margin="unset 2em unset 0.5em" name="button1" textalign="center" backgroundcolor="#2296F3" color="#ffffff" bordercolor="#ffffff00" fontsize="14"></wm-button>
                                     <wm-label padding="unset 0.5em" name="label6" caption="bind:&quot;+&quot;+Variables.PrefabData.dataSet.TotalDownloads" margin="1em unset unset unset" fontsize="14" fontweight="bold"></wm-label>
                                 </wm-gridcolumn>
                             </wm-gridrow>
