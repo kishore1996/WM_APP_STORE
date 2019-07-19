@@ -1,4 +1,98 @@
 {
+  "changePassword" : {
+    "name" : "changePassword",
+    "description" : "change user password",
+    "version" : "V2",
+    "queryString" : "UPDATE CREDENTIALS SET PASSWORD = :newpassword WHERE USERNAME = :uname AND PASSWORD = :oldpassword",
+    "countQueryString" : null,
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "newpassword",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "user",
+      "required" : true
+    }, {
+      "name" : "uname",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "user",
+      "required" : true
+    }, {
+      "name" : "oldpassword",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "user",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.wm_app_store.wm_app_store.models.query.ChangePasswordRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  },
+  "deleteUser" : {
+    "name" : "deleteUser",
+    "description" : "delete users",
+    "version" : "V2",
+    "queryString" : "DELETE FROM CREDENTIALS WHERE USERNAME = :uname AND ID = :id AND USERNAME != :loggedinuser",
+    "countQueryString" : null,
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "DELETE",
+    "parameters" : [ {
+      "name" : "uname",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "user1",
+      "required" : true
+    }, {
+      "name" : "id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "10",
+      "required" : true
+    }, {
+      "name" : "loggedinuser",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "admin",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "DELETE"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  },
   "editUser" : {
     "name" : "editUser",
     "description" : "Edit user credentials",
@@ -52,6 +146,74 @@
       "typeRef" : "java.lang.Integer",
       "returns" : "ENTITY",
       "responseType" : "SINGLE"
+    }
+  },
+  "viewProfile" : {
+    "name" : "viewProfile",
+    "description" : "view logged user profile",
+    "version" : "V2",
+    "queryString" : "SELECT ID, USERNAME, PASSWORD, USER_ROLE FROM CREDENTIALS WHERE USERNAME = :uname",
+    "countQueryString" : "select count(*) from (SELECT ID, USERNAME, PASSWORD, USER_ROLE FROM CREDENTIALS WHERE USERNAME = :uname) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "uname",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "user",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.wm_app_store.wm_app_store.models.query.ViewProfileResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "USERNAME",
+        "fieldName" : "username",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "PASSWORD",
+        "fieldName" : "password",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "USER_ROLE",
+        "fieldName" : "userRole",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
     }
   }
 }

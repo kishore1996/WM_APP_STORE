@@ -1,5 +1,5 @@
 <wm-partial name="topnav" type="topnav">
-    <wm-navbar>
+    <wm-navbar name="navbar1">
         <wm-nav name="leftTopLinks" type="navbar" class="navbar-left">
             <wm-nav-item name="list_home">
                 <wm-anchor caption="Home" name="homeLink" iconclass="wi wi-home" on-click="Actions.goToPage_Main.invoke()"></wm-anchor>
@@ -14,6 +14,9 @@
             </wm-nav-item>
             <wm-nav-item name="list_logout">
                 <wm-anchor caption="Logout" name="logoutLink" iconclass="wi wi-sign-out" on-click="Actions.logoutAction.invoke()"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="nav_item6">
+                <wm-anchor name="anchor8" iconclass="wi wi-file" caption="My Profile" on-click="Actions.goToPage_viewProfile.invoke()"></wm-anchor>
             </wm-nav-item>
         </wm-nav>
     </wm-navbar>

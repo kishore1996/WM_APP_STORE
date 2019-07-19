@@ -6,12 +6,17 @@
 }, {
   "urlPattern" : "/pages/Main/**",
   "permission" : "Role",
-  "roles" : [ "user" ],
+  "roles" : [ "user", "admin" ],
   "httpMethod" : null
 }, {
   "urlPattern" : "/pages/UserManagement/**",
   "permission" : "Role",
   "roles" : [ "admin" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/viewProfile/**",
+  "permission" : "Role",
+  "roles" : [ "user", "admin" ],
   "httpMethod" : null
 }, {
   "urlPattern" : "/**",

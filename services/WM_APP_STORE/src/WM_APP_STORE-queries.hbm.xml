@@ -2,6 +2,15 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    <sql-query name="deleteUser">
+        <![CDATA[
+        DELETE FROM CREDENTIALS WHERE USERNAME = :uname AND ID = :id AND USERNAME != :loggedinuser
+        ]]>
+    <query-param name="uname" type="java.lang.String"/>
+    <query-param name="id" type="java.lang.Integer"/>
+    <query-param name="loggedinuser" type="java.lang.String"/>
+    </sql-query>
+
     <sql-query name="editUser">
         <![CDATA[
         UPDATE CREDENTIALS SET USERNAME = :newusername, PASSWORD = :password, USER_ROLE = :urole  WHERE USERNAME = :currentusername
@@ -10,5 +19,28 @@
     <query-param name="password" type="java.lang.String"/>
     <query-param name="urole" type="java.lang.String"/>
     <query-param name="currentusername" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="viewProfile">
+        <![CDATA[
+        SELECT ID, USERNAME, PASSWORD, USER_ROLE FROM CREDENTIALS WHERE USERNAME = :uname
+        ]]>
+    <query-param name="uname" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="viewProfile__count">
+        <![CDATA[
+        select count(*) from (SELECT ID, USERNAME, PASSWORD, USER_ROLE FROM CREDENTIALS WHERE USERNAME = :uname) wmTempTable
+        ]]>
+    <query-param name="uname" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="changePassword">
+        <![CDATA[
+        UPDATE CREDENTIALS SET PASSWORD = :newpassword WHERE USERNAME = :uname AND PASSWORD = :oldpassword
+        ]]>
+    <query-param name="newpassword" type="java.lang.String"/>
+    <query-param name="uname" type="java.lang.String"/>
+    <query-param name="oldpassword" type="java.lang.String"/>
     </sql-query>
 </hibernate-mapping>
