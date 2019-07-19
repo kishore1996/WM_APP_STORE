@@ -34,6 +34,17 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_Prefab_Version" : {
+    "_id" : "wm-goToPage_Prefab_Version-wm.NavigationVariable-1563519153546",
+    "name" : "goToPage_Prefab_Version",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Prefab_Version",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_PrefabUpload" : {
     "_id" : "wm-goToPage_PrefabUpload-wm.NavigationVariable-1560231685908",
     "name" : "goToPage_PrefabUpload",

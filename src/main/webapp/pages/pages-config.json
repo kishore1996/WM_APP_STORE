@@ -27,6 +27,10 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "Prefab_Version",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "UserManagement",
   "type" : "PAGE",
   "params" : [ ]
