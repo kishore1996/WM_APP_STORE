@@ -1,0 +1,78 @@
+<wm-page pagetitle="Prefab Preview" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn1" height="auto" horizontalalign="center">
+                        <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="PrefabDataList2" dataset="bind:Variables.PrefabData.dataSet" navigation="None" width="auto" height="auto" horizontalalign="left">
+                            <wm-listtemplate layout="media" name="listtemplate3">
+                                <wm-card name="card3" imageheight="auto" width="200px" height="auto">
+                                    <wm-card-content fontsize="0.8" fontunit="em" name="card_content3">
+                                        <wm-layoutgrid columns="2" name="layoutgrid5">
+                                            <wm-gridrow name="gridrow11">
+                                                <wm-gridcolumn colwidth="6" columnwidth="12" class="col-xs-6" name="gridcolumn15" horizontalalign="center">
+                                                    <wm-picture name="Picture" width="100%" picturesource="bind:Variables.PrefabData.dataSet.icon" height="auto"></wm-picture>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-card-content>
+                                </wm-card>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="9" name="gridcolumn2">
+                        <wm-layoutgrid name="layoutgrid2">
+                            <wm-gridrow name="gridrow4" padding="1em unset unset 1em">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                                    <wm-label padding="unset 0.5em" name="label3" caption="bind:Variables.PrefabData.dataSet.Name"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow9" padding="1em unset unset 1em">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn13_2">
+                                    <wm-label padding="unset 0.5em" name="label8" caption="bind:Variables.PrefabData.dataSet.Description" textalign="left" whitespace="normal" width="80%" margin="unset unset unset 15%"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow5" padding="1em unset unset 1em">
+                                <wm-gridcolumn columnwidth="4" name="gridcolumn9" horizontalalign="left">
+                                    <wm-label padding="unset 0.5em" name="label4" caption="bind:Variables.PrefabData.dataSet.categoryID" color="#487835"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="3" name="gridcolumn11" horizontalalign="center">
+                                    <wm-rating name="rating1" datavalue="bind:Variables.PrefabData.dataSet.AvgRating" datafield="AvgRating" displayfield="AvgRating"></wm-rating>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="5" name="gridcolumn13_1"></wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow6" padding="2em unset unset unset">
+                                <wm-gridcolumn columnwidth="10" name="gridcolumn13" class="pull-right" horizontalalign="right">
+                                    <wm-button class="btn-default" caption="Download" type="button" margin="unset 2em unset 0.5em" name="button1"></wm-button>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="2" name="gridcolumn15_1">
+                                    <wm-label padding="unset 0.5em" name="label6" caption="bind:+(Variables.PrefabData.dataSet.TotalDownloads)" margin="1em unset unset unset"></wm-label>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2" height="auto" padding="2em unset unset unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn3" horizontalalign="left" height="auto">
+                        <wm-carousel height="200px" type="dynamic" name="carousel1" dataset="bind:Variables.PrefabData.dataSet.Images" width="100%" animation="none">
+                            <wm-carousel-template horizontalalign="center" name="carousel_template1" width="100%" height="100%">
+                                <wm-picture width="300" name="picture4" picturesource="bind:Variables.PrefabData.dataSet.Images[$i].image" height="100%" margin="unset unset unset 10%" pictureaspect="Both" backgroundcolor="#818181"></wm-picture>
+                            </wm-carousel-template>
+                        </wm-carousel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow7" padding="2em unset unset 1em">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn16"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow8" padding="2em unset unset 1em">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn17">
+                        <wm-label padding="unset 0.5em" name="label9" caption="Review and comment"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>
