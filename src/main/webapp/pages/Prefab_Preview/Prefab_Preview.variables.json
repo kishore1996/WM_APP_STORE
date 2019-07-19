@@ -163,6 +163,36 @@
     "twoWayBinding" : false,
     "saveInPhonegap" : false
   },
+  "stForReview" : {
+    "_id" : "wm-stForReview-wm.Variable-1563528266085",
+    "name" : "stForReview",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "reviews" : [ {
+        "rate" : 3,
+        "comment" : "Average",
+        "createdby" : "Abc",
+        "createddate" : "01012019"
+      }, {
+        "rate" : 4,
+        "comment" : "Good",
+        "createdby" : "Def",
+        "createddate" : "11052019"
+      }, {
+        "rate" : 5,
+        "comment" : "Excellent",
+        "createdby" : "Hij",
+        "createddate" : "03032019"
+      } ],
+      "selfreview" : { }
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
   "Total_Downloads" : {
     "_id" : "wm-Total_Downloads-wm.ServiceVariable-1563449618170",
     "name" : "Total_Downloads",

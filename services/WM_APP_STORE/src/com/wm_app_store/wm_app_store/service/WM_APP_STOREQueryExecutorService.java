@@ -20,6 +20,25 @@ import com.wm_app_store.wm_app_store.models.query.*;
 public interface WM_APP_STOREQueryExecutorService {
 
     Page<AppSourceResponse> executeAPP_SOURCE(Pageable pageable);
+<<<<<<< HEAD
+=======
+
+    void exportAPP_SOURCE(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<AvgRatingResponse> executeAvgRating(Pageable pageable);
+
+    void exportAvgRating(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<AppInfoResponse> executeAPP_INFO(Pageable pageable);
+
+    InputStream getImageContentForAPP_INFO(Integer id, String _desc, Integer categoryId, String createdBy, Timestamp creationDate, Timestamp lastUpdateDate, String name, String updatedBy) throws EntityNotFoundException;
+
+    void exportAPP_INFO(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<AppScreenshotsResponse> executeAPP_SCREENSHOTS(Pageable pageable);
+
+    void exportAPP_SCREENSHOTS(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+>>>>>>> stash
 
     void exportAPP_SOURCE(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 

@@ -62,6 +62,153 @@ public class QueryExecutionController {
         Page<AppSourceResponse> _result = queryService.executeAPP_SOURCE(pageable);
         LOGGER.debug("got the result for named query: APP_SOURCE, result:{}", _result);
         return _result;
+<<<<<<< HEAD
+=======
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query APP_SOURCE")
+    @RequestMapping(value = "/queries/APP_SOURCE/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportAPP_SOURCE(@RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: APP_SOURCE");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "APP_SOURCE";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportAPP_SOURCE( exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/AvgRating", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Average Rating")
+    public Page<AvgRatingResponse> executeAvgRating(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: AvgRating");
+        Page<AvgRatingResponse> _result = queryService.executeAvgRating(pageable);
+        LOGGER.debug("got the result for named query: AvgRating, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query AvgRating")
+    @RequestMapping(value = "/queries/AvgRating/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportAvgRating(@RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: AvgRating");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "AvgRating";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportAvgRating( exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @JsonView(BlobAsUrlView.class)
+    @RequestMapping(value = "/queries/APP_INFO", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "APP_INFO")
+    public Page<AppInfoResponse> executeAPP_INFO(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: APP_INFO");
+        Page<AppInfoResponse> _result = queryService.executeAPP_INFO(pageable);
+        LOGGER.debug("got the result for named query: APP_INFO, result:{}", _result);
+        UriComponentsBuilder _uriBuilder = ServletUriComponentsBuilder.fromRequest(_request);
+        _uriBuilder.path("/composite-id/content/{_fieldName_}");
+        _uriBuilder.queryParam("id", "{id}");
+        _uriBuilder.queryParam("_desc", "{_desc}");
+        _uriBuilder.queryParam("categoryId", "{categoryId}");
+        _uriBuilder.queryParam("createdBy", "{createdBy}");
+        _uriBuilder.queryParam("creationDate", "{creationDate}");
+        _uriBuilder.queryParam("lastUpdateDate", "{lastUpdateDate}");
+        _uriBuilder.queryParam("name", "{name}");
+        _uriBuilder.queryParam("updatedBy", "{updatedBy}");
+        for(AppInfoResponse _content : _result.getContent()) {
+            Map<String, Object> _properties = new HashMap(9);
+            _properties.put("id", _content.getId());
+            _properties.put("_desc", _content.get_desc());
+            _properties.put("categoryId", _content.getCategoryId());
+            _properties.put("createdBy", _content.getCreatedBy());
+            _properties.put("creationDate", _content.getCreationDate());
+            _properties.put("lastUpdateDate", _content.getLastUpdateDate());
+            _properties.put("name", _content.getName());
+            _properties.put("updatedBy", _content.getUpdatedBy());
+            _properties.put("_fieldName_", "image");
+            if(_content.getImage() != null) {
+                _content.setImage(_uriBuilder.buildAndExpand(_properties).toUriString().getBytes());
+            } else {
+                _content.setImage(null);
+            }
+        }
+        return _result;
+    }
+
+    @ApiOperation(value = "Retrives the BLOB content for property image in query APP_INFO")
+    @RequestMapping(value = "/queries/APP_INFO/composite-id/content/image", method = RequestMethod.GET, produces = "application/octet-stream")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Downloadable getImageContentForAPP_INFO(@RequestParam("id") Integer id, @RequestParam("_desc") String _desc, @RequestParam("categoryId") Integer categoryId, @RequestParam("createdBy") String createdBy, @RequestParam("creationDate") Timestamp creationDate, @RequestParam("lastUpdateDate") Timestamp lastUpdateDate, @RequestParam("name") String name, @RequestParam("updatedBy") String updatedBy, @RequestParam(value="downloadAsAttachment", defaultValue = "false") boolean downloadAsAttachment, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: APP_INFO");
+
+        InputStream _result = queryService.getImageContentForAPP_INFO(id, _desc, categoryId, createdBy, creationDate, lastUpdateDate, name, updatedBy);
+        return WMMultipartUtils.buildDownloadResponse(_request, _result, downloadAsAttachment);
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query APP_INFO")
+    @RequestMapping(value = "/queries/APP_INFO/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportAPP_INFO(@RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: APP_INFO");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "APP_INFO";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportAPP_INFO( exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/APP_SCREENSHOTS", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "APP_SCREENSHOTS")
+    public Page<AppScreenshotsResponse> executeAPP_SCREENSHOTS(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: APP_SCREENSHOTS");
+        Page<AppScreenshotsResponse> _result = queryService.executeAPP_SCREENSHOTS(pageable);
+        LOGGER.debug("got the result for named query: APP_SCREENSHOTS, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query APP_SCREENSHOTS")
+    @RequestMapping(value = "/queries/APP_SCREENSHOTS/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportAPP_SCREENSHOTS(@RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: APP_SCREENSHOTS");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "APP_SCREENSHOTS";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportAPP_SCREENSHOTS( exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+>>>>>>> stash
     }
 
     @ApiOperation(value = "Returns downloadable file url for query APP_SOURCE")

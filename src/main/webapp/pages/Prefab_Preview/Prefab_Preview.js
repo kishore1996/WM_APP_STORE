@@ -88,3 +88,65 @@ Page.cancel1Click = function($event, widget) {
     Page.Widgets.edit1.show = true;
 
 };
+Page.submitClick = function($event, widget) {
+    Page.Widgets.stnewJsonList1_1.show;
+    Page.Variables.stForReview.dataSet.selfreview.createdby = "CurrentUser";
+    Page.Variables.stForReview.dataSet.selfreview.rate = Page.Widgets.userrating.datavalue;
+    Page.Variables.stForReview.dataSet.selfreview.comment = Page.Widgets.textarea1.datavalue;
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1;
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
+    var newdate = day + "/" + month + "/" + year;
+    Page.Variables.stForReview.dataSet.selfreview.createddate = newdate;
+    Page.Widgets.submit.show = false;
+    Page.Widgets.textarea1.show = false;
+    Page.Widgets.label3.show = false;
+    Page.Widgets.userrating.show = false;
+
+};
+
+var comments;
+Page.okprefabClick = function($event, widget, item, currentItemWidgets) {
+    Page.Widgets.okprefab.show = false;
+    Page.Widgets.closeprefab.show = false;
+    Page.Widgets.textarea2.readonly = true;
+    Page.Widgets.editprefab.show = true;
+    Page.Widgets.deleteprefab.show = true;
+    comments = Page.Widgets.textarea2.datavalue;
+    Page.Variables.stForReview.dataSet.selfreview.rate = Page.Widgets.rating.datavalue;
+    Page.Variables.stForReview.dataSet.selfreview.comment = comments;
+};
+
+Page.closeprefabClick = function($event, widget, item, currentItemWidgets) {
+    Page.Widgets.textarea2.datavalue = comments;
+    comments = null;
+    Page.Widgets.textarea2.readonly = true;
+    Page.Widgets.okprefab.show = false;
+    Page.Widgets.closeprefab.show = false;
+    Page.Widgets.editprefab.show = true;
+    Page.Widgets.deleteprefab.show = true;
+};
+
+Page.editprefabClick = function($event, widget, item, currentItemWidgets) {
+    Page.Widgets.okprefab.show = true;
+    Page.Widgets.closeprefab.show = true;
+    Page.Widgets.textarea2.readonly = false;
+    Page.Widgets.editprefab.show = false;
+    Page.Widgets.deleteprefab.show = false;
+    comments = Page.Widgets.textarea2.datavalue;
+    Page.Variables.stForReview.dataSet.selfreview.rate = Page.Widgets.rating.datavalue;
+    Page.Variables.stForReview.dataSet.selfreview.comment = comments;
+};
+
+
+Page.deleteprefabClick = function($event, widget, item, currentItemWidgets) {
+    Page.Widgets.stnewJsonList1_1.show = false;
+    Page.Variables.stForReview.dataSet.selfreview = {};
+    Page.Widgets.submit.show = true;
+    Page.Widgets.textarea1.show = true;
+    Page.Widgets.label3.show = true;
+    Page.Widgets.userrating.show = true;
+    Page.Widgets.textarea1.datavalue = " ";
+    Page.Widgets.userrating.datavalue = 0;
+};

@@ -46,6 +46,102 @@ public class WM_APP_STOREQueryExecutorServiceImpl implements WM_APP_STOREQueryEx
 
 
         return queryExecutor.executeNamedQuery("APP_SOURCE", params, AppSourceResponse.class, pageable);
+<<<<<<< HEAD
+=======
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportAPP_SOURCE(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        QueryProcedureInput<AppSourceResponse> queryInput = new QueryProcedureInput<>("APP_SOURCE", params, AppSourceResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
+    public Page<AvgRatingResponse> executeAvgRating(Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        return queryExecutor.executeNamedQuery("AvgRating", params, AvgRatingResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportAvgRating(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        QueryProcedureInput<AvgRatingResponse> queryInput = new QueryProcedureInput<>("AvgRating", params, AvgRatingResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
+    public Page<AppInfoResponse> executeAPP_INFO(Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        return queryExecutor.executeNamedQuery("APP_INFO", params, AppInfoResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
+    public InputStream getImageContentForAPP_INFO(Integer id, String _desc, Integer categoryId, String createdBy, Timestamp creationDate, Timestamp lastUpdateDate, String name, String updatedBy) throws EntityNotFoundException {
+        Map<String, Object> params = new HashMap<>(0);
+
+        params.put("id", id);
+        params.put("_desc", _desc);
+        params.put("categoryId", categoryId);
+        params.put("createdBy", createdBy);
+        params.put("creationDate", creationDate);
+        params.put("lastUpdateDate", lastUpdateDate);
+        params.put("name", name);
+        params.put("updatedBy", updatedBy);
+
+        AppInfoResponse _result =  queryExecutor.executeNamedQuery("APP_INFO__identifier", params, AppInfoResponse.class);
+        if(_result.getImage() == null) {
+            LOGGER.debug("Blob content not exists for image in query APP_INFO");
+            throw new BlobContentNotFoundException(MessageResource.create("com.wavemaker.runtime.blob.content.not.found"), "image", "query", "APP_INFO");
+        }
+        return new ByteArrayInputStream(_result.getImage());
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportAPP_INFO(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        QueryProcedureInput<AppInfoResponse> queryInput = new QueryProcedureInput<>("APP_INFO", params, AppInfoResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
+    public Page<AppScreenshotsResponse> executeAPP_SCREENSHOTS(Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        return queryExecutor.executeNamedQuery("APP_SCREENSHOTS", params, AppScreenshotsResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportAPP_SCREENSHOTS(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        QueryProcedureInput<AppScreenshotsResponse> queryInput = new QueryProcedureInput<>("APP_SCREENSHOTS", params, AppScreenshotsResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+>>>>>>> stash
     }
 
     @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)

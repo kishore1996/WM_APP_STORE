@@ -14,6 +14,7 @@
         ]]>
     </sql-query>
 
+<<<<<<< HEAD
     <sql-query name="APP_SCREENSHOTS">
         <![CDATA[
         select * from APP_SCREENSHOTS
@@ -50,5 +51,55 @@
     <query-param name="lastUpdateDate" type="java.sql.Timestamp"/>
     <query-param name="name" type="java.lang.String"/>
     <query-param name="updatedBy" type="java.lang.String"/>
+=======
+    <sql-query name="AvgRating">
+        <![CDATA[
+        SELECT AVG(RATE) FROM APP_RATING
+        ]]>
+    </sql-query>
+
+    <sql-query name="AvgRating__count">
+        <![CDATA[
+        select count(*) from (SELECT AVG(RATE) FROM APP_RATING) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="APP_INFO">
+        <![CDATA[
+        select * from APP_INFO
+        ]]>
+    </sql-query>
+
+    <sql-query name="APP_INFO__count">
+        <![CDATA[
+        select count(*) from (select * from APP_INFO) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="APP_INFO__identifier">
+        <![CDATA[
+        select * from (select * from APP_INFO) wmTempTable where `ID`=:id and `DESC`=:_desc and `CATEGORY_ID`=:categoryId and `CREATED_BY`=:createdBy and `CREATION_DATE`=:creationDate and `LAST_UPDATE_DATE`=:lastUpdateDate and `NAME`=:name and `UPDATED_BY`=:updatedBy
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    <query-param name="_desc" type="java.lang.String"/>
+    <query-param name="categoryId" type="java.lang.Integer"/>
+    <query-param name="createdBy" type="java.lang.String"/>
+    <query-param name="creationDate" type="java.sql.Timestamp"/>
+    <query-param name="lastUpdateDate" type="java.sql.Timestamp"/>
+    <query-param name="name" type="java.lang.String"/>
+    <query-param name="updatedBy" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="APP_SCREENSHOTS">
+        <![CDATA[
+        select * from APP_SCREENSHOTS
+        ]]>
+    </sql-query>
+
+    <sql-query name="APP_SCREENSHOTS__count">
+        <![CDATA[
+        select count(*) from (select * from APP_SCREENSHOTS) wmTempTable
+        ]]>
+>>>>>>> stash
     </sql-query>
 </hibernate-mapping>
