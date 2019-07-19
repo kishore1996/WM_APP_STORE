@@ -7,10 +7,6 @@
   "type" : "PARTIAL",
   "params" : [ ]
 }, {
-  "name" : "FileUpload",
-  "type" : "PARTIAL",
-  "params" : [ ]
-}, {
   "name" : "Login",
   "type" : "PAGE",
   "params" : [ ]
