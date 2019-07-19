@@ -2,4 +2,53 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    <sql-query name="APP_SOURCE">
+        <![CDATA[
+        select * from APP_SOURCE
+        ]]>
+    </sql-query>
+
+    <sql-query name="APP_SOURCE__count">
+        <![CDATA[
+        select count(*) from (select * from APP_SOURCE) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="APP_SCREENSHOTS">
+        <![CDATA[
+        select * from APP_SCREENSHOTS
+        ]]>
+    </sql-query>
+
+    <sql-query name="APP_SCREENSHOTS__count">
+        <![CDATA[
+        select count(*) from (select * from APP_SCREENSHOTS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="APP_INFO">
+        <![CDATA[
+        select * from APP_INFO
+        ]]>
+    </sql-query>
+
+    <sql-query name="APP_INFO__count">
+        <![CDATA[
+        select count(*) from (select * from APP_INFO) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="APP_INFO__identifier">
+        <![CDATA[
+        select * from (select * from APP_INFO) wmTempTable where `ID`=:id and `DESC`=:_desc and `CATEGORY_ID`=:categoryId and `CREATED_BY`=:createdBy and `CREATION_DATE`=:creationDate and `LAST_UPDATE_DATE`=:lastUpdateDate and `NAME`=:name and `UPDATED_BY`=:updatedBy
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    <query-param name="_desc" type="java.lang.String"/>
+    <query-param name="categoryId" type="java.lang.Integer"/>
+    <query-param name="createdBy" type="java.lang.String"/>
+    <query-param name="creationDate" type="java.sql.Timestamp"/>
+    <query-param name="lastUpdateDate" type="java.sql.Timestamp"/>
+    <query-param name="name" type="java.lang.String"/>
+    <query-param name="updatedBy" type="java.lang.String"/>
+    </sql-query>
 </hibernate-mapping>

@@ -21,43 +21,43 @@ import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
-import com.wm_app_store.wm_app_store.AppSource;
+import com.wm_app_store.wm_app_store.AppScreenshots;
 
 /**
- * Service object for domain model class {@link AppSource}.
+ * Service object for domain model class {@link AppScreenshots}.
  */
-public interface AppSourceService {
+public interface AppScreenshotsService {
 
     /**
-     * Creates a new AppSource. It does cascade insert for all the children in a single transaction.
+     * Creates a new AppScreenshots. It does cascade insert for all the children in a single transaction.
      *
-     * This method overrides the input field values using Server side or database managed properties defined on AppSource if any.
+     * This method overrides the input field values using Server side or database managed properties defined on AppScreenshots if any.
      *
-     * @param appSource Details of the AppSource to be created; value cannot be null.
-     * @return The newly created AppSource.
+     * @param appScreenshots Details of the AppScreenshots to be created; value cannot be null.
+     * @return The newly created AppScreenshots.
      */
-    AppSource create(@Valid AppSource appSource);
+    AppScreenshots create(@Valid AppScreenshots appScreenshots);
 
 
 	/**
-     * Returns AppSource by given id if exists.
+     * Returns AppScreenshots by given id if exists.
      *
-     * @param appsourceId The id of the AppSource to get; value cannot be null.
-     * @return AppSource associated with the given appsourceId.
-	 * @throws EntityNotFoundException If no AppSource is found.
+     * @param appscreenshotsId The id of the AppScreenshots to get; value cannot be null.
+     * @return AppScreenshots associated with the given appscreenshotsId.
+	 * @throws EntityNotFoundException If no AppScreenshots is found.
      */
-    AppSource getById(Integer appsourceId);
+    AppScreenshots getById(Integer appscreenshotsId);
 
     /**
-     * Find and return the AppSource by given id if exists, returns null otherwise.
+     * Find and return the AppScreenshots by given id if exists, returns null otherwise.
      *
-     * @param appsourceId The id of the AppSource to get; value cannot be null.
-     * @return AppSource associated with the given appsourceId.
+     * @param appscreenshotsId The id of the AppScreenshots to get; value cannot be null.
+     * @return AppScreenshots associated with the given appscreenshotsId.
      */
-    AppSource findById(Integer appsourceId);
+    AppScreenshots findById(Integer appscreenshotsId);
 
 	/**
-     * Find and return the list of AppSources by given id's.
+     * Find and return the list of AppScreenshots by given id's.
      *
      * If orderedReturn true, the return List is ordered and positional relative to the incoming ids.
      *
@@ -66,56 +66,56 @@ public interface AppSourceService {
      * If enabled, A null is inserted into the List at the proper position(s).
      * If disabled, the nulls are not put into the return List.
      *
-     * @param appsourceIds The id's of the AppSource to get; value cannot be null.
+     * @param appscreenshotsIds The id's of the AppScreenshots to get; value cannot be null.
      * @param orderedReturn Should the return List be ordered and positional in relation to the incoming ids?
-     * @return AppSources associated with the given appsourceIds.
+     * @return AppScreenshots associated with the given appscreenshotsIds.
      */
-    List<AppSource> findByMultipleIds(List<Integer> appsourceIds, boolean orderedReturn);
+    List<AppScreenshots> findByMultipleIds(List<Integer> appscreenshotsIds, boolean orderedReturn);
 
 
     /**
-     * Updates the details of an existing AppSource. It replaces all fields of the existing AppSource with the given appSource.
+     * Updates the details of an existing AppScreenshots. It replaces all fields of the existing AppScreenshots with the given appScreenshots.
      *
-     * This method overrides the input field values using Server side or database managed properties defined on AppSource if any.
+     * This method overrides the input field values using Server side or database managed properties defined on AppScreenshots if any.
      *
-     * @param appSource The details of the AppSource to be updated; value cannot be null.
-     * @return The updated AppSource.
-     * @throws EntityNotFoundException if no AppSource is found with given input.
+     * @param appScreenshots The details of the AppScreenshots to be updated; value cannot be null.
+     * @return The updated AppScreenshots.
+     * @throws EntityNotFoundException if no AppScreenshots is found with given input.
      */
-    AppSource update(@Valid AppSource appSource);
+    AppScreenshots update(@Valid AppScreenshots appScreenshots);
 
 
     /**
-     * Partially updates the details of an existing AppSource. It updates only the
-     * fields of the existing AppSource which are passed in the appSourcePatch.
+     * Partially updates the details of an existing AppScreenshots. It updates only the
+     * fields of the existing AppScreenshots which are passed in the appScreenshotsPatch.
      *
-     * This method overrides the input field values using Server side or database managed properties defined on AppSource if any.
+     * This method overrides the input field values using Server side or database managed properties defined on AppScreenshots if any.
      *
-     * @param appsourceId The id of the AppSource to be deleted; value cannot be null.
-     * @param appSourcePatch The partial data of AppSource which is supposed to be updated; value cannot be null.
-     * @return The updated AppSource.
-     * @throws EntityNotFoundException if no AppSource is found with given input.
+     * @param appscreenshotsId The id of the AppScreenshots to be deleted; value cannot be null.
+     * @param appScreenshotsPatch The partial data of AppScreenshots which is supposed to be updated; value cannot be null.
+     * @return The updated AppScreenshots.
+     * @throws EntityNotFoundException if no AppScreenshots is found with given input.
      */
-    AppSource partialUpdate(Integer appsourceId, Map<String, Object> appSourcePatch);
+    AppScreenshots partialUpdate(Integer appscreenshotsId, Map<String, Object> appScreenshotsPatch);
 
     /**
-     * Deletes an existing AppSource with the given id.
+     * Deletes an existing AppScreenshots with the given id.
      *
-     * @param appsourceId The id of the AppSource to be deleted; value cannot be null.
-     * @return The deleted AppSource.
-     * @throws EntityNotFoundException if no AppSource found with the given id.
+     * @param appscreenshotsId The id of the AppScreenshots to be deleted; value cannot be null.
+     * @return The deleted AppScreenshots.
+     * @throws EntityNotFoundException if no AppScreenshots found with the given id.
      */
-    AppSource delete(Integer appsourceId);
+    AppScreenshots delete(Integer appscreenshotsId);
 
     /**
-     * Deletes an existing AppSource with the given object.
+     * Deletes an existing AppScreenshots with the given object.
      *
-     * @param appSource The instance of the AppSource to be deleted; value cannot be null.
+     * @param appScreenshots The instance of the AppScreenshots to be deleted; value cannot be null.
      */
-    void delete(AppSource appSource);
+    void delete(AppScreenshots appScreenshots);
 
     /**
-     * Find all AppSources matching the given QueryFilter(s).
+     * Find all AppScreenshots matching the given QueryFilter(s).
      * All the QueryFilter(s) are ANDed to filter the results.
      * This method returns Paginated results.
      *
@@ -123,30 +123,30 @@ public interface AppSourceService {
      *
      * @param queryFilters Array of queryFilters to filter the results; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of matching AppSources.
+     * @return Paginated list of matching AppScreenshots.
      *
      * @see QueryFilter
      * @see Pageable
      * @see Page
      */
     @Deprecated
-    Page<AppSource> findAll(QueryFilter[] queryFilters, Pageable pageable);
+    Page<AppScreenshots> findAll(QueryFilter[] queryFilters, Pageable pageable);
 
     /**
-     * Find all AppSources matching the given input query. This method returns Paginated results.
+     * Find all AppScreenshots matching the given input query. This method returns Paginated results.
      * Note: Go through the documentation for <u>query</u> syntax.
      *
      * @param query The query to filter the results; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of matching AppSources.
+     * @return Paginated list of matching AppScreenshots.
      *
      * @see Pageable
      * @see Page
      */
-    Page<AppSource> findAll(String query, Pageable pageable);
+    Page<AppScreenshots> findAll(String query, Pageable pageable);
 
     /**
-     * Exports all AppSources matching the given input query to the given exportType format.
+     * Exports all AppScreenshots matching the given input query to the given exportType format.
      * Note: Go through the documentation for <u>query</u> syntax.
      *
      * @param exportType The format in which to export the data; value cannot be null.
@@ -161,7 +161,7 @@ public interface AppSourceService {
     Downloadable export(ExportType exportType, String query, Pageable pageable);
 
     /**
-     * Exports all AppSources matching the given input query to the given exportType format.
+     * Exports all AppScreenshots matching the given input query to the given exportType format.
      *
      * @param options The export options provided by the user; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null exports all matching records.
@@ -174,11 +174,11 @@ public interface AppSourceService {
     void export(DataExportOptions options, Pageable pageable, OutputStream outputStream);
 
     /**
-     * Retrieve the count of the AppSources in the repository with matching query.
+     * Retrieve the count of the AppScreenshots in the repository with matching query.
      * Note: Go through the documentation for <u>query</u> syntax.
      *
      * @param query query to filter results. No filters applied if the input is null/empty.
-     * @return The count of the AppSource.
+     * @return The count of the AppScreenshots.
      */
     long count(String query);
 

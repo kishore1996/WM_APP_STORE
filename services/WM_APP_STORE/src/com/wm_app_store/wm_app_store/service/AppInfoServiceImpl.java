@@ -36,6 +36,7 @@ import com.wavemaker.runtime.file.model.Downloadable;
 import com.wm_app_store.wm_app_store.AppInfo;
 import com.wm_app_store.wm_app_store.AppRating;
 import com.wm_app_store.wm_app_store.AppScreen;
+import com.wm_app_store.wm_app_store.AppScreenshots;
 import com.wm_app_store.wm_app_store.AppSource;
 
 
@@ -54,6 +55,11 @@ public class AppInfoServiceImpl implements AppInfoService {
     @Autowired
     @Qualifier("WM_APP_STORE.AppSourceService")
     private AppSourceService appSourceService;
+
+    @Lazy
+    @Autowired
+    @Qualifier("WM_APP_STORE.AppScreenshotsService")
+    private AppScreenshotsService appScreenshotsService;
 
     @Lazy
     @Autowired
@@ -240,6 +246,17 @@ public class AppInfoServiceImpl implements AppInfoService {
         return appSourceService.findAll(queryBuilder.toString(), pageable);
     }
 
+    @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
+    @Override
+    public Page<AppScreenshots> findAssociatedAppScreenshotses(Integer id, Pageable pageable) {
+        LOGGER.debug("Fetching all associated appScreenshotses");
+
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("appInfo.id = '" + id + "'");
+
+        return appScreenshotsService.findAll(queryBuilder.toString(), pageable);
+    }
+
     /**
      * This setter method should only be used by unit tests
      *
@@ -247,6 +264,15 @@ public class AppInfoServiceImpl implements AppInfoService {
      */
     protected void setAppSourceService(AppSourceService service) {
         this.appSourceService = service;
+    }
+
+    /**
+     * This setter method should only be used by unit tests
+     *
+     * @param service AppScreenshotsService instance
+     */
+    protected void setAppScreenshotsService(AppScreenshotsService service) {
+        this.appScreenshotsService = service;
     }
 
     /**

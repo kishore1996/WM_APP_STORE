@@ -48,7 +48,7 @@
       },
       "constraintList" : [ ],
       "fieldName" : "appSourceId",
-      "foreignKey" : true,
+      "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "hidden" : false,
@@ -57,8 +57,8 @@
       "name" : "APP_SOURCE_ID",
       "nullable" : true,
       "oldName" : "APP_SOURCE_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
       "period" : false,
@@ -203,39 +203,7 @@
       "name" : "PRIMARY",
       "virtual" : false
     },
-    "relations" : [ {
-      "cardinality" : "ManyToOne",
-      "cascadeEnabled" : false,
-      "cascadeOptions" : {
-        "cascadeRemove" : "NONE",
-        "cascadeReplace" : true
-      },
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fetchOptions" : {
-        "fetch" : true,
-        "columnsFilter" : [ ]
-      },
-      "fieldName" : "appSource",
-      "ignored" : false,
-      "mappings" : [ {
-        "sourceColumn" : "APP_SOURCE_ID",
-        "targetColumn" : "ID"
-      } ],
-      "name" : "FK_APP_SOURCE_TO_APP_D0WJ7tGl",
-      "parentFetchOptions" : {
-        "fetch" : false,
-        "columnsFilter" : [ ]
-      },
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceColumnsNotUniqueKey" : true,
-      "sourceTable" : "APP_DOWNLOAD_HISTORY",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "APP_SOURCE",
-      "valid" : true,
-      "virtual" : false
-    } ],
+    "relations" : [ ],
     "schema" : null,
     "tableDataLockingOptions" : {
       "versionColumnName" : "VERSION",
@@ -405,7 +373,7 @@
       "generatorValue" : null,
       "hidden" : false,
       "javaType" : "blob",
-      "length" : -1,
+      "length" : 255,
       "name" : "IMAGE",
       "nullable" : true,
       "oldName" : "IMAGE",
@@ -1132,6 +1100,155 @@
       "columnValue" : {
         "insertable" : true,
         "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "id",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "ID",
+      "nullable" : false,
+      "oldName" : "ID",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "appInfoId",
+      "foreignKey" : true,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "APP_INFO_ID",
+      "nullable" : true,
+      "oldName" : "APP_INFO_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "fieldName" : "screenshots",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "SCREENSHOTS",
+      "nullable" : true,
+      "oldName" : "SCREENSHOTS",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    } ],
+    "constraints" : [ ],
+    "entityName" : "AppScreenshots",
+    "filter" : null,
+    "fullyQualifiedName" : "com.wm_app_store.wm_app_store.AppScreenshots",
+    "ignoreRefreshAfterInsert" : false,
+    "name" : "APP_SCREENSHOTS",
+    "oldName" : "APP_SCREENSHOTS",
+    "primaryKey" : {
+      "columns" : [ "ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ {
+      "cardinality" : "ManyToOne",
+      "cascadeEnabled" : false,
+      "cascadeOptions" : {
+        "cascadeRemove" : "NONE",
+        "cascadeReplace" : true
+      },
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fetchOptions" : {
+        "fetch" : true,
+        "columnsFilter" : [ ]
+      },
+      "fieldName" : "appInfo",
+      "ignored" : false,
+      "mappings" : [ {
+        "sourceColumn" : "APP_INFO_ID",
+        "targetColumn" : "ID"
+      } ],
+      "name" : "FK_APP_SCREENSHOTS_TO_APhHjED",
+      "parentFetchOptions" : {
+        "fetch" : false,
+        "columnsFilter" : [ ]
+      },
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "APP_SCREENSHOTS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "APP_INFO",
+      "valid" : true,
+      "virtual" : false
+    } ],
+    "schema" : null,
+    "tableDataLockingOptions" : {
+      "versionColumnName" : "VERSION",
+      "lockingStrategy" : "NONE",
+      "overrideStrategy" : "INHERIT"
+    },
+    "temporals" : [ ],
+    "type" : "TABLE"
+  }, {
+    "catalog" : "WM_APP_STORE",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
         "defaultValue" : "",
         "type" : "user-defined"
       },
@@ -1165,16 +1282,16 @@
         "type" : "user-defined"
       },
       "constraintList" : [ ],
-      "fieldName" : "_desc",
+      "fieldName" : "filePath",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "hidden" : false,
       "javaType" : "string",
       "length" : 255,
-      "name" : "DESC",
+      "name" : "FILE_PATH",
       "nullable" : true,
-      "oldName" : "DESC",
+      "oldName" : "FILE_PATH",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
@@ -1272,35 +1389,6 @@
       "scale" : 0,
       "sequenceSchema" : null,
       "sqlType" : "timestamp",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : "",
-        "type" : "user-defined"
-      },
-      "constraintList" : [ ],
-      "fieldName" : "fileName",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "hidden" : false,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "FILE_NAME",
-      "nullable" : true,
-      "oldName" : "FILE_NAME",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "period" : false,
-      "precision" : 0,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sequenceSchema" : null,
-      "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
@@ -1417,6 +1505,35 @@
       "scale" : 0,
       "sequenceSchema" : null,
       "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "fieldName" : "fileName",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "FILE_NAME",
+      "nullable" : true,
+      "oldName" : "FILE_NAME",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
       "unique" : false
     } ],
     "constraints" : [ ],

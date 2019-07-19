@@ -3,7 +3,75 @@
     <wm-content name="content1">
         <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
         <wm-page-content columnwidth="10" name="page_content1">
-            <wm-container name="container6" content="FileUpload"></wm-container>
+            <wm-label padding="unset 0.5em" name="label1" caption="Upload Prefab" fontsize="20" fontweight="bold"></wm-label><br><br>
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="7" name="gridcolumn1">
+                        <wm-composite name="composite1" margin="unset unset unset 10px">
+                            <wm-label class="col-md-3 control-label" name="label2" caption="Prefab Name" margin="10px unset unset unset"></wm-label>
+                            <wm-container class="col-md-9" name="container2">
+                                <wm-text name="prefab_name"></wm-text>
+                            </wm-container>
+                        </wm-composite><br></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn2"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="7" name="gridcolumn3">
+                        <wm-composite name="composite2" margin="unset unset unset 10px">
+                            <wm-label class="col-md-3 control-label" name="label3" caption="Description" margin="10px unset unset unset"></wm-label>
+                            <wm-container class="col-md-9" name="container3">
+                                <wm-text name="description"></wm-text>
+                            </wm-container>
+                        </wm-composite><br></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn4"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-layoutgrid name="layoutgrid4">
+                <wm-gridrow name="gridrow7">
+                    <wm-gridcolumn columnwidth="7" name="gridcolumn13">
+                        <wm-composite margin="unset unset unset 10px" name="composite3">
+                            <wm-label class="col-md-3 control-label" caption="File Name" margin="10px unset unset unset" name="label6"></wm-label>
+                            <wm-container class="col-md-9" name="container3_1">
+                                <wm-text name="text3"></wm-text>
+                            </wm-container>
+                        </wm-composite><br></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn14"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow8">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn15"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn16"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-layoutgrid name="layoutgrid2" show="true">
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn5">
+                        <wm-label padding="unset 0.5em" name="label4" caption="Choose Prefab:" fontsize="15" fontweight="bold"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="10" name="gridcolumn6">
+                        <wm-fileupload name="fileupload1" on-select="Variables.FileServiceUploadFile.invoke()" contenttype=".zip" maxfilesize="50"></wm-fileupload>
+                    </wm-gridcolumn>
+                </wm-gridrow><br>
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn7">
+                        <wm-label padding="unset 0.5em" name="label5" caption="Upload Screenshots:" fontsize="15" fontweight="bold"></wm-label>
+                        <wm-fileupload name="fileupload2" on-select="Variables.FileServiceUploadFile1.invoke()" contenttype="image/* .jpeg .jpg .gif mp4 video/*" multiple="true" iconclass="wi wi-folder" horizontalalign="center" maxfilesize="20"></wm-fileupload>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn8"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid><br>
+            <wm-layoutgrid name="layoutgrid3">
+                <wm-gridrow name="gridrow5">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn9"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn10">
+                        <wm-button class="btn-default" caption="Save" type="button" margin="unset 0.5em" name="save" on-click="Variables.insert_into_appinfo.createRecord();saveClick($event, widget)"></wm-button>
+                        <wm-button class="btn-default" caption="Cancel" type="button" margin="unset 0.5em" name="cancel"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow6">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn11"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn12"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
         </wm-page-content>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>

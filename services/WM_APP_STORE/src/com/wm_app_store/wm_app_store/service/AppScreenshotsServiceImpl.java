@@ -32,111 +32,111 @@ import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
-import com.wm_app_store.wm_app_store.AppSource;
+import com.wm_app_store.wm_app_store.AppScreenshots;
 
 
 /**
- * ServiceImpl object for domain model class AppSource.
+ * ServiceImpl object for domain model class AppScreenshots.
  *
- * @see AppSource
+ * @see AppScreenshots
  */
-@Service("WM_APP_STORE.AppSourceService")
+@Service("WM_APP_STORE.AppScreenshotsService")
 @Validated
-public class AppSourceServiceImpl implements AppSourceService {
+public class AppScreenshotsServiceImpl implements AppScreenshotsService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AppSourceServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AppScreenshotsServiceImpl.class);
 
 
     @Autowired
-    @Qualifier("WM_APP_STORE.AppSourceDao")
-    private WMGenericDao<AppSource, Integer> wmGenericDao;
+    @Qualifier("WM_APP_STORE.AppScreenshotsDao")
+    private WMGenericDao<AppScreenshots, Integer> wmGenericDao;
 
     @Autowired
     @Qualifier("wmAppObjectMapper")
     private ObjectMapper objectMapper;
 
 
-    public void setWMGenericDao(WMGenericDao<AppSource, Integer> wmGenericDao) {
+    public void setWMGenericDao(WMGenericDao<AppScreenshots, Integer> wmGenericDao) {
         this.wmGenericDao = wmGenericDao;
     }
 
     @Transactional(value = "WM_APP_STORETransactionManager")
     @Override
-    public AppSource create(AppSource appSource) {
-        LOGGER.debug("Creating a new AppSource with information: {}", appSource);
+    public AppScreenshots create(AppScreenshots appScreenshots) {
+        LOGGER.debug("Creating a new AppScreenshots with information: {}", appScreenshots);
 
-        AppSource appSourceCreated = this.wmGenericDao.create(appSource);
+        AppScreenshots appScreenshotsCreated = this.wmGenericDao.create(appScreenshots);
         // reloading object from database to get database defined & server defined values.
-        return this.wmGenericDao.refresh(appSourceCreated);
+        return this.wmGenericDao.refresh(appScreenshotsCreated);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public AppSource getById(Integer appsourceId) {
-        LOGGER.debug("Finding AppSource by id: {}", appsourceId);
-        return this.wmGenericDao.findById(appsourceId);
+    public AppScreenshots getById(Integer appscreenshotsId) {
+        LOGGER.debug("Finding AppScreenshots by id: {}", appscreenshotsId);
+        return this.wmGenericDao.findById(appscreenshotsId);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public AppSource findById(Integer appsourceId) {
-        LOGGER.debug("Finding AppSource by id: {}", appsourceId);
+    public AppScreenshots findById(Integer appscreenshotsId) {
+        LOGGER.debug("Finding AppScreenshots by id: {}", appscreenshotsId);
         try {
-            return this.wmGenericDao.findById(appsourceId);
+            return this.wmGenericDao.findById(appscreenshotsId);
         } catch (EntityNotFoundException ex) {
-            LOGGER.debug("No AppSource found with id: {}", appsourceId, ex);
+            LOGGER.debug("No AppScreenshots found with id: {}", appscreenshotsId, ex);
             return null;
         }
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public List<AppSource> findByMultipleIds(List<Integer> appsourceIds, boolean orderedReturn) {
-        LOGGER.debug("Finding AppSources by ids: {}", appsourceIds);
+    public List<AppScreenshots> findByMultipleIds(List<Integer> appscreenshotsIds, boolean orderedReturn) {
+        LOGGER.debug("Finding AppScreenshots by ids: {}", appscreenshotsIds);
 
-        return this.wmGenericDao.findByMultipleIds(appsourceIds, orderedReturn);
+        return this.wmGenericDao.findByMultipleIds(appscreenshotsIds, orderedReturn);
     }
 
 
     @Transactional(rollbackFor = EntityNotFoundException.class, value = "WM_APP_STORETransactionManager")
     @Override
-    public AppSource update(AppSource appSource) {
-        LOGGER.debug("Updating AppSource with information: {}", appSource);
+    public AppScreenshots update(AppScreenshots appScreenshots) {
+        LOGGER.debug("Updating AppScreenshots with information: {}", appScreenshots);
 
-        this.wmGenericDao.update(appSource);
-        this.wmGenericDao.refresh(appSource);
+        this.wmGenericDao.update(appScreenshots);
+        this.wmGenericDao.refresh(appScreenshots);
 
-        return appSource;
+        return appScreenshots;
     }
 
     @Transactional(value = "WM_APP_STORETransactionManager")
     @Override
-    public AppSource partialUpdate(Integer appsourceId, Map<String, Object>appSourcePatch) {
-        LOGGER.debug("Partially Updating the AppSource with id: {}", appsourceId);
+    public AppScreenshots partialUpdate(Integer appscreenshotsId, Map<String, Object>appScreenshotsPatch) {
+        LOGGER.debug("Partially Updating the AppScreenshots with id: {}", appscreenshotsId);
 
-        AppSource appSource = getById(appsourceId);
+        AppScreenshots appScreenshots = getById(appscreenshotsId);
 
         try {
-            ObjectReader appSourceReader = this.objectMapper.reader().forType(AppSource.class).withValueToUpdate(appSource);
-            appSource = appSourceReader.readValue(this.objectMapper.writeValueAsString(appSourcePatch));
+            ObjectReader appScreenshotsReader = this.objectMapper.reader().forType(AppScreenshots.class).withValueToUpdate(appScreenshots);
+            appScreenshots = appScreenshotsReader.readValue(this.objectMapper.writeValueAsString(appScreenshotsPatch));
         } catch (IOException ex) {
-            LOGGER.debug("There was a problem in applying the patch: {}", appSourcePatch, ex);
+            LOGGER.debug("There was a problem in applying the patch: {}", appScreenshotsPatch, ex);
             throw new InvalidInputException("Could not apply patch",ex);
         }
 
-        appSource = update(appSource);
+        appScreenshots = update(appScreenshots);
 
-        return appSource;
+        return appScreenshots;
     }
 
     @Transactional(value = "WM_APP_STORETransactionManager")
     @Override
-    public AppSource delete(Integer appsourceId) {
-        LOGGER.debug("Deleting AppSource with id: {}", appsourceId);
-        AppSource deleted = this.wmGenericDao.findById(appsourceId);
+    public AppScreenshots delete(Integer appscreenshotsId) {
+        LOGGER.debug("Deleting AppScreenshots with id: {}", appscreenshotsId);
+        AppScreenshots deleted = this.wmGenericDao.findById(appscreenshotsId);
         if (deleted == null) {
-            LOGGER.debug("No AppSource found with id: {}", appsourceId);
-            throw new EntityNotFoundException(MessageResource.create("com.wavemaker.runtime.entity.not.found"), AppSource.class.getSimpleName(), appsourceId);
+            LOGGER.debug("No AppScreenshots found with id: {}", appscreenshotsId);
+            throw new EntityNotFoundException(MessageResource.create("com.wavemaker.runtime.entity.not.found"), AppScreenshots.class.getSimpleName(), appscreenshotsId);
         }
         this.wmGenericDao.delete(deleted);
         return deleted;
@@ -144,36 +144,36 @@ public class AppSourceServiceImpl implements AppSourceService {
 
     @Transactional(value = "WM_APP_STORETransactionManager")
     @Override
-    public void delete(AppSource appSource) {
-        LOGGER.debug("Deleting AppSource with {}", appSource);
-        this.wmGenericDao.delete(appSource);
+    public void delete(AppScreenshots appScreenshots) {
+        LOGGER.debug("Deleting AppScreenshots with {}", appScreenshots);
+        this.wmGenericDao.delete(appScreenshots);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public Page<AppSource> findAll(QueryFilter[] queryFilters, Pageable pageable) {
-        LOGGER.debug("Finding all AppSources");
+    public Page<AppScreenshots> findAll(QueryFilter[] queryFilters, Pageable pageable) {
+        LOGGER.debug("Finding all AppScreenshots");
         return this.wmGenericDao.search(queryFilters, pageable);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public Page<AppSource> findAll(String query, Pageable pageable) {
-        LOGGER.debug("Finding all AppSources");
+    public Page<AppScreenshots> findAll(String query, Pageable pageable) {
+        LOGGER.debug("Finding all AppScreenshots");
         return this.wmGenericDao.searchByQuery(query, pageable);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager", timeout = 300)
     @Override
     public Downloadable export(ExportType exportType, String query, Pageable pageable) {
-        LOGGER.debug("exporting data in the service WM_APP_STORE for table AppSource to {} format", exportType);
+        LOGGER.debug("exporting data in the service WM_APP_STORE for table AppScreenshots to {} format", exportType);
         return this.wmGenericDao.export(exportType, query, pageable);
     }
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager", timeout = 300)
     @Override
     public void export(DataExportOptions options, Pageable pageable, OutputStream outputStream) {
-        LOGGER.debug("exporting data in the service WM_APP_STORE for table AppSource to {} format", options.getExportType());
+        LOGGER.debug("exporting data in the service WM_APP_STORE for table AppScreenshots to {} format", options.getExportType());
         this.wmGenericDao.export(options, pageable, outputStream);
     }
 

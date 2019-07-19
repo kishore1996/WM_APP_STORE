@@ -9,9 +9,12 @@
   "dbType" : "MySQL",
   "host" : "{WM_CLOUD_MYSQL_HOST}",
   "dbName" : "WM_APP_STORE",
-  "port" : "",
+  "port" : null,
   "schemaName" : null,
   "tableFilter" : [ {
+    "table" : "APP_DOWNLOAD_HISTORY",
+    "schema" : null
+  }, {
     "table" : "APP_INFO",
     "schema" : null
   }, {
@@ -19,6 +22,9 @@
     "schema" : null
   }, {
     "table" : "APP_SCREEN",
+    "schema" : null
+  }, {
+    "table" : "APP_SCREENSHOTS",
     "schema" : null
   }, {
     "table" : "APP_SOURCE",
@@ -34,9 +40,6 @@
     "schema" : null
   }, {
     "table" : "USER_ROLE",
-    "schema" : null
-  }, {
-    "table" : "APP_DOWNLOAD_HISTORY",
     "schema" : null
   } ],
   "schemaFilter" : [ ],

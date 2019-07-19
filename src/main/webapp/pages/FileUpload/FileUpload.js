@@ -4,7 +4,7 @@
  */
 
 /* perform any action on widgets/variables within this block */
-Partial.onReady = function () {
+Partial.onReady = function() {
     /*
      * variables can be accessed through 'Partial.Variables' property here
      * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script

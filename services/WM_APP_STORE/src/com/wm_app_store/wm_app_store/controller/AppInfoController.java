@@ -48,6 +48,7 @@ import com.wordnik.swagger.annotations.ApiParam;
 import com.wm_app_store.wm_app_store.AppInfo;
 import com.wm_app_store.wm_app_store.AppRating;
 import com.wm_app_store.wm_app_store.AppScreen;
+import com.wm_app_store.wm_app_store.AppScreenshots;
 import com.wm_app_store.wm_app_store.AppSource;
 import com.wm_app_store.wm_app_store.service.AppInfoService;
 
@@ -255,6 +256,15 @@ public class AppInfoController {
 
         LOGGER.debug("Fetching all associated appSources");
         return appInfoService.findAssociatedAppSources(id, pageable);
+    }
+
+    @RequestMapping(value="/{id:.+}/appScreenshotses", method=RequestMethod.GET)
+    @ApiOperation(value = "Gets the appScreenshotses instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<AppScreenshots> findAssociatedAppScreenshotses(@PathVariable("id") Integer id, Pageable pageable) {
+
+        LOGGER.debug("Fetching all associated appScreenshotses");
+        return appInfoService.findAssociatedAppScreenshotses(id, pageable);
     }
 
     /**

@@ -24,6 +24,7 @@ import com.wavemaker.runtime.file.model.Downloadable;
 import com.wm_app_store.wm_app_store.AppInfo;
 import com.wm_app_store.wm_app_store.AppRating;
 import com.wm_app_store.wm_app_store.AppScreen;
+import com.wm_app_store.wm_app_store.AppScreenshots;
 import com.wm_app_store.wm_app_store.AppSource;
 
 /**
@@ -233,5 +234,17 @@ public interface AppInfoService {
      * @see Page
      */
     Page<AppSource> findAssociatedAppSources(Integer id, Pageable pageable);
+
+    /*
+     * Returns the associated appScreenshotses for given AppInfo id.
+     *
+     * @param id value of id; value cannot be null
+     * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
+     * @return Paginated list of associated AppScreenshots instances.
+     *
+     * @see Pageable
+     * @see Page
+     */
+    Page<AppScreenshots> findAssociatedAppScreenshotses(Integer id, Pageable pageable);
 
 }

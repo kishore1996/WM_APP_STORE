@@ -1,30 +1,4 @@
 {
-  "FileServiceUploadFile2" : {
-    "_id" : "wm-FileServiceUploadFile2-wm.ServiceVariable-1560420421063",
-    "name" : "FileServiceUploadFile2",
-    "owner" : "Page",
-    "category" : "wm.ServiceVariable",
-    "dataBinding" : [ {
-      "target" : "files",
-      "value" : "bind:Widgets.fileupload3.selectedFiles",
-      "type" : "java.lang.String"
-    } ],
-    "type" : "com.wm_app_store.fileservice.FileService.FileUploadResponse",
-    "service" : "FileService",
-    "operation" : "uploadFile",
-    "operationId" : "FileController_uploadFile",
-    "serviceType" : "JavaService",
-    "dataSet" : [ ],
-    "isList" : false,
-    "maxResults" : 20,
-    "startUpdate" : false,
-    "autoUpdate" : false,
-    "inFlightBehavior" : "executeLast",
-    "transformationRequired" : false,
-    "saveInPhonegap" : false,
-    "isDefault" : true,
-    "controller" : "File"
-  },
   "insertFile" : {
     "_id" : "wm-insertFile-wm.LiveVariable-1560320323694",
     "name" : "insertFile",
