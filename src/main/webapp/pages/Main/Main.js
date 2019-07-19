@@ -26,6 +26,7 @@ Page.WM_APP_STOREAppInfoDataonSuccess = function(variable, data) {
     console.log(data)
     for (var i = 0; i < data.length; i++) {
         jsondata.push({
+            "PrefabID": data[i]["id"],
             "category": data[i]["categoryId"],
             "CreatedBy": data[i]["createdBy"],
             "CreatedOn": data[i]["creationDate"],
@@ -36,4 +37,11 @@ Page.WM_APP_STOREAppInfoDataonSuccess = function(variable, data) {
     console.log(jsondata)
     Page.Variables.Prefabs.setData(jsondata)
 
+};
+Page.card1Click = function($event, widget, item, currentItemWidgets) {
+    console.log(item)
+    Page.App.Actions.goToPage_Prefab_Preview.setData({
+        "ID": 1
+    })
+    Page.App.Actions.goToPage_Prefab_Preview.invoke()
 };

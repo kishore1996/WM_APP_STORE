@@ -14,6 +14,8 @@ Page.onReady = function() {
      * e.g. to get value of text widget named 'username' use following script
      * 'Page.Widgets.username.datavalue'
      */
+    console.log(Page.App.Actions.goToPage_Prefab_Preview.dataSet["ID"])
+    console.log(Page.Variables.PrefabData.dataSet)
     Page.Widgets.save.show = false;
     Page.Widgets.save1.show = false;
     Page.Widgets.cancel.show = false;

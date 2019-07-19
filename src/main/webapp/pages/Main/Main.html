@@ -22,7 +22,7 @@
                     <wm-gridcolumn columnwidth="10" name="gridcolumn11_1">
                         <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="PrefabsList1" dataset="bind:Variables.Prefabs.dataSet" navigation="Scroll" padding="5% unset unset 5%">
                             <wm-listtemplate layout="media" name="listtemplate1">
-                                <wm-card name="card1" width="auto" height="auto">
+                                <wm-card name="card1" width="auto" height="auto" on-click="card1Click($event, widget, item, currentItemWidgets)">
                                     <wm-card-content fontsize="0.8" fontunit="em" name="card_content1">
                                         <wm-layoutgrid columns="2" name="layoutgrid4_1" width="auto" height="auto">
                                             <wm-gridrow name="gridrow8">

@@ -32,18 +32,21 @@
 }, {
   "name" : "Prefab_Preview",
   "type" : "PAGE",
-  "params" : [ ]
+  "params" : [ {
+    "name" : "ID",
+    "type" : "integer"
+  } ]
 }, {
   "name" : "Prefab_Version",
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "UserManagement",
-  "type" : "PAGE",
-  "params" : [ ]
-}, {
   "name" : "Upload_Prefab",
   "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "UserManagement",
+  "type" : "PAGE",
   "params" : [ ]
 }, {
   "name" : "carousal",
