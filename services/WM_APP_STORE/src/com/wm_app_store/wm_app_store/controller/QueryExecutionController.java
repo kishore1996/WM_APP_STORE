@@ -133,6 +133,64 @@ public class QueryExecutionController {
         return new StringWrapper(exportedUrl);
     }
 
+    @RequestMapping(value = "/queries/GetDatafromAPPSource", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "GetDatafromAPPSource")
+    public Page<GetDatafromAppsourceResponse> executeGetDatafromAPPSource(@RequestParam(value = "id") Integer id, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: GetDatafromAPPSource");
+        Page<GetDatafromAppsourceResponse> _result = queryService.executeGetDatafromAPPSource(id, pageable);
+        LOGGER.debug("got the result for named query: GetDatafromAPPSource, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query GetDatafromAPPSource")
+    @RequestMapping(value = "/queries/GetDatafromAPPSource/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportGetDatafromAPPSource(@RequestParam(value = "id") Integer id, @RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: GetDatafromAPPSource");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "GetDatafromAPPSource";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportGetDatafromAPPSource(id,  exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/AVGRATING", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Avg Rating")
+    public Page<AvgratingResponse> executeAVGRATING(@RequestParam(value = "APPID") Integer appid, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: AVGRATING");
+        Page<AvgratingResponse> _result = queryService.executeAVGRATING(appid, pageable);
+        LOGGER.debug("got the result for named query: AVGRATING, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query AVGRATING")
+    @RequestMapping(value = "/queries/AVGRATING/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportAVGRATING(@RequestParam(value = "APPID") Integer appid, @RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: AVGRATING");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "AVGRATING";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportAVGRATING(appid,  exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
     @RequestMapping(value = "/queries/deleteUser", method = RequestMethod.DELETE)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "delete users")
@@ -178,6 +236,35 @@ public class QueryExecutionController {
 
         String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
                         outputStream -> queryService.exportViewProfile(uname,  exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/TotalDownloads", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Total Downloads")
+    public Page<TotalDownloadsResponse> executeTotalDownloads(@RequestParam(value = "id") Integer id, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: TotalDownloads");
+        Page<TotalDownloadsResponse> _result = queryService.executeTotalDownloads(id, pageable);
+        LOGGER.debug("got the result for named query: TotalDownloads, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query TotalDownloads")
+    @RequestMapping(value = "/queries/TotalDownloads/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportTotalDownloads(@RequestParam(value = "id") Integer id, @RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: TotalDownloads");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "TotalDownloads";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportTotalDownloads(id,  exportOptions, pageable, outputStream));
 
         return new StringWrapper(exportedUrl);
     }

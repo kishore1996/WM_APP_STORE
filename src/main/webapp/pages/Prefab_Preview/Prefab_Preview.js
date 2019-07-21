@@ -14,8 +14,13 @@ Page.onReady = function() {
      * e.g. to get value of text widget named 'username' use following script
      * 'Page.Widgets.username.datavalue'
      */
-    console.log(Page.App.Actions.goToPage_Prefab_Preview.dataSet["ID"])
+    console.log(Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID == null)
+    if (Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID == null)
+        Page.App.Actions.goToPage_Main.invoke()
+
     console.log(Page.Variables.PrefabData.dataSet)
+    var id = Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID;
+    Page.Variables.PrefabData.dataSet = {}
     Page.Widgets.save.show = false;
     Page.Widgets.save1.show = false;
     Page.Widgets.cancel.show = false;
@@ -151,4 +156,68 @@ Page.deleteprefabClick = function($event, widget, item, currentItemWidgets) {
     Page.Widgets.userrating.show = true;
     Page.Widgets.textarea1.datavalue = " ";
     Page.Widgets.userrating.datavalue = 0;
+};
+
+Page.PrefabSourceonSuccess = function(variable, data) {
+    console.log("source")
+    console.log(data)
+    Page.Variables.TotalDownloads.setInput({
+        "id": data[0]["id"]
+    })
+    Page.Variables.TotalDownloads.invoke()
+};
+Page.TotalDownloadsonSuccess = function(variable, data) {
+    console.log("totaldownloads")
+    console.log(data)
+    Page.Variables.PrefabData.dataSet["TotalDownloads"] = data[0]["count___"]
+};
+
+Page.AppinfoonSuccess = function(variable, data) {
+    console.log("Info")
+    console.log(data)
+    Page.Variables.PrefabSource.setInput({
+        "id": data[0]["id"]
+    })
+    Page.Variables.PrefabSource.invoke()
+    Page.Variables.AvgRating.setInput({
+        "APPID": data[0]["id"]
+    })
+    Page.Variables.AvgRating.invoke()
+    Page.Variables.PrefabData.dataSet["Name"] = data[0]["name"]
+    Page.Variables.PrefabData.dataSet["icon"] = data[0]["image"]
+    Page.Variables.PrefabData.dataSet["categoryID"] = data[0]["mdCategory"]["label"]
+    Page.Variables.PrefabData.dataSet["Description"] = data[0]["_desc"]
+};
+
+Page.AvgRatingonSuccess = function(variable, data) {
+    console.log("avg")
+    console.log(data)
+    Page.Variables.PrefabData.dataSet["AvgRating"] = data["avg_rate_"]
+};
+
+Page.AppScreenshotsonSuccess = function(variable, data) {
+    console.log('screen')
+    console.log(data)
+    d = []
+    for (var i = 0; i < data.length; i++) {
+        d.push({
+            "image": data[i]["screenshots"]
+        })
+    }
+    Page.Variables.PrefabData.dataSet["Images"] = d;
+};
+
+Page.AppRatingsonSuccess = function(variable, data) {
+    console.log("rating")
+    console.log(data)
+    d = []
+    for (var i = 0; i < data.length; i++) {
+        d.push({
+            "rate": data[i]["rate"],
+            "comment": data[i]["comments"],
+            "createdby": data[i]["createdBy"],
+            "createddate": data[i]["creationDate"]
+        })
+    }
+    Page.Variables.stForReview.dataSet["reviews"] = d
 };

@@ -1,4 +1,176 @@
 {
+  "AVGRATING" : {
+    "name" : "AVGRATING",
+    "description" : "Avg Rating",
+    "version" : "V2",
+    "queryString" : "SELECT AVG(RATE) FROM APP_RATING WHERE APP_INFO_ID =:APPID",
+    "countQueryString" : "select count(*) from (SELECT AVG(RATE) FROM APP_RATING WHERE APP_INFO_ID =:APPID) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "APPID",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.wm_app_store.wm_app_store.models.query.AvgratingResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "AVG(RATE)",
+        "fieldName" : "avg_rate_",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Double",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "GetDatafromAPPSource" : {
+    "name" : "GetDatafromAPPSource",
+    "description" : "GetDatafromAPPSource",
+    "version" : "V2",
+    "queryString" : "select * from APP_SOURCE where APP_INFO_ID=:id",
+    "countQueryString" : "select count(*) from (select * from APP_SOURCE where APP_INFO_ID=:id) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.wm_app_store.wm_app_store.models.query.GetDatafromAppsourceResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "DESC",
+        "fieldName" : "_desc",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "APP_INFO_ID",
+        "fieldName" : "appInfoId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "CREATED_BY",
+        "fieldName" : "createdBy",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "CREATION_DATE",
+        "fieldName" : "creationDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Timestamp",
+          "list" : false
+        }
+      }, {
+        "name" : "FILE_NAME",
+        "fieldName" : "fileName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "LAST_UPDATE_DATE",
+        "fieldName" : "lastUpdateDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Timestamp",
+          "list" : false
+        }
+      }, {
+        "name" : "PRICE",
+        "fieldName" : "price",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "UPDATED_BY",
+        "fieldName" : "updatedBy",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "VERSION_ID",
+        "fieldName" : "versionId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "FILE_PATH",
+        "fieldName" : "filePath",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
   "SELECTFROM_APPINFO" : {
     "name" : "SELECTFROM_APPINFO",
     "description" : "SELECTFROM_APPINFO",
@@ -264,6 +436,47 @@
         "fieldType" : {
           "type" : "PRIMITIVE",
           "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "TotalDownloads" : {
+    "name" : "TotalDownloads",
+    "description" : "Total Downloads",
+    "version" : "V2",
+    "queryString" : "select count(*) from APP_DOWNLOAD_HISTORY where APP_SOURCE_ID =:id",
+    "countQueryString" : "select count(*) from (select count(*) from APP_DOWNLOAD_HISTORY where APP_SOURCE_ID =:id) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.wm_app_store.wm_app_store.models.query.TotalDownloadsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "count(*)",
+        "fieldName" : "count___",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
           "list" : false
         }
       } ]

@@ -93,6 +93,50 @@ public class WM_APP_STOREQueryExecutorServiceImpl implements WM_APP_STOREQueryEx
         queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
     }
 
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
+    public Page<GetDatafromAppsourceResponse> executeGetDatafromAPPSource(Integer id, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("id", id);
+
+        return queryExecutor.executeNamedQuery("GetDatafromAPPSource", params, GetDatafromAppsourceResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportGetDatafromAPPSource(Integer id, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("id", id);
+
+        QueryProcedureInput<GetDatafromAppsourceResponse> queryInput = new QueryProcedureInput<>("GetDatafromAPPSource", params, GetDatafromAppsourceResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
+    public Page<AvgratingResponse> executeAVGRATING(Integer appid, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("APPID", appid);
+
+        return queryExecutor.executeNamedQuery("AVGRATING", params, AvgratingResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportAVGRATING(Integer appid, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("APPID", appid);
+
+        QueryProcedureInput<AvgratingResponse> queryInput = new QueryProcedureInput<>("AVGRATING", params, AvgratingResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
     @Transactional(value = "WM_APP_STORETransactionManager")
     @Override
     public Integer executeDeleteUser(String uname, Integer id, String loggedinuser) {
@@ -136,6 +180,28 @@ public class WM_APP_STOREQueryExecutorServiceImpl implements WM_APP_STOREQueryEx
         params.put("uname", uname);
 
         QueryProcedureInput<ViewProfileResponse> queryInput = new QueryProcedureInput<>("viewProfile", params, ViewProfileResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
+    public Page<TotalDownloadsResponse> executeTotalDownloads(Integer id, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("id", id);
+
+        return queryExecutor.executeNamedQuery("TotalDownloads", params, TotalDownloadsResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportTotalDownloads(Integer id, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("id", id);
+
+        QueryProcedureInput<TotalDownloadsResponse> queryInput = new QueryProcedureInput<>("TotalDownloads", params, TotalDownloadsResponse.class);
 
         queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
     }

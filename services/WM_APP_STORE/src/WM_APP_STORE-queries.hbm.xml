@@ -38,6 +38,34 @@
         ]]>
     </sql-query>
 
+    <sql-query name="GetDatafromAPPSource">
+        <![CDATA[
+        select * from APP_SOURCE where APP_INFO_ID=:id
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="GetDatafromAPPSource__count">
+        <![CDATA[
+        select count(*) from (select * from APP_SOURCE where APP_INFO_ID=:id) wmTempTable
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="AVGRATING">
+        <![CDATA[
+        SELECT AVG(RATE) FROM APP_RATING WHERE APP_INFO_ID =:APPID
+        ]]>
+    <query-param name="APPID" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="AVGRATING__count">
+        <![CDATA[
+        select count(*) from (SELECT AVG(RATE) FROM APP_RATING WHERE APP_INFO_ID =:APPID) wmTempTable
+        ]]>
+    <query-param name="APPID" type="java.lang.Integer"/>
+    </sql-query>
+
     <sql-query name="deleteUser">
         <![CDATA[
         DELETE FROM CREDENTIALS WHERE USERNAME = :uname AND ID = :id AND USERNAME != :loggedinuser
@@ -69,6 +97,20 @@
         select count(*) from (SELECT ID, USERNAME, PASSWORD, USER_ROLE FROM CREDENTIALS WHERE USERNAME = :uname) wmTempTable
         ]]>
     <query-param name="uname" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="TotalDownloads">
+        <![CDATA[
+        select count(*) from APP_DOWNLOAD_HISTORY where APP_SOURCE_ID =:id
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="TotalDownloads__count">
+        <![CDATA[
+        select count(*) from (select count(*) from APP_DOWNLOAD_HISTORY where APP_SOURCE_ID =:id) wmTempTable
+        ]]>
+    <query-param name="id" type="java.lang.Integer"/>
     </sql-query>
 
     <sql-query name="changePassword">

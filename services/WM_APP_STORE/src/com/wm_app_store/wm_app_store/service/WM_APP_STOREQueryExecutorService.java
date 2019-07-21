@@ -28,6 +28,14 @@ public interface WM_APP_STOREQueryExecutorService {
 
     void exportSELECTFROM_APPSOURCE(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
+    Page<GetDatafromAppsourceResponse> executeGetDatafromAPPSource(Integer id, Pageable pageable);
+
+    void exportGetDatafromAPPSource(Integer id, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<AvgratingResponse> executeAVGRATING(Integer appid, Pageable pageable);
+
+    void exportAVGRATING(Integer appid, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
     Integer executeDeleteUser(String uname, Integer id, String loggedinuser);
 
     Integer executeEditUser(EditUserRequest editUserRequest);
@@ -35,6 +43,10 @@ public interface WM_APP_STOREQueryExecutorService {
     Page<ViewProfileResponse> executeViewProfile(String uname, Pageable pageable);
 
     void exportViewProfile(String uname, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<TotalDownloadsResponse> executeTotalDownloads(Integer id, Pageable pageable);
+
+    void exportTotalDownloads(Integer id, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
     Integer executeChangePassword(ChangePasswordRequest changePasswordRequest);
 
