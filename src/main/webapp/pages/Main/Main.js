@@ -41,7 +41,7 @@ Page.WM_APP_STOREAppInfoDataonSuccess = function(variable, data) {
 Page.card1Click = function($event, widget, item, currentItemWidgets) {
     console.log(item)
     Page.App.Actions.goToPage_Prefab_Preview.setData({
-        "ID": 1
+        "ID": item["PrefabID"]
     })
     Page.App.Actions.goToPage_Prefab_Preview.invoke()
 };

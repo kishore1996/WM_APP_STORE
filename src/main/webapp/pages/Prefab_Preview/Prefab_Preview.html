@@ -44,7 +44,7 @@
                                 <wm-gridcolumn columnwidth="12" name="gridcolumn13_2">
                                     <wm-composite name="composite7">
                                         <wm-container class="col-md-9" name="container7" width="85%" margin="unset unset unset 8%">
-                                            <wm-textarea name="textarea2" backgroundcolor="#ffffff00" fontsize="14" placeholder="" datavalue="bind:Variables.PrefabData.dataSet.Description" disabled="false" readonly="true" class="input-sm"></wm-textarea>
+                                            <wm-textarea name="textarea2" class="desc" backgroundcolor="#ffffff00" fontsize="14" placeholder="" datavalue="bind:Variables.PrefabData.dataSet.Description" disabled="false" readonly="true"></wm-textarea>
                                         </wm-container>
                                         <wm-button class="btn-default" caption="" type="button" margin="0px" iconclass="wi wi-mode-edit fa-lg fa-fw" backgroundcolor="#ffffff00" bordercolor="#ffffff00" padding="0px" color="#000000" borderwidth="0px" name="edit1"
                                             on-click="edit1Click($event, widget)"></wm-button>
@@ -80,6 +80,8 @@
                         <wm-carousel height="200px" type="dynamic" name="carousel1" dataset="bind:Variables.PrefabData.dataSet.Images" width="100%" animation="none">
                             <wm-carousel-template horizontalalign="center" name="carousel_template1" width="100%" height="100%">
                                 <wm-picture width="300" name="picture4" picturesource="bind:Variables.PrefabData.dataSet.Images[$i].image" height="100%" margin="unset unset unset 10%" pictureaspect="Both"></wm-picture>
+                                <wm-button class="btn-default" caption="" type="button" margin="0px" name="button15" iconclass="wi wi-delete fa-lg" color="#000000" backgroundcolor="#ffffff00" bordercolor="#ffffff00" borderwidth="0px" padding="0px"
+                                    on-click="button15Click($event, widget)"></wm-button>
                             </wm-carousel-template>
                         </wm-carousel>
                     </wm-gridcolumn>
@@ -118,7 +120,7 @@
                                                 <wm-button class="btn-transparent " iconclass="wi wi-done fa-2x" name="okprefab" on-click="okprefabClick($event, widget, item, currentItemWidgets)" show="true"></wm-button>
                                             </wm-container>
                                             <wm-container class="media-right media-top " name="container9 ">
-                                                <wm-button class="btn-transparent " iconclass="wi wi-close fa-2x" name="closeprefab" on-click="closeprefabClick($event, widget, item, currentItemWidgets)"></wm-button>
+                                                <wm-button class="btn-transparent " iconclass="wi wi-close fa-2x" name="closeprefab" on-click="closeprefabClick($event, widget, item, currentItemWidgets)" show="true"></wm-button>
                                             </wm-container>
                                             <wm-container class="media-right media-top " name="container9 ">
                                                 <wm-button class="btn-transparent " iconclass="wi wi-edit fa-2x " name="editprefab" on-click="editprefabClick($event, widget, item, currentItemWidgets)"></wm-button>
@@ -155,7 +157,7 @@
                                     </wm-gridrow>
                                     <wm-gridrow name="gridrow16">
                                         <wm-gridcolumn columnwidth="6" name="gridcolumn28">
-                                            <wm-textarea name="textarea2" value="bind:Variables.stForReview.dataSet.selfreview.comment" datavalue="bind:Variables.stForReview.dataSet.selfreview.comment" id="textarea2"></wm-textarea>
+                                            <wm-textarea name="textarea12" value="bind:Variables.stForReview.dataSet.selfreview.comment" datavalue="bind:Variables.stForReview.dataSet.selfreview.comment" id="textarea2"></wm-textarea>
                                         </wm-gridcolumn>
                                         <wm-gridcolumn columnwidth="6" name="gridcolumn29"></wm-gridcolumn>
                                     </wm-gridrow>

@@ -194,8 +194,7 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "systemInserted" : true,
-        "systemUpdated" : true,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "creationDate",
@@ -461,8 +460,7 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "systemInserted" : true,
-        "systemUpdated" : true,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "creationDate",
@@ -802,8 +800,7 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "systemInserted" : true,
-        "systemUpdated" : true,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "creationDate",

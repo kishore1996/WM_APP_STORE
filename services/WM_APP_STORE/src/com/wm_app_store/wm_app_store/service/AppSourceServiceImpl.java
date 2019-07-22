@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,7 @@ import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
+import com.wm_app_store.wm_app_store.AppD0wnloadHostory;
 import com.wm_app_store.wm_app_store.AppSource;
 
 
@@ -46,6 +48,10 @@ public class AppSourceServiceImpl implements AppSourceService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AppSourceServiceImpl.class);
 
+    @Lazy
+    @Autowired
+    @Qualifier("WM_APP_STORE.AppD0wnloadHostoryService")
+    private AppD0wnloadHostoryService appD0wnloadHostoryService;
 
     @Autowired
     @Qualifier("WM_APP_STORE.AppSourceDao")
@@ -189,6 +195,24 @@ public class AppSourceServiceImpl implements AppSourceService {
         return this.wmGenericDao.getAggregatedValues(aggregationInfo, pageable);
     }
 
+    @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
+    @Override
+    public Page<AppD0wnloadHostory> findAssociatedAppD0wnloadHostories(Integer id, Pageable pageable) {
+        LOGGER.debug("Fetching all associated appD0wnloadHostories");
 
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("appSource.id = '" + id + "'");
+
+        return appD0wnloadHostoryService.findAll(queryBuilder.toString(), pageable);
+    }
+
+    /**
+     * This setter method should only be used by unit tests
+     *
+     * @param service AppD0wnloadHostoryService instance
+     */
+    protected void setAppD0wnloadHostoryService(AppD0wnloadHostoryService service) {
+        this.appD0wnloadHostoryService = service;
+    }
 
 }

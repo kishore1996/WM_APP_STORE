@@ -35,6 +35,7 @@ import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
 
+import com.wm_app_store.wm_app_store.AppD0wnloadHostory;
 import com.wm_app_store.wm_app_store.AppSource;
 import com.wm_app_store.wm_app_store.service.AppSourceService;
 
@@ -187,6 +188,14 @@ public class AppSourceController {
         return appSourceService.getAggregatedValues(aggregationInfo, pageable);
     }
 
+    @RequestMapping(value="/{id:.+}/appD0wnloadHostories", method=RequestMethod.GET)
+    @ApiOperation(value = "Gets the appD0wnloadHostories instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<AppD0wnloadHostory> findAssociatedAppD0wnloadHostories(@PathVariable("id") Integer id, Pageable pageable) {
+
+        LOGGER.debug("Fetching all associated appD0wnloadHostories");
+        return appSourceService.findAssociatedAppD0wnloadHostories(id, pageable);
+    }
 
     /**
 	 * This setter method should only be used by unit tests

@@ -27,6 +27,20 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/WM_APP_STORE1/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/WM_APP_STORE2/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/securityService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -161,6 +175,8 @@
                             <sources>
                                 <source>services/FileService/src</source>
                                 <source>services/WM_APP_STORE/src</source>
+                                <source>services/WM_APP_STORE1/src</source>
+                                <source>services/WM_APP_STORE2/src</source>
                                 <source>services/securityService/src</source>
                             </sources>
                         </configuration>

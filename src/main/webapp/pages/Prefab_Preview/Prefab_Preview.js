@@ -4,6 +4,7 @@
  */
 
 /* perform any action on widgets/variables within this block */
+var CurrentUser;
 Page.onReady = function() {
     /*
      * variables can be accessed through 'Page.Variables' property here
@@ -14,89 +15,86 @@ Page.onReady = function() {
      * e.g. to get value of text widget named 'username' use following script
      * 'Page.Widgets.username.datavalue'
      */
-    console.log(Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID == null)
+    console.log(Page.App.Variables.loggedInUser.dataSet)
     if (Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID == null)
         Page.App.Actions.goToPage_Main.invoke()
-
-    console.log(Page.Variables.PrefabData.dataSet)
     var id = Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID;
-    Page.Variables.PrefabData.dataSet = {}
-    Page.Widgets.save.show = false;
-    Page.Widgets.save1.show = false;
-    Page.Widgets.cancel.show = false;
-    Page.Widgets.cancel1.show = false;
+    CurrentUser = (Page.App.Variables.loggedInUser.dataSet.name)
+    Page.Widgets.edit.display = "none";
+    Page.Widgets.edit1.display = "none";
+    Page.Widgets.save.display = "none";
+    Page.Widgets.save1.display = "none";
+    Page.Widgets.cancel.display = "none";
+    Page.Widgets.cancel1.display = "none";
+    Page.Widgets.button15.display = "none";
+    Page.Widgets.submit.display = "none";
+    Page.Widgets.textarea1.display = "none";
+    Page.Widgets.label3.display = "none";
+    Page.Widgets.userrating.display = "none";
 };
-
-function nameEdit() {
-    alert("nameEdit")
-}
-var jsondata = {
-    "Name": "PrefabName",
-    "icon": "https://media.licdn.com/dms/image/C560BAQE9O_4idOVN0w/company-logo_200_200/0?e=2159024400&v=beta&t=NmS2mTzVU8MSm-UkeRwc4vFqyYaEoD2VMMpqSt5eEsg",
-    "categoryID": "PrefabCategory",
-    "AvgRating": "4",
-    "TotalDownloads": "1000",
-    "Images": [{
-        "image": "https://www.wavemaker.com/wp-content/uploads/WM_blue-retina.png"
-    }, {
-        "image": "https://upload.wikimedia.org/wikipedia/en/4/4f/Wavemaker-logo.png"
-    }, {
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6KqN0_ZSKCJTF8DZrwDUjCEZptomNz4UYr_6GXMYij02JAw8g"
-    }, {
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwwJBE6ZNcwyvVj_vGrrI_20LlEFtX5EdKKBFwCi5TEwQT93NqPg"
-    }],
-    "Description": "Prefab  Description",
-
-}
 var temp;
+var creator = false;
 Page.editClick = function($event, widget) {
     Page.Widgets.text2.readonly = false;
-    Page.Widgets.edit.show = false;
-    Page.Widgets.save.show = true;
-    Page.Widgets.cancel.show = true;
+    Page.Widgets.edit.display = "none";
+    Page.Widgets.save.display = "";
+    Page.Widgets.cancel.display = "";
     temp = Page.Widgets.text2.datavalue;
+
 };
 Page.saveClick = function($event, widget) {
     Page.Widgets.text2.readonly = true;
-    Page.Widgets.save.show = false;
-    Page.Widgets.cancel.show = false;
-    Page.Widgets.edit.show = true;
+    Page.Widgets.save.display = "none";
+    Page.Widgets.cancel.display = "none";
+    Page.Widgets.edit.display = "";
+    d = Page.Variables.Appinfo.dataSet[0]
+    d["name"] = Page.Widgets.text2.datavalue;
+    console.log(d)
+    Page.Variables.App_Info_Update.updateRecord({
+        row: d
+    })
 };
 Page.cancelClick = function($event, widget) {
     Page.Widgets.text2.datavalue = temp;
     temp = null;
     Page.Widgets.text2.readonly = true;
-    Page.Widgets.save.show = false;
-    Page.Widgets.cancel.show = false;
-    Page.Widgets.edit.show = true;
+    Page.Widgets.save.display = "none";
+    Page.Widgets.cancel.display = "none";
+    Page.Widgets.edit.display = "";
 
 };
 Page.edit1Click = function($event, widget) {
     Page.Widgets.textarea2.readonly = false;
-    Page.Widgets.edit1.show = false;
-    Page.Widgets.save1.show = true;
-    Page.Widgets.cancel1.show = true;
+    Page.Widgets.edit1.display = "none";
+    Page.Widgets.save1.display = "";
+    Page.Widgets.cancel1.display = "";
     temp = Page.Widgets.textarea2.datavalue;
 };
 
 Page.save1Click = function($event, widget) {
     Page.Widgets.textarea2.readonly = true;
-    Page.Widgets.save1.show = false;
-    Page.Widgets.cancel1.show = false;
-    Page.Widgets.edit1.show = true;
+    Page.Widgets.save1.display = "none";
+    Page.Widgets.cancel1.display = "none";
+    Page.Widgets.edit1.display = "";
+    d = Page.Variables.Appinfo.dataSet[0]
+    d["_desc"] = Page.Widgets.textarea2.datavalue;
+    console.log(d)
+    Page.Variables.App_Info_Update.updateRecord({
+        row: d
+    })
 };
 
 Page.cancel1Click = function($event, widget) {
     Page.Widgets.textarea2.datavalue = temp;
     temp = null;
     Page.Widgets.textarea2.readonly = true;
-    Page.Widgets.save1.show = false;
-    Page.Widgets.cancel1.show = false;
-    Page.Widgets.edit1.show = true;
+    Page.Widgets.save1.display = "none";
+    Page.Widgets.cancel1.display = "none";
+    Page.Widgets.edit1.display = "";
 
 };
 Page.submitClick = function($event, widget) {
-    Page.Widgets.stnewJsonList1_1.show;
+
     Page.Variables.stForReview.dataSet.selfreview.createdby = "CurrentUser";
     Page.Variables.stForReview.dataSet.selfreview.rate = Page.Widgets.userrating.datavalue;
     Page.Variables.stForReview.dataSet.selfreview.comment = Page.Widgets.textarea1.datavalue;
@@ -105,43 +103,70 @@ Page.submitClick = function($event, widget) {
     var day = dateObj.getUTCDate();
     var year = dateObj.getUTCFullYear();
     var newdate = day + "/" + month + "/" + year;
-    Page.Variables.stForReview.dataSet.selfreview.createddate = newdate;
-    Page.Widgets.submit.show = false;
-    Page.Widgets.textarea1.show = false;
-    Page.Widgets.label3.show = false;
-    Page.Widgets.userrating.show = false;
+    Page.Variables.stForReview.dataSet.selfreview.createddate = newdate
+
+    Page.Widgets.submit.display = "none";
+    Page.Widgets.textarea1.display = "none";
+    Page.Widgets.label3.display = "none";
+    Page.Widgets.userrating.display = "none";
+    Page.Widgets.stnewJsonList1_1.display = "";
+
+    Page.Variables.AppRating_Update.createRecord({
+        row: {
+            "appInfoId": Page.Variables.Appinfo.dataSet[0]["id"],
+            "comments": Page.Widgets.textarea1.datavalue,
+            "creationDate": new Date(),
+            "lastUpdateDate": new Date(),
+            "rate": Page.Widgets.userrating.datavalue,
+            "updatedBy": CurrentUser
+        }
+    })
+
 
 };
 
 var comments;
 Page.okprefabClick = function($event, widget, item, currentItemWidgets) {
-    Page.Widgets.okprefab.show = false;
-    Page.Widgets.closeprefab.show = false;
-    Page.Widgets.textarea2.readonly = true;
-    Page.Widgets.editprefab.show = true;
-    Page.Widgets.deleteprefab.show = true;
-    comments = Page.Widgets.textarea2.datavalue;
+    Page.Widgets.okprefab.display = "none";
+    Page.Widgets.closeprefab.display = "none";
+    Page.Widgets.textarea12.readonly = true;
+    Page.Widgets.editprefab.display = "";
+    Page.Widgets.deleteprefab.display = "";
+    comments = Page.Widgets.textarea12.datavalue;
     Page.Variables.stForReview.dataSet.selfreview.rate = Page.Widgets.rating.datavalue;
     Page.Variables.stForReview.dataSet.selfreview.comment = comments;
+    console.log(Page.Variables.AppRatings.dataSet)
+    data = Page.Variables.AppRatings.dataSet
+    for (var i = 0; i < data.length; i++) {
+        if (data[i]["appInfoId"] == Page.Variables.Appinfo.dataSet[0]["id"])
+            break
+    }
+    data[i]["comments"] = Page.Widgets.textarea12.datavalue;
+    data[i]["rate"] = Page.Widgets.rating.datavalue;
+    Page.Variables.AppRating_Update.updateRecord({
+        row: data[i]
+    })
+
 };
 
 Page.closeprefabClick = function($event, widget, item, currentItemWidgets) {
-    Page.Widgets.textarea2.datavalue = comments;
+    Page.Widgets.textarea12.datavalue = comments;
     comments = null;
-    Page.Widgets.textarea2.readonly = true;
-    Page.Widgets.okprefab.show = false;
-    Page.Widgets.closeprefab.show = false;
-    Page.Widgets.editprefab.show = true;
-    Page.Widgets.deleteprefab.show = true;
+    Page.Widgets.textarea12.readonly = true;
+    Page.Widgets.okprefab.display = "none";
+    Page.Widgets.closeprefab.display = "none";
+    Page.Widgets.editprefab.display = "";
+    Page.Widgets.deleteprefab.display = "";
 };
 
 Page.editprefabClick = function($event, widget, item, currentItemWidgets) {
-    Page.Widgets.okprefab.show = true;
-    Page.Widgets.closeprefab.show = true;
-    Page.Widgets.textarea2.readonly = false;
-    Page.Widgets.editprefab.show = false;
-    Page.Widgets.deleteprefab.show = false;
-    comments = Page.Widgets.textarea2.datavalue;
+
+    Page.Widgets.editprefab.display = "none";
+    Page.Widgets.deleteprefab.display = "none";
+    Page.Widgets.okprefab.display = "";
+    Page.Widgets.closeprefab.display = "";
+    Page.Widgets.textarea12.readonly = false;
+    comments = Page.Widgets.textarea12.datavalue;
     Page.Variables.stForReview.dataSet.selfreview.rate = Page.Widgets.rating.datavalue;
     Page.Variables.stForReview.dataSet.selfreview.comment = comments;
 };
@@ -150,12 +175,21 @@ Page.editprefabClick = function($event, widget, item, currentItemWidgets) {
 Page.deleteprefabClick = function($event, widget, item, currentItemWidgets) {
     Page.Widgets.stnewJsonList1_1.show = false;
     Page.Variables.stForReview.dataSet.selfreview = {};
-    Page.Widgets.submit.show = true;
-    Page.Widgets.textarea1.show = true;
-    Page.Widgets.label3.show = true;
-    Page.Widgets.userrating.show = true;
-    Page.Widgets.textarea1.datavalue = " ";
+    Page.Widgets.submit.display = "";
+    Page.Widgets.textarea1.display = "";
+    Page.Widgets.label3.display = "";
+    Page.Widgets.userrating.display = "";
+    Page.Widgets.textarea1.datavalue = "";
     Page.Widgets.userrating.datavalue = 0;
+    for (var i = 0; i < data.length; i++) {
+        if (data[i]["appInfoId"] == Page.Variables.Appinfo.dataSet[0]["id"])
+            break
+    }
+    Page.Variables.AppRating_Update.deleteRecord({
+        row: {
+            "id": data[i]["id"]
+        }
+    })
 };
 
 Page.PrefabSourceonSuccess = function(variable, data) {
@@ -175,6 +209,13 @@ Page.TotalDownloadsonSuccess = function(variable, data) {
 Page.AppinfoonSuccess = function(variable, data) {
     console.log("Info")
     console.log(data)
+    if (CurrentUser == data[0]["createdBy"] || CurrentUser == "admin")
+        creator = true
+    if (creator) {
+        Page.Widgets.edit.display = "";
+        Page.Widgets.edit1.display = "";
+        Page.Widgets.button15.display = "";
+    }
     Page.Variables.PrefabSource.setInput({
         "id": data[0]["id"]
     })
@@ -182,11 +223,18 @@ Page.AppinfoonSuccess = function(variable, data) {
     Page.Variables.AvgRating.setInput({
         "APPID": data[0]["id"]
     })
+    console.log("Description")
+    console.log(data[0]["_desc"])
+    console.log(Page.Variables.PrefabData.dataSet)
     Page.Variables.AvgRating.invoke()
     Page.Variables.PrefabData.dataSet["Name"] = data[0]["name"]
     Page.Variables.PrefabData.dataSet["icon"] = data[0]["image"]
-    Page.Variables.PrefabData.dataSet["categoryID"] = data[0]["mdCategory"]["label"]
+    if (data[0]["mdCategory"] != null)
+        Page.Variables.PrefabData.dataSet["categoryID"] = data[0]["mdCategory"]["label"]
+    else
+        Page.Variables.PrefabData.dataSet["categoryID"] = null
     Page.Variables.PrefabData.dataSet["Description"] = data[0]["_desc"]
+
 };
 
 Page.AvgRatingonSuccess = function(variable, data) {
@@ -211,13 +259,62 @@ Page.AppRatingsonSuccess = function(variable, data) {
     console.log("rating")
     console.log(data)
     d = []
+    e = {}
+    flag = false;
     for (var i = 0; i < data.length; i++) {
-        d.push({
-            "rate": data[i]["rate"],
-            "comment": data[i]["comments"],
-            "createdby": data[i]["createdBy"],
-            "createddate": data[i]["creationDate"]
-        })
+        if (data[i]["appInfoId"] != Page.Variables.Appinfo.dataSet[0]["id"])
+            d.push({
+                "rate": data[i]["rate"],
+                "comment": data[i]["comments"],
+                "createdby": data[i]["createdBy"],
+                "createddate": data[i]["creationDate"]
+            })
+        else {
+            e = {
+                "rate": data[i]["rate"],
+                "comment": data[i]["comments"],
+                "createdby": data[i]["createdBy"],
+                "createddate": data[i]["creationDate"]
+            }
+            flag = true;
+        }
+    }
+    if (!flag) {
+        Page.Widgets.submit.display = "";
+        Page.Widgets.textarea1.display = "";
+        Page.Widgets.label3.display = "";
+        Page.Widgets.userrating.display = "";
     }
     Page.Variables.stForReview.dataSet["reviews"] = d
+    Page.Variables.stForReview.dataSet["selfreview"] = e
+};
+
+Page.App_Info_UpdateonSuccess = function(variable, data) {
+
+};
+Page.button15Click = function($event, widget) {
+    data = Page.Variables.AppScreenshots.dataSet
+    var i;
+    for (i = 0; i < data.length; i++) {
+        if (data[i]["screenshots"] == Page.Widgets.picture4.picturesource) {
+            Page.Variables.AppScreenshots.dataSet.slice(i, 1)
+            Page.Widgets.picture4.picturesource = null
+            break;
+        }
+    }
+    Page.Variables.App_Screenshots.deleteRecord({
+        row: {
+            "id": data[i]["id"]
+        }
+    })
+    console.log(data[i]["id"])
+    console.log(Page.Widgets.picture4.picturesource)
+};
+
+Page.App_ScreenshotsonSuccess = function(variable, data) {
+
+};
+
+Page.AppRating_UpdateonSuccess = function(variable, data) {
+
 };

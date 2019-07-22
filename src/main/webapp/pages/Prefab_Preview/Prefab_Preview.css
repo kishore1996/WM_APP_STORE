@@ -1,3 +1,7 @@
 .wm-app .list-group-item {
     border: 0px;
 }
+.wm-app .list-group-item.active, .wm-app .list-group-item.active:hover, .wm-app .list-group-item.active:focus {
+    background-color: #ffffff;
+     color: #000000;
+}  
