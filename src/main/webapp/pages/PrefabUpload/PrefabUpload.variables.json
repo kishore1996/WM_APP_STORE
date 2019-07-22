@@ -149,7 +149,7 @@
     "type" : "AppInfo",
     "isList" : false,
     "saveInPhonegap" : false,
-    "maxResults" : 20,
+    "maxResults" : 200,
     "designMaxResults" : 10,
     "inFlightBehavior" : "executeLast",
     "startUpdate" : false,
@@ -308,18 +308,6 @@
         "isRelated" : false,
         "scale" : 0
       }, {
-        "fieldName" : "image",
-        "type" : "blob",
-        "fullyQualifiedType" : "blob",
-        "columnName" : "IMAGE",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : -1,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "scale" : 0
-      }, {
         "fieldName" : "lastUpdateDate",
         "type" : "timestamp",
         "fullyQualifiedType" : "timestamp",
@@ -358,6 +346,19 @@
         "systemInserted" : true,
         "systemUpdated" : true,
         "scale" : 0
+      }, {
+        "fieldName" : "image",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "IMAGE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
       } ],
       "entityName" : "AppInfo",
       "fullyQualifiedName" : "com.wm_app_store.wm_app_store.AppInfo",
@@ -394,7 +395,7 @@
     "type" : "AppScreenshots",
     "isList" : false,
     "saveInPhonegap" : false,
-    "maxResults" : 20,
+    "maxResults" : 200,
     "designMaxResults" : 10,
     "onSuccess" : "insertInto_appscreenshotsonSuccess(variable, data, options)",
     "inFlightBehavior" : "executeLast",
@@ -491,18 +492,6 @@
           "isRelated" : false,
           "scale" : 0
         }, {
-          "fieldName" : "image",
-          "type" : "blob",
-          "fullyQualifiedType" : "blob",
-          "columnName" : "IMAGE",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : -1,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "scale" : 0
-        }, {
           "fieldName" : "lastUpdateDate",
           "type" : "timestamp",
           "fullyQualifiedType" : "timestamp",
@@ -541,6 +530,19 @@
           "systemInserted" : true,
           "systemUpdated" : true,
           "scale" : 0
+        }, {
+          "fieldName" : "image",
+          "type" : "string",
+          "fullyQualifiedType" : "string",
+          "columnName" : "IMAGE",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : 255,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "defaultValue" : "",
+          "scale" : 0
         } ]
       }, {
         "fieldName" : "id",
@@ -561,7 +563,7 @@
         "columnName" : "SCREENSHOTS",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 255,
+        "length" : 1000,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
@@ -611,7 +613,7 @@
     "type" : "AppSource",
     "isList" : false,
     "saveInPhonegap" : false,
-    "maxResults" : 20,
+    "maxResults" : 200,
     "designMaxResults" : 10,
     "inFlightBehavior" : "executeLast",
     "startUpdate" : false,
@@ -708,18 +710,6 @@
           "isRelated" : false,
           "scale" : 0
         }, {
-          "fieldName" : "image",
-          "type" : "blob",
-          "fullyQualifiedType" : "blob",
-          "columnName" : "IMAGE",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : -1,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "scale" : 0
-        }, {
           "fieldName" : "lastUpdateDate",
           "type" : "timestamp",
           "fullyQualifiedType" : "timestamp",
@@ -758,6 +748,19 @@
           "systemInserted" : true,
           "systemUpdated" : true,
           "scale" : 0
+        }, {
+          "fieldName" : "image",
+          "type" : "string",
+          "fullyQualifiedType" : "string",
+          "columnName" : "IMAGE",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : 255,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "defaultValue" : "",
+          "scale" : 0
         } ]
       }, {
         "fieldName" : "id",
@@ -773,16 +776,17 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "_desc",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "DESC",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -808,19 +812,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "scale" : 0
-      }, {
-        "fieldName" : "fileName",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 255,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -862,9 +853,21 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "VERSION_ID",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "VERSION_ID",
+        "columnName" : "FILE_NAME",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -874,17 +877,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "AppSource",

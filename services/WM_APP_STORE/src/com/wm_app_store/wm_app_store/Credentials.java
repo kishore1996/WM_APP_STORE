@@ -23,9 +23,9 @@ import javax.persistence.Table;
 public class Credentials implements Serializable {
 
     private Integer id;
-    private String username;
     private String password;
     private String userRole;
+    private String username;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,15 +36,6 @@ public class Credentials implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @Column(name = "`USERNAME`", nullable = true, length = 255)
-    public String getUsername() {
-        return this.username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     @Column(name = "`PASSWORD`", nullable = true, length = 255)
@@ -63,6 +54,15 @@ public class Credentials implements Serializable {
 
     public void setUserRole(String userRole) {
         this.userRole = userRole;
+    }
+
+    @Column(name = "`USERNAME`", nullable = true, length = 255)
+    public String getUsername() {
+        return this.username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
 

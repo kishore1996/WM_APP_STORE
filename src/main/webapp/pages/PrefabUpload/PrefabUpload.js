@@ -54,7 +54,7 @@ Page.FileServiceUploadFile1onSuccess = function(variable, data) {
 };
 
 Page.saveClick = function($event, widget) {
-    if (Page.Widgets.text3.datavalue == null) {
+    if (Page.Widgets.text3.datavalue == null || Page.Widgets.prefab_upload.selectedFiles == null) {
         Page.Actions.nuotnullnotify.invoke();
     } else {
         Page.Variables.insertINto_appsource.invoke();

@@ -31,16 +31,16 @@ import org.hibernate.annotations.FetchMode;
 public class AppSource implements Serializable {
 
     private Integer id;
-    private String _desc;
+    private String filePath;
     private Integer appInfoId;
     private String createdBy;
     private Timestamp creationDate;
-    private String fileName;
     private Timestamp lastUpdateDate;
     private Integer price;
     private String updatedBy;
-    private String versionId;
-    private String filePath;
+    private Integer versionId;
+    private String fileName;
+    private String _desc;
     private AppInfo appInfo;
 
     @Id
@@ -54,13 +54,13 @@ public class AppSource implements Serializable {
         this.id = id;
     }
 
-    @Column(name = "`DESC`", nullable = true, length = 255)
-    public String get_desc() {
-        return this._desc;
+    @Column(name = "`FILE_PATH`", nullable = true, length = 255)
+    public String getFilePath() {
+        return this.filePath;
     }
 
-    public void set_desc(String _desc) {
-        this._desc = _desc;
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 
     @Column(name = "`APP_INFO_ID`", nullable = true, scale = 0, precision = 10)
@@ -90,15 +90,6 @@ public class AppSource implements Serializable {
         this.creationDate = creationDate;
     }
 
-    @Column(name = "`FILE_NAME`", nullable = true, length = 255)
-    public String getFileName() {
-        return this.fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
     @Column(name = "`LAST_UPDATE_DATE`", nullable = false)
     public Timestamp getLastUpdateDate() {
         return this.lastUpdateDate;
@@ -126,22 +117,31 @@ public class AppSource implements Serializable {
         this.updatedBy = updatedBy;
     }
 
-    @Column(name = "`VERSION_ID`", nullable = true, length = 255)
-    public String getVersionId() {
+    @Column(name = "`VERSION_ID`", nullable = true, scale = 0, precision = 10)
+    public Integer getVersionId() {
         return this.versionId;
     }
 
-    public void setVersionId(String versionId) {
+    public void setVersionId(Integer versionId) {
         this.versionId = versionId;
     }
 
-    @Column(name = "`FILE_PATH`", nullable = true, length = 255)
-    public String getFilePath() {
-        return this.filePath;
+    @Column(name = "`FILE_NAME`", nullable = true, length = 255)
+    public String getFileName() {
+        return this.fileName;
     }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    @Column(name = "`DESC`", nullable = true, length = 255)
+    public String get_desc() {
+        return this._desc;
+    }
+
+    public void set_desc(String _desc) {
+        this._desc = _desc;
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
