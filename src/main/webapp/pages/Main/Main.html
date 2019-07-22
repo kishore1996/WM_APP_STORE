@@ -3,7 +3,7 @@
     <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
     <wm-content name="content">
         <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
-        <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px">
+        <wm-page-content columnwidth="10" name="mainContent" padding="unset 15px">
             <wm-layoutgrid name="layoutgrid3">
                 <wm-gridrow name="gridrow62">
                     <wm-gridcolumn columnwidth="10" name="gridcolumn147">
@@ -52,49 +52,6 @@
             </wm-layoutgrid><br><br><br><br>
             <wm-container name="container2" content="prefab" show="false"></wm-container>
         </wm-page-content>
-        <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>
     <wm-footer name="footer" content="footer"></wm-footer>
-    <wm-dialog dialogtype="design-dialog" modal="true" title="Upload Prefab" iconclass="wi wi-file-text" name="dialog1" width="800" height="300">
-        <wm-dialogactions name="dialogactions1">
-            <wm-button class="btn-success" caption="Continue" on-click="continuebuttonClick($event, widget);Actions.goToPage_PrefabUpload.invoke()" name="continuebutton"></wm-button>
-            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button2"></wm-button>
-        </wm-dialogactions>
-        <wm-layoutgrid name="layoutgrid3_1" columns="1">
-            <wm-gridrow name="gridrow6">
-                <wm-gridcolumn columnwidth="12" name="gridcolumn11">
-                    <wm-composite name="composite1">
-                        <wm-label class="col-md-3 control-label" name="prefabname" caption="Prefab Name"></wm-label>
-                        <wm-container class="col-md-9" name="container3_1">
-                            <wm-text name="PrefabName"></wm-text>
-                        </wm-container>
-                    </wm-composite>
-                </wm-gridcolumn>
-            </wm-gridrow>
-            <wm-gridrow name="gridrow7">
-                <wm-gridcolumn columnwidth="12" name="gridcolumn12">
-                    <wm-composite name="composite2">
-                        <wm-label class="col-md-3 control-label" name="description" caption="Description"></wm-label>
-                        <wm-container class="col-md-9" name="container4">
-                            <wm-textarea name="Description"></wm-textarea>
-                        </wm-container>
-                    </wm-composite>
-                </wm-gridcolumn>
-            </wm-gridrow>
-        </wm-layoutgrid><br>
-        <wm-layoutgrid name="layoutgrid4">
-            <wm-gridrow name="gridrow10">
-                <wm-gridcolumn columnwidth="3" name="gridcolumn15">
-                    <wm-label padding="unset 0.5em" caption="Choose Icon:" fontsize="14" fontweight="bold" name="label8" margin="unset unset unset -8px"></wm-label>
-                </wm-gridcolumn>
-                <wm-gridcolumn columnwidth="9" name="gridcolumn16">
-                    <wm-fileupload name="icon_upload" on-select="Variables.FileServiceUploadFile4.invoke()" maxfilesize="10" contenttype=".jpeg .jpg .png image/*"></wm-fileupload>
-                </wm-gridcolumn>
-            </wm-gridrow>
-            <wm-gridrow name="gridrow11">
-                <wm-gridcolumn columnwidth="3" name="gridcolumn17"></wm-gridcolumn>
-                <wm-gridcolumn columnwidth="9" name="gridcolumn18"></wm-gridcolumn>
-            </wm-gridrow>
-        </wm-layoutgrid>
-    </wm-dialog>
 </wm-page>

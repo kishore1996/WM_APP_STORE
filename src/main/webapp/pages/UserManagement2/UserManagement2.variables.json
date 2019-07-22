@@ -111,19 +111,6 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "username",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "USERNAME",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 255,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
-        "scale" : 0
-      }, {
         "fieldName" : "password",
         "type" : "string",
         "fullyQualifiedType" : "string",
@@ -141,6 +128,19 @@
         "type" : "string",
         "fullyQualifiedType" : "string",
         "columnName" : "USER_ROLE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "username",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "USERNAME",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -211,19 +211,6 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "username",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "USERNAME",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 255,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
-        "scale" : 0
-      }, {
         "fieldName" : "password",
         "type" : "string",
         "fullyQualifiedType" : "string",
@@ -241,6 +228,19 @@
         "type" : "string",
         "fullyQualifiedType" : "string",
         "columnName" : "USER_ROLE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "username",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "USERNAME",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -311,19 +311,6 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "username",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "USERNAME",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 255,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
-        "scale" : 0
-      }, {
         "fieldName" : "password",
         "type" : "string",
         "fullyQualifiedType" : "string",
@@ -341,6 +328,19 @@
         "type" : "string",
         "fullyQualifiedType" : "string",
         "columnName" : "USER_ROLE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "username",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "USERNAME",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
