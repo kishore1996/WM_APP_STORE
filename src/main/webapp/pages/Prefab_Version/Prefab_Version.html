@@ -10,9 +10,10 @@
                             <wm-gridrow name="gridrow10" height="30">
                                 <wm-gridcolumn columnwidth="4" name="gridcolumn14">
                                     <wm-label padding="unset 0.5em" name="label7" caption="File Name"></wm-label>
+                                    <wm-label padding="unset 0.5em" name="prefab_id" caption="bind:Variables.database_appinfo.dataSet[$i].id"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="8" name="gridcolumn15_2">
-                                    <wm-text name="text1" placeholder="Enter File Name"></wm-text>
+                                    <wm-text name="filename" placeholder="Enter File Name" datavalue="bind:Variables.database_appsource.dataSet[$i].fileName"></wm-text>
                                 </wm-gridcolumn>
                             </wm-gridrow><br>
                             <wm-gridrow name="gridrow11_1" height="100">
@@ -20,7 +21,7 @@
                                     <wm-label padding="unset 0.5em" name="label8_1" caption="Description"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="8" name="gridcolumn17_1">
-                                    <wm-textarea name="textarea1" datavalue="bind:Variables.read_appinfo.dataSet[$i]._desc" placeholder="Enter description"></wm-textarea>
+                                    <wm-textarea name="description" datavalue="bind:Variables.database_appinfo.dataSet[$i]._desc" placeholder="Enter description"></wm-textarea>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                         </wm-layoutgrid>
@@ -31,7 +32,7 @@
                                 <wm-label padding="unset 0.5em" name="label9_1" caption="Upload prefab"></wm-label>
                             </wm-gridcolumn>
                             <wm-gridcolumn columnwidth="8" name="gridcolumn19">
-                                <wm-fileupload name="fileupload2_1" on-select="Variables.FileServiceUploadFile.invoke()" contenttype=".zip"></wm-fileupload>
+                                <wm-fileupload name="prefabupload" on-select="Variables.FileServiceUploadFile.invoke()"></wm-fileupload>
                             </wm-gridcolumn>
                         </wm-gridrow>
                         <wm-gridrow name="gridrow13" height="300">
@@ -39,7 +40,7 @@
                                 <wm-label padding="unset 0.5em" name="label10" caption="Upload screenshots"></wm-label>
                             </wm-gridcolumn>
                             <wm-gridcolumn columnwidth="8" name="gridcolumn21">
-                                <wm-fileupload name="fileupload3" on-select="Variables.FileServiceUploadFile1.invoke()" multiple="true" contenttype=".png .jpg" fileuploadmessage="You can browse screenshots"></wm-fileupload>
+                                <wm-fileupload name="screenshotsupload" on-select="Variables.FileServiceUploadFile1.invoke()" multiple="true" width="200"></wm-fileupload>
                             </wm-gridcolumn>
                         </wm-gridrow>
                     </wm-layoutgrid>
@@ -64,6 +65,6 @@
         </wm-page-content>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>
-    <wm-confirmdialog on-ok="notification.onOk()" on-cancel="notification.onCancel()" name="notificationconfirmdialog" notificationdialog="confirm" message="bind:notification.text" title="bind:notification.title" oktext="bind:notification.okButtonText" canceltext="bind:notification.cancelButtonText"
-        on-close="notification.onClose()"></wm-confirmdialog>
+    <wm-confirmdialog on-ok="notification.onOk()" on-cancel="notification.onCancel()" name="notificationconfirmdialog" notificationdialog="confirm" message="bind:notification.text" title="bind:notification.title" oktext="bind:notification.okButtonText"
+        canceltext="bind:notification.cancelButtonText" on-close="notification.onClose()"></wm-confirmdialog>
 </wm-page>

@@ -19,6 +19,7 @@
     "dataSet" : [ ],
     "isList" : true,
     "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadFileonSuccess(variable, data, options)",
     "startUpdate" : false,
     "autoUpdate" : false,
     "inFlightBehavior" : "executeLast",
@@ -278,16 +279,17 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "description",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "DESCRIPTION",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 2000,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -352,19 +354,6 @@
         "isRelated" : false,
         "systemInserted" : true,
         "systemUpdated" : true,
-        "scale" : 0
-      }, {
-        "fieldName" : "_desc",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "DESC",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 2000,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "image",
@@ -474,16 +463,17 @@
           "defaultValue" : "",
           "scale" : 0
         }, {
-          "fieldName" : "description",
+          "fieldName" : "_desc",
           "type" : "string",
           "fullyQualifiedType" : "string",
-          "columnName" : "DESCRIPTION",
+          "columnName" : "DESC",
           "isPrimaryKey" : false,
           "notNull" : false,
           "length" : 2000,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
+          "defaultValue" : "",
           "scale" : 0
         }, {
           "fieldName" : "createdBy",
@@ -550,19 +540,6 @@
           "systemUpdated" : true,
           "scale" : 0
         }, {
-          "fieldName" : "_desc",
-          "type" : "string",
-          "fullyQualifiedType" : "string",
-          "columnName" : "DESC",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : 2000,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "defaultValue" : "",
-          "scale" : 0
-        }, {
           "fieldName" : "image",
           "type" : "string",
           "fullyQualifiedType" : "string",
@@ -599,6 +576,7 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "AppScreenshots",
@@ -707,16 +685,17 @@
           "defaultValue" : "",
           "scale" : 0
         }, {
-          "fieldName" : "description",
+          "fieldName" : "_desc",
           "type" : "string",
           "fullyQualifiedType" : "string",
-          "columnName" : "DESCRIPTION",
+          "columnName" : "DESC",
           "isPrimaryKey" : false,
           "notNull" : false,
           "length" : 2000,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
+          "defaultValue" : "",
           "scale" : 0
         }, {
           "fieldName" : "createdBy",
@@ -783,19 +762,6 @@
           "systemUpdated" : true,
           "scale" : 0
         }, {
-          "fieldName" : "_desc",
-          "type" : "string",
-          "fullyQualifiedType" : "string",
-          "columnName" : "DESC",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : 2000,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "defaultValue" : "",
-          "scale" : 0
-        }, {
           "fieldName" : "image",
           "type" : "string",
           "fullyQualifiedType" : "string",
@@ -823,17 +789,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "description",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "DESCRIPTION",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -846,7 +811,8 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
+        "systemInserted" : true,
+        "systemUpdated" : true,
         "scale" : 0
       }, {
         "fieldName" : "creationDate",
@@ -909,20 +875,8 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
-        "scale" : 0
-      }, {
-        "fieldName" : "filePath",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 255,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
+        "systemInserted" : true,
+        "systemUpdated" : true,
         "scale" : 0
       }, {
         "fieldName" : "versionId",
@@ -935,16 +889,17 @@
         "precision" : 10,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "status",
-        "type" : "boolean",
-        "fullyQualifiedType" : "boolean",
-        "columnName" : "STATUS",
+        "fieldName" : "filePath",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 1,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",

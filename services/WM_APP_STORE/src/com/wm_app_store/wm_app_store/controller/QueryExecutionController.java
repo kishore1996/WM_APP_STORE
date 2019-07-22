@@ -269,14 +269,33 @@ public class QueryExecutionController {
         return new StringWrapper(exportedUrl);
     }
 
-    @RequestMapping(value = "/queries/version", method = RequestMethod.GET)
+    @RequestMapping(value = "/queries/SELECTFROM_MD_CATEGORY", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "gives version")
-    public VersionResponse executeVersion(HttpServletRequest _request) {
-        LOGGER.debug("Executing named query: version");
-        VersionResponse _result = queryService.executeVersion();
-        LOGGER.debug("got the result for named query: version, result:{}", _result);
+    @ApiOperation(value = "SELECTFROM_MD_CATEGORY")
+    public Page<SelectfromMdCategoryResponse> executeSELECTFROM_MD_CATEGORY(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SELECTFROM_MD_CATEGORY");
+        Page<SelectfromMdCategoryResponse> _result = queryService.executeSELECTFROM_MD_CATEGORY(pageable);
+        LOGGER.debug("got the result for named query: SELECTFROM_MD_CATEGORY, result:{}", _result);
         return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query SELECTFROM_MD_CATEGORY")
+    @RequestMapping(value = "/queries/SELECTFROM_MD_CATEGORY/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportSELECTFROM_MD_CATEGORY(@RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: SELECTFROM_MD_CATEGORY");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "SELECTFROM_MD_CATEGORY";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportSELECTFROM_MD_CATEGORY( exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
     }
 
     @RequestMapping(value = "/queries/TotalDownloads", method = RequestMethod.GET)

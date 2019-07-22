@@ -48,7 +48,9 @@ public interface WM_APP_STOREQueryExecutorService {
 
     void exportSelectUserRoles(String userRole, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
-    VersionResponse executeVersion();
+    Page<SelectfromMdCategoryResponse> executeSELECTFROM_MD_CATEGORY(Pageable pageable);
+
+    void exportSELECTFROM_MD_CATEGORY(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
     Page<TotalDownloadsResponse> executeTotalDownloads(Integer id, Pageable pageable);
 

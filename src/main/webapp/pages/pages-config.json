@@ -16,6 +16,9 @@
   "params" : [ {
     "name" : "APP_INFO_ID",
     "type" : "integer"
+  }, {
+    "name" : "CATEGORY_ID",
+    "type" : "integer"
   } ]
 }, {
   "name" : "PrefabDetails",
@@ -67,7 +70,10 @@
 }, {
   "name" : "leftnav",
   "type" : "LEFTNAV",
-  "params" : [ ]
+  "params" : [ {
+    "name" : "Name_ID",
+    "type" : "integer"
+  } ]
 }, {
   "name" : "prefab",
   "type" : "PARTIAL",

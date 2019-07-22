@@ -441,6 +441,84 @@
       } ]
     }
   },
+  "SELECTFROM_MD_CATEGORY" : {
+    "name" : "SELECTFROM_MD_CATEGORY",
+    "description" : "SELECTFROM_MD_CATEGORY",
+    "version" : "V2",
+    "queryString" : "select * from MD_CATEGORY",
+    "countQueryString" : "select count(*) from (select * from MD_CATEGORY) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.wm_app_store.wm_app_store.models.query.SelectfromMdCategoryResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ID",
+        "fieldName" : "id",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "CREATED_BY",
+        "fieldName" : "createdBy",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "CREATION_DATE",
+        "fieldName" : "creationDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Timestamp",
+          "list" : false
+        }
+      }, {
+        "name" : "LABEL",
+        "fieldName" : "label",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "LAST_UPDATE_DATE",
+        "fieldName" : "lastUpdateDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.sql.Timestamp",
+          "list" : false
+        }
+      }, {
+        "name" : "UPDATED_BY",
+        "fieldName" : "updatedBy",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
   "TotalDownloads" : {
     "name" : "TotalDownloads",
     "description" : "Total Downloads",

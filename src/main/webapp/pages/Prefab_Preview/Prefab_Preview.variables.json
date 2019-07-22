@@ -581,16 +581,17 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "description",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "DESCRIPTION",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 2000,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -655,19 +656,6 @@
         "isRelated" : false,
         "systemInserted" : true,
         "systemUpdated" : true,
-        "scale" : 0
-      }, {
-        "fieldName" : "_desc",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "DESC",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 2000,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "image",
@@ -1055,16 +1043,17 @@
           "defaultValue" : "",
           "scale" : 0
         }, {
-          "fieldName" : "description",
+          "fieldName" : "_desc",
           "type" : "string",
           "fullyQualifiedType" : "string",
-          "columnName" : "DESCRIPTION",
+          "columnName" : "DESC",
           "isPrimaryKey" : false,
           "notNull" : false,
           "length" : 2000,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
+          "defaultValue" : "",
           "scale" : 0
         }, {
           "fieldName" : "createdBy",
@@ -1129,19 +1118,6 @@
           "isRelated" : false,
           "systemInserted" : true,
           "systemUpdated" : true,
-          "scale" : 0
-        }, {
-          "fieldName" : "_desc",
-          "type" : "string",
-          "fullyQualifiedType" : "string",
-          "columnName" : "DESC",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : 2000,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "defaultValue" : "",
           "scale" : 0
         }, {
           "fieldName" : "image",
@@ -1347,16 +1323,17 @@
           "defaultValue" : "",
           "scale" : 0
         }, {
-          "fieldName" : "description",
+          "fieldName" : "_desc",
           "type" : "string",
           "fullyQualifiedType" : "string",
-          "columnName" : "DESCRIPTION",
+          "columnName" : "DESC",
           "isPrimaryKey" : false,
           "notNull" : false,
           "length" : 2000,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
+          "defaultValue" : "",
           "scale" : 0
         }, {
           "fieldName" : "createdBy",
@@ -1423,19 +1400,6 @@
           "systemUpdated" : true,
           "scale" : 0
         }, {
-          "fieldName" : "_desc",
-          "type" : "string",
-          "fullyQualifiedType" : "string",
-          "columnName" : "DESC",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : 2000,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "defaultValue" : "",
-          "scale" : 0
-        }, {
           "fieldName" : "image",
           "type" : "string",
           "fullyQualifiedType" : "string",
@@ -1472,6 +1436,7 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "AppScreenshots",

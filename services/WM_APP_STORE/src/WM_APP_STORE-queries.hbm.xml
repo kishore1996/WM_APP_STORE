@@ -113,15 +113,15 @@
     <query-param name="user_role" type="java.lang.String"/>
     </sql-query>
 
-    <sql-query name="version">
+    <sql-query name="SELECTFROM_MD_CATEGORY">
         <![CDATA[
-        select count(*) from APP_SOURCE
+        select * from MD_CATEGORY
         ]]>
     </sql-query>
 
-    <sql-query name="version__count">
+    <sql-query name="SELECTFROM_MD_CATEGORY__count">
         <![CDATA[
-        select count(*) from (select count(*) from APP_SOURCE) wmTempTable
+        select count(*) from (select * from MD_CATEGORY) wmTempTable
         ]]>
     </sql-query>
 

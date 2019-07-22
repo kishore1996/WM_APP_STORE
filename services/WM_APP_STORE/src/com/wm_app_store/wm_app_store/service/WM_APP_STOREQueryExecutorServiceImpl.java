@@ -208,11 +208,22 @@ public class WM_APP_STOREQueryExecutorServiceImpl implements WM_APP_STOREQueryEx
 
     @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
     @Override
-    public VersionResponse executeVersion() {
+    public Page<SelectfromMdCategoryResponse> executeSELECTFROM_MD_CATEGORY(Pageable pageable) {
         Map<String, Object> params = new HashMap<>(0);
 
 
-        return queryExecutor.executeNamedQuery("version", params, VersionResponse.class);
+        return queryExecutor.executeNamedQuery("SELECTFROM_MD_CATEGORY", params, SelectfromMdCategoryResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportSELECTFROM_MD_CATEGORY(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        QueryProcedureInput<SelectfromMdCategoryResponse> queryInput = new QueryProcedureInput<>("SELECTFROM_MD_CATEGORY", params, SelectfromMdCategoryResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
     }
 
     @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)

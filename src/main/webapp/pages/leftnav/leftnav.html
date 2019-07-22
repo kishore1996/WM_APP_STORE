@@ -1,22 +1,22 @@
 <wm-partial name="leftnav" type="leftnav">
     <wm-nav name="leftnavigation" type="pills" layout="stacked">
         <wm-nav-item name="list_dashboard">
-            <wm-anchor caption="Apps" name="dashboardLink" iconclass="wi wi-bar-graph"></wm-anchor>
+            <wm-anchor caption="Apps" name="appslink" iconclass="wi wi-bar-graph" on-click="appslinkClick($event, widget)"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_order">
-            <wm-anchor caption="Maps" name="orderLink" iconclass="wi wi-file" on-click="orderLinkClick($event, widget)"></wm-anchor>
+            <wm-anchor caption="Maps" name="mapslink" iconclass="wi wi-file" on-click="mapslinkClick($event, widget)"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_inventory">
-            <wm-anchor caption="Media" name="inventoryLink" iconclass="wi wi-tag"></wm-anchor>
+            <wm-anchor caption="Media" name="medialink" iconclass="wi wi-tag" on-click="medialinkClick($event, widget)"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_support">
-            <wm-anchor caption="News" name="supportLink" iconclass="wi wi-envelope"></wm-anchor>
+            <wm-anchor caption="News" name="newslink" iconclass="wi wi-envelope" on-click="newslinkClick($event, widget)"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="nav_item5">
-            <wm-anchor name="anchor5" iconclass="wi wi-file" caption="Travel"></wm-anchor>
+            <wm-anchor name="travellink" iconclass="wi wi-file" caption="Travel" on-click="travellinkClick($event, widget)"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="nav_item6">
-            <wm-anchor name="anchor6" iconclass="wi wi-file" caption="Basic"></wm-anchor>
+            <wm-anchor name="basiclink" iconclass="wi wi-file" caption="Basic" on-click="basiclinkClick($event, widget)"></wm-anchor>
         </wm-nav-item>
     </wm-nav>
 </wm-partial>

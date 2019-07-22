@@ -22,3 +22,25 @@ Partial.orderLinkClick = function($event, widget) {
 
     console.log(App.Variables.staticFilterVariable.getData().name)
 };
+Partial.appslinkClick = function($event, widget) {
+
+};
+
+Partial.mapslinkClick = function($event, widget) {
+
+};
+
+Partial.medialinkClick = function($event, widget) {
+
+};
+Partial.newslinkClick = function ($event, widget) { 
+
+};
+
+Partial.travellinkClick = function ($event, widget) { 
+
+};
+
+Partial.basiclinkClick = function ($event, widget) { 
+
+};

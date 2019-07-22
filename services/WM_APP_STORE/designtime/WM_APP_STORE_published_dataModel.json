@@ -1572,8 +1572,8 @@
       "columnValue" : {
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "",
-        "type" : "user-defined"
+        "type" : "server-defined",
+        "name" : "USER_NAME"
       },
       "constraintList" : [ ],
       "fieldName" : "createdBy",
@@ -1717,8 +1717,8 @@
       "columnValue" : {
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : "",
-        "type" : "user-defined"
+        "type" : "server-defined",
+        "name" : "USER_NAME"
       },
       "constraintList" : [ ],
       "fieldName" : "updatedBy",
