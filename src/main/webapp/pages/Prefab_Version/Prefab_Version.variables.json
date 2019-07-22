@@ -147,10 +147,10 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "description",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "DESCRIPTION",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 2000,
@@ -180,18 +180,6 @@
         "isPrimaryKey" : false,
         "notNull" : true,
         "length" : 0,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "scale" : 0
-      }, {
-        "fieldName" : "image",
-        "type" : "blob",
-        "fullyQualifiedType" : "blob",
-        "columnName" : "IMAGE",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : -1,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
@@ -234,6 +222,19 @@
         "isRelated" : false,
         "systemInserted" : true,
         "systemUpdated" : true,
+        "scale" : 0
+      }, {
+        "fieldName" : "image",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "IMAGE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 1000,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "AppInfo",
@@ -325,10 +326,10 @@
           "defaultValue" : "",
           "scale" : 0
         }, {
-          "fieldName" : "description",
+          "fieldName" : "_desc",
           "type" : "string",
           "fullyQualifiedType" : "string",
-          "columnName" : "DESCRIPTION",
+          "columnName" : "DESC",
           "isPrimaryKey" : false,
           "notNull" : false,
           "length" : 2000,
@@ -358,18 +359,6 @@
           "isPrimaryKey" : false,
           "notNull" : true,
           "length" : 0,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "scale" : 0
-        }, {
-          "fieldName" : "image",
-          "type" : "blob",
-          "fullyQualifiedType" : "blob",
-          "columnName" : "IMAGE",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : -1,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
@@ -413,6 +402,19 @@
           "systemInserted" : true,
           "systemUpdated" : true,
           "scale" : 0
+        }, {
+          "fieldName" : "image",
+          "type" : "string",
+          "fullyQualifiedType" : "string",
+          "columnName" : "IMAGE",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : 1000,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "defaultValue" : "",
+          "scale" : 0
         } ]
       }, {
         "fieldName" : "id",
@@ -433,7 +435,7 @@
         "columnName" : "SCREENSHOTS",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 255,
+        "length" : 1000,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
@@ -591,10 +593,10 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "description",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "DESCRIPTION",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 2000,
@@ -624,18 +626,6 @@
         "isPrimaryKey" : false,
         "notNull" : true,
         "length" : 0,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "scale" : 0
-      }, {
-        "fieldName" : "image",
-        "type" : "blob",
-        "fullyQualifiedType" : "blob",
-        "columnName" : "IMAGE",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : -1,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
@@ -678,6 +668,19 @@
         "isRelated" : false,
         "systemInserted" : true,
         "systemUpdated" : true,
+        "scale" : 0
+      }, {
+        "fieldName" : "image",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "IMAGE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 1000,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "AppInfo",

@@ -12,7 +12,7 @@
                     <wm-gridcolumn columnwidth="2" name="gridcolumn148">
                         <wm-button class="btn-default" caption="Upload" type="button" margin="unset 0.5em" name="button1" backgroundcolor="#0f09e3" color="#ede8e8" on-click="Actions.goToPage_PrefabUpload.invoke()"></wm-button>
                     </wm-gridcolumn>
-                </wm-gridrow>
+                </wm-gridrow><br>
                 <wm-gridrow name="gridrow6_1">
                     <wm-gridcolumn columnwidth="12" name="gridcolumn9">
                         <wm-picture name="picture2" picturesource="resources/images/imagelists/carousel1.jpg" pictureplaceholder="resources/images/imagelists/carousel1.jpg" width="100%" height="auto"></wm-picture>
@@ -30,7 +30,7 @@
                                                     <wm-picture name="Picture" width="100%" picturesource="bind:Variables.Prefabs.dataSet.Icon"></wm-picture>
                                                 </wm-gridcolumn>
                                                 <wm-gridcolumn colwidth="6" columnwidth="8" padding="unset unset unset 1em" class="col-xs-6" name="gridcolumn12_1" horizontalalign="left">
-                                                    <wm-label name="ID" caption="bind:Variables.Prefabs.dataSet.CreatedOn" class="text-muted p" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
+                                                    <wm-label name="ID" caption="bind:Variables.Prefabs.dataSet.CreatedOn" class="text-muted p" margin="unset unset 0px unset" whitespace="nowrap" on-click="Actions.goToPage_Prefab_Preview.invoke()"></wm-label>
                                                     <wm-label name="Name" caption="bind:Variables.Prefabs.dataSet.PrefabName" class="h4" margin="0px unset" whitespace="nowrap"></wm-label>
                                                     <wm-label name="Department" caption="bind:Variables.Prefabs.dataSet.category" class="p text-muted" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
                                                     <wm-anchor name="PhoneNumber" caption="" class="h5" hyperlink="tel:" margin="0px unset" whitespace="nowrap"></wm-anchor>

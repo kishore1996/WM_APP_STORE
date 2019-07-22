@@ -2,12 +2,10 @@
     <wm-layoutgrid name="headerlayout">
         <wm-gridrow name="headerrow">
             <wm-gridcolumn name="headerleft" verticalalign="middle" columnwidth="7">
-                <wm-picture picturesource="resources/images/logos/logo.png" name="AppLogo" margin="unset unset unset 5px" backgroundcolor="#020202"></wm-picture>
+                <wm-picture picturesource="resources/images/logos/logo.png" name="AppLogo" margin="unset unset unset 5px" backgroundcolor="#6a7177" bordercolor="#333030"></wm-picture>
                 <wm-label caption="WM_APP_STORE" class="application-name" name="AppName" fontsize="20" on-click="Actions.goToPage_Main.invoke()"></wm-label>
             </wm-gridcolumn>
-            <wm-gridcolumn name="headerright" horizontalalign="right" verticalalign="middle" columnwidth="5" padding="1em 1em unset unset">
-                <wm-search name="siteSearch" dataset="Home, Services, Products, About US, Contact" searchon="typing"></wm-search>
-            </wm-gridcolumn>
+            <wm-gridcolumn name="headerright" horizontalalign="right" verticalalign="middle" columnwidth="5" padding="1em 1em unset unset"></wm-gridcolumn>
         </wm-gridrow>
     </wm-layoutgrid>
 </wm-partial>
