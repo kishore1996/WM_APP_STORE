@@ -135,6 +135,100 @@
     "redirectTo" : "Login",
     "useDefaultSuccessHandler" : true
   },
+  "PrefabData" : {
+    "_id" : "wm-PrefabData-wm.Variable-1563451818792",
+    "name" : "PrefabData",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "Name" : "PrefabName",
+      "icon" : "https://media.licdn.com/dms/image/C560BAQE9O_4idOVN0w/company-logo_200_200/0?e=2159024400&v=beta&t=NmS2mTzVU8MSm-UkeRwc4vFqyYaEoD2VMMpqSt5eEsg",
+      "categoryID" : "PrefabCategory",
+      "AvgRating" : 4,
+      "TotalDownloads" : "1000",
+      "Images" : [ {
+        "image" : "https://www.wavemaker.com/wp-content/uploads/WM_blue-retina.png"
+      }, {
+        "image" : "https://upload.wikimedia.org/wikipedia/en/4/4f/Wavemaker-logo.png"
+      }, {
+        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6KqN0_ZSKCJTF8DZrwDUjCEZptomNz4UYr_6GXMYij02JAw8g"
+      }, {
+        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwwJBE6ZNcwyvVj_vGrrI_20LlEFtX5EdKKBFwCi5TEwQT93NqPg"
+      } ],
+      "Description" : "Wavemaker is the second largest media agency network in the world, with domestic and international clients such as Vodafone, L'Oréal, IKEA, Paramount Pictures, Chanel, GE, Xerox, Colgate-Palmolive, Chevron, Beiersdorf, Tiffany and Mondelēz International."
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "Prefabs" : {
+    "_id" : "wm-Prefabs-wm.Variable-1563534457870",
+    "name" : "Prefabs",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    }, {
+      "PrefabName" : "PrefabName",
+      "category" : "PrefabCatergory",
+      "Icon" : "Icon",
+      "CreatedBy" : "createdBy",
+      "CreatedOn" : "createdOn"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
   "Revert_update" : {
     "_id" : "wm-Revert_update-wm.NotificationVariable-1563522076332",
     "name" : "Revert_update",

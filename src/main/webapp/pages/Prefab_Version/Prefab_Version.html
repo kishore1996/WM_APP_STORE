@@ -9,18 +9,18 @@
                         <wm-layoutgrid name="layoutgrid4">
                             <wm-gridrow name="gridrow10" height="30">
                                 <wm-gridcolumn columnwidth="4" name="gridcolumn14">
-                                    <wm-label padding="unset 0.5em" name="label7" caption="Version Id"></wm-label>
+                                    <wm-label padding="unset 0.5em" name="label7" caption="File Name"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="8" name="gridcolumn15_2">
-                                    <wm-label padding="unset 0.5em" name="label13" caption="bind:Variables.read_appinfo.dataSet[$i].id"></wm-label>
+                                    <wm-text name="text1" placeholder="Enter File Name"></wm-text>
                                 </wm-gridcolumn>
-                            </wm-gridrow>
+                            </wm-gridrow><br>
                             <wm-gridrow name="gridrow11_1" height="100">
                                 <wm-gridcolumn columnwidth="4" name="gridcolumn16_1">
                                     <wm-label padding="unset 0.5em" name="label8_1" caption="Description"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="8" name="gridcolumn17_1">
-                                    <wm-textarea name="textarea1" datavalue="bind:Variables.read_appinfo.dataSet[$i].description"></wm-textarea>
+                                    <wm-textarea name="textarea1" datavalue="bind:Variables.read_appinfo.dataSet[$i]._desc" placeholder="Enter description"></wm-textarea>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                         </wm-layoutgrid>
@@ -31,7 +31,7 @@
                                 <wm-label padding="unset 0.5em" name="label9_1" caption="Upload prefab"></wm-label>
                             </wm-gridcolumn>
                             <wm-gridcolumn columnwidth="8" name="gridcolumn19">
-                                <wm-fileupload name="fileupload1" on-select="Variables.FileServiceUploadFile.invoke()" contenttype=".zip"></wm-fileupload>
+                                <wm-fileupload name="fileupload2_1" on-select="Variables.FileServiceUploadFile.invoke()" contenttype=".zip"></wm-fileupload>
                             </wm-gridcolumn>
                         </wm-gridrow>
                         <wm-gridrow name="gridrow13" height="300">
@@ -39,7 +39,7 @@
                                 <wm-label padding="unset 0.5em" name="label10" caption="Upload screenshots"></wm-label>
                             </wm-gridcolumn>
                             <wm-gridcolumn columnwidth="8" name="gridcolumn21">
-                                <wm-fileupload name="fileupload2" on-select="Variables.FileServiceUploadFile1.invoke()" contenttype=".jpg .png" multiple="true"></wm-fileupload>
+                                <wm-fileupload name="fileupload3" on-select="Variables.FileServiceUploadFile1.invoke()" multiple="true" contenttype=".png .jpg" fileuploadmessage="You can browse screenshots"></wm-fileupload>
                             </wm-gridcolumn>
                         </wm-gridrow>
                     </wm-layoutgrid>
@@ -47,19 +47,23 @@
                 </wm-gridcolumn>
             </wm-gridrow>
             <wm-layoutgrid name="layoutgrid5">
+                <wm-gridrow name="gridrow9">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn16_2">
+                        <wm-label padding="unset 0.5em" name="label6" caption="Version"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn17"></wm-gridcolumn>
+                </wm-gridrow>
                 <wm-gridrow name="gridrow8">
                     <wm-gridcolumn columnwidth="9" name="gridcolumn14_1"></wm-gridcolumn>
                     <wm-gridcolumn columnwidth="3" name="gridcolumn15">
-                        <wm-button class="btn-default" caption="Save" type="button" margin="unset 0.5em" name="button1"></wm-button>
+                        <wm-button class="btn-default" caption="Save" type="button" margin="unset 0.5em" name="save_button" on-click="save_buttonClick($event, widget)"></wm-button>
                         <wm-button class="btn-default" caption="Cancel" type="button" margin="unset 0.5em" name="button2" on-click="Actions.goToPage_Prefab_Preview.invoke()"></wm-button>
                     </wm-gridcolumn>
-                </wm-gridrow>
-                <wm-gridrow name="gridrow9">
-                    <wm-gridcolumn columnwidth="6" name="gridcolumn16_2"></wm-gridcolumn>
-                    <wm-gridcolumn columnwidth="6" name="gridcolumn17"></wm-gridcolumn>
                 </wm-gridrow>
             </wm-layoutgrid>
         </wm-page-content>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-confirmdialog on-ok="notification.onOk()" on-cancel="notification.onCancel()" name="notificationconfirmdialog" notificationdialog="confirm" message="bind:notification.text" title="bind:notification.title" oktext="bind:notification.okButtonText" canceltext="bind:notification.cancelButtonText"
+        on-close="notification.onClose()"></wm-confirmdialog>
 </wm-page>

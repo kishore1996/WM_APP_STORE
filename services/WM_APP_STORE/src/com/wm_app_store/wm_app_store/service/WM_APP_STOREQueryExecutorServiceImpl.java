@@ -208,6 +208,15 @@ public class WM_APP_STOREQueryExecutorServiceImpl implements WM_APP_STOREQueryEx
 
     @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
     @Override
+    public VersionResponse executeVersion() {
+        Map<String, Object> params = new HashMap<>(0);
+
+
+        return queryExecutor.executeNamedQuery("version", params, VersionResponse.class);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
     public Page<TotalDownloadsResponse> executeTotalDownloads(Integer id, Pageable pageable) {
         Map<String, Object> params = new HashMap<>(1);
 

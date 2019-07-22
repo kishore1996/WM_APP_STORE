@@ -699,6 +699,39 @@
       } ]
     }
   },
+  "version" : {
+    "name" : "version",
+    "description" : "gives version",
+    "version" : "V2",
+    "queryString" : "select count(*) from APP_SOURCE",
+    "countQueryString" : "select count(*) from (select count(*) from APP_SOURCE) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.wm_app_store.wm_app_store.models.query.VersionResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "count(*)",
+        "fieldName" : "count___",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      } ]
+    }
+  },
   "viewProfile" : {
     "name" : "viewProfile",
     "description" : "view logged user profile",

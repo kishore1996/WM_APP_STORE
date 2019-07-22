@@ -113,6 +113,18 @@
     <query-param name="user_role" type="java.lang.String"/>
     </sql-query>
 
+    <sql-query name="version">
+        <![CDATA[
+        select count(*) from APP_SOURCE
+        ]]>
+    </sql-query>
+
+    <sql-query name="version__count">
+        <![CDATA[
+        select count(*) from (select count(*) from APP_SOURCE) wmTempTable
+        ]]>
+    </sql-query>
+
     <sql-query name="TotalDownloads">
         <![CDATA[
         select count(*) from APP_DOWNLOAD_HISTORY where APP_SOURCE_ID =:id

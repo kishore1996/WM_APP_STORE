@@ -269,6 +269,16 @@ public class QueryExecutionController {
         return new StringWrapper(exportedUrl);
     }
 
+    @RequestMapping(value = "/queries/version", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "gives version")
+    public VersionResponse executeVersion(HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: version");
+        VersionResponse _result = queryService.executeVersion();
+        LOGGER.debug("got the result for named query: version, result:{}", _result);
+        return _result;
+    }
+
     @RequestMapping(value = "/queries/TotalDownloads", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "Total Downloads")

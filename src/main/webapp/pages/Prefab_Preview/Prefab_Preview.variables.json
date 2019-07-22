@@ -581,17 +581,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "_desc",
+        "fieldName" : "description",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "DESC",
+        "columnName" : "DESCRIPTION",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 2000,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -656,6 +655,19 @@
         "isRelated" : false,
         "systemInserted" : true,
         "systemUpdated" : true,
+        "scale" : 0
+      }, {
+        "fieldName" : "_desc",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "DESC",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 2000,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "image",
@@ -1043,17 +1055,16 @@
           "defaultValue" : "",
           "scale" : 0
         }, {
-          "fieldName" : "_desc",
+          "fieldName" : "description",
           "type" : "string",
           "fullyQualifiedType" : "string",
-          "columnName" : "DESC",
+          "columnName" : "DESCRIPTION",
           "isPrimaryKey" : false,
           "notNull" : false,
           "length" : 2000,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
-          "defaultValue" : "",
           "scale" : 0
         }, {
           "fieldName" : "createdBy",
@@ -1118,6 +1129,19 @@
           "isRelated" : false,
           "systemInserted" : true,
           "systemUpdated" : true,
+          "scale" : 0
+        }, {
+          "fieldName" : "_desc",
+          "type" : "string",
+          "fullyQualifiedType" : "string",
+          "columnName" : "DESC",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : 2000,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "defaultValue" : "",
           "scale" : 0
         }, {
           "fieldName" : "image",
@@ -1323,17 +1347,16 @@
           "defaultValue" : "",
           "scale" : 0
         }, {
-          "fieldName" : "_desc",
+          "fieldName" : "description",
           "type" : "string",
           "fullyQualifiedType" : "string",
-          "columnName" : "DESC",
+          "columnName" : "DESCRIPTION",
           "isPrimaryKey" : false,
           "notNull" : false,
           "length" : 2000,
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
-          "defaultValue" : "",
           "scale" : 0
         }, {
           "fieldName" : "createdBy",
@@ -1400,6 +1423,19 @@
           "systemUpdated" : true,
           "scale" : 0
         }, {
+          "fieldName" : "_desc",
+          "type" : "string",
+          "fullyQualifiedType" : "string",
+          "columnName" : "DESC",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : 2000,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "defaultValue" : "",
+          "scale" : 0
+        }, {
           "fieldName" : "image",
           "type" : "string",
           "fullyQualifiedType" : "string",
@@ -1436,7 +1472,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "AppScreenshots",
@@ -1491,34 +1526,6 @@
     "transformationRequired" : false,
     "saveInPhonegap" : false,
     "controller" : "QueryExecution"
-  },
-  "PrefabData" : {
-    "_id" : "wm-PrefabData-wm.Variable-1563451818792",
-    "name" : "PrefabData",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : {
-      "Name" : "PrefabName",
-      "icon" : "https://media.licdn.com/dms/image/C560BAQE9O_4idOVN0w/company-logo_200_200/0?e=2159024400&v=beta&t=NmS2mTzVU8MSm-UkeRwc4vFqyYaEoD2VMMpqSt5eEsg",
-      "categoryID" : "PrefabCategory",
-      "AvgRating" : 4,
-      "TotalDownloads" : "1000",
-      "Images" : [ {
-        "image" : "https://www.wavemaker.com/wp-content/uploads/WM_blue-retina.png"
-      }, {
-        "image" : "https://upload.wikimedia.org/wikipedia/en/4/4f/Wavemaker-logo.png"
-      }, {
-        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6KqN0_ZSKCJTF8DZrwDUjCEZptomNz4UYr_6GXMYij02JAw8g"
-      }, {
-        "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwwJBE6ZNcwyvVj_vGrrI_20LlEFtX5EdKKBFwCi5TEwQT93NqPg"
-      } ],
-      "Description" : "Wavemaker is the second largest media agency network in the world, with domestic and international clients such as Vodafone, L'Oréal, IKEA, Paramount Pictures, Chanel, GE, Xerox, Colgate-Palmolive, Chevron, Beiersdorf, Tiffany and Mondelēz International."
-    },
-    "type" : "entry",
-    "isList" : false,
-    "twoWayBinding" : false,
-    "saveInPhonegap" : false
   },
   "PrefabSource" : {
     "_id" : "wm-PrefabSource-wm.ServiceVariable-1563540516337",
