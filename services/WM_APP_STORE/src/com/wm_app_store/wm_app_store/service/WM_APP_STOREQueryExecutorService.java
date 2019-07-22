@@ -44,6 +44,10 @@ public interface WM_APP_STOREQueryExecutorService {
 
     void exportViewProfile(String uname, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
+    Page<SelectUserRolesResponse> executeSelectUserRoles(String userRole, Pageable pageable);
+
+    void exportSelectUserRoles(String userRole, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
     Page<TotalDownloadsResponse> executeTotalDownloads(Integer id, Pageable pageable);
 
     void exportTotalDownloads(Integer id, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);

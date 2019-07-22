@@ -240,6 +240,35 @@ public class QueryExecutionController {
         return new StringWrapper(exportedUrl);
     }
 
+    @RequestMapping(value = "/queries/selectUserRoles", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "select based on user roles")
+    public Page<SelectUserRolesResponse> executeSelectUserRoles(@RequestParam(value = "user_role") String userRole, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: selectUserRoles");
+        Page<SelectUserRolesResponse> _result = queryService.executeSelectUserRoles(userRole, pageable);
+        LOGGER.debug("got the result for named query: selectUserRoles, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query selectUserRoles")
+    @RequestMapping(value = "/queries/selectUserRoles/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportSelectUserRoles(@RequestParam(value = "user_role") String userRole, @RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: selectUserRoles");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "selectUserRoles";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportSelectUserRoles(userRole,  exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
     @RequestMapping(value = "/queries/TotalDownloads", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "Total Downloads")

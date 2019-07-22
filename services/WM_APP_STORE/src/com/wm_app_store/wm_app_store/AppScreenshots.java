@@ -54,7 +54,7 @@ public class AppScreenshots implements Serializable {
         this.appInfoId = appInfoId;
     }
 
-    @Column(name = "`SCREENSHOTS`", nullable = true, length = 1000)
+    @Column(name = "`SCREENSHOTS`", nullable = true, length = 255)
     public String getScreenshots() {
         return this.screenshots;
     }

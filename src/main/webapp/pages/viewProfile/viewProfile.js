@@ -28,6 +28,3 @@ Page.tabpane1Select = function($event, widget) {
     })
     Page.Variables.viewProfileVariable.invoke()
 };
-Page.tabpane2Select = function($event, widget) {
-
-};

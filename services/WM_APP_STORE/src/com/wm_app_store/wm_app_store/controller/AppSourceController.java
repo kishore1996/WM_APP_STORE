@@ -35,6 +35,7 @@ import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
 
+import com.wm_app_store.wm_app_store.AppDownloadHistory;
 import com.wm_app_store.wm_app_store.AppSource;
 import com.wm_app_store.wm_app_store.service.AppSourceService;
 
@@ -187,6 +188,14 @@ public class AppSourceController {
         return appSourceService.getAggregatedValues(aggregationInfo, pageable);
     }
 
+    @RequestMapping(value="/{id:.+}/appDownloadHistories", method=RequestMethod.GET)
+    @ApiOperation(value = "Gets the appDownloadHistories instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<AppDownloadHistory> findAssociatedAppDownloadHistories(@PathVariable("id") Integer id, Pageable pageable) {
+
+        LOGGER.debug("Fetching all associated appDownloadHistories");
+        return appSourceService.findAssociatedAppDownloadHistories(id, pageable);
+    }
 
     /**
 	 * This setter method should only be used by unit tests

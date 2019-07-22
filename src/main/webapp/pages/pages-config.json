@@ -49,6 +49,10 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "UserManagement2",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "carousal",
   "type" : "PARTIAL",
   "params" : [ ]

@@ -99,6 +99,20 @@
     <query-param name="uname" type="java.lang.String"/>
     </sql-query>
 
+    <sql-query name="selectUserRoles">
+        <![CDATA[
+        SELECT * FROM CREDENTIALS WHERE USER_ROLE = :user_role
+        ]]>
+    <query-param name="user_role" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="selectUserRoles__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM CREDENTIALS WHERE USER_ROLE = :user_role) wmTempTable
+        ]]>
+    <query-param name="user_role" type="java.lang.String"/>
+    </sql-query>
+
     <sql-query name="TotalDownloads">
         <![CDATA[
         select count(*) from APP_DOWNLOAD_HISTORY where APP_SOURCE_ID =:id

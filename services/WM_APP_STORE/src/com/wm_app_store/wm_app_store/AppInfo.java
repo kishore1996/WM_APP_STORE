@@ -23,6 +23,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.wavemaker.runtime.data.annotations.WMValueInject;
 import com.wavemaker.runtime.data.replacers.Scope;
 import com.wavemaker.runtime.data.replacers.providers.VariableType;
@@ -39,11 +41,12 @@ public class AppInfo implements Serializable {
     private Integer categoryId;
     private String createdBy;
     private Timestamp creationDate;
+    @JsonProperty(access = Access.READ_ONLY)
+    private byte[] image;
     private Timestamp lastUpdateDate;
     private String name;
     @WMValueInject( type = VariableType.SERVER, name = "USER_NAME", scopes = { Scope.INSERT, Scope.UPDATE })
     private String updatedBy;
-    private String image;
     private MdCategory mdCategory;
 
     @Id
@@ -93,6 +96,15 @@ public class AppInfo implements Serializable {
         this.creationDate = creationDate;
     }
 
+    @Column(name = "`IMAGE`", nullable = true)
+    public byte[] getImage() {
+        return this.image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
     @Column(name = "`LAST_UPDATE_DATE`", nullable = false)
     public Timestamp getLastUpdateDate() {
         return this.lastUpdateDate;
@@ -118,15 +130,6 @@ public class AppInfo implements Serializable {
 
     public void setUpdatedBy(String updatedBy) {
         this.updatedBy = updatedBy;
-    }
-
-    @Column(name = "`IMAGE`", nullable = true, length = 1000)
-    public String getImage() {
-        return this.image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     @ManyToOne(fetch = FetchType.EAGER)

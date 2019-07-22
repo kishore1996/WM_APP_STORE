@@ -67,6 +67,17 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_UserManagement2" : {
+    "_id" : "wm-goToPage_UserManagement2-wm.NavigationVariable-1563530779273",
+    "name" : "goToPage_UserManagement2",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "UserManagement2",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_viewProfile" : {
     "_id" : "wm-goToPage_viewProfile-wm.NavigationVariable-1563517318157",
     "name" : "goToPage_viewProfile",

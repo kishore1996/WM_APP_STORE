@@ -186,6 +186,28 @@ public class WM_APP_STOREQueryExecutorServiceImpl implements WM_APP_STOREQueryEx
 
     @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
     @Override
+    public Page<SelectUserRolesResponse> executeSelectUserRoles(String userRole, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("user_role", userRole);
+
+        return queryExecutor.executeNamedQuery("selectUserRoles", params, SelectUserRolesResponse.class, pageable);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportSelectUserRoles(String userRole, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("user_role", userRole);
+
+        QueryProcedureInput<SelectUserRolesResponse> queryInput = new QueryProcedureInput<>("selectUserRoles", params, SelectUserRolesResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "WM_APP_STORETransactionManager", readOnly = true)
+    @Override
     public Page<TotalDownloadsResponse> executeTotalDownloads(Integer id, Pageable pageable) {
         Map<String, Object> params = new HashMap<>(1);
 
