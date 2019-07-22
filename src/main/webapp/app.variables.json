@@ -253,6 +253,21 @@
     } ],
     "operation" : "confirm"
   },
+  "staticFilterVariable" : {
+    "_id" : "wm-staticFilterVariable-wm.Variable-1563797295762",
+    "name" : "staticFilterVariable",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "name",
+      "dataValue" : "dataValue"
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",
     "name" : "supportedLocale",

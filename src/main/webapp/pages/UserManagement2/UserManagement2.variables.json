@@ -108,7 +108,6 @@
         "precision" : 10,
         "generator" : "identity",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "password",
@@ -121,7 +120,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "userRole",
@@ -134,7 +132,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "username",
@@ -147,7 +144,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "Credentials",
@@ -208,7 +204,6 @@
         "precision" : 10,
         "generator" : "identity",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "password",
@@ -221,7 +216,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "userRole",
@@ -234,7 +228,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "username",
@@ -247,7 +240,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "Credentials",
@@ -308,7 +300,6 @@
         "precision" : 10,
         "generator" : "identity",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "password",
@@ -321,7 +312,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "userRole",
@@ -334,7 +324,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "username",
@@ -347,7 +336,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "Credentials",

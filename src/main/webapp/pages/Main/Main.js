@@ -24,6 +24,7 @@ img = ["https://lh3.googleusercontent.com/8r-ZTPoTIywU_aK2OXmLKg5WOdzXRxv7UUpiIk
 var jsondata = []
 Page.WM_APP_STOREAppInfoDataonSuccess = function(variable, data) {
     console.log(data)
+    var jsondata = []
     for (var i = 0; i < data.length; i++) {
         jsondata.push({
             "PrefabID": data[i]["id"],
@@ -44,4 +45,54 @@ Page.card1Click = function($event, widget, item, currentItemWidgets) {
         "ID": item["PrefabID"]
     })
     Page.App.Actions.goToPage_Prefab_Preview.invoke()
+};
+
+Page.selectPrefabsFilteredVariableonSuccess = function(variable, data) {
+    console.log(data)
+    var jsondata = []
+    for (var i = 0; i < data.length; i++) {
+        jsondata.push({
+            "PrefabID": data[i]["id"],
+            "category": data[i]["categoryId"],
+            "CreatedBy": data[i]["createdBy"],
+            "CreatedOn": data[i]["creationDate"],
+            "Icon": data[i]["image"],
+            "PrefabName": data[i]["name"]
+        })
+    }
+    console.log(jsondata)
+    Page.Variables.Prefabs.setData(jsondata)
+};
+Page.anchor4Click = function($event, widget) {
+    Page.Variables.selectPrefabsFilteredVariable.setFilter({
+        "categoryId": 1
+    })
+    Page.Variables.selectPrefabsFilteredVariable.invoke()
+};
+Page.anchor3Click = function($event, widget) {
+    Page.Variables.WM_APP_STOREAppInfoData.invoke()
+};
+Page.anchor5Click = function($event, widget) {
+    Page.Variables.selectPrefabsFilteredVariable.setFilter({
+        "categoryId": 2
+    })
+    Page.Variables.selectPrefabsFilteredVariable.invoke()
+};
+Page.anchor6Click = function($event, widget) {
+    Page.Variables.selectPrefabsFilteredVariable.setFilter({
+        "categoryId": 3
+    })
+    Page.Variables.selectPrefabsFilteredVariable.invoke()
+};
+Page.anchor7Click = function($event, widget) {
+    Page.Variables.selectPrefabsFilteredVariable.setFilter({
+        "categoryId": 4
+    })
+    Page.Variables.selectPrefabsFilteredVariable.invoke()
+};
+Page.anchor8Click = function($event, widget) {
+    Page.Variables.selectPrefabsFilteredVariable.setFilter({
+        "categoryId": 5
+    })
+    Page.Variables.selectPrefabsFilteredVariable.invoke()
 };

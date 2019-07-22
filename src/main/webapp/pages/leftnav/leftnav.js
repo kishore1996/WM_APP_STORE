@@ -16,8 +16,9 @@ Partial.onReady = function() {
      */
 };
 Partial.orderLinkClick = function($event, widget) {
-    Partial.Variables.staticVariable1.setData({
+    App.Variables.staticFilterVariable.setData({
         "name": "1"
     })
-    console.log(Partial.Variables.staticVariable1.getData())
+
+    console.log(App.Variables.staticFilterVariable.getData().name)
 };
