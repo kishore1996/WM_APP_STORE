@@ -617,6 +617,10 @@
       "target" : "fileName",
       "value" : "bind:Widgets.text3.datavalue",
       "type" : "string"
+    }, {
+      "target" : "versionId",
+      "value" : 1,
+      "type" : "number"
     } ],
     "operation" : "insert",
     "dataSet" : [ ],
