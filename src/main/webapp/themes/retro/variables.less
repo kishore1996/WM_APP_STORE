@@ -7,18 +7,18 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-base:              #333;
+@gray-base:              #000;
 @gray-darker:            lighten(@gray-base, 13.5%); // #222
 @gray-dark:              lighten(@gray-base, 20%);   // #333
 @gray:                   lighten(@gray-base, 33.5%); // #555
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         #5b89db;
-@brand-success:         #58b957;
-@brand-info:            #56c0e0;
-@brand-warning:         #f2ae43;
-@brand-danger:          #db524b;
+@brand-primary:         #78a38f;
+@brand-success:         #04c793;
+@brand-info:            #434c90;
+@brand-warning:         #f57558;
+@brand-danger:          #e31524;
 
 
 @font-face {
@@ -32,25 +32,12 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Open Sans';
-  src: url('fonts/opensans-regular-webfont.eot');
-  src: url('fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('fonts/opensans-regular-webfont.woff2') format('woff2'),
-  url('fonts/opensans-regular-webfont.woff') format('woff'),
-  url('fonts/opensans-regular-webfont.ttf') format('truetype'),
-  url('fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               #f5fcfb;
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
@@ -73,8 +60,8 @@
 @font-family-base:        @font-family-sans-serif;
 
 @font-size-base:          12px;
-@font-size-large:         ceil((@font-size-base * 1.2)); // ~18px
-@font-size-small:         11px; // ~12px
+@font-size-large:         ceil((@font-size-base * 1.14)); // ~18px
+@font-size-small:         ceil((@font-size-base * ((@font-size-base - 1)/@font-size-base))); // ~11px
 
 @font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
 @font-size-h2:            floor((@font-size-base * 1.71)); // ~30px
@@ -126,9 +113,9 @@
 @line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
 @line-height-small:         1.5;
 
-@border-radius-base:        0px;
-@border-radius-large:       0px;
-@border-radius-small:       0px;
+@border-radius-base:        4px;
+@border-radius-large:       6px;
+@border-radius-small:       2px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -155,11 +142,11 @@
 //** Background color used for `.table-striped`.
 @table-bg-accent:               #f9f9f9;
 //** Background color used for `.table-hover`.
-@table-bg-hover:                #f5f5f5;
-@table-bg-active:               #F3F6FD;
+@table-bg-hover:                #f5fcfb;
+@table-bg-active:               @table-bg-hover;
 
 //** Border color for table and cell borders.
-@table-border-color:            #eee;
+@table-border-color:            #ddd;
 
 
 //== Buttons
@@ -169,7 +156,7 @@
 @btn-font-weight:                normal;
 
 @btn-default-color:              #fff;
-@btn-default-bg:                 #545765;
+@btn-default-bg:                 #46555C;
 @btn-default-border:             darken(@btn-default-bg, 5%);
 
 @btn-primary-color:              #fff;
@@ -200,6 +187,7 @@
 @btn-border-radius-small:        @border-radius-small;
 
 
+
 //== Forms
 //
 //##
@@ -207,12 +195,12 @@
 //** `<input>` background color
 @input-bg:                       #fff;
 //** `<input disabled>` background color
-@input-bg-disabled:              #eee;
+@input-bg-disabled:              @gray-lighter;
 
 //** Text color for `<input>`s
-@input-color:                    #3b3b3b;
+@input-color:                    @gray;
 //** `<input>` border color
-@input-border:                   #e0e0e0;
+@input-border:                   #ccc;
 @input-border-focus:             #aeaeae;
 
 // TODO: Rename `@input-border-radius` to `@input-border-radius-base` in v4
@@ -225,7 +213,7 @@
 @input-border-radius-small:      @border-radius-small;
 
 //** Border color for inputs on focus
-@input-border-focus:             #aeaeae;
+@input-border-focus:             #66afe9;
 
 //** Placeholder text color
 @input-color-placeholder:        #999;
@@ -389,17 +377,17 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-@navbar-default-bg:                #545765;
-@navbar-default-hover-bg:          #424554;
-@navbar-default-color:             #f8f8f8;
-@navbar-default-border:            transparent;
+@navbar-default-bg:                #fff;
+@navbar-default-hover-bg:          #f0f0f0;
+@navbar-default-color:             #777;
+@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
-@navbar-default-link-color:                #FFF;
-@navbar-default-link-hover-color:          #f8f8f8;
-@navbar-default-link-hover-bg:             #424554;
-@navbar-default-link-active-color:         #fff;
-@navbar-default-link-active-bg:            #153d6c;
+@navbar-default-link-color:                #333333;
+@navbar-default-link-hover-color:          @brand-primary;
+@navbar-default-link-hover-bg:             #f0f0f0;
+@navbar-default-link-active-color:         @brand-primary;
+@navbar-default-link-active-bg:            #f0f0f0;
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
 
@@ -414,7 +402,7 @@
 @navbar-default-toggle-border-color:       #ddd;
 
 
-//=== Inverted navbar
+// Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                      lighten(@gray-light, 15%);
 @navbar-inverse-bg:                         #222;
@@ -452,14 +440,13 @@
 @nav-disabled-link-hover-color:             @gray-light;
 
 //== Tabs
-@nav-tabs-border-color:                     #ddd;
+@nav-tabs-border-color:                      #f0f0f0;
 
 @nav-tabs-link-hover-border-color:          @gray-lighter;
 
-@nav-tabs-active-link-hover-bg:             @body-bg;
+@nav-tabs-active-link-hover-bg:             #fff;
 @nav-tabs-active-link-hover-color:          @gray;
-@nav-tabs-active-link-hover-border-color:   #ddd;
-
+@nav-tabs-active-link-hover-border-color:   #54abd9;
 @nav-tabs-justified-link-border-color:            #ddd;
 @nav-tabs-justified-active-link-border-color:     @body-bg;
 
@@ -477,8 +464,8 @@
 @pagination-bg:                        #fff;
 @pagination-border:                    #ddd;
 
-@pagination-hover-color:               @link-hover-color;
-@pagination-hover-bg:                  @gray-lighter;
+@pagination-hover-color:               @brand-primary;
+@pagination-hover-bg:                  #f0f0f0;
 @pagination-hover-border:              #ddd;
 
 @pagination-active-color:              #fff;
@@ -522,20 +509,20 @@
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-@state-success-text:             #fff;
-@state-success-bg:               @brand-success;
+@state-success-text:             #3c763d;
+@state-success-bg:               #dff0d8;
 @state-success-border:           darken(spin(@state-success-bg, -10), 5%);
 
-@state-info-text:                #fff;
-@state-info-bg:                  @brand-info;
+@state-info-text:                #31708f;
+@state-info-bg:                  #d9edf7;
 @state-info-border:              darken(spin(@state-info-bg, -10), 7%);
 
-@state-warning-text:             #fff;
-@state-warning-bg:               @brand-warning;
+@state-warning-text:             #8a6d3b;
+@state-warning-bg:               #fcf8e3;
 @state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
 
-@state-danger-text:              #fff;
-@state-danger-bg:                @brand-danger;
+@state-danger-text:              #a94442;
+@state-danger-bg:                #f2dede;
 @state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
 
 
@@ -566,7 +553,7 @@
 //** Popover maximum width
 @popover-max-width:                   276px;
 //** Popover border color
-@popover-border-color:                 rgba(0, 0, 0, 0.14);
+@popover-border-color:                rgba(0,0,0,0.2);
 //** Popover fallback border color
 @popover-fallback-border-color:       #ccc;
 
@@ -735,32 +722,32 @@
 @panel-border-radius:         @border-radius-base;
 
 //** Border color for elements within panels
-@panel-inner-border:          #f0f0f0;
+@panel-inner-border:          #CFDBE2;
 @panel-footer-bg:             #FFF;
 
-@panel-default-text:          #fff;
-@panel-default-border:        #F0F0F0;
-@panel-default-heading-bg:    #545765;
+@panel-default-text:          @gray-dark;
+@panel-default-border:        lighten(@gray-dark,70%);
+@panel-default-heading-bg:    #f5f5f5;
 
 @panel-primary-text:          #fff;
 @panel-primary-border:        @brand-primary;
 @panel-primary-heading-bg:    @brand-primary;
 
-@panel-success-text:          @state-success-text;
-@panel-success-border:        @state-success-border;
-@panel-success-heading-bg:    @state-success-bg;
+@panel-success-text:          #fff;
+@panel-success-border:        @brand-success;
+@panel-success-heading-bg:    @brand-success;
 
-@panel-info-text:             @state-info-text;
-@panel-info-border:           @state-info-border;
-@panel-info-heading-bg:       @state-info-bg;
+@panel-info-text:             #fff;
+@panel-info-border:           @brand-info;
+@panel-info-heading-bg:       @brand-info;
 
-@panel-warning-text:          @state-warning-text;
-@panel-warning-border:        @state-warning-border;
-@panel-warning-heading-bg:    @state-warning-bg;
+@panel-warning-text:          #fff;
+@panel-warning-border:        @brand-warning;
+@panel-warning-heading-bg:    @brand-warning;
 
-@panel-danger-text:           @state-danger-text;
-@panel-danger-border:         @state-danger-border;
-@panel-danger-heading-bg:     @state-danger-bg;
+@panel-danger-text:           #fff;
+@panel-danger-border:         @brand-danger;
+@panel-danger-heading-bg:     @brand-danger;
 
 
 //== Thumbnails
@@ -768,18 +755,18 @@
 //##
 
 //** Padding around the thumbnail image
-@thumbnail-padding:           4px;
+@thumbnail-padding:           @padding-small-horizontal;
 //** Thumbnail background color
 @thumbnail-bg:                @body-bg;
 //** Thumbnail border color
 @thumbnail-border:            #ddd;
 //** Thumbnail border radius
-@thumbnail-border-radius:     4px;
+@thumbnail-border-radius:     @thumbnail-padding;
 
 //** Custom text color for thumbnail captions
 @thumbnail-caption-color:     @text-color;
 //** Padding around the thumbnail caption
-@thumbnail-caption-padding:   9px;
+@thumbnail-caption-padding:   @padding-small-vertical;
 
 
 //== Wells
@@ -816,11 +803,11 @@
 @breadcrumb-padding-vertical:   @padding-base-vertical;
 @breadcrumb-padding-horizontal: @padding-base-horizontal;
 //** Breadcrumb background color
-@breadcrumb-bg:                 #F2F3F6;
+@breadcrumb-bg:                 #c5d7cf;
 //** Breadcrumb text color
 @breadcrumb-color:              @brand-primary;
 //** Text color of current page in the breadcrumb
-@breadcrumb-active-color:       #a4a4a4;
+@breadcrumb-active-color:       #777;
 //** Textual separator for between breadcrumb elements
 @breadcrumb-separator:          "/";
 
@@ -831,7 +818,7 @@
 
 @carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6);
 
-@carousel-control-color:                      #808080;
+@carousel-control-color:                      #fff;
 @carousel-control-width:                      15%;
 @carousel-control-opacity:                    .5;
 @carousel-control-font-size:                  20px;
@@ -847,7 +834,7 @@
 //##
 
 @close-font-weight:           bold;
-@close-color:                 #f8f8f8;
+@close-color:                 #000;
 @close-text-shadow:           0 1px 0 #fff;
 
 

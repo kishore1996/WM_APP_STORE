@@ -1,4 +1,4 @@
-/*START - default Theme*/
+/*START - Retro Theme*/
 
 .wm-app {
 
@@ -12,25 +12,25 @@
 
   //Header
   @wm-header-border-color: rgba(0, 0, 0, 0.1);
-  @wm-header-text-color: #515253;
-  @wm-header-bg-color: #fff;
+  @wm-header-text-color: #e9e9e9;
+  @wm-header-bg-color: @brand-primary;
   @wm-header-height: auto;
 
-  //left panel
-  @wm-left-panel-bg: #F2F3F6;
-  @wm-left-panel-list-border: 1px #e6e5e5 solid;
+  //Left Panel
+  @wm-left-panel-bg: #fff;
+  @wm-left-panel-list-border: 1px #f5f5f5 solid;
   @wm-left-panel-border-color: #CFDBE2;
   @wm-left-panel-link-color: #515253;
-  @wm-left-panel-link-hover-bg: #e6e4e4;
+  @wm-left-panel-link-hover-bg: #f0f0f0;
   @wm-left-panel-link-hover-text-color: @brand-primary;
-  @wm-left-panel-link-hover-border-color: @brand-primary;
-  @wm-left-panel-dropdown-menu-bg: transparent;
+  @wm-left-panel-link-hover-border-color: transparent;
+  @wm-left-panel-dropdown-menu-bg: #fff;
 
   //right panel
   @wm-right-panel-border-color: #CFDBE2;
-  @wm-right-panel-bg: #F2F3F6;
+  @wm-right-panel-bg: #FFFFFF;
   @wm-right-panel-btn-color: #515253;
-  @wm-right-panel-list-border: 1px #e6e5e5 solid;
+  @wm-right-panel-list-border: 1px #f5f5f5 solid;
 
   //Footer
   @wm-footer-border-color: #ccc;
@@ -38,12 +38,13 @@
   @wm-footer-bg-color: #F5F7FA;
   @wm-footer-height: auto;
 
-
   //Table
-  @table-header-bg: #E7E9F1;
+  @table-header-bg: @brand-primary;
+  @table-header-text-color: #fff;
 
   //Tabset
   @nav-tabs-color-hover : @brand-primary;
+  @nav-tabs-bg-color: #f0f0f0;
 
   //input group hover
   @input-group-addon-hover-bg: #e7e7e7;
@@ -51,10 +52,10 @@
   //Buttons
   @btn-group-active-btn-bg: #fff;
 
-  //modal dialogs
-  @modal-header-bg: @navbar-default-bg;
-  @modal-header-color: @navbar-default-color;
-  @modal-header-border-color: #7B706A;
+  //Modal
+  @modal-header-bg: #dde8e3;
+  @modal-header-color: #2b3f36;
+  @modal-header-border-color: #dde8e3;
 
   //Calendar
   @wm-calendar-header-color: #adadad;
@@ -67,29 +68,9 @@
   label {
     font-weight: normal;
   }
-  .label-primary, .label-success, .label-info, .label-warning, .label-danger {
-    color: #fff;
-  }
-  .text-danger {
-    color: darken(@brand-danger, 20%);
-  }
-  .text-success {
-    color: darken(@brand-success, 20%);
-  }
-  .text-info {
-    color: darken(@brand-info, 20%);
-  }
-  .text-primary {
-    color: darken(@brand-primary, 20%);
-  }
-  .text-warning {
-    color: darken(@brand-warning, 20%);
-  }
+
   .h1,.h2,.h3,.h4,.h5,.h6 {
     width: 100%;
-  }
-  .close {
-    opacity: 1;
   }
 
   //stylings for tile widget
@@ -103,7 +84,7 @@
   //Tab Content
   .tab-content {
     .tab-body {
-      border-color: transparent;
+      border-color: @nav-tabs-border-color;
       padding: @padding-base-vertical @padding-base-horizontal;
     }
   }
@@ -113,32 +94,27 @@
     > li {
       > a {
         color: @text-color;
-        background-color: @nav-tabs-active-link-hover-bg;
-        border-radius: @border-radius-base;
+        background-color: @nav-tabs-bg-color;
+        border-bottom-color: @nav-tabs-border-color;
+        border-radius: @border-radius-base @border-radius-base 0 0;
         box-shadow: none;
-        margin-right: 0;
-        border-width: 0 0 2px;
+        margin-right: .2em;
         border-color: transparent;
         text-transform: uppercase;
-        &:hover, &:focus {
+        &:hover, &:focus, &:active {
           color: @nav-tabs-color-hover;
           background-color: @nav-tabs-active-link-hover-bg;
-          border-width: 0 0 2px;
-          border-color: transparent;
-          border-bottom-color: @brand-primary;
+          border-color: @nav-tabs-border-color;
         }
       }
       &.active {
         > a {
+          border-color: @nav-tabs-border-color;
           color: @nav-tabs-color-hover;
-          border-width: 0 0 2px;
-          border-color: transparent;
-          border-bottom-color: @brand-primary;
-          &:hover, &:focus {
+          border-bottom-width: 0em;
+          &:hover {
+            border-color: @nav-tabs-border-color;
             color: @nav-tabs-color-hover;
-            border-width: 0 0 2px;
-            border-color: transparent;
-            border-bottom-color: @brand-primary;
           }
         }
       }
@@ -146,10 +122,10 @@
       &.app-nav-item > .dropdown > a.dropdown-toggle {
         padding: @nav-link-padding;
         color: @text-color;
+        background-color: @nav-tabs-bg-color;
         text-transform: uppercase;
         line-height: 1.42857143;
-        border-width: 0 0 2px;
-        border-color: transparent;
+        border: 1px solid transparent;
       }
     }
   }
@@ -183,10 +159,23 @@
   .checkbox , .radio {
       padding: 0 @padding-base-horizontal;
   }
+  .checkbox input[type="checkbox"], .radio input[type="radio"] {
+    margin-top: 4px;
+  }
+  //filter
+  .app-livefilter, .app-form {
+    .control-label, .app-label {
+      padding-left: 1em;
+    }
+    .panel-body {
+      padding: @padding-base-horizontal;
+    }
+  }
 
   /***Button Style: Defining the sixe of the button for bootstrap classes********/
   .btn {
     text-transform: uppercase;
+    border-radius: 2px;
     &.btn-lg {
       font-size: 1.4em;
     }
@@ -196,19 +185,8 @@
     .caret {
       margin-left: 0.7em;
     }
-    &.active, &:active {
-      -webkit-box-shadow: none;
-      box-shadow: none;
-    }
   }
 
-  .btn-default {
-    &:hover, &:focus &:active {
-      color: @btn-default-color;
-      background-color: darken(@btn-default-bg, 10%);
-      border-color: darken(@btn-default-bg, 10%);
-    }
-  }
 
   /***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
   .modal-header {
@@ -271,6 +249,7 @@
         th {
           text-transform: uppercase;
           background-color: @table-header-bg;
+          color: @table-header-text-color;
         }
       }
     }
@@ -290,7 +269,6 @@
     color: @wm-header-text-color;
     box-shadow: 0px 1px 0px rgba(0,0,0,0.2);
     border-color: transparent;
-    height: @wm-header-height;
     a {
       color: @wm-header-text-color;
     }
@@ -304,6 +282,40 @@
     }
   }
 
+  /****nav widget****/
+  .app-nav {
+    &.nav-pills {
+      .app-nav-item {
+        .app-menu {
+          .dropdown-toggle {
+            border-radius: @border-radius-base;
+            padding: @nav-link-padding;
+            &:hover {
+              color: @brand-primary;
+              background-color: @nav-link-hover-bg;
+            }
+          }
+          &.open {
+            .dropdown-toggle {
+              color: @nav-pills-active-link-hover-color;
+              background-color: @nav-pills-active-link-hover-bg;
+              &:active, &:active:hover {
+                color: @nav-pills-active-link-hover-color;
+                background-color: @nav-pills-active-link-hover-bg;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.nav-justified {
+      .app-nav-item {
+        .app-menu {
+          text-align: center;
+        }
+      }
+    }
+  }
   //Popover wrapper styles in Navbar
   .nav li > .app-popover-wrapper a {
     padding: @nav-link-padding;
@@ -326,18 +338,17 @@
       }
     }
   }
-
   //Top Nav Bar
   .app-navbar {
     border-radius: 0;
     color: @navbar-default-color;
-
+    border-width: 0 0 1px 0;
     .navbar-nav {
       li {
-        a {
+        a, .app-popover-wrapper a {
           font-size: 1em;
-          padding-left: 2em;
-          padding-right: 2em;
+          padding-left: 3em;
+          padding-right: 3em;
           text-transform: uppercase;
           font-weight: normal;
           text-decoration: none;
@@ -350,9 +361,6 @@
             background-color: @navbar-default-hover-bg;
           }
         }
-        > .dropdown .dropdown-menu, .app-popover-wrapper a {
-          line-height: 16px;
-        }
         &.active .app-popover-wrapper a {
           background-color: @navbar-default-link-active-bg;
           color: @navbar-default-link-active-color;
@@ -361,10 +369,9 @@
         > .dropdown .dropdown-menu {
           margin: 0;
           background-color: @navbar-default-bg;
-          border-color: @navbar-default-bg;
           a {
             color: inherit;
-            padding: .65em 1em;
+            padding: 1em 1.5em;
             &:hover {
               background-color: @navbar-default-hover-bg;
             }
@@ -375,62 +382,36 @@
       .app-nav-item {
         > .dropdown, .app-popover-wrapper {
           a.dropdown-toggle, a {
-            padding-left: 2em;
-            padding-right: 2em;
-            color: inherit;
-            &:hover {
+            color: @navbar-default-link-color;
+            &:hover, &:focus {
+              color: @navbar-default-link-hover-color;
               background-color: @navbar-default-hover-bg;
             }
+            .app-icon {
+              margin-right: 0;
+            }
+            .caption {
+              vertical-align: middle;
+            }
           }
         }
       }
     }
   }
 
-  /****nav widget****/
-  .app-nav {
-    &.nav-pills {
+  //Dropdown element color for nav inverse
+  .navbar-inverse {
+    .app-nav.navbar-nav {
       .app-nav-item {
-        a, .app-menu {
-          .dropdown-toggle {
-            padding: @padding-base-vertical @padding-base-horizontal;
-          }
-
-        }
-        &.active {
-          a, a.dropdown-toggle {
-            &:active, &.active:hover {
-              color: @nav-pills-active-link-hover-color;
-              background-color: @nav-pills-active-link-hover-bg;
-            }
-          }
-          .dropdown {
-            &.open {
-              .dropdown-toggle {
-                color: @nav-pills-active-link-hover-color;
-                background-color: @nav-pills-active-link-hover-bg;
-              }
-            }
-          }
-        }
-      }
-      &.nav-justified {
-        > li {
-          a, .app-menu {
-            text-align: center;
+        .dropdown, .app-popover-wrapper {
+          .dropdown-toggle, a {
+            color: @navbar-inverse-link-color;
           }
         }
       }
     }
   }
 
-  //Popover
-  .popover {
-    min-width: 16.667em;
-    .popover-content {
-      padding: 0;
-    }
-  }
   .navbar-inverse .navbar-nav {
     > li.active .app-popover-wrapper {
       a, a:hover, a:focus, a:active {
@@ -438,11 +419,6 @@
         background-color: @navbar-inverse-link-active-bg;
       }
     }
-  }
-  //Sets the padding for menu list elements
-  .dropdown-menu > li > a {
-    padding-top: 8px;
-    padding-bottom: 8px;
   }
   //Left & Right Panels
   .app-left-panel, .app-right-panel {
@@ -489,56 +465,42 @@
             -o-transition: color .5s ease, background .5s ease;
           }
           &.active {
-            background-color: transparent;
+            background-color: @nav-tabs-border-color;
             border-left-color: @brand-primary;
             color: @brand-primary;
           }
           .app-icon {
+            margin-left: 0.833em;
             margin-right: 0.417em;
-          }
-          .caret {
-            margin-right: 1.25em;
+            line-height: inherit;
           }
         }
+
         > .dropdown.open {
           > .dropdown-menu {
             position: relative;
-            margin: 0 0 1.333em;
-            border: 0;
-            box-shadow: none;
+            margin: 0 0 1em;
+            border-width: 0;
             background-color: @wm-left-panel-dropdown-menu-bg;
+            border-radius: 0;
+            box-shadow: none;
             li {
               a {
-                padding: 1em 1.667em;
+                padding: 1em 1.2em;
               }
             }
           }
         }
-      }
-    }
-    .app-nav {
-      .app-nav-item {
-        > .dropdown {
-          > a {
-            padding: 1.333em;
-          }
-        }
-        &.active {
-          .dropdown.open {
-            .dropdown-toggle {
-                background-color: @wm-left-panel-link-hover-bg;
-                color: inherit;
-            }
+        .app-menu.open {
+          .dropdown-toggle {
+            background-color: @nav-tabs-border-color;
+            color: @brand-primary;
           }
         }
       }
     }
   }
-  .dropdown.open {
-    .dropdown-menu {
-      margin-top:0;
-    }
-  }
+
   //Left Panel
   .app-left-panel {
     background-color: @wm-left-panel-bg;
@@ -598,7 +560,6 @@
     //action buttons in the form
     .form-action {
       .btn {
-        margin: 0 0.333em;
         border-radius: @border-radius-base;
       }
     }
@@ -619,31 +580,9 @@
     }
   }
 
-  //filter
-  .app-livefilter {
-    .control-label, .app-label {
-      padding: 1em 1em 0;
-      margin-bottom: 1em;
-      font-weight: bold;
-    }
-    .panel-footer.form-action {
-      padding: @padding-base-horizontal;
-      border-top: 1px solid @panel-inner-border;
-    }
-    .form-action {
-      .btn {
-        margin: 0 0.333em;
-        border-radius: @border-radius-base;
-      }
-    }
-    .panel-body {
-      padding: @padding-base-horizontal;
-    }
-  }
   /***search widget****/
   .app-search {
     .input-group-addon {
-      padding: 0.667em;
       &:hover {
         background: @input-group-addon-hover-bg;
       }
@@ -655,41 +594,36 @@
     .table {
       thead {
         th {
-          border-color: rgba(0,0,0,0.07);
+          border-color: rgba(0,0,0,0.1);
           .header-data {
             font-size: 0.917em;
           }
           .sort-buttons-container {
             .sort-button {
-             .up {
-               border-width: 0 0.333em 0.333em;
-               bottom: -2px;
-             }
-             .down {
-               border-width: 0.333em 0.333em 0;
-               top: 0.250em;
-             }
+              .sort-icon {
+                border-color: @component-active-color transparent;
+              }
+              .up {
+                border-width: 0 0.333em 0.333em;
+                bottom: -2px;
+              }
+              .down {
+                border-width: 0.333em 0.333em 0;
+                top: 0.250em;
+              }
             }
-          }
-          &.info {
-            background-color: lighten(@state-info-bg, 10%);
           }
         }
       }
     }
     //When table is condensed
     .input-group.input-group-sm {
-      .input-group-addon, .input-group-btn {
+      .input-group-addon {
         padding: 0 4px;
         .btn {
           .app-icon {
             font-size: 11px;
           }
-        }
-      }
-      .input-group-addon {
-        .btn .app-icon {
-          color: @text-color;
         }
       }
     }
@@ -714,23 +648,11 @@
       .panel-heading {
         .panel-actions {
           right: 1em;
-          top: 1.5em;
+          top: 1.3em;
         }
       }
     }
   }
-
-/***wizard styles***/
-  .app-wizard {
-    .app-wizard-steps {
-        .app-wizard-step:not(:last-child) {
-           &.active .arrow {
-             border-color: rgba(0, 0, 0, 0.3);
-           }
-        }
-    }
-  }
-
 
   //file upload button
   .app-single-file-upload {
@@ -748,23 +670,31 @@
           margin-left: 0;
         }
     }
+    //setting the base font color for the popup content
+    .dropdown-menu {
+      color: @text-color;
+      padding-top: 0;
+    }
+
     thead tr th {
       button.btn-default {
         width: 100%;
         font-size: 1em;
         background: @btn-default-bg;
         color: @btn-default-color;
-        padding: 0.55em .83em;
+        border-radius: 0;
+        padding: 0.66em;
       }
     }
+
     tbody {
       .btn-default {
-        background-color: @body-bg;
-        border-color: @gray-lighter;
         color: @text-color;
+        background-color: @component-active-color;
+        border-color: transparent;
         width: auto;
         box-shadow: none;
-        padding: 0.66em;
+        padding: 0.56em .83em;
         &.btn-info {
           background-color: lighten(@brand-primary, 30%);
           color: @text-color;
@@ -773,6 +703,7 @@
           background-color: @component-active-bg;
           border-color: @component-active-bg;
           color: @component-active-color;
+          box-shadow: none;
           .text-info {
             color: inherit;
           }
@@ -782,25 +713,18 @@
           font-weight: bold;
         }
       }
-      td.is-highlighted:not(.disabled):not(.selected) span {
-        background-color: @component-active-bg;
-        border-color: @component-active-bg;
-        color: @component-active-color;
-        &.text-info {
-          color: inherit;
-        }
-      }
+
       td {
-        &.week {
-          span {
-             color: @brand-primary;
-             &:hover {
-               background-color: transparent;
+          &.week {
+            span {
                color: @brand-primary;
-             }
+               &:hover {
+                 background-color: transparent;
+                 color: @brand-primary;
+               }
+            }
           }
-        }
-        span {
+          span {
             &.text-info {
               color: @brand-primary;
               font-weight: bold;
@@ -809,7 +733,7 @@
               background-color: lighten(@brand-primary, 30%);
               color: @text-color;
             }
-            &:hover {
+            &:hover:not(.fc-day-number) {
               background-color: @component-active-bg;
               border-color: @component-active-bg;
               color: @component-active-color;
@@ -820,7 +744,7 @@
                 background-color: rgba(168,168,168,0.05);
               }
             }
-        }
+          }
       }
     }
     small {
@@ -835,7 +759,7 @@
     .bs-datepicker-head {
       background: @btn-default-bg;
       color: @btn-default-color;
-    }
+        }
     .bs-datepicker-body {
       padding: 0;
       border: none;
@@ -864,9 +788,6 @@
           background-color: @btn-primary-bg;
           color: @btn-primary-color;
         }
-        span:hover {
-          border-color: @component-active-color;
-        }
       }
     }
   }
@@ -879,23 +800,8 @@
       background-color: @body-bg;
       padding: 0;
       margin: 0;
-      tr:nth-child(2) th {
-        padding: 10px 12px;
-
-        &:first-child {
-          padding-left: 20px;
-        }
-        &:last-child {
-          padding-right: 20px;
-        }
-      }
-      tr td {
-        &:first-child {
-          padding-left: 10px;
-        }
-        &:last-child {
-          padding-right: 10px;
-        }
+      button {
+        border: none;
       }
     }
     .fc {
@@ -918,10 +824,7 @@
         }
       }
     }
-    .fc-widget-header {
-      background-color: @body-bg;
-      color: @text-color;
-    }
+
     .fc-body {
       .fc-row {
         min-height: 5em;
@@ -937,16 +840,16 @@
 /*********************************************************************************************************************************************/
 /****************************************************Advanced editors******************************************************************************/
 /*********************************************************************************************************************************************/
-/******rich-editor class*******/
+  /******rich-editor class*******/
   .app-richtexteditor {
     .btn-default {
-      background-color: @gray-lighter;
+      background: @component-active-color;
       border-color: @gray-light;
       color: @text-color;
       &.disabled, &[disabled], &.disabled:hover, &[disabled]:hover, &.disabled:focus, &[disabled]:focus,
       &.disabled.focus, &.focus[disabled], &.disabled:active, &[disabled]:active, &.disabled.active, &.active[disabled],
       &.disabled.active, &.active[disabled] {
-        background-color: @gray-lighter;
+        background: @gray-lighter;
         color: @text-color;
       }
       &:focus, &.active , &:active:hover  {
@@ -957,15 +860,15 @@
     }
 
     .ta-root .ta-toolbar .btn-group .btn {
-      height: 3em;
-      padding: 1em;
+      height: 2.917em;
+      padding: 0.833em;
     }
   }
 
   fieldset[disabled] {
     .app-richtexteditor {
       .btn-default, .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
-        background-color: @gray-lighter;
+        background: @gray-lighter;
         color: @text-color;
       }
     }
@@ -995,19 +898,21 @@
       width: 13em;
     }
   }
-/***popover class: removing the radius*******/
+/***popover class*******/
   .popover {
-    padding: 0;
-    border-radius: @border-radius-base;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    min-width: 16.667em;
+    border-radius: @border-radius-large;
     color: @text-color;
+    .popover-content {
+      padding: 0;
+    }
     .panel-footer {
        .btn-default {
           color: @gray-dark;
        }
     }
   }
-
+/***file-uploader class*******/
   .app-fileupload .app-multi-file-upload, .app-fileupload .app-single-file-upload {
     height: auto;
     min-height: 3em;

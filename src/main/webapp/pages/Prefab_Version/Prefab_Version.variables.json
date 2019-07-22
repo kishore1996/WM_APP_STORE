@@ -185,6 +185,18 @@
         "isRelated" : false,
         "scale" : 0
       }, {
+        "fieldName" : "image",
+        "type" : "blob",
+        "fullyQualifiedType" : "blob",
+        "columnName" : "IMAGE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : -1,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
         "fieldName" : "lastUpdateDate",
         "type" : "timestamp",
         "fullyQualifiedType" : "timestamp",
@@ -222,19 +234,6 @@
         "isRelated" : false,
         "systemInserted" : true,
         "systemUpdated" : true,
-        "scale" : 0
-      }, {
-        "fieldName" : "image",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "IMAGE",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 1000,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "AppInfo",
@@ -364,6 +363,18 @@
           "isRelated" : false,
           "scale" : 0
         }, {
+          "fieldName" : "image",
+          "type" : "blob",
+          "fullyQualifiedType" : "blob",
+          "columnName" : "IMAGE",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : -1,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "scale" : 0
+        }, {
           "fieldName" : "lastUpdateDate",
           "type" : "timestamp",
           "fullyQualifiedType" : "timestamp",
@@ -402,19 +413,6 @@
           "systemInserted" : true,
           "systemUpdated" : true,
           "scale" : 0
-        }, {
-          "fieldName" : "image",
-          "type" : "string",
-          "fullyQualifiedType" : "string",
-          "columnName" : "IMAGE",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : 1000,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "defaultValue" : "",
-          "scale" : 0
         } ]
       }, {
         "fieldName" : "id",
@@ -435,7 +433,7 @@
         "columnName" : "SCREENSHOTS",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 1000,
+        "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
@@ -631,6 +629,18 @@
         "isRelated" : false,
         "scale" : 0
       }, {
+        "fieldName" : "image",
+        "type" : "blob",
+        "fullyQualifiedType" : "blob",
+        "columnName" : "IMAGE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : -1,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
         "fieldName" : "lastUpdateDate",
         "type" : "timestamp",
         "fullyQualifiedType" : "timestamp",
@@ -668,19 +678,6 @@
         "isRelated" : false,
         "systemInserted" : true,
         "systemUpdated" : true,
-        "scale" : 0
-      }, {
-        "fieldName" : "image",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "IMAGE",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 1000,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "AppInfo",

@@ -15,27 +15,54 @@ Page.onReady = function() {
      * 'Page.Widgets.username.datavalue'
      */
     Page.Variables.selectAllVariable.invoke()
-    Page.Widgets.gridrow12.show = false;
-    Page.Widgets.gridrow16.show = false;
+    // Page.Widgets.gridrow12.show = false;
+    // Page.Widgets.gridrow16.show = false;
 };
 
 Page.select2Change = function($event, widget, newVal, oldVal) {
     if (newVal == "All") {
         Page.Variables.selectAllVariable.invoke()
-        Page.Widgets.gridrow4.show = true;
-        Page.Widgets.gridrow12.show = false;
-        Page.Widgets.gridrow16.show = false;
+        // Page.Widgets.gridrow4.show = true;
+        // Page.Widgets.gridrow12.show = false;
+        // Page.Widgets.gridrow16.show = false;
     }
     if (newVal == "Active") {
         Page.Variables.selectActiveVariable.invoke()
-        Page.Widgets.gridrow4.show = false;
-        Page.Widgets.gridrow12.show = true;
-        Page.Widgets.gridrow16.show = false;
+        // Page.Widgets.gridrow4.show = false;
+        // Page.Widgets.gridrow12.show = true;
+        // Page.Widgets.gridrow16.show = false;
     }
     if (newVal == "Inactive") {
         Page.Variables.selectInactiveVariable.invoke()
-        Page.Widgets.gridrow4.show = false;
-        Page.Widgets.gridrow12.show = false;
-        Page.Widgets.gridrow16.show = true;
+        // Page.Widgets.gridrow4.show = false;
+        // Page.Widgets.gridrow12.show = false;
+        // Page.Widgets.gridrow16.show = true;
     }
+};
+
+Page.notificationAction1onOk = function(variable, data) {
+    Page.Widgets.CredentialsLiveForm4.save();
+};
+Page.notificationAction3onOk = function(variable, data) {
+    Page.Widgets.CredentialsLiveForm3.save();
+};
+Page.notificationAction2onOk = function(variable, data) {
+    Page.Widgets.CredentialsLiveForm2.save();
+};
+
+
+Page.selectAllVariableonSuccess = function(variable, data) {
+    Page.Widgets.gridrow4.show = true;
+    Page.Widgets.gridrow12.show = false;
+    Page.Widgets.gridrow16.show = false;
+};
+Page.selectInactiveVariableonSuccess = function(variable, data) {
+    Page.Widgets.gridrow4.show = false;
+    Page.Widgets.gridrow12.show = true;
+    Page.Widgets.gridrow16.show = false;
+};
+Page.selectActiveVariableonSuccess = function(variable, data) {
+    Page.Widgets.gridrow4.show = false;
+    Page.Widgets.gridrow12.show = false;
+    Page.Widgets.gridrow16.show = true;
 };

@@ -17,7 +17,7 @@
                 <wm-gridrow name="gridrow4">
                     <wm-gridcolumn columnwidth="12" name="gridcolumn6" height="600">
                         <wm-livetable formlayout="dialog" name="CredentialsLiveTable2">
-                            <wm-table gridfirstrowselect="true" editmode="dialog" name="CredentialsTable2" title="Credentials List" dataset="bind:Variables.selectAllVariable.dataSet" navigation="Classic">
+                            <wm-table gridfirstrowselect="true" editmode="dialog" name="CredentialsTable2" title="Credentials List" dataset="bind:Variables.selectAllVariable.dataSet" navigation="Classic" width="600">
                                 <wm-table-column binding="username" caption="Username" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
                                 <wm-table-column binding="password" caption="Password" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
                                 <wm-table-column binding="userRole" caption="User Role" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
@@ -42,14 +42,16 @@
                                     </wm-gridrow>
                                     <wm-gridrow name="gridrow15">
                                         <wm-gridcolumn columnwidth="12" name="gridcolumn14">
-                                            <wm-form-field name="userRole" displayname="User Role" show="true" primary-key="false" generator="assigned" key="userRole" type="string" readonly="false" required="false" widget="select" maxchars="255" placeholder="Select value"></wm-form-field>
+                                            <wm-form-field name="userRole" displayname="User Role" show="true" primary-key="false" generator="assigned" key="userRole" type="string" readonly="false" required="false" widget="select" maxchars="255" placeholder="Select value"
+                                                dataset="admin, active, inactive" datafield="All Fields"></wm-form-field>
                                         </wm-gridcolumn>
                                     </wm-gridrow>
                                 </wm-layoutgrid>
                                 <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
                                 <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" widget-type="button" type="button"
                                     update-mode="true"></wm-form-action>
-                                <wm-form-action widget-type="button" key="save" class="form-save btn-success" iconclass="wi wi-save" action="save()" display-name="Save" show="true" type="submit" update-mode="true" shortcutkey=""></wm-form-action>
+                                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="Actions.notificationAction2.invoke()" shortcutkey="" disabled="false"
+                                    widget-type="button" type="button" update-mode="true"></wm-form-action>
                             </wm-liveform>
                         </wm-livetable>
                     </wm-gridcolumn>
@@ -82,14 +84,16 @@
                                     </wm-gridrow>
                                     <wm-gridrow name="gridrow19">
                                         <wm-gridcolumn columnwidth="12" name="gridcolumn18">
-                                            <wm-form-field name="userRole" displayname="User Role" show="true" primary-key="false" generator="assigned" key="userRole" type="string" readonly="false" widget="select" maxchars="255" placeholder="Select value"></wm-form-field>
+                                            <wm-form-field name="userRole" displayname="User Role" show="true" primary-key="false" generator="assigned" key="userRole" type="string" readonly="false" widget="select" maxchars="255" placeholder="Select value"
+                                                dataset="admin, active, inactive" datafield="All Fields"></wm-form-field>
                                         </wm-gridcolumn>
                                     </wm-gridrow>
                                 </wm-layoutgrid>
                                 <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
                                 <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" widget-type="button" type="button"
                                     update-mode="true"></wm-form-action>
-                                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="save()" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+                                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="Actions.notificationAction3.invoke()" disabled="false" widget-type="button"
+                                    type="button" update-mode="true"></wm-form-action>
                             </wm-liveform>
                         </wm-livetable>
                     </wm-gridcolumn>
@@ -122,14 +126,16 @@
                                     </wm-gridrow>
                                     <wm-gridrow name="gridrow22">
                                         <wm-gridcolumn columnwidth="12" name="gridcolumn21">
-                                            <wm-form-field name="userRole" displayname="User Role" show="true" primary-key="false" generator="assigned" key="userRole" type="string" readonly="false" widget="select" maxchars="255" placeholder="Select value"></wm-form-field>
+                                            <wm-form-field name="userRole" displayname="User Role" show="true" primary-key="false" generator="assigned" key="userRole" type="string" readonly="false" widget="select" maxchars="255" placeholder="Select value"
+                                                dataset="admin, active, inactive" datafield="All Fields"></wm-form-field>
                                         </wm-gridcolumn>
                                     </wm-gridrow>
                                 </wm-layoutgrid>
                                 <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
                                 <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" widget-type="button" type="button"
                                     update-mode="true"></wm-form-action>
-                                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="save()" disabled="false" widget-type="button" type="submit" update-mode="true"></wm-form-action>
+                                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="Actions.notificationAction1.invoke()" disabled="false" widget-type="button"
+                                    type="button" update-mode="true"></wm-form-action>
                             </wm-liveform>
                         </wm-livetable>
                     </wm-gridcolumn>
@@ -138,4 +144,6 @@
         </wm-page-content>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-confirmdialog on-ok="notification.onOk()" on-cancel="notification.onCancel()" name="notificationconfirmdialog" notificationdialog="confirm" message="bind:notification.text" title="bind:notification.title" oktext="bind:notification.okButtonText"
+        canceltext="bind:notification.cancelButtonText" on-close="notification.onClose()"></wm-confirmdialog>
 </wm-page>

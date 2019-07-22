@@ -1,4 +1,79 @@
 {
+  "notificationAction1" : {
+    "_id" : "wm-notificationAction1-wm.NotificationVariable-1563777601968",
+    "name" : "notificationAction1",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Are you sure ?",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Confirm",
+      "type" : "string"
+    }, {
+      "target" : "okButtonText",
+      "value" : "Yes",
+      "type" : "string"
+    }, {
+      "target" : "cancelButtonText",
+      "value" : "No",
+      "type" : "string"
+    } ],
+    "operation" : "confirm",
+    "onOk" : "notificationAction1onOk(variable, data, options)"
+  },
+  "notificationAction2" : {
+    "_id" : "wm-notificationAction2-wm.NotificationVariable-1563778158908",
+    "name" : "notificationAction2",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Are you sure ?",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Confirm",
+      "type" : "string"
+    }, {
+      "target" : "okButtonText",
+      "value" : "Yes",
+      "type" : "string"
+    }, {
+      "target" : "cancelButtonText",
+      "value" : "No",
+      "type" : "string"
+    } ],
+    "operation" : "confirm",
+    "onOk" : "notificationAction2onOk(variable, data, options)"
+  },
+  "notificationAction3" : {
+    "_id" : "wm-notificationAction3-wm.NotificationVariable-1563778230029",
+    "name" : "notificationAction3",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Are you sure ?",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Confirm",
+      "type" : "string"
+    }, {
+      "target" : "okButtonText",
+      "value" : "Yes",
+      "type" : "string"
+    }, {
+      "target" : "cancelButtonText",
+      "value" : "No",
+      "type" : "string"
+    } ],
+    "operation" : "confirm",
+    "onOk" : "notificationAction3onOk(variable, data, options)"
+  },
   "selectActiveVariable" : {
     "_id" : "wm-selectActiveVariable-wm.LiveVariable-1563537790973",
     "name" : "selectActiveVariable",
@@ -12,6 +87,7 @@
     "saveInPhonegap" : false,
     "maxResults" : 20,
     "designMaxResults" : 10,
+    "onSuccess" : "selectActiveVariableonSuccess(variable, data, options)",
     "inFlightBehavior" : "executeLast",
     "startUpdate" : true,
     "autoUpdate" : true,
@@ -111,6 +187,7 @@
     "saveInPhonegap" : false,
     "maxResults" : 20,
     "designMaxResults" : 10,
+    "onSuccess" : "selectAllVariableonSuccess(variable, data, options)",
     "inFlightBehavior" : "executeLast",
     "startUpdate" : true,
     "autoUpdate" : true,
@@ -210,6 +287,7 @@
     "saveInPhonegap" : false,
     "maxResults" : 20,
     "designMaxResults" : 10,
+    "onSuccess" : "selectInactiveVariableonSuccess(variable, data, options)",
     "inFlightBehavior" : "executeLast",
     "startUpdate" : true,
     "autoUpdate" : true,
