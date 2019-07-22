@@ -23,7 +23,7 @@ Page.continue_dialogClick = function($event, widget) {
 var check = 1;
 
 Page.insertInto_appscreenshotsonSuccess = function(variable, data) {
-    console.log(data)
+    //console.log(data)
     if (data != null)
         check = 1;
     else
@@ -31,7 +31,7 @@ Page.insertInto_appscreenshotsonSuccess = function(variable, data) {
 };
 
 Page.FileServiceUploadFile1onSuccess = function(variable, data) {
-    console.log(data)
+    //console.log(data)
     var i = 0;
     var flag = 0;
     var inter = setInterval(function() {

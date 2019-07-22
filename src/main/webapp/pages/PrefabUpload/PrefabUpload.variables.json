@@ -308,6 +308,18 @@
         "isRelated" : false,
         "scale" : 0
       }, {
+        "fieldName" : "image",
+        "type" : "blob",
+        "fullyQualifiedType" : "blob",
+        "columnName" : "IMAGE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : -1,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
         "fieldName" : "lastUpdateDate",
         "type" : "timestamp",
         "fullyQualifiedType" : "timestamp",
@@ -345,19 +357,6 @@
         "isRelated" : false,
         "systemInserted" : true,
         "systemUpdated" : true,
-        "scale" : 0
-      }, {
-        "fieldName" : "image",
-        "type" : "string",
-        "fullyQualifiedType" : "string",
-        "columnName" : "IMAGE",
-        "isPrimaryKey" : false,
-        "notNull" : false,
-        "length" : 1000,
-        "precision" : 0,
-        "generator" : "assigned",
-        "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "AppInfo",
@@ -492,6 +491,18 @@
           "isRelated" : false,
           "scale" : 0
         }, {
+          "fieldName" : "image",
+          "type" : "blob",
+          "fullyQualifiedType" : "blob",
+          "columnName" : "IMAGE",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : -1,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "scale" : 0
+        }, {
           "fieldName" : "lastUpdateDate",
           "type" : "timestamp",
           "fullyQualifiedType" : "timestamp",
@@ -530,19 +541,6 @@
           "systemInserted" : true,
           "systemUpdated" : true,
           "scale" : 0
-        }, {
-          "fieldName" : "image",
-          "type" : "string",
-          "fullyQualifiedType" : "string",
-          "columnName" : "IMAGE",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : 1000,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "defaultValue" : "",
-          "scale" : 0
         } ]
       }, {
         "fieldName" : "id",
@@ -563,7 +561,7 @@
         "columnName" : "SCREENSHOTS",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 1000,
+        "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
@@ -710,6 +708,18 @@
           "isRelated" : false,
           "scale" : 0
         }, {
+          "fieldName" : "image",
+          "type" : "blob",
+          "fullyQualifiedType" : "blob",
+          "columnName" : "IMAGE",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : -1,
+          "precision" : 0,
+          "generator" : "assigned",
+          "isRelated" : false,
+          "scale" : 0
+        }, {
           "fieldName" : "lastUpdateDate",
           "type" : "timestamp",
           "fullyQualifiedType" : "timestamp",
@@ -748,19 +758,6 @@
           "systemInserted" : true,
           "systemUpdated" : true,
           "scale" : 0
-        }, {
-          "fieldName" : "image",
-          "type" : "string",
-          "fullyQualifiedType" : "string",
-          "columnName" : "IMAGE",
-          "isPrimaryKey" : false,
-          "notNull" : false,
-          "length" : 1000,
-          "precision" : 0,
-          "generator" : "assigned",
-          "isRelated" : false,
-          "defaultValue" : "",
-          "scale" : 0
         } ]
       }, {
         "fieldName" : "id",
@@ -776,17 +773,16 @@
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "filePath",
+        "fieldName" : "_desc",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_PATH",
+        "columnName" : "DESC",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "createdBy",
@@ -812,6 +808,19 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "fileName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "FILE_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -853,22 +862,22 @@
         "scale" : 0
       }, {
         "fieldName" : "versionId",
-        "type" : "integer",
-        "fullyQualifiedType" : "integer",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
         "columnName" : "VERSION_ID",
         "isPrimaryKey" : false,
         "notNull" : false,
-        "length" : 0,
-        "precision" : 10,
+        "length" : 255,
+        "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
       }, {
-        "fieldName" : "fileName",
+        "fieldName" : "filePath",
         "type" : "string",
         "fullyQualifiedType" : "string",
-        "columnName" : "FILE_NAME",
+        "columnName" : "FILE_PATH",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 255,
@@ -920,8 +929,7 @@
       "value" : "warning",
       "type" : "string"
     } ],
-    "operation" : "alert",
-    "onOk" : "Widgets.dialog1.open()"
+    "operation" : "alert"
   },
   "prefab_created" : {
     "_id" : "wm-prefab_created-wm.NotificationVariable-1563527381929",
