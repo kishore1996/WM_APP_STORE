@@ -12,12 +12,19 @@ Page.continue_dialogClick = function($event, widget) {
     if (Page.Widgets.prefabname.datavalue == null || Page.Widgets.description.datavalue == null) {
         Page.Actions.nuotnullnotify.invoke();
         //Page.Widgets.dialog1.open();
+    }
+    if (Page.Widgets.select1.datavalue == null) {
+        Page.Actions.selectcategory_alert.invoke();
+    }
+    if (Page.Widgets.icon_upload.selectedFiles.length == 0) {
+        Page.Actions.selectfileupload.invoke();
     } else {
         Page.Variables.insertInto_appinfo.invoke();
         Page.Widgets.dialog1.close();
         Page.Actions.timerAction1.invoke();
         Page.Actions.prefab_created.invoke();
     }
+    //console.log(Page.Widgets.icon_upload.selectedFiles)
 };
 
 var check = 1;
@@ -54,8 +61,14 @@ Page.FileServiceUploadFile1onSuccess = function(variable, data) {
 };
 
 Page.saveClick = function($event, widget) {
-    if (Page.Widgets.text3.datavalue == null || Page.Widgets.prefab_upload.selectedFiles == null) {
+    if (Page.Widgets.text3.datavalue == null) {
         Page.Actions.nuotnullnotify.invoke();
+    }
+    if (Page.Widgets.prefab_upload.selectedFiles.length == 0) {
+        Page.Actions.selectfileupload.invoke();
+    }
+    if (Page.Widgets.screenshot_upload.selectedFiles.length == 0) {
+        Page.Actions.selectfileupload.invoke();
     } else {
         Page.Variables.insertINto_appsource.invoke();
         Page.Actions.filesuploaded.invoke();

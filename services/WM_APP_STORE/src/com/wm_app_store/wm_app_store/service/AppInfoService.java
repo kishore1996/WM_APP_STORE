@@ -224,18 +224,6 @@ public interface AppInfoService {
     Page<AppScreen> findAssociatedAppScreens(Integer id, Pageable pageable);
 
     /*
-     * Returns the associated appSources for given AppInfo id.
-     *
-     * @param id value of id; value cannot be null
-     * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of associated AppSource instances.
-     *
-     * @see Pageable
-     * @see Page
-     */
-    Page<AppSource> findAssociatedAppSources(Integer id, Pageable pageable);
-
-    /*
      * Returns the associated appScreenshotses for given AppInfo id.
      *
      * @param id value of id; value cannot be null
@@ -246,5 +234,17 @@ public interface AppInfoService {
      * @see Page
      */
     Page<AppScreenshots> findAssociatedAppScreenshotses(Integer id, Pageable pageable);
+
+    /*
+     * Returns the associated appSources for given AppInfo id.
+     *
+     * @param id value of id; value cannot be null
+     * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
+     * @return Paginated list of associated AppSource instances.
+     *
+     * @see Pageable
+     * @see Page
+     */
+    Page<AppSource> findAssociatedAppSources(Integer id, Pageable pageable);
 
 }

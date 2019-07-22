@@ -237,17 +237,6 @@ public class AppInfoServiceImpl implements AppInfoService {
 
     @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
     @Override
-    public Page<AppSource> findAssociatedAppSources(Integer id, Pageable pageable) {
-        LOGGER.debug("Fetching all associated appSources");
-
-        StringBuilder queryBuilder = new StringBuilder();
-        queryBuilder.append("appInfo.id = '" + id + "'");
-
-        return appSourceService.findAll(queryBuilder.toString(), pageable);
-    }
-
-    @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
-    @Override
     public Page<AppScreenshots> findAssociatedAppScreenshotses(Integer id, Pageable pageable) {
         LOGGER.debug("Fetching all associated appScreenshotses");
 
@@ -255,6 +244,17 @@ public class AppInfoServiceImpl implements AppInfoService {
         queryBuilder.append("appInfo.id = '" + id + "'");
 
         return appScreenshotsService.findAll(queryBuilder.toString(), pageable);
+    }
+
+    @Transactional(readOnly = true, value = "WM_APP_STORETransactionManager")
+    @Override
+    public Page<AppSource> findAssociatedAppSources(Integer id, Pageable pageable) {
+        LOGGER.debug("Fetching all associated appSources");
+
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("appInfo.id = '" + id + "'");
+
+        return appSourceService.findAll(queryBuilder.toString(), pageable);
     }
 
     /**

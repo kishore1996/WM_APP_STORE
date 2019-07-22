@@ -143,6 +143,14 @@
       "target" : "image",
       "value" : "bind:Variables.FileServiceUploadFile3.dataSet[$i].inlinePath",
       "type" : "string"
+    }, {
+      "target" : "categoryId",
+      "value" : "bind:Widgets.select1.datavalue",
+      "type" : "number"
+    }, {
+      "target" : "createdBy",
+      "value" : "bind:Variables.loggedInUser.dataSet.name",
+      "type" : "string"
     } ],
     "operation" : "insert",
     "dataSet" : [ ],
@@ -293,7 +301,8 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
+        "systemInserted" : true,
+        "systemUpdated" : true,
         "scale" : 0
       }, {
         "fieldName" : "creationDate",
@@ -477,7 +486,8 @@
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
-          "defaultValue" : "",
+          "systemInserted" : true,
+          "systemUpdated" : true,
           "scale" : 0
         }, {
           "fieldName" : "creationDate",
@@ -695,7 +705,8 @@
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
-          "defaultValue" : "",
+          "systemInserted" : true,
+          "systemUpdated" : true,
           "scale" : 0
         }, {
           "fieldName" : "creationDate",
@@ -799,7 +810,8 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
+        "systemInserted" : true,
+        "systemUpdated" : true,
         "scale" : 0
       }, {
         "fieldName" : "creationDate",
@@ -849,7 +861,8 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
+        "systemInserted" : true,
+        "systemUpdated" : true,
         "scale" : 0
       }, {
         "fieldName" : "versionId",
@@ -960,6 +973,167 @@
       "type" : "string"
     } ],
     "operation" : "toast"
+  },
+  "read_mdcategory" : {
+    "_id" : "wm-read_mdcategory-wm.LiveVariable-1563784254189",
+    "name" : "read_mdcategory",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "MdCategory",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "WM_APP_STORE",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "id asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "createdBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "CREATED_BY",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "creationDate",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
+        "columnName" : "CREATION_DATE",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "label",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "LABEL",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "lastUpdateDate",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
+        "columnName" : "LAST_UPDATE_DATE",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "updatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "UPDATED_BY",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "MdCategory",
+      "fullyQualifiedName" : "com.wm_app_store.wm_app_store.MdCategory",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "id" ]
+    },
+    "bindCount" : 1,
+    "tableName" : "MD_CATEGORY",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : { },
+    "package" : "com.wm_app_store.wm_app_store.MdCategory"
+  },
+  "selectcategory_alert" : {
+    "_id" : "wm-selectcategory_alert-wm.NotificationVariable-1563785079113",
+    "name" : "selectcategory_alert",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Please select category.",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Warning",
+      "type" : "string"
+    }, {
+      "target" : "okButtonText",
+      "value" : "Okay",
+      "type" : "string"
+    }, {
+      "target" : "alerttype",
+      "value" : "warning",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
+  },
+  "selectfileupload" : {
+    "_id" : "wm-selectfileupload-wm.NotificationVariable-1563787435601",
+    "name" : "selectfileupload",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Please a select file(s) to Upload",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Warning",
+      "type" : "string"
+    }, {
+      "target" : "okButtonText",
+      "value" : "Okay",
+      "type" : "string"
+    }, {
+      "target" : "alerttype",
+      "value" : "warning",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
   },
   "timeaction_gotomain" : {
     "_id" : "wm-timeaction_gotomain-wm.TimerVariable-1563541639614",

@@ -11,7 +11,7 @@
                         <wm-composite name="composite3">
                             <wm-label class="col-md-3 control-label" caption="File Name:" margin="10px unset unset 10px" name="label6" fontsize="15"></wm-label>
                             <wm-container class="col-md-9" name="container3_1" width="450" margin="unset unset unset 23px">
-                                <wm-text name="text3"></wm-text>
+                                <wm-text name="text3" required="true"></wm-text>
                             </wm-container>
                         </wm-composite>
                     </wm-gridcolumn>
@@ -56,9 +56,9 @@
             <wm-gridrow name="gridrow9">
                 <wm-gridcolumn columnwidth="12" name="gridcolumn17">
                     <wm-composite name="composite2">
-                        <wm-label class="col-md-3 control-label" name="label7" caption="Prefab Name" fontsize="15"></wm-label>
+                        <wm-label class="col-md-3 control-label" name="label7" caption="Prefab Name:" fontsize="15"></wm-label>
                         <wm-container class="col-md-9" name="container2">
-                            <wm-text name="prefabname"></wm-text>
+                            <wm-text name="prefabname" required="true"></wm-text>
                         </wm-container>
                     </wm-composite>
                 </wm-gridcolumn>
@@ -66,9 +66,21 @@
             <wm-gridrow name="gridrow10">
                 <wm-gridcolumn columnwidth="12" name="gridcolumn18">
                     <wm-composite name="composite3_1">
-                        <wm-label class="col-md-3 control-label" name="label8" caption="Description" fontsize="15"></wm-label>
+                        <wm-label class="col-md-3 control-label" name="label8" caption="Description:" fontsize="15"></wm-label>
                         <wm-container class="col-md-9" name="container3">
-                            <wm-textarea name="description"></wm-textarea>
+                            <wm-textarea name="description" required="true"></wm-textarea>
+                        </wm-container>
+                    </wm-composite>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-layoutgrid name="layoutgrid6_1" columns="1">
+            <wm-gridrow name="gridrow11">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn19">
+                    <wm-composite name="composite4">
+                        <wm-label class="col-md-3 control-label" name="label9_1" caption="Select Category:" fontsize="15" margin="unset unset unset -1px"></wm-label>
+                        <wm-container class="col-md-9" name="container4" width="250">
+                            <wm-select name="select1" dataset="bind:Variables.read_mdcategory.dataSet" datafield="id" displayfield="label" placeholder="Select Category" required="true"></wm-select>
                         </wm-container>
                     </wm-composite>
                 </wm-gridcolumn>

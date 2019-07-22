@@ -37,6 +37,7 @@ public class AppInfo implements Serializable {
     private Integer id;
     private String _desc;
     private Integer categoryId;
+    @WMValueInject( type = VariableType.SERVER, name = "USER_NAME", scopes = { Scope.INSERT, Scope.UPDATE })
     private String createdBy;
     private Timestamp creationDate;
     private Timestamp lastUpdateDate;

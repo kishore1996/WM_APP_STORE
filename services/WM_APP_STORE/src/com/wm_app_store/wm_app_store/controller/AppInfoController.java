@@ -209,15 +209,6 @@ public class AppInfoController {
         return appInfoService.findAssociatedAppScreens(id, pageable);
     }
 
-    @RequestMapping(value="/{id:.+}/appSources", method=RequestMethod.GET)
-    @ApiOperation(value = "Gets the appSources instance associated with the given id.")
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<AppSource> findAssociatedAppSources(@PathVariable("id") Integer id, Pageable pageable) {
-
-        LOGGER.debug("Fetching all associated appSources");
-        return appInfoService.findAssociatedAppSources(id, pageable);
-    }
-
     @RequestMapping(value="/{id:.+}/appScreenshotses", method=RequestMethod.GET)
     @ApiOperation(value = "Gets the appScreenshotses instance associated with the given id.")
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
@@ -225,6 +216,15 @@ public class AppInfoController {
 
         LOGGER.debug("Fetching all associated appScreenshotses");
         return appInfoService.findAssociatedAppScreenshotses(id, pageable);
+    }
+
+    @RequestMapping(value="/{id:.+}/appSources", method=RequestMethod.GET)
+    @ApiOperation(value = "Gets the appSources instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<AppSource> findAssociatedAppSources(@PathVariable("id") Integer id, Pageable pageable) {
+
+        LOGGER.debug("Fetching all associated appSources");
+        return appInfoService.findAssociatedAppSources(id, pageable);
     }
 
     /**
