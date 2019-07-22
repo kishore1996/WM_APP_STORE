@@ -60,7 +60,7 @@
                                     <wm-label padding="unset 0.5em" name="label4" caption="bind:Variables.PrefabData.dataSet.categoryID" color="#1A659E" fontsize="14" fontweight="bold"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="3" name="gridcolumn11" horizontalalign="center">
-                                    <wm-rating name="rating1" datavalue="bind:Variables.PrefabData.dataSet.AvgRating" datafield="AvgRating" displayfield="AvgRating"></wm-rating>
+                                    <wm-rating name="rating1" datavalue="bind:Variables.PrefabData.dataSet.AvgRating" datafield="AvgRating" displayfield="AvgRating" readonly="true"></wm-rating>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="5" name="gridcolumn13_1"></wm-gridcolumn>
                             </wm-gridrow>
@@ -68,7 +68,8 @@
                                 <wm-gridcolumn columnwidth="12" name="gridcolumn13" class="pull-right" horizontalalign="right" padding="unset 2em unset unset">
                                     <wm-button class="btn-default" caption="Revert" type="button" margin="unset 0.5em" name="button14" fontsize="14" backgroundcolor="#dc4f44" on-click="Actions.Revert_update.invoke()"></wm-button>
                                     <wm-button class="btn-default" caption="Update" type="button" margin="unset 0.5em" name="button2" backgroundcolor="#2296F3" bordercolor="#ffffff00" color="#ffffff" fontsize="14" textalign="center" on-click="Actions.goToPage_Prefab_Version.invoke()"></wm-button>
-                                    <wm-button class="btn-default" caption="Download" type="button" margin="unset 2em unset 0.5em" name="button1" textalign="center" backgroundcolor="#2296F3" color="#ffffff" bordercolor="#ffffff00" fontsize="14"></wm-button>
+                                    <wm-button class="btn-default" caption="Download" type="button" margin="unset 2em unset 0.5em" name="button1" textalign="center" backgroundcolor="#2296F3" color="#ffffff" bordercolor="#ffffff00" fontsize="14"
+                                        on-click="button1Click($event, widget)"></wm-button>
                                     <wm-label padding="unset 0.5em" name="label6" caption="bind:&quot;+&quot;+Variables.PrefabData.dataSet.TotalDownloads" margin="1em unset unset unset" fontsize="14" fontweight="bold"></wm-label>
                                 </wm-gridcolumn>
                             </wm-gridrow>

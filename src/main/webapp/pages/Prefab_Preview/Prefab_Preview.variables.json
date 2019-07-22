@@ -1242,10 +1242,10 @@
     "filterExpressions" : {
       "condition" : "AND",
       "rules" : [ {
-        "target" : "",
-        "type" : "string",
+        "target" : "appInfoId",
+        "type" : "integer",
         "matchMode" : "exact",
-        "value" : "",
+        "value" : "bind:pageParams.ID",
         "required" : false,
         "secondvalue" : "",
         "isFirst" : true

@@ -95,7 +95,7 @@ Page.cancel1Click = function($event, widget) {
 };
 Page.submitClick = function($event, widget) {
 
-    Page.Variables.stForReview.dataSet.selfreview.createdby = "CurrentUser";
+    Page.Variables.stForReview.dataSet.selfreview.createdby = CurrentUser;
     Page.Variables.stForReview.dataSet.selfreview.rate = Page.Widgets.userrating.datavalue;
     Page.Variables.stForReview.dataSet.selfreview.comment = Page.Widgets.textarea1.datavalue;
     var dateObj = new Date();
@@ -114,6 +114,7 @@ Page.submitClick = function($event, widget) {
     Page.Variables.AppRating_Update.createRecord({
         row: {
             "appInfoId": Page.Variables.Appinfo.dataSet[0]["id"],
+            "createdBy": CurrentUser,
             "comments": Page.Widgets.textarea1.datavalue,
             "creationDate": new Date(),
             "lastUpdateDate": new Date(),
@@ -214,7 +215,7 @@ Page.AppinfoonSuccess = function(variable, data) {
     if (creator) {
         Page.Widgets.edit.display = "";
         Page.Widgets.edit1.display = "";
-        Page.Widgets.button15.display = "";
+        Page.Widgets.button15.show = true;
     }
     Page.Variables.PrefabSource.setInput({
         "id": data[0]["id"]
@@ -240,7 +241,19 @@ Page.AppinfoonSuccess = function(variable, data) {
 Page.AvgRatingonSuccess = function(variable, data) {
     console.log("avg")
     console.log(data)
-    Page.Variables.PrefabData.dataSet["AvgRating"] = data["avg_rate_"]
+    console.log(data[0]["avg_rate_"] != null)
+
+    if (data[0]["avg_rate_"] != null) {
+        Page.Widgets.rating1.selectedRatingValue = data[0]["avg_rate_"]
+        Page.Widgets.rating1.datavalue = data[0]["avg_rate_"]
+        Page.Widgets.rating1.caption = Math.round(data[0]["avg_rate_"])
+
+    } else {
+        Page.Widgets.rating1.selectedRatingValue = 0
+        Page.Widgets.rating1.datavalue = 0
+        Page.Widgets.rating1.caption = null
+    }
+    console.log(Page.Widgets.rating1)
 };
 
 Page.AppScreenshotsonSuccess = function(variable, data) {
@@ -256,13 +269,15 @@ Page.AppScreenshotsonSuccess = function(variable, data) {
 };
 
 Page.AppRatingsonSuccess = function(variable, data) {
+    console.log("caurosel")
+    console.log(Page.Widgets.carousel1.dataset)
     console.log("rating")
     console.log(data)
     d = []
     e = {}
     flag = false;
     for (var i = 0; i < data.length; i++) {
-        if (data[i]["appInfoId"] != Page.Variables.Appinfo.dataSet[0]["id"])
+        if (data[i]["createdBy"] != CurrentUser)
             d.push({
                 "rate": data[i]["rate"],
                 "comment": data[i]["comments"],
@@ -279,6 +294,9 @@ Page.AppRatingsonSuccess = function(variable, data) {
             flag = true;
         }
     }
+    console.log("success rating")
+    console.log(d)
+    console.log(e)
     if (!flag) {
         Page.Widgets.submit.display = "";
         Page.Widgets.textarea1.display = "";
@@ -297,16 +315,24 @@ Page.button15Click = function($event, widget) {
     var i;
     for (i = 0; i < data.length; i++) {
         if (data[i]["screenshots"] == Page.Widgets.picture4.picturesource) {
-            Page.Variables.AppScreenshots.dataSet.slice(i, 1)
             Page.Widgets.picture4.picturesource = null
             break;
         }
     }
+    console.log(Page.Variables.AppScreenshots.dataSet)
+
+    console.log(Page.Variables.AppScreenshots.dataSet)
     Page.Variables.App_Screenshots.deleteRecord({
         row: {
             "id": data[i]["id"]
         }
     })
+    for (var j = 0; j < Page.Widgets.carousel1.dataset.length; j++) {
+        if (Page.Widgets.carousel1.dataset[j]["image"] == data[i]["screenshots"]) {
+            delete Page.Variables.AppScreenshots.dataSet[j]
+            break
+        }
+    }
     console.log(data[i]["id"])
     console.log(Page.Widgets.picture4.picturesource)
 };
@@ -317,4 +343,8 @@ Page.App_ScreenshotsonSuccess = function(variable, data) {
 
 Page.AppRating_UpdateonSuccess = function(variable, data) {
 
+};
+Page.button1Click = function($event, widget) {
+    window.open(Page.Variables.PrefabSource.dataSet[0]["filePath"])
+    window.focus()
 };
