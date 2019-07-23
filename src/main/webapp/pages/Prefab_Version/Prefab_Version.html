@@ -10,7 +10,6 @@
                             <wm-gridrow name="gridrow10" height="30">
                                 <wm-gridcolumn columnwidth="4" name="gridcolumn14">
                                     <wm-label padding="unset 0.5em" name="label7" caption="File Name"></wm-label>
-                                    <wm-label padding="unset 0.5em" name="prefab_id" caption="bind:Variables.database_appinfo.dataSet[$i].id"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="8" name="gridcolumn15_2">
                                     <wm-text name="filename" placeholder="Enter File Name" datavalue="bind:Variables.database_appsource.dataSet[$i].fileName"></wm-text>
@@ -21,7 +20,7 @@
                                     <wm-label padding="unset 0.5em" name="label8_1" caption="Description"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="8" name="gridcolumn17_1">
-                                    <wm-textarea name="description" datavalue="bind:Variables.database_appinfo.dataSet[$i]._desc" placeholder="Enter description"></wm-textarea>
+                                    <wm-textarea name="description" datavalue="bind:Variables.PrefabData.dataSet.Description" placeholder="Enter description"></wm-textarea>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                         </wm-layoutgrid>
@@ -32,7 +31,7 @@
                                 <wm-label padding="unset 0.5em" name="label9_1" caption="Upload prefab"></wm-label>
                             </wm-gridcolumn>
                             <wm-gridcolumn columnwidth="8" name="gridcolumn19">
-                                <wm-fileupload name="prefabupload" on-select="Variables.FileServiceUploadFile.invoke()"></wm-fileupload>
+                                <wm-fileupload name="prefabupload" on-select="Variables.FileServiceUploadFile.invoke()" contenttype=".zip" maxfilesize="20"></wm-fileupload>
                             </wm-gridcolumn>
                         </wm-gridrow>
                         <wm-gridrow name="gridrow13" height="300">
@@ -40,7 +39,7 @@
                                 <wm-label padding="unset 0.5em" name="label10" caption="Upload screenshots"></wm-label>
                             </wm-gridcolumn>
                             <wm-gridcolumn columnwidth="8" name="gridcolumn21">
-                                <wm-fileupload name="screenshotsupload" on-select="Variables.FileServiceUploadFile1.invoke()" multiple="true" width="200"></wm-fileupload>
+                                <wm-fileupload name="screenshotsupload" on-select="Variables.FileServiceUploadFile1.invoke()" multiple="true" width="200" contenttype=".png .jpg" maxfilesize="20"></wm-fileupload>
                             </wm-gridcolumn>
                         </wm-gridrow>
                     </wm-layoutgrid>
@@ -49,10 +48,12 @@
             </wm-gridrow>
             <wm-layoutgrid name="layoutgrid5">
                 <wm-gridrow name="gridrow9">
-                    <wm-gridcolumn columnwidth="6" name="gridcolumn16_2">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn16_2">
                         <wm-label padding="unset 0.5em" name="label6" caption="Version"></wm-label>
                     </wm-gridcolumn>
-                    <wm-gridcolumn columnwidth="6" name="gridcolumn17"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn17">
+                        <wm-label padding="unset 0.5em" name="prefab_id" caption="bind:Variables.database_appinfo.dataSet[$i].id"></wm-label>
+                    </wm-gridcolumn>
                 </wm-gridrow>
                 <wm-gridrow name="gridrow8">
                     <wm-gridcolumn columnwidth="9" name="gridcolumn14_1"></wm-gridcolumn>

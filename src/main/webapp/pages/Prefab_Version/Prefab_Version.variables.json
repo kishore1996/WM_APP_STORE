@@ -687,7 +687,11 @@
       "type" : "string"
     }, {
       "target" : "filePath",
-      "value" : "bind:Variables.FileServiceUploadFile.dataSet[$i].path",
+      "value" : "bind:Variables.FileServiceUploadFile.firstRecord.inlinePath",
+      "type" : "string"
+    }, {
+      "target" : "_desc",
+      "value" : "bind:Widgets.description.datavalue",
       "type" : "string"
     } ],
     "operation" : "insert",
@@ -1543,27 +1547,5 @@
     "filterExpressions" : { },
     "inputFields" : { },
     "package" : "com.wm_app_store.wm_app_store.AppInfo"
-  },
-  "Version_id" : {
-    "_id" : "wm-Version_id-wm.ServiceVariable-1563796973316",
-    "name" : "Version_id",
-    "owner" : "Page",
-    "category" : "wm.ServiceVariable",
-    "dataBinding" : [ ],
-    "type" : "com.wm_app_store.wm_app_store.models.query.VersionResponse",
-    "service" : "WM_APP_STORE",
-    "operation" : "executeVersion",
-    "operationId" : "QueryExecutionController_executeVersion",
-    "operationType" : "get",
-    "serviceType" : "DataService",
-    "dataSet" : [ ],
-    "isList" : false,
-    "maxResults" : 20,
-    "startUpdate" : true,
-    "autoUpdate" : true,
-    "inFlightBehavior" : "executeLast",
-    "transformationRequired" : false,
-    "saveInPhonegap" : false,
-    "controller" : "QueryExecution"
   }
 }

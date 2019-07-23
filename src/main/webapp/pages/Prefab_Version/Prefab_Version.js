@@ -32,7 +32,7 @@ Page.FileServiceUploadFile1onSuccess = function(variable, data) {
     var flag = 0;
     var inter = setInterval(function() {
         if (flag == 0) {
-            Page.Variables.insertInto_appscreenshots.setInput({
+            Page.Variables.insert_screenshots.setInput({
                 "screenshots": data[i]["inlinePath"]
             })
             Page.Variables.insert_screenshots.invoke();
@@ -50,15 +50,16 @@ Page.FileServiceUploadFile1onSuccess = function(variable, data) {
 };
 
 Page.save_buttonClick = function($event, widget) {
-    if (Page.Widgets.text1.datavalue == null || Page.Widgets.textarea1.datavalue == null) {
+    if (Page.Widgets.filename.datavalue == null || Page.Widgets.description.datavalue == null) {
         Page.Actions.nullnotify.invoke();
-    } else if (Page.Widgets.fileupload2_1.selectedFiles.length == 0) {
+    } else if (Page.Widgets.prefabupload.selectedFiles.length == 0) {
         Page.Actions.fileupload.invoke();
-    } else if (Page.Widgets.fileupload3.selectedFiles.length == 0) {
+    } else if (Page.Widgets.screenshotsupload.selectedFiles.length == 0) {
         Page.Actions.fileupload1.invoke();
     } else {
+        console.log(Page.Variables.FileServiceUploadFile.dataSet)
         Page.Variables.insert_appsource.invoke();
-        Page.Variables.update_appinfo.invoke();
-        Page.Actions.success.invoke();
+        // Page.Variables.update_appinfo.invoke();
+        Page.App.Actions.goToPage_Prefab_Preview.invoke();
     }
 };
