@@ -2,62 +2,84 @@
     <wm-header content="header" name="header" height="auto"></wm-header>
     <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
     <wm-content name="content">
-        <wm-page-content columnwidth="12" name="mainContent" padding="unset 15px" overflow="hidden">
-            <wm-layoutgrid name="layoutgrid3">
-                <wm-gridrow name="gridrow62">
-                    <wm-gridcolumn columnwidth="8" name="gridcolumn147" padding="unset unset unset 25%">
+        <wm-page-content columnwidth="12" name="mainContent" padding="unset 15px" overflow="hidden"><br>
+            <wm-layoutgrid name="layoutgrid12" columns="3">
+                <wm-gridrow name="gridrow9">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn19"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn20">
                         <wm-search name="search2" searchon="typing" imagewidth="16px"></wm-search>
                     </wm-gridcolumn>
-                    <wm-gridcolumn columnwidth="4" name="gridcolumn148">
-                        <wm-button class="btn-default" caption="Upload" type="button" margin="unset 0.5em unset 2em" name="button1" backgroundcolor="#0f09e3" color="#ede8e8" on-click="Actions.goToPage_PrefabUpload.invoke()"></wm-button>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn21_1">
+                        <wm-button class="btn-default" caption="Upload" type="button" margin="unset 0.5em unset 10em" name="button1" backgroundcolor="#0f09e3" color="#ede8e8" on-click="Actions.goToPage_PrefabUpload.invoke()" width="100"></wm-button>
                     </wm-gridcolumn>
-                </wm-gridrow><br>
-                <wm-gridrow name="gridrow6_1" height="220" overflow="hidden">
-                    <wm-gridcolumn columnwidth="1" name="gridcolumn8" height="350">
-                        <wm-anchor margin="unset 0.5% unset unset" name="anchor3" width="200" padding="10% unset unset 10%" fontsize="13" caption="APPS" on-click="anchor3Click($event, widget)"></wm-anchor>
-                        <wm-anchor margin="unset 0.5% unset unset" name="anchor4" width="200" padding="10% unset unset 10%" fontsize="13" caption="MAPS" on-click="anchor4Click($event, widget)"></wm-anchor>
-                        <wm-anchor margin="unset 0.5% unset unset" name="anchor5" caption="MEDIA" fontsize="13" padding="10% unset unset 10%" width="200" on-click="anchor5Click($event, widget)"></wm-anchor>
-                        <wm-anchor margin="unset 0.5em unset unset" name="anchor6" caption="NEWS" width="200" fontsize="13" padding="10% unset unset 10%" on-click="anchor6Click($event, widget)"></wm-anchor>
-                        <wm-anchor margin="unset 0.5em unset unset" name="anchor7" fontsize="13" caption="TRAVEL" width="200" padding="10% unset unset 10%" on-click="anchor7Click($event, widget)"></wm-anchor>
-                        <wm-anchor margin="unset 0.5em unset unset" name="anchor8" caption="BASIC" width="200" fontsize="13" padding="10% unset unset 10%" on-click="anchor8Click($event, widget)"></wm-anchor>
+                </wm-gridrow>
+            </wm-layoutgrid><br>
+            <wm-layoutgrid name="layoutgrid7_1" columns="12">
+                <wm-gridrow name="gridrow12">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn26"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn27"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn28">
+                        <wm-label name="label6" class="control-label" caption="Categories:"></wm-label>
                     </wm-gridcolumn>
-                    <wm-gridcolumn columnwidth="11" name="gridcolumn9" height="350" padding="unset unset unset 35px">
-                        <wm-picture name="picture2" picturesource="resources/images/imagelists/wp1868041.jpg" pictureplaceholder="resources/images/imagelists/carousel1.jpg" width="97%" height="220" margin="unset unset unset -35px"></wm-picture>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn29">
+                        <wm-anchor name="anchor3" width="100" fontsize="13" caption="APPS" on-click="anchor3Click($event, widget)" class="badge"></wm-anchor>
                     </wm-gridcolumn>
-                </wm-gridrow><br>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn30">
+                        <wm-anchor name="anchor8" caption="BASIC" width="100" fontsize="13" on-click="anchor8Click($event, widget)" class="badge"></wm-anchor>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn31">
+                        <wm-anchor name="anchor4" width="100" fontsize="13" caption="MAPS" on-click="anchor4Click($event, widget)" class="badge"></wm-anchor>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn32">
+                        <wm-anchor name="anchor5" caption="MEDIA" fontsize="13" width="100" on-click="anchor5Click($event, widget)" class="badge"></wm-anchor>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn33_1">
+                        <wm-anchor name="anchor6" caption="NEWS" width="100" fontsize="13" on-click="anchor6Click($event, widget)" class="badge"></wm-anchor>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn34_1">
+                        <wm-anchor name="anchor7" fontsize="13" caption="TRAVEL" width="100" on-click="anchor7Click($event, widget)" class="badge"></wm-anchor>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn35"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn36"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn37_1"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-layoutgrid name="layoutgrid3"><br><br>
                 <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="PrefabsList1" dataset="bind:Variables.Prefabs.dataSet" navigation="Scroll" height="500" horizontalalign="left" showrecordcount="false"
-                    padding="unset 60px unset 100px">
+                    padding="unset 100px">
                     <wm-listtemplate layout="media" name="listtemplate1">
                         <wm-card name="card1" width="auto" on-click="card1Click($event, widget, item, currentItemWidgets)" imageheight="200px">
                             <wm-card-content fontsize="0.8" fontunit="em" name="card_content1" overflow="hidden">
-                                <wm-layoutgrid columns="2" name="layoutgrid4_1" width="auto" height="auto">
-                                    <wm-gridrow name="gridrow11">
-                                        <wm-gridcolumn columnwidth="4" name="gridcolumn27">
-                                            <wm-picture name="Picture" width="70px" picturesource="bind:Variables.Prefabs.dataSet.Icon" pictureaspect="None" height="60px"></wm-picture>
+                                <wm-layoutgrid name="layoutgrid8">
+                                    <wm-gridrow name="gridrow20">
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn37">
+                                            <wm-picture name="Picture" width="70px" picturesource="bind:Variables.Prefabs.dataSet.Icon" pictureaspect="None" height="70px" shape="circle"></wm-picture>
                                             <wm-label name="Department" caption="bind:Variables.Prefabs.dataSet.category" class="p text-muted" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
                                         </wm-gridcolumn>
-                                        <wm-gridcolumn columnwidth="8" name="gridcolumn28">
-                                            <wm-label name="ID" caption="bind:Variables.Prefabs.dataSet.CreatedOn" class="text-muted p" margin="unset unset 0px unset" whitespace="nowrap" on-click="Actions.goToPage_Prefab_Preview.invoke()" show="false"></wm-label>
-                                            <wm-layoutgrid name="layoutgrid3_1" columns="1">
-                                                <wm-gridrow name="gridrow9">
-                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn16">
-                                                        <wm-label name="Name" caption="bind:Variables.Prefabs.dataSet.PrefabName" class="h4" margin="0px unset" whitespace="nowrap" fontweight="bold"></wm-label>
+                                        <wm-gridcolumn columnwidth="7" name="gridcolumn38">
+                                            <wm-layoutgrid name="layoutgrid9" columns="1">
+                                                <wm-gridrow name="gridrow24">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn45">
+                                                        <wm-label name="Name" caption="bind:Variables.Prefabs.dataSet.PrefabName" class="h4" margin="0px unset" whitespace="nowrap" fontweight="bold" padding="2px unset 10px 2px"></wm-label>
                                                     </wm-gridcolumn>
                                                 </wm-gridrow>
-                                                <wm-gridrow name="gridrow10">
-                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn17">
-                                                        <wm-label padding="unset 0.5em" name="Createdby" caption="bind:Variables.Prefabs.dataSet[$i].CreatedBy"></wm-label>
+                                                <wm-gridrow name="gridrow25">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn46">
+                                                        <wm-label padding="2px unset 5px 2px" name="Createdby" caption="bind:Variables.Prefabs.dataSet[$i].CreatedBy" margin="unset unset unset 3px"></wm-label>
                                                     </wm-gridcolumn>
                                                 </wm-gridrow>
                                             </wm-layoutgrid>
-                                            <wm-anchor name="PhoneNumber" caption="" class="h5" hyperlink="tel:" margin="0px unset" whitespace="nowrap"></wm-anchor>
-                                            <wm-anchor name="EmailID" class="p text-muted" hyperlink="mailto://" caption="" whitespace="nowrap"></wm-anchor>
                                         </wm-gridcolumn>
                                     </wm-gridrow>
-                                    <wm-gridrow name="gridrow12" overflow="hidden">
-                                        <wm-gridcolumn columnwidth="12" name="gridcolumn29" height="100">
+                                </wm-layoutgrid>
+                                <wm-layoutgrid name="layoutgrid6" columnwidth="6">
+                                    <wm-gridrow name="gridrow16">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn33" height="50">
                                             <wm-label padding="unset 0.5em" name="Description" caption="test"></wm-label>
                                         </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow17">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn34"></wm-gridcolumn>
                                     </wm-gridrow>
                                 </wm-layoutgrid>
                             </wm-card-content>
