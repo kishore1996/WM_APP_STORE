@@ -560,6 +560,39 @@
       } ]
     }
   },
+  "appname" : {
+    "name" : "appname",
+    "description" : "name from app_info",
+    "version" : "V2",
+    "queryString" : "select NAME from APP_INFO",
+    "countQueryString" : "select count(*) from (select NAME from APP_INFO) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.wm_app_store.wm_app_store.models.query.AppnameResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "NAME",
+        "fieldName" : "name",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
   "changePassword" : {
     "name" : "changePassword",
     "description" : "change user password",

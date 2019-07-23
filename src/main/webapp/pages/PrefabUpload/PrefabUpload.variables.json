@@ -1,4 +1,27 @@
 {
+  "appname" : {
+    "_id" : "wm-appname-wm.ServiceVariable-1563871039813",
+    "name" : "appname",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wm_app_store.wm_app_store.models.query.AppnameResponse",
+    "service" : "WM_APP_STORE",
+    "operation" : "executeAppname",
+    "operationId" : "QueryExecutionController_executeAppname",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "appnameonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
   "FileServiceUploadFile" : {
     "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1563451113790",
     "name" : "FileServiceUploadFile",

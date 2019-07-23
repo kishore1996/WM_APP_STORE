@@ -104,35 +104,6 @@ public class QueryExecutionController {
         return new StringWrapper(exportedUrl);
     }
 
-    @RequestMapping(value = "/queries/SELECTFROM_APPSOURCE", method = RequestMethod.GET)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "SELECTFROM_APPSOURCE")
-    public Page<SelectfromAppsourceResponse> executeSELECTFROM_APPSOURCE(Pageable pageable, HttpServletRequest _request) {
-        LOGGER.debug("Executing named query: SELECTFROM_APPSOURCE");
-        Page<SelectfromAppsourceResponse> _result = queryService.executeSELECTFROM_APPSOURCE(pageable);
-        LOGGER.debug("got the result for named query: SELECTFROM_APPSOURCE, result:{}", _result);
-        return _result;
-    }
-
-    @ApiOperation(value = "Returns downloadable file url for query SELECTFROM_APPSOURCE")
-    @RequestMapping(value = "/queries/SELECTFROM_APPSOURCE/export", method = RequestMethod.POST)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @XssDisable
-    public StringWrapper exportSELECTFROM_APPSOURCE(@RequestBody ExportOptions exportOptions, Pageable pageable) {
-        LOGGER.debug("Exporting named query: SELECTFROM_APPSOURCE");
-
-        String exportedFileName = exportOptions.getFileName();
-        if(exportedFileName == null || exportedFileName.isEmpty()) {
-            exportedFileName = "SELECTFROM_APPSOURCE";
-        }
-        exportedFileName += exportOptions.getExportType().getExtension();
-
-        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
-                        outputStream -> queryService.exportSELECTFROM_APPSOURCE( exportOptions, pageable, outputStream));
-
-        return new StringWrapper(exportedUrl);
-    }
-
     @RequestMapping(value = "/queries/GetDatafromAPPSource", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "GetDatafromAPPSource")
@@ -191,16 +162,6 @@ public class QueryExecutionController {
         return new StringWrapper(exportedUrl);
     }
 
-    @RequestMapping(value = "/queries/deleteUser", method = RequestMethod.DELETE)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "delete users")
-    public IntegerWrapper executeDeleteUser(@RequestParam(value = "uname") String uname, @RequestParam(value = "id") Integer id, @RequestParam(value = "loggedinuser") String loggedinuser, HttpServletRequest _request) {
-        LOGGER.debug("Executing named query: deleteUser");
-        Integer _result = queryService.executeDeleteUser(uname, id, loggedinuser);
-        LOGGER.debug("got the result for named query: deleteUser, result:{}", _result);
-        return new IntegerWrapper(_result);
-    }
-
     @RequestMapping(value = "/queries/editUser", method = RequestMethod.PUT)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "Edit user credentials")
@@ -209,35 +170,6 @@ public class QueryExecutionController {
         Integer _result = queryService.executeEditUser(editUserRequest);
         LOGGER.debug("got the result for named query: editUser, result:{}", _result);
         return new IntegerWrapper(_result);
-    }
-
-    @RequestMapping(value = "/queries/viewProfile", method = RequestMethod.GET)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "view logged user profile")
-    public Page<ViewProfileResponse> executeViewProfile(@RequestParam(value = "uname") String uname, Pageable pageable, HttpServletRequest _request) {
-        LOGGER.debug("Executing named query: viewProfile");
-        Page<ViewProfileResponse> _result = queryService.executeViewProfile(uname, pageable);
-        LOGGER.debug("got the result for named query: viewProfile, result:{}", _result);
-        return _result;
-    }
-
-    @ApiOperation(value = "Returns downloadable file url for query viewProfile")
-    @RequestMapping(value = "/queries/viewProfile/export", method = RequestMethod.POST)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @XssDisable
-    public StringWrapper exportViewProfile(@RequestParam(value = "uname") String uname, @RequestBody ExportOptions exportOptions, Pageable pageable) {
-        LOGGER.debug("Exporting named query: viewProfile");
-
-        String exportedFileName = exportOptions.getFileName();
-        if(exportedFileName == null || exportedFileName.isEmpty()) {
-            exportedFileName = "viewProfile";
-        }
-        exportedFileName += exportOptions.getExportType().getExtension();
-
-        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
-                        outputStream -> queryService.exportViewProfile(uname,  exportOptions, pageable, outputStream));
-
-        return new StringWrapper(exportedUrl);
     }
 
     @RequestMapping(value = "/queries/selectUserRoles", method = RequestMethod.GET)
@@ -267,6 +199,16 @@ public class QueryExecutionController {
                         outputStream -> queryService.exportSelectUserRoles(userRole,  exportOptions, pageable, outputStream));
 
         return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/version", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "gives version")
+    public VersionResponse executeVersion(HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: version");
+        VersionResponse _result = queryService.executeVersion();
+        LOGGER.debug("got the result for named query: version, result:{}", _result);
+        return _result;
     }
 
     @RequestMapping(value = "/queries/SELECTFROM_MD_CATEGORY", method = RequestMethod.GET)
@@ -335,6 +277,103 @@ public class QueryExecutionController {
         Integer _result = queryService.executeChangePassword(changePasswordRequest);
         LOGGER.debug("got the result for named query: changePassword, result:{}", _result);
         return new IntegerWrapper(_result);
+    }
+
+    @RequestMapping(value = "/queries/appname", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "name from app_info")
+    public Page<AppnameResponse> executeAppname(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: appname");
+        Page<AppnameResponse> _result = queryService.executeAppname(pageable);
+        LOGGER.debug("got the result for named query: appname, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query appname")
+    @RequestMapping(value = "/queries/appname/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportAppname(@RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: appname");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "appname";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportAppname( exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/SELECTFROM_APPSOURCE", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "SELECTFROM_APPSOURCE")
+    public Page<SelectfromAppsourceResponse> executeSELECTFROM_APPSOURCE(Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: SELECTFROM_APPSOURCE");
+        Page<SelectfromAppsourceResponse> _result = queryService.executeSELECTFROM_APPSOURCE(pageable);
+        LOGGER.debug("got the result for named query: SELECTFROM_APPSOURCE, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query SELECTFROM_APPSOURCE")
+    @RequestMapping(value = "/queries/SELECTFROM_APPSOURCE/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportSELECTFROM_APPSOURCE(@RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: SELECTFROM_APPSOURCE");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "SELECTFROM_APPSOURCE";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportSELECTFROM_APPSOURCE( exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/deleteUser", method = RequestMethod.DELETE)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "delete users")
+    public IntegerWrapper executeDeleteUser(@RequestParam(value = "uname") String uname, @RequestParam(value = "id") Integer id, @RequestParam(value = "loggedinuser") String loggedinuser, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: deleteUser");
+        Integer _result = queryService.executeDeleteUser(uname, id, loggedinuser);
+        LOGGER.debug("got the result for named query: deleteUser, result:{}", _result);
+        return new IntegerWrapper(_result);
+    }
+
+    @RequestMapping(value = "/queries/viewProfile", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "view logged user profile")
+    public Page<ViewProfileResponse> executeViewProfile(@RequestParam(value = "uname") String uname, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: viewProfile");
+        Page<ViewProfileResponse> _result = queryService.executeViewProfile(uname, pageable);
+        LOGGER.debug("got the result for named query: viewProfile, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query viewProfile")
+    @RequestMapping(value = "/queries/viewProfile/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @XssDisable
+    public StringWrapper exportViewProfile(@RequestParam(value = "uname") String uname, @RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: viewProfile");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "viewProfile";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportViewProfile(uname,  exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
     }
 
 }

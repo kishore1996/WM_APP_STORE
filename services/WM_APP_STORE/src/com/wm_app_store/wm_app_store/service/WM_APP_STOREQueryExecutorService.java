@@ -24,10 +24,6 @@ public interface WM_APP_STOREQueryExecutorService {
 
     void exportSELECTFROM_APPSCREENSHOTS(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
-    Page<SelectfromAppsourceResponse> executeSELECTFROM_APPSOURCE(Pageable pageable);
-
-    void exportSELECTFROM_APPSOURCE(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
-
     Page<GetDatafromAppsourceResponse> executeGetDatafromAPPSource(Integer id, Pageable pageable);
 
     void exportGetDatafromAPPSource(Integer id, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
@@ -36,17 +32,13 @@ public interface WM_APP_STOREQueryExecutorService {
 
     void exportAVGRATING(Integer appid, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
-    Integer executeDeleteUser(String uname, Integer id, String loggedinuser);
-
     Integer executeEditUser(EditUserRequest editUserRequest);
-
-    Page<ViewProfileResponse> executeViewProfile(String uname, Pageable pageable);
-
-    void exportViewProfile(String uname, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
     Page<SelectUserRolesResponse> executeSelectUserRoles(String userRole, Pageable pageable);
 
     void exportSelectUserRoles(String userRole, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    VersionResponse executeVersion();
 
     Page<SelectfromMdCategoryResponse> executeSELECTFROM_MD_CATEGORY(Pageable pageable);
 
@@ -57,5 +49,19 @@ public interface WM_APP_STOREQueryExecutorService {
     void exportTotalDownloads(Integer id, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
     Integer executeChangePassword(ChangePasswordRequest changePasswordRequest);
+
+    Page<AppnameResponse> executeAppname(Pageable pageable);
+
+    void exportAppname(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<SelectfromAppsourceResponse> executeSELECTFROM_APPSOURCE(Pageable pageable);
+
+    void exportSELECTFROM_APPSOURCE(ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Integer executeDeleteUser(String uname, Integer id, String loggedinuser);
+
+    Page<ViewProfileResponse> executeViewProfile(String uname, Pageable pageable);
+
+    void exportViewProfile(String uname, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
 }

@@ -26,18 +26,6 @@
         ]]>
     </sql-query>
 
-    <sql-query name="SELECTFROM_APPSOURCE">
-        <![CDATA[
-        select * from APP_SOURCE
-        ]]>
-    </sql-query>
-
-    <sql-query name="SELECTFROM_APPSOURCE__count">
-        <![CDATA[
-        select count(*) from (select * from APP_SOURCE) wmTempTable
-        ]]>
-    </sql-query>
-
     <sql-query name="GetDatafromAPPSource">
         <![CDATA[
         select * from APP_SOURCE where APP_INFO_ID=:id
@@ -66,15 +54,6 @@
     <query-param name="APPID" type="java.lang.Integer"/>
     </sql-query>
 
-    <sql-query name="deleteUser">
-        <![CDATA[
-        DELETE FROM CREDENTIALS WHERE USERNAME = :uname AND ID = :id AND USERNAME != :loggedinuser
-        ]]>
-    <query-param name="uname" type="java.lang.String"/>
-    <query-param name="id" type="java.lang.Integer"/>
-    <query-param name="loggedinuser" type="java.lang.String"/>
-    </sql-query>
-
     <sql-query name="editUser">
         <![CDATA[
         UPDATE CREDENTIALS SET USERNAME = :newusername, PASSWORD = :password, USER_ROLE = :urole  WHERE USERNAME = :currentusername
@@ -83,20 +62,6 @@
     <query-param name="password" type="java.lang.String"/>
     <query-param name="urole" type="java.lang.String"/>
     <query-param name="currentusername" type="java.lang.String"/>
-    </sql-query>
-
-    <sql-query name="viewProfile">
-        <![CDATA[
-        SELECT ID, USERNAME, PASSWORD, USER_ROLE FROM CREDENTIALS WHERE USERNAME = :uname
-        ]]>
-    <query-param name="uname" type="java.lang.String"/>
-    </sql-query>
-
-    <sql-query name="viewProfile__count">
-        <![CDATA[
-        select count(*) from (SELECT ID, USERNAME, PASSWORD, USER_ROLE FROM CREDENTIALS WHERE USERNAME = :uname) wmTempTable
-        ]]>
-    <query-param name="uname" type="java.lang.String"/>
     </sql-query>
 
     <sql-query name="selectUserRoles">
@@ -111,6 +76,18 @@
         select count(*) from (SELECT * FROM CREDENTIALS WHERE USER_ROLE = :user_role) wmTempTable
         ]]>
     <query-param name="user_role" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="version">
+        <![CDATA[
+        select count(*) from APP_SOURCE
+        ]]>
+    </sql-query>
+
+    <sql-query name="version__count">
+        <![CDATA[
+        select count(*) from (select count(*) from APP_SOURCE) wmTempTable
+        ]]>
     </sql-query>
 
     <sql-query name="SELECTFROM_MD_CATEGORY">
@@ -146,5 +123,52 @@
     <query-param name="newpassword" type="java.lang.String"/>
     <query-param name="uname" type="java.lang.String"/>
     <query-param name="oldpassword" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="appname">
+        <![CDATA[
+        select NAME from APP_INFO
+        ]]>
+    </sql-query>
+
+    <sql-query name="appname__count">
+        <![CDATA[
+        select count(*) from (select NAME from APP_INFO) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SELECTFROM_APPSOURCE">
+        <![CDATA[
+        select * from APP_SOURCE
+        ]]>
+    </sql-query>
+
+    <sql-query name="SELECTFROM_APPSOURCE__count">
+        <![CDATA[
+        select count(*) from (select * from APP_SOURCE) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="deleteUser">
+        <![CDATA[
+        DELETE FROM CREDENTIALS WHERE USERNAME = :uname AND ID = :id AND USERNAME != :loggedinuser
+        ]]>
+    <query-param name="uname" type="java.lang.String"/>
+    <query-param name="id" type="java.lang.Integer"/>
+    <query-param name="loggedinuser" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="viewProfile">
+        <![CDATA[
+        SELECT ID, USERNAME, PASSWORD, USER_ROLE FROM CREDENTIALS WHERE USERNAME = :uname
+        ]]>
+    <query-param name="uname" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="viewProfile__count">
+        <![CDATA[
+        select count(*) from (SELECT ID, USERNAME, PASSWORD, USER_ROLE FROM CREDENTIALS WHERE USERNAME = :uname) wmTempTable
+        ]]>
+    <query-param name="uname" type="java.lang.String"/>
     </sql-query>
 </hibernate-mapping>

@@ -9,6 +9,7 @@ Page.onReady = function() {
 };
 
 Page.continue_dialogClick = function($event, widget) {
+
     if (Page.Widgets.prefabname.datavalue == null || Page.Widgets.description.datavalue == null) {
         Page.Actions.nuotnullnotify.invoke();
         //Page.Widgets.dialog1.open();
@@ -19,12 +20,40 @@ Page.continue_dialogClick = function($event, widget) {
     if (Page.Widgets.icon_upload.selectedFiles.length == 0) {
         Page.Actions.selectfileupload.invoke();
     } else {
+        Page.Variables.appname.invoke();
+        // Page.Variables.insertInto_appinfo.invoke();
+        // Page.Widgets.dialog1.close();
+        // Page.Actions.timerAction1.invoke();
+        // Page.Actions.prefab_created.invoke();
+    }
+    //console.log(Page.Widgets.icon_upload.selectedFiles)
+};
+
+//checking the duplicate pre-fab name
+
+Page.appnameonSuccess = function(variable, data) {
+
+    //console.log(data)
+    var f = 1;
+    var un = Page.Widgets.prefabname.datavalue;
+    // console.log(un)
+    // console.log(data.length)
+    // console.log(data[0].name)
+    // console.log(data[1].name)
+    // console.log(data[2].name)
+    for (var i = 0; i < data.length; i++) {
+        if (un == data[i].name) {
+            alert("Prefab Name has been taken. Try another.");
+            f = 0;
+            break;
+        }
+    }
+    if (f == 1) {
         Page.Variables.insertInto_appinfo.invoke();
         Page.Widgets.dialog1.close();
         Page.Actions.timerAction1.invoke();
         Page.Actions.prefab_created.invoke();
     }
-    //console.log(Page.Widgets.icon_upload.selectedFiles)
 };
 
 var check = 1;
