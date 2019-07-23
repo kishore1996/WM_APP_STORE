@@ -5,15 +5,15 @@
         <wm-page-content columnwidth="12" name="mainContent" padding="unset 15px">
             <wm-layoutgrid name="layoutgrid3">
                 <wm-gridrow name="gridrow62">
-                    <wm-gridcolumn columnwidth="10" name="gridcolumn147">
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn147" padding="unset unset unset 25%">
                         <wm-search name="search2" searchon="typing"></wm-search>
                     </wm-gridcolumn>
-                    <wm-gridcolumn columnwidth="2" name="gridcolumn148">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn148">
                         <wm-button class="btn-default" caption="Upload" type="button" margin="unset 0.5em unset 2em" name="button1" backgroundcolor="#0f09e3" color="#ede8e8" on-click="Actions.goToPage_PrefabUpload.invoke()"></wm-button>
                     </wm-gridcolumn>
                 </wm-gridrow><br>
-                <wm-gridrow name="gridrow6_1" height="300">
-                    <wm-gridcolumn columnwidth="2" name="gridcolumn8">
+                <wm-gridrow name="gridrow6_1" height="280">
+                    <wm-gridcolumn columnwidth="1" name="gridcolumn8" height="350">
                         <wm-anchor margin="unset 0.5% unset unset" name="anchor3" width="200" padding="10% unset unset 10%" fontsize="13" caption="APPS" on-click="anchor3Click($event, widget)"></wm-anchor>
                         <wm-anchor margin="unset 0.5% unset unset" name="anchor4" width="200" padding="10% unset unset 10%" fontsize="13" caption="MAPS" on-click="anchor4Click($event, widget)"></wm-anchor>
                         <wm-anchor margin="unset 0.5% unset unset" name="anchor5" caption="MEDIA" fontsize="13" padding="10% unset unset 10%" width="200" on-click="anchor5Click($event, widget)"></wm-anchor>
@@ -21,13 +21,13 @@
                         <wm-anchor margin="unset 0.5em unset unset" name="anchor7" fontsize="13" caption="TRAVEL" width="200" padding="10% unset unset 10%" on-click="anchor7Click($event, widget)"></wm-anchor>
                         <wm-anchor margin="unset 0.5em unset unset" name="anchor8" caption="BASIC" width="200" fontsize="13" padding="10% unset unset 10%" on-click="anchor8Click($event, widget)"></wm-anchor>
                     </wm-gridcolumn>
-                    <wm-gridcolumn columnwidth="10" name="gridcolumn9">
-                        <wm-picture name="picture2" picturesource="resources/images/imagelists/wp1868041.jpg" pictureplaceholder="resources/images/imagelists/carousel1.jpg" width="75%" height="250"></wm-picture>
+                    <wm-gridcolumn columnwidth="11" name="gridcolumn9" height="350">
+                        <wm-picture name="picture2" picturesource="resources/images/imagelists/wp1868041.jpg" pictureplaceholder="resources/images/imagelists/carousel1.jpg" width="90%" height="250"></wm-picture>
                     </wm-gridcolumn>
                 </wm-gridrow>
                 <wm-gridrow name="gridrow7_1">
                     <wm-gridcolumn columnwidth="10" name="gridcolumn11_1">
-                        <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="PrefabsList1" dataset="bind:Variables.Prefabs.dataSet" navigation="Scroll" padding="5% unset unset 5%">
+                        <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="PrefabsList1" dataset="bind:Variables.Prefabs.dataSet" navigation="Scroll" padding="2% unset unset 5%">
                             <wm-listtemplate layout="media" name="listtemplate1">
                                 <wm-card name="card1" width="auto" height="auto" on-click="card1Click($event, widget, item, currentItemWidgets)">
                                     <wm-card-content fontsize="0.8" fontunit="em" name="card_content1">
