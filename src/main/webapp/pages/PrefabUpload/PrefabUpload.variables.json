@@ -637,7 +637,7 @@
       "type" : "number"
     }, {
       "target" : "fileName",
-      "value" : "bind:Widgets.text3.datavalue",
+      "value" : "bind:Variables.FileServiceUploadFile.dataSet[$i].fileName",
       "type" : "string"
     }, {
       "target" : "versionId",
@@ -956,6 +956,30 @@
     "dataBinding" : [ {
       "target" : "text",
       "value" : "Fields should not be blank",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Warning",
+      "type" : "string"
+    }, {
+      "target" : "okButtonText",
+      "value" : "Okay",
+      "type" : "string"
+    }, {
+      "target" : "alerttype",
+      "value" : "warning",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
+  },
+  "prafbnamealready" : {
+    "_id" : "wm-prafbnamealready-wm.NotificationVariable-1563883105246",
+    "name" : "prafbnamealready",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Prefab Name is already in use. Try another.",
       "type" : "string"
     }, {
       "target" : "title",

@@ -43,7 +43,7 @@ Page.appnameonSuccess = function(variable, data) {
     // console.log(data[2].name)
     for (var i = 0; i < data.length; i++) {
         if (un == data[i].name) {
-            alert("Prefab Name has been taken. Try another.");
+            Page.Actions.prafbnamealready.invoke();
             f = 0;
             break;
         }
@@ -89,9 +89,9 @@ Page.FileServiceUploadFile1onSuccess = function(variable, data) {
 
 Page.saveClick = function($event, widget) {
     //console.log(Page.Variables.FileServiceUploadFile.onSuccess)
-    if (Page.Widgets.text3.datavalue == null) {
-        Page.Actions.nuotnullnotify.invoke();
-    }
+    // if (Page.Widgets.text3.datavalue == null) {
+    //     Page.Actions.nuotnullnotify.invoke();
+    // }
     if (Page.Widgets.prefab_upload.selectedFiles.length == 0) {
         Page.Actions.selectfileupload.invoke();
     }
@@ -104,9 +104,9 @@ Page.saveClick = function($event, widget) {
 Page.FileServiceUploadFileonSuccess = function(variable, data) {
     Page.saveClick = function($event, widget) {
         //console.log(Page.Variables.FileServiceUploadFile.onSuccess)
-        if (Page.Widgets.text3.datavalue == null) {
-            Page.Actions.nuotnullnotify.invoke();
-        }
+        // if (Page.Widgets.text3.datavalue == null) {
+        //     Page.Actions.nuotnullnotify.invoke();
+        // }
         if (Page.Widgets.prefab_upload.selectedFiles.length == 0) {
             Page.Actions.selectfileupload.invoke();
         }

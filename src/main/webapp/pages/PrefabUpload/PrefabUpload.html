@@ -5,13 +5,13 @@
         <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
         <wm-page-content columnwidth="8" name="page_content1"><br>
             <wm-label padding="unset 0.5em" name="label1" caption="Enter some more details:" fontsize="20" fontweight="bold" margin="unset unset unset -8px"></wm-label><br><br>
-            <wm-layoutgrid name="layoutgrid4" columns="2">
+            <wm-layoutgrid name="layoutgrid4" columns="2" show="false">
                 <wm-gridrow name="gridrow22">
                     <wm-gridcolumn columnwidth="10" name="gridcolumn36"><br>
                         <wm-composite name="composite3">
                             <wm-label class="col-md-3 control-label" caption="File Name:" margin="10px unset unset 10px" name="label6" fontsize="15"></wm-label>
                             <wm-container class="col-md-9" name="container3_1" width="450" margin="unset unset unset 23px">
-                                <wm-text name="text3" required="true"></wm-text>
+                                <wm-text name="text3" required="true" maxchars="30"></wm-text>
                             </wm-container>
                         </wm-composite>
                     </wm-gridcolumn>
@@ -58,7 +58,7 @@
                     <wm-composite name="composite2">
                         <wm-label class="col-md-3 control-label" name="label7" caption="Prefab Name:" fontsize="15"></wm-label>
                         <wm-container class="col-md-9" name="container2">
-                            <wm-text name="prefabname" required="true"></wm-text>
+                            <wm-text name="prefabname" required="true" maxchars="50"></wm-text>
                         </wm-container>
                     </wm-composite>
                 </wm-gridcolumn>
