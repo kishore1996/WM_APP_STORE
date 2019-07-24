@@ -98,8 +98,6 @@
         <security:intercept-url pattern="/j_spring_security_logout" access="permitAll"/>
         <security:intercept-url pattern="/pages/Login/**" access="permitAll"/>
         <security:intercept-url pattern="/pages/Main/**" access="hasAnyRole('ROLE_user','ROLE_admin','ROLE_active')"/>
-        <security:intercept-url pattern="/pages/UserManagement/**" access="hasAnyRole('ROLE_admin')"/>
-        <security:intercept-url pattern="/pages/UserManagement2/**" access="hasAnyRole('ROLE_admin')"/>
         <security:intercept-url pattern="/pages/viewProfile/**" access="hasAnyRole('ROLE_user','ROLE_admin','ROLE_active')"/>
         <security:intercept-url pattern="/services/application/i18n/**" access="permitAll"/>
         <security:intercept-url pattern="/services/prefabs/**/servicedefs" access="permitAll"/>
@@ -219,7 +217,7 @@
             <map key-type="java.lang.String" value-type="com.wavemaker.commons.model.security.RoleConfig">
                 <entry key="admin">
                     <bean class="com.wavemaker.commons.model.security.RoleConfig">
-                        <property name="landingPage" value="UserManagement2"/>
+                        <property name="landingPage" value="UserManagement"/>
                     </bean>
                 </entry>
                 <entry key="active">

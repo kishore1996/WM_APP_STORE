@@ -1,6 +1,0 @@
-{
-  "id" : "WM_APP_STORE2",
-  "type" : "DataService",
-  "packageNames" : [ "com.wm_app_store.wm_app_store2" ],
-  "title" : "WM_APP_STORE2"
-}

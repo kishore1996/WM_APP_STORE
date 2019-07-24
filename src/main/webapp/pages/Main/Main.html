@@ -7,7 +7,7 @@
                 <wm-gridrow name="gridrow9">
                     <wm-gridcolumn columnwidth="2" name="gridcolumn19"></wm-gridcolumn>
                     <wm-gridcolumn columnwidth="6" name="gridcolumn20">
-                        <wm-search name="search2" searchon="typing" imagewidth="16px"></wm-search>
+                        <wm-search name="search2" searchon="typing" imagewidth="16px" dataset="bind:Variables.WM_APP_STOREAppInfoData.dataSet" displaylabel="name" datafield="All Fields" matchmode="anywhereignorecase" searchkey="name" on-submit="search2Submit($event, widget)"></wm-search>
                     </wm-gridcolumn>
                     <wm-gridcolumn columnwidth="4" name="gridcolumn21_1">
                         <wm-button class="btn-default" caption="Upload" type="button" margin="unset 0.5em unset 10em" name="button1" backgroundcolor="#0f09e3" color="#ede8e8" on-click="Actions.goToPage_PrefabUpload.invoke()" width="100"></wm-button>

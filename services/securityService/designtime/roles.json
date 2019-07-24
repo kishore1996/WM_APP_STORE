@@ -2,7 +2,7 @@
   "name" : "admin",
   "description" : null,
   "roleConfig" : {
-    "landingPage" : "UserManagement2"
+    "landingPage" : "UserManagement"
   }
 }, {
   "name" : "active",

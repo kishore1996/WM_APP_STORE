@@ -29,6 +29,17 @@
     } ],
     "operation" : "toast"
   },
+  "goToPage_forgotPassword" : {
+    "_id" : "wm-goToPage_forgotPassword-wm.NavigationVariable-1563886561958",
+    "name" : "goToPage_forgotPassword",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "forgotPassword",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
@@ -71,24 +82,13 @@
     "pageTransitions" : "none"
   },
   "goToPage_UserManagement" : {
-    "_id" : "wm-goToPage_UserManagement-wm.NavigationVariable-1563451840563",
+    "_id" : "wm-goToPage_UserManagement2-wm.NavigationVariable-1563530779273",
     "name" : "goToPage_UserManagement",
     "owner" : "App",
     "category" : "wm.NavigationVariable",
     "dataBinding" : [ ],
     "operation" : "gotoPage",
     "pageName" : "UserManagement",
-    "dataSet" : [ ],
-    "pageTransitions" : "none"
-  },
-  "goToPage_UserManagement2" : {
-    "_id" : "wm-goToPage_UserManagement2-wm.NavigationVariable-1563530779273",
-    "name" : "goToPage_UserManagement2",
-    "owner" : "App",
-    "category" : "wm.NavigationVariable",
-    "dataBinding" : [ ],
-    "operation" : "gotoPage",
-    "pageName" : "UserManagement2",
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
