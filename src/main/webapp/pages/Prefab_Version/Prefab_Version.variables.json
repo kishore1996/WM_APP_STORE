@@ -551,7 +551,7 @@
       "tableType" : "TABLE",
       "primaryFields" : [ "id" ]
     },
-    "bindCount" : 1,
+    "bindCount" : -1,
     "tableName" : "APP_SOURCE",
     "tableType" : "TABLE",
     "properties" : [ "appInfo" ],

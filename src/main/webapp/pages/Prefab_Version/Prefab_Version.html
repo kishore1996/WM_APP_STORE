@@ -10,10 +10,9 @@
                             <wm-gridrow name="gridrow10" height="30">
                                 <wm-gridcolumn columnwidth="4" name="gridcolumn14">
                                     <wm-label padding="unset 0.5em" name="label7" caption="File Name"></wm-label>
-                                    <wm-label padding="unset 0.5em" name="prefab_id" caption="bind:Variables.database_appinfo.dataSet[$i].id"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="8" name="gridcolumn15_2">
-                                    <wm-text name="filename" placeholder="Enter File Name" datavalue="bind:Variables.database_appsource.dataSet[$i].fileName" required="true"></wm-text>
+                                    <wm-text name="filename" placeholder="Enter File Name" required="true"></wm-text>
                                 </wm-gridcolumn>
                             </wm-gridrow><br>
                             <wm-gridrow name="gridrow11_1" height="100">
@@ -21,7 +20,7 @@
                                     <wm-label padding="unset 0.5em" name="label8_1" caption="Description"></wm-label>
                                 </wm-gridcolumn>
                                 <wm-gridcolumn columnwidth="8" name="gridcolumn17_1">
-                                    <wm-textarea name="description" datavalue="bind:Variables.database_appinfo.dataSet[$i]._desc" placeholder="Enter description"></wm-textarea>
+                                    <wm-textarea name="description" placeholder="Enter description"></wm-textarea>
                                 </wm-gridcolumn>
                             </wm-gridrow>
                         </wm-layoutgrid>
@@ -52,12 +51,14 @@
                     <wm-gridcolumn columnwidth="6" name="gridcolumn16_2">
                         <wm-label padding="unset 0.5em" name="label6" caption="Version"></wm-label>
                     </wm-gridcolumn>
-                    <wm-gridcolumn columnwidth="6" name="gridcolumn17"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn17">
+                        <wm-label padding="unset 0.5em" name="label7_1" caption="bind:Variables.database_appinfo.dataSet[$i].id"></wm-label>
+                    </wm-gridcolumn>
                 </wm-gridrow>
                 <wm-gridrow name="gridrow8">
                     <wm-gridcolumn columnwidth="9" name="gridcolumn14_1"></wm-gridcolumn>
                     <wm-gridcolumn columnwidth="3" name="gridcolumn15">
-                        <wm-button class="btn-default" caption="Save" type="button" margin="unset 0.5em" name="save_button" on-click="save_buttonClick($event, widget)"></wm-button>
+                        <wm-button class="btn-default" caption="Save" type="button" margin="unset 0.5em" name="save_button" on-click="save_buttonClick($event, widget);Actions.goToPage_Prefab_Preview.invoke()"></wm-button>
                         <wm-button class="btn-default" caption="Cancel" type="button" margin="unset 0.5em" name="button2" on-click="Actions.goToPage_Prefab_Preview.invoke()"></wm-button>
                     </wm-gridcolumn>
                 </wm-gridrow>

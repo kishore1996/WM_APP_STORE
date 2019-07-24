@@ -73,7 +73,7 @@ Page.save_buttonClick = function($event, widget) {
     } else if (!screencheck) {
         console.log("wait till screenshotsupload")
     } else if (!prefabcheck) {
-        console.log("wait till prefabc upload")
+        console.log("wait till prefab upload")
     } else {
         if (Page.Variables.FileServiceUploadFile.dataSet.length > 0) {
             data = Page.Variables.FileServiceUploadFile.dataSet
