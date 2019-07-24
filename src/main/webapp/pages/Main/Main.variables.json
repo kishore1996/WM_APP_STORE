@@ -706,9 +706,9 @@
     },
     "package" : "com.wm_app_store.wm_app_store.MdCategory"
   },
-  "selectPrefabsFilteredVariable" : {
-    "_id" : "wm-selectPrefabsFilteredVariable-wm.LiveVariable-1563957332375",
-    "name" : "selectPrefabsFilteredVariable",
+  "select_filter" : {
+    "_id" : "wm-select_filter-wm.LiveVariable-1563962395960",
+    "name" : "select_filter",
     "owner" : "Page",
     "category" : "wm.LiveVariable",
     "dataBinding" : [ ],
@@ -719,6 +719,7 @@
     "saveInPhonegap" : false,
     "maxResults" : 20,
     "designMaxResults" : 10,
+    "onSuccess" : "select_filteronSuccess(variable, data, options)",
     "inFlightBehavior" : "executeLast",
     "startUpdate" : true,
     "autoUpdate" : true,

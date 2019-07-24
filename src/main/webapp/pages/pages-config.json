@@ -13,13 +13,7 @@
 }, {
   "name" : "Main",
   "type" : "PAGE",
-  "params" : [ {
-    "name" : "APP_INFO_ID",
-    "type" : "integer"
-  }, {
-    "name" : "CATEGORY_ID",
-    "type" : "integer"
-  } ]
+  "params" : [ ]
 }, {
   "name" : "PrefabDetails",
   "type" : "PARTIAL",

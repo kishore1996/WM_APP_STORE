@@ -50,55 +50,14 @@ Page.card1Click = function($event, widget, item, currentItemWidgets) {
     Page.App.Actions.goToPage_Prefab_Preview.invoke()
 };
 
-Page.selectPrefabsFilteredVariableonSuccess = function(variable, data) {
-    console.log(data)
-    var jsondata = []
-    for (var i = 0; i < data.length; i++) {
-        jsondata.push({
-            "PrefabID": data[i]["id"],
-            "category": data[i]["categoryId"],
-            "CreatedBy": data[i]["createdBy"],
-            "CreatedOn": data[i]["creationDate"],
-            "Icon": data[i]["image"],
-            "PrefabName": data[i]["name"]
-        })
-    }
-    console.log(jsondata)
-    Page.Variables.Prefabs.setData(jsondata)
-};
-Page.anchor4Click = function($event, widget) {
-    Page.Variables.selectPrefabsFilteredVariable.setFilter({
-        "categoryId": 1
-    })
-    Page.Variables.selectPrefabsFilteredVariable.invoke()
-};
-Page.anchor3Click = function($event, widget) {
-    Page.Variables.WM_APP_STOREAppInfoData.invoke()
-};
-Page.anchor5Click = function($event, widget) {
-    Page.Variables.selectPrefabsFilteredVariable.setFilter({
-        "categoryId": 2
-    })
-    Page.Variables.selectPrefabsFilteredVariable.invoke()
-};
-Page.anchor6Click = function($event, widget) {
-    Page.Variables.selectPrefabsFilteredVariable.setFilter({
-        "categoryId": 3
-    })
-    Page.Variables.selectPrefabsFilteredVariable.invoke()
-};
-Page.anchor7Click = function($event, widget) {
-    Page.Variables.selectPrefabsFilteredVariable.setFilter({
-        "categoryId": 4
-    })
-    Page.Variables.selectPrefabsFilteredVariable.invoke()
-};
-Page.anchor8Click = function($event, widget) {
-    Page.Variables.selectPrefabsFilteredVariable.setFilter({
-        "categoryId": 5
-    })
-    Page.Variables.selectPrefabsFilteredVariable.invoke()
-};
+// Page.anchor4Click = function($event, widget) {
+//     console.log("anchor4")
+//     Page.Variables.select_filter.setFilter({
+//         "categoryId": 5
+//     })
+//     Page.Variables.select_filter.invoke()
+// };
+
 
 Page.search2Submit = function($event, widget) {
     console.log(widget.result)
@@ -116,4 +75,67 @@ Page.search2Submit = function($event, widget) {
     }
     console.log(jsondata)
     Page.Variables.Prefabs.setData(jsondata)
+};
+
+Page.apps_anchorClick = function($event, widget) {
+    console.log("apps_anchorClick")
+    Page.Variables.WM_APP_STOREAppInfoData.invoke();
+};
+
+Page.basic_anchorClick = function($event, widget) {
+    console.log("basic_anchorClick")
+    Page.Variables.select_filter.setFilter({
+        "categoryId": 2
+    })
+    Page.Variables.select_filter.invoke();
+};
+
+Page.maps_anchorClick = function($event, widget) {
+    console.log("maps_anchorClick")
+    Page.Variables.select_filter.setFilter({
+        "categoryId": 5
+    })
+    Page.Variables.select_filter.invoke();
+};
+
+Page.media_anchorClick = function($event, widget) {
+    console.log("media_anchorClick")
+    Page.Variables.select_filter.setFilter({
+        "categoryId": 1
+    })
+    Page.Variables.select_filter.invoke();
+};
+
+Page.news_anchorClick = function($event, widget) {
+    console.log("news_anchorClick")
+    Page.Variables.select_filter.setFilter({
+        "categoryId": 3
+    })
+    Page.Variables.select_filter.invoke();
+};
+
+Page.travel_anchorClick = function($event, widget) {
+    console.log("travel_anchorClick")
+    Page.Variables.select_filter.setFilter({
+        "categoryId": 4
+    })
+    Page.Variables.select_filter.invoke();
+};
+
+Page.select_filteronSuccess = function(variable, data) {
+    console.log("success")
+    var jsondata = []
+    for (var i = 0; i < data.length; i++) {
+        jsondata.push({
+            "PrefabID": data[i]["id"],
+            "category": data[i]["categoryId"],
+            "CreatedBy": data[i]["createdBy"],
+            "CreatedOn": data[i]["creationDate"],
+            "Icon": data[i]["image"],
+            "PrefabName": data[i]["name"]
+        })
+    }
+
+    Page.Variables.Prefabs.setData(jsondata)
+    console.log("end")
 };
