@@ -13,8 +13,8 @@
     "maxResults" : 20,
     "designMaxResults" : 10,
     "inFlightBehavior" : "executeLast",
-    "startUpdate" : true,
-    "autoUpdate" : true,
+    "startUpdate" : false,
+    "autoUpdate" : false,
     "transformationRequired" : false,
     "liveSource" : "WM_APP_STORE",
     "ignoreCase" : true,
@@ -238,7 +238,18 @@
       "package" : "com.wm_app_store.wm_app_store.AppInfo"
     } ],
     "filterFields" : { },
-    "filterExpressions" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "id",
+        "type" : "integer",
+        "matchMode" : "exact",
+        "value" : "bind:Variables.AppInfoID.dataSet.dataValue",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      } ]
+    },
     "package" : "com.wm_app_store.wm_app_store.AppInfo"
   },
   "database_appsource" : {
@@ -254,9 +265,10 @@
     "saveInPhonegap" : false,
     "maxResults" : 20,
     "designMaxResults" : 10,
+    "onSuccess" : "database_appsourceonSuccess(variable, data, options)",
     "inFlightBehavior" : "executeLast",
-    "startUpdate" : true,
-    "autoUpdate" : true,
+    "startUpdate" : false,
+    "autoUpdate" : false,
     "transformationRequired" : false,
     "liveSource" : "WM_APP_STORE",
     "ignoreCase" : true,
@@ -548,7 +560,17 @@
       "package" : "com.wm_app_store.wm_app_store.AppSource"
     } ],
     "filterFields" : { },
-    "filterExpressions" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "appInfoId",
+        "type" : "integer",
+        "matchMode" : "exact",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
     "package" : "com.wm_app_store.wm_app_store.AppSource"
   },
   "FileServiceUploadFile" : {
@@ -571,6 +593,7 @@
     "dataSet" : [ ],
     "isList" : true,
     "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadFileonSuccess(variable, data, options)",
     "startUpdate" : false,
     "autoUpdate" : false,
     "inFlightBehavior" : "executeLast",
@@ -630,7 +653,8 @@
       "value" : "Cancel",
       "type" : "string"
     } ],
-    "operation" : "confirm"
+    "operation" : "confirm",
+    "onOk" : "fileuploadonOk(variable, data, options)"
   },
   "fileupload1" : {
     "_id" : "wm-fileupload1-wm.NotificationVariable-1563795639694",
@@ -687,11 +711,7 @@
       "type" : "string"
     }, {
       "target" : "filePath",
-      "value" : "bind:Variables.FileServiceUploadFile.firstRecord.inlinePath",
-      "type" : "string"
-    }, {
-      "target" : "_desc",
-      "value" : "bind:Widgets.description.datavalue",
+      "value" : "bind:Variables.FileServiceUploadFile.dataSet[$i].path",
       "type" : "string"
     } ],
     "operation" : "insert",
@@ -1547,5 +1567,25 @@
     "filterExpressions" : { },
     "inputFields" : { },
     "package" : "com.wm_app_store.wm_app_store.AppInfo"
+  },
+  "Version_id" : {
+    "_id" : "wm-Version_id-wm.ServiceVariable-1563796973316",
+    "name" : "Version_id",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wm_app_store.wm_app_store.AppD0wnloadHostory",
+    "service" : "WM_APP_STORE",
+    "operation" : "executeVersion",
+    "operationId" : "AppD0wnloadHostoryController_findAppD0wnloadHostories",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false
   }
 }

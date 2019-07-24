@@ -14,7 +14,14 @@ Page.onReady = function() {
      * e.g. to get value of text widget named 'username' use following script
      * 'Page.Widgets.username.datavalue'
      */
-
+    Page.Variables.database_appinfo.setFilter({
+        "id": Page.App.Variables.AppInfoID.dataSet
+    })
+    Page.Variables.database_appinfo.invoke()
+    Page.Variables.database_appsource.setFilter({
+        "appInfoId": parseInt(Page.App.Variables.AppInfoID.dataSet)
+    })
+    Page.Variables.database_appsource.invoke()
 };
 
 var check = 1;
@@ -49,17 +56,35 @@ Page.FileServiceUploadFile1onSuccess = function(variable, data) {
     }, 1000)
 };
 
-Page.save_buttonClick = function($event, widget) {
-    if (Page.Widgets.filename.datavalue == null || Page.Widgets.description.datavalue == null) {
-        Page.Actions.nullnotify.invoke();
-    } else if (Page.Widgets.prefabupload.selectedFiles.length == 0) {
-        Page.Actions.fileupload.invoke();
-    } else if (Page.Widgets.screenshotsupload.selectedFiles.length == 0) {
-        Page.Actions.fileupload1.invoke();
-    } else {
-        console.log(Page.Variables.FileServiceUploadFile.dataSet)
-        Page.Variables.insert_appsource.invoke();
-        // Page.Variables.update_appinfo.invoke();
-        Page.App.Actions.goToPage_Prefab_Preview.invoke();
-    }
+
+var no;
+Page.database_appsourceonSuccess = function(variable, data) {};
+Page.FileServiceUploadFileonSuccess = function(variable, data) {
+    console.log("FIle")
+    console.log(data)
+    Page.save_buttonClick = function($event, widget) {
+        if (Page.Widgets.description.datavalue == null) {
+            Page.Actions.nullnotify.invoke();
+        } else if (Page.Widgets.prefabupload.selectedFiles.length == 0) {
+            Page.Actions.fileupload.invoke();
+        } else if (Page.Widgets.screenshotsupload.selectedFiles.length == 0) {
+            Page.Actions.fileupload1.invoke();
+        } else {
+            if (Page.Variables.FileServiceUploadFile.dataSet.length > 0) {
+                d = Page.Variables.database_appsource.dataSet[0]
+                d["fileName"] = data[0]["fileName"]
+                d["filePath"] = data[0]["inlinePath"]
+                if (d["versionId"] == null) {
+                    d["versionId"] = 1
+                } else {
+                    d["versionId"] = d["versionId"] + 1
+                }
+                Page.Variables.insert_appsource.createRecord({
+                    row: d
+                })
+                // Page.Variables.update_appinfo.invoke();
+                Page.Actions.success.invoke();
+            }
+        }
+    };
 };

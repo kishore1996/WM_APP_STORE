@@ -5,6 +5,7 @@
 
 /* perform any action on widgets/variables within this block */
 var CurrentUser;
+
 Page.onReady = function() {
     /*
      * variables can be accessed through 'Page.Variables' property here
@@ -15,11 +16,27 @@ Page.onReady = function() {
      * e.g. to get value of text widget named 'username' use following script
      * 'Page.Widgets.username.datavalue'
      */
+    Page.Variables.AppRatings.setFilter({
+        "appInfoId": Page.App.Variables.AppInfoID.dataSet
+    });
+    Page.Variables.Appinfo.setFilter({
+        "id": Page.App.Variables.AppInfoID.dataSet
+    })
+    Page.Variables.AppScreenshots.setFilter({
+        "appInfoId": Page.App.Variables.AppInfoID.dataSet
+    })
     console.log(Page.App.Variables.loggedInUser.dataSet)
+    console.log("-" + Page.App.Variables.AppInfoID.dataSet + "-")
+
     if (Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID == null)
         Page.App.Actions.goToPage_Main.invoke()
     var id = Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID;
     CurrentUser = (Page.App.Variables.loggedInUser.dataSet.name)
+
+    Page.Widgets.submit.display = "none";
+    Page.Widgets.textarea1.display = "none";
+    Page.Widgets.label3.display = "none";
+    Page.Widgets.userrating.display = "none";
     Page.Widgets.edit.display = "none";
     Page.Widgets.edit1.display = "none";
     Page.Widgets.save.display = "none";
@@ -27,10 +44,6 @@ Page.onReady = function() {
     Page.Widgets.cancel.display = "none";
     Page.Widgets.cancel1.display = "none";
     Page.Widgets.button15.display = "none";
-    Page.Widgets.submit.display = "none";
-    Page.Widgets.textarea1.display = "none";
-    Page.Widgets.label3.display = "none";
-    Page.Widgets.userrating.display = "none";
 };
 var temp;
 var creator = false;
@@ -215,7 +228,7 @@ Page.AppinfoonSuccess = function(variable, data) {
     if (creator) {
         Page.Widgets.edit.display = "";
         Page.Widgets.edit1.display = "";
-        Page.Widgets.button15.show = true;
+        // Page.Widgets.button15.show = true;
     }
     Page.Variables.PrefabSource.setInput({
         "id": data[0]["id"]
@@ -345,6 +358,26 @@ Page.AppRating_UpdateonSuccess = function(variable, data) {
 
 };
 Page.button1Click = function($event, widget) {
-    window.open(Page.Variables.PrefabSource.dataSet[0]["filePath"])
+    window.open(Page.Variables.PrefabSource.dataSet[Page.Variables.PrefabSource.dataSet.length - 1]["filePath"])
     window.focus()
+};
+
+
+Page.Revert_updateonOk = function(variable, data) {
+    console.log("Revert")
+    console.log(data)
+    console.log(Page.Variables.PrefabSource.dataSet)
+    d = Page.Variables.PrefabSource.dataSet
+    if (d.length > 0)
+        Page.Variables.APP_SOURCE.deleteRecord({
+            row: d[d.length - 1]["id"]
+        })
+    else {
+        //info source ,screenshots downloadhistory rating
+        Page.Variables
+    }
+};
+
+Page.button14Click = function($event, widget) {
+    Page.Variables.PrefabSource.invoke();
 };

@@ -575,61 +575,7 @@
     "owner" : "Page",
     "category" : "wm.Variable",
     "dataBinding" : [ ],
-    "dataSet" : [ {
-      "PrefabName" : "PrefabName",
-      "category" : "PrefabCatergory",
-      "Icon" : "Icon",
-      "CreatedBy" : "createdBy",
-      "CreatedOn" : "createdOn"
-    }, {
-      "PrefabName" : "PrefabName",
-      "category" : "PrefabCatergory",
-      "Icon" : "Icon",
-      "CreatedBy" : "createdBy",
-      "CreatedOn" : "createdOn"
-    }, {
-      "PrefabName" : "PrefabName",
-      "category" : "PrefabCatergory",
-      "Icon" : "Icon",
-      "CreatedBy" : "createdBy",
-      "CreatedOn" : "createdOn"
-    }, {
-      "PrefabName" : "PrefabName",
-      "category" : "PrefabCatergory",
-      "Icon" : "Icon",
-      "CreatedBy" : "createdBy",
-      "CreatedOn" : "createdOn"
-    }, {
-      "PrefabName" : "PrefabName",
-      "category" : "PrefabCatergory",
-      "Icon" : "Icon",
-      "CreatedBy" : "createdBy",
-      "CreatedOn" : "createdOn"
-    }, {
-      "PrefabName" : "PrefabName",
-      "category" : "PrefabCatergory",
-      "Icon" : "Icon",
-      "CreatedBy" : "createdBy",
-      "CreatedOn" : "createdOn"
-    }, {
-      "PrefabName" : "PrefabName",
-      "category" : "PrefabCatergory",
-      "Icon" : "Icon",
-      "CreatedBy" : "createdBy",
-      "CreatedOn" : "createdOn"
-    }, {
-      "PrefabName" : "PrefabName",
-      "category" : "PrefabCatergory",
-      "Icon" : "Icon",
-      "CreatedBy" : "createdBy",
-      "CreatedOn" : "createdOn"
-    }, {
-      "PrefabName" : "PrefabName",
-      "category" : "PrefabCatergory",
-      "Icon" : "Icon",
-      "CreatedBy" : "createdBy",
-      "CreatedOn" : "createdOn"
-    } ],
+    "dataSet" : [ { } ],
     "type" : "entry",
     "isList" : true,
     "twoWayBinding" : false,

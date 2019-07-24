@@ -1,4 +1,18 @@
 {
+  "AppInfoID" : {
+    "_id" : "wm-AppInfoID-wm.Variable-1563839813560",
+    "name" : "AppInfoID",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : 0
+    },
+    "type" : "number",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
   "appNotification" : {
     "_id" : "wm-appErrorHandler-wm.NotificationVariable-1454664620943",
     "name" : "appNotification",
@@ -228,30 +242,6 @@
     "isList" : true,
     "twoWayBinding" : false,
     "saveInPhonegap" : false
-  },
-  "Revert_update" : {
-    "_id" : "wm-Revert_update-wm.NotificationVariable-1563522076332",
-    "name" : "Revert_update",
-    "owner" : "App",
-    "category" : "wm.NotificationVariable",
-    "dataBinding" : [ {
-      "target" : "text",
-      "value" : "Do you really want to revert prefab? By reverting prefab, the source code and it's associative archived branches will be reverted.",
-      "type" : "string"
-    }, {
-      "target" : "title",
-      "value" : "Revert Prefab",
-      "type" : "string"
-    }, {
-      "target" : "okButtonText",
-      "value" : "Proceed",
-      "type" : "string"
-    }, {
-      "target" : "cancelButtonText",
-      "value" : "Cancel",
-      "type" : "string"
-    } ],
-    "operation" : "confirm"
   },
   "staticFilterVariable" : {
     "_id" : "wm-staticFilterVariable-wm.Variable-1563797295762",

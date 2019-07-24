@@ -4,7 +4,7 @@
  */
 
 /* perform any action on the variables within this block(on-page-load) */
-App.onAppVariablesReady = function () {
+App.onAppVariablesReady = function() {
     /*
      * variables can be accessed through 'App.Variables' property here
      * e.g. App.Variables.staticVariable1.getData()
@@ -12,7 +12,7 @@ App.onAppVariablesReady = function () {
 };
 
 /* perform any action on session timeout here, e.g clearing some data, etc */
-App.onSessionTimeout = function () {
+App.onSessionTimeout = function() {
     /*
      * NOTE:
      * On re-login after session timeout:
@@ -40,6 +40,6 @@ App.onPageReady = function(activePageName, activePageScope, $activePageEl) {
  * xhrObj:      The xhrObject used to make the service call
  *              This object contains useful information like statusCode, url, request/response body.
  */
-App.onServiceError = function (errorMsg, xhrObj) {
+App.onServiceError = function(errorMsg, xhrObj) {
 
 };
