@@ -33,6 +33,8 @@ Page.onReady = function() {
     var id = Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID;
     CurrentUser = (Page.App.Variables.loggedInUser.dataSet.name)
 
+    Page.Widgets.button14.display = "none";
+    Page.Widgets.button2.display = "none";
     Page.Widgets.submit.display = "none";
     Page.Widgets.textarea1.display = "none";
     Page.Widgets.label3.display = "none";
@@ -223,12 +225,15 @@ Page.TotalDownloadsonSuccess = function(variable, data) {
 Page.AppinfoonSuccess = function(variable, data) {
     console.log("Info")
     console.log(data)
+    console.log(data[0]["createdBy"])
     if (CurrentUser == data[0]["createdBy"] || CurrentUser == "admin")
         creator = true
     if (creator) {
         Page.Widgets.edit.display = "";
         Page.Widgets.edit1.display = "";
-        // Page.Widgets.button15.show = true;
+        Page.Widgets.button14.display = "";
+        Page.Widgets.button2.display = "";
+        //Page.Widgets.button15.show = true;
     }
     Page.Variables.PrefabSource.setInput({
         "id": data[0]["id"]
