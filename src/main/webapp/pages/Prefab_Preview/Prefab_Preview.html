@@ -208,4 +208,6 @@
         </wm-page-content>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-confirmdialog on-ok="notification.onOk()" on-cancel="notification.onCancel()" name="notificationconfirmdialog" notificationdialog="confirm" message="bind:notification.text" title="bind:notification.title" oktext="bind:notification.okButtonText"
+        canceltext="bind:notification.cancelButtonText" on-close="notification.onClose()"></wm-confirmdialog>
 </wm-page>
