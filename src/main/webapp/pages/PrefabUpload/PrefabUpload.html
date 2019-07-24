@@ -24,7 +24,7 @@
                         <wm-label padding="unset 0.5em" name="label5_1" caption="(upload &quot;.zip&quot; file only)"></wm-label>
                     </wm-gridcolumn>
                     <wm-gridcolumn columnwidth="9" name="gridcolumn33">
-                        <wm-fileupload name="prefab_upload" on-select="Variables.FileServiceUploadFile.invoke()" contenttype=".zip" maxfilesize="50" margin="unset unset -10px unset"></wm-fileupload>
+                        <wm-fileupload name="prefab_upload" contenttype=".zip" maxfilesize="50" margin="unset unset -10px unset"></wm-fileupload>
                     </wm-gridcolumn>
                 </wm-gridrow><br></wm-layoutgrid>
             <wm-layoutgrid name="layoutgrid3">
@@ -33,7 +33,7 @@
                         <wm-label padding="unset 0.5em" name="label5" caption="Upload Screenshots:" fontsize="15" fontweight="bold"></wm-label>
                     </wm-gridcolumn>
                     <wm-gridcolumn columnwidth="9" name="gridcolumn10">
-                        <wm-fileupload name="screenshot_upload" on-select="Variables.FileServiceUploadFile1.invoke()" contenttype="image/* .jpeg .jpg .gif mp4 video/*" multiple="true" iconclass="wi wi-folder" horizontalalign="center" maxfilesize="20" width="200"></wm-fileupload>
+                        <wm-fileupload name="screenshot_upload" contenttype="image/* .jpeg .jpg .gif mp4 video/*" multiple="true" iconclass="wi wi-folder" horizontalalign="center" maxfilesize="20" width="200"></wm-fileupload>
                     </wm-gridcolumn>
                 </wm-gridrow><br>
                 <wm-gridrow name="gridrow6">
@@ -43,6 +43,7 @@
                     </wm-gridcolumn>
                 </wm-gridrow>
             </wm-layoutgrid>
+            <wm-spinner show="bind:Variables.FileServiceUploadFile1.dataSet[$i].success" name="spinner4" deferload="true" backgroundposition="bottom" backgroundattachment="fixed"></wm-spinner>
         </wm-page-content>
         <wm-right-panel columnwidth="2" content="rightnav" name="right_panel1"></wm-right-panel>
     </wm-content>
@@ -92,7 +93,7 @@
                     <wm-label padding="unset 0.5em" name="label9" caption="Choose Icon:" fontsize="15" fontweight="bold" margin="unset unset unset -8px"></wm-label>
                 </wm-gridcolumn>
                 <wm-gridcolumn columnwidth="9" name="gridcolumn22">
-                    <wm-fileupload name="icon_upload" on-select="Variables.FileServiceUploadFile3.invoke()" contenttype=".jpeg .jpg .png image/*" maxfilesize="10"></wm-fileupload>
+                    <wm-fileupload name="icon_upload" contenttype=".jpeg .jpg .png image/*" maxfilesize="10"></wm-fileupload>
                 </wm-gridcolumn>
             </wm-gridrow>
             <wm-gridrow name="gridrow14">

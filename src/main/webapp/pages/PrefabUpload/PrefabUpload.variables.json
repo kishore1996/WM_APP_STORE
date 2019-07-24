@@ -100,6 +100,7 @@
     "dataSet" : [ ],
     "isList" : true,
     "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadFile3onSuccess(variable, data, options)",
     "startUpdate" : false,
     "autoUpdate" : false,
     "inFlightBehavior" : "executeLast",
@@ -107,34 +108,6 @@
     "saveInPhonegap" : false,
     "isDefault" : true,
     "controller" : "File"
-  },
-  "filesuploaded" : {
-    "_id" : "wm-filesuploaded-wm.NotificationVariable-1563527468526",
-    "name" : "filesuploaded",
-    "owner" : "Page",
-    "category" : "wm.NotificationVariable",
-    "dataBinding" : [ {
-      "target" : "content",
-      "value" : "inline",
-      "type" : "string"
-    }, {
-      "target" : "text",
-      "value" : "Files are Uploaded Successfully",
-      "type" : "string"
-    }, {
-      "target" : "duration",
-      "value" : "2000",
-      "type" : "number"
-    }, {
-      "target" : "class",
-      "value" : "Success",
-      "type" : "string"
-    }, {
-      "target" : "toasterPosition",
-      "value" : "center center",
-      "type" : "string"
-    } ],
-    "operation" : "toast"
   },
   "gotomain" : {
     "_id" : "wm-gotomain-wm.NavigationVariable-1563541693803",
@@ -1011,7 +984,7 @@
       "type" : "string"
     }, {
       "target" : "duration",
-      "value" : "2000",
+      "value" : "1000",
       "type" : "number"
     }, {
       "target" : "class",
@@ -1022,7 +995,9 @@
       "value" : "center center",
       "type" : "string"
     } ],
-    "operation" : "toast"
+    "operation" : "toast",
+    "onClick" : "prefab_createdonClick(variable, data, options)",
+    "onHide" : "prefab_createdonHide(variable, data, options)"
   },
   "read_mdcategory" : {
     "_id" : "wm-read_mdcategory-wm.LiveVariable-1563784254189",
@@ -1192,7 +1167,7 @@
     "category" : "wm.TimerVariable",
     "startUpdate" : false,
     "repeating" : false,
-    "delay" : 2000
+    "delay" : 5000
   },
   "timerAction1" : {
     "_id" : "wm-timerAction1-wm.TimerVariable-1563522544017",
