@@ -5,8 +5,8 @@
         <wm-page-content columnwidth="12" name="mainContent" padding="unset 15px" overflow="hidden"><br>
             <wm-layoutgrid name="layoutgrid12" columns="3">
                 <wm-gridrow name="gridrow9">
-                    <wm-gridcolumn columnwidth="2" name="gridcolumn19"></wm-gridcolumn>
-                    <wm-gridcolumn columnwidth="6" name="gridcolumn20">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn19"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="5" name="gridcolumn20">
                         <wm-search name="search2" searchon="typing" imagewidth="16px" dataset="bind:Variables.WM_APP_STOREAppInfoData.dataSet" displaylabel="name" datafield="All Fields" matchmode="anywhereignorecase" searchkey="name" on-submit="search2Submit($event, widget)"></wm-search>
                     </wm-gridcolumn>
                     <wm-gridcolumn columnwidth="4" name="gridcolumn21_1">
@@ -48,38 +48,45 @@
                 <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="PrefabsList1" dataset="bind:Variables.Prefabs.dataSet" navigation="Scroll" height="500" horizontalalign="left" showrecordcount="false"
                     padding="unset 100px">
                     <wm-listtemplate layout="media" name="listtemplate1">
-                        <wm-card name="card1" width="auto" on-click="card1Click($event, widget, item, currentItemWidgets)" imageheight="200px">
-                            <wm-card-content fontsize="0.8" fontunit="em" name="card_content1" overflow="hidden">
+                        <wm-card name="card1" width="auto" on-click="card1Click($event, widget, item, currentItemWidgets)" imageheight="200px" margin="0%">
+                            <wm-card-content fontsize="0.8" fontunit="em" name="card_content1" overflow="hidden" padding="1% 4%">
                                 <wm-layoutgrid name="layoutgrid8">
+                                    <wm-gridrow name="gridrow9_1">
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn23"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="7" name="gridcolumn24">
+                                            <wm-label padding="unset 0.5em" name="label6_1" margin="unset unset unset 50px" caption="bind:Variables.Prefabs.dataSet[$i].CreatedOn"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
                                     <wm-gridrow name="gridrow20">
                                         <wm-gridcolumn columnwidth="5" name="gridcolumn37">
-                                            <wm-picture name="Picture" width="70px" picturesource="bind:Variables.Prefabs.dataSet.Icon" pictureaspect="None" height="70px" shape="circle"></wm-picture>
-                                            <wm-label name="Department" caption="bind:Variables.Prefabs.dataSet.category" class="p text-muted" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
+                                            <wm-picture name="Picture" width="70px" picturesource="bind:Variables.Prefabs.dataSet.Icon" pictureaspect="None" height="70px" shape="rounded"></wm-picture>
                                         </wm-gridcolumn>
                                         <wm-gridcolumn columnwidth="7" name="gridcolumn38">
                                             <wm-layoutgrid name="layoutgrid9" columns="1">
-                                                <wm-gridrow name="gridrow24">
-                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn45">
+                                                <wm-gridrow name="gridrow25">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn46">
                                                         <wm-label name="Name" caption="bind:Variables.Prefabs.dataSet.PrefabName" class="h4" margin="0px unset" whitespace="nowrap" fontweight="bold" padding="2px unset 10px 2px"></wm-label>
                                                     </wm-gridcolumn>
                                                 </wm-gridrow>
-                                                <wm-gridrow name="gridrow25">
-                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn46">
-                                                        <wm-label padding="2px unset 5px 2px" name="Createdby" caption="bind:Variables.Prefabs.dataSet[$i].CreatedBy" margin="unset unset unset 3px"></wm-label>
+                                                <wm-gridrow name="gridrow8">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn22">
+                                                        <wm-label name="Department" caption="bind:Variables.Prefabs.dataSet.category" class="p text-muted" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
                                                     </wm-gridcolumn>
                                                 </wm-gridrow>
                                             </wm-layoutgrid>
                                         </wm-gridcolumn>
                                     </wm-gridrow>
-                                </wm-layoutgrid>
-                                <wm-layoutgrid name="layoutgrid6" columnwidth="6">
-                                    <wm-gridrow name="gridrow16">
-                                        <wm-gridcolumn columnwidth="12" name="gridcolumn33" height="50">
-                                            <wm-label padding="unset 0.5em" name="Description" caption="test"></wm-label>
+                                    <wm-gridrow name="gridrow10">
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn25">
+                                            <wm-label padding="unset 0.5em" name="label6_2" caption=""></wm-label>
                                         </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="7" name="gridcolumn26_1"></wm-gridcolumn>
                                     </wm-gridrow>
-                                    <wm-gridrow name="gridrow17">
-                                        <wm-gridcolumn columnwidth="12" name="gridcolumn34"></wm-gridcolumn>
+                                    <wm-gridrow name="gridrow11">
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn27_1">
+                                            <wm-label padding="2px unset 5px 2px" name="Createdby" caption="bind:Variables.Prefabs.dataSet[$i].CreatedBy" margin="unset unset unset 3px"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="7" name="gridcolumn28_1"></wm-gridcolumn>
                                     </wm-gridrow>
                                 </wm-layoutgrid>
                             </wm-card-content>

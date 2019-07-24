@@ -7,6 +7,7 @@ package com.wm_app_store.wm_app_store;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -38,7 +39,7 @@ public class AppInfo implements Serializable {
     private String _desc;
     private Integer categoryId;
     private String createdBy;
-    private Timestamp creationDate;
+    private LocalDateTime creationDate;
     private Timestamp lastUpdateDate;
     private String name;
     @WMValueInject( type = VariableType.SERVER, name = "USER_NAME", scopes = { Scope.INSERT, Scope.UPDATE })
@@ -85,11 +86,11 @@ public class AppInfo implements Serializable {
     }
 
     @Column(name = "`CREATION_DATE`", nullable = false)
-    public Timestamp getCreationDate() {
+    public LocalDateTime getCreationDate() {
         return this.creationDate;
     }
 
-    public void setCreationDate(Timestamp creationDate) {
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 

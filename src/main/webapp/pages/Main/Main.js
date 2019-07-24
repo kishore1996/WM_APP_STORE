@@ -26,9 +26,10 @@ Page.WM_APP_STOREAppInfoDataonSuccess = function(variable, data) {
     console.log(data)
     var jsondata = []
     for (var i = 0; i < data.length; i++) {
+        console.log(data[i].mdCategory.label)
         jsondata.push({
             "PrefabID": data[i]["id"],
-            "category": data[i]["categoryId"],
+            "category": data[i].mdCategory.label,
             "CreatedBy": data[i]["createdBy"],
             "CreatedOn": data[i]["creationDate"],
             "Icon": data[i]["image"],
