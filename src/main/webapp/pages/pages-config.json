@@ -36,7 +36,10 @@
 }, {
   "name" : "Prefab_Version",
   "type" : "PAGE",
-  "params" : [ ]
+  "params" : [ {
+    "name" : "id",
+    "type" : "integer"
+  } ]
 }, {
   "name" : "Upload_Prefab",
   "type" : "PARTIAL",

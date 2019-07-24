@@ -14,7 +14,7 @@
     "designMaxResults" : 10,
     "onSuccess" : "database_appinfoonSuccess(variable, data, options)",
     "inFlightBehavior" : "executeLast",
-    "startUpdate" : false,
+    "startUpdate" : true,
     "autoUpdate" : false,
     "transformationRequired" : false,
     "liveSource" : "WM_APP_STORE",
@@ -246,7 +246,7 @@
         "target" : "id",
         "type" : "integer",
         "matchMode" : "exact",
-        "value" : "",
+        "value" : "bind:pageParams.id",
         "required" : false,
         "secondvalue" : "",
         "isFirst" : true

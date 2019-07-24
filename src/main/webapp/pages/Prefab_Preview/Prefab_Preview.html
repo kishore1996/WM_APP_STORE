@@ -1,8 +1,8 @@
 <wm-page pagetitle="Prefab Preview" name="page1">
     <wm-header content="header" name="header1" backgroundcolor="#2396F3"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
     <wm-content name="content1">
-        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
-        <wm-page-content columnwidth="10" name="page_content1">
+        <wm-page-content columnwidth="12" name="page_content1">
             <wm-layoutgrid name="layoutgrid1">
                 <wm-gridrow name="gridrow1">
                     <wm-gridcolumn columnwidth="3" name="gridcolumn1" height="auto" horizontalalign="center">
@@ -67,7 +67,7 @@
                             <wm-gridrow name="gridrow6" padding="2em unset unset unset">
                                 <wm-gridcolumn columnwidth="12" name="gridcolumn13" class="pull-right" horizontalalign="right" padding="unset 2em unset unset">
                                     <wm-button class="btn-default" caption="Revert" type="button" margin="unset 0.5em" name="button14" fontsize="14" backgroundcolor="#dc4f44" on-click="Actions.Revert_update.invoke()"></wm-button>
-                                    <wm-button class="btn-default" caption="Update" type="button" margin="unset 0.5em" name="button2" backgroundcolor="#2296F3" bordercolor="#ffffff00" color="#ffffff" fontsize="14" textalign="center" on-click="Actions.goToPage_Prefab_Version.invoke()"></wm-button>
+                                    <wm-button class="btn-default" caption="Update" type="button" margin="unset 0.5em" name="button2" backgroundcolor="#2296F3" bordercolor="#ffffff00" color="#ffffff" fontsize="14" textalign="center" on-click="button2Click($event, widget)"></wm-button>
                                     <wm-button class="btn-default" caption="Download" type="button" margin="unset 2em unset 0.5em" name="button1" textalign="center" backgroundcolor="#2296F3" color="#ffffff" bordercolor="#ffffff00" fontsize="14"
                                         on-click="button1Click($event, widget)"></wm-button>
                                     <wm-label padding="unset 0.5em" name="label6" caption="bind:&quot;+&quot;+Variables.PrefabData.dataSet.TotalDownloads" margin="1em unset unset unset" fontsize="14" fontweight="bold"></wm-label>
@@ -208,6 +208,4 @@
         </wm-page-content>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>
-    <wm-confirmdialog on-ok="notification.onOk()" on-cancel="notification.onCancel()" name="notificationconfirmdialog" notificationdialog="confirm" message="bind:notification.text" title="bind:notification.title" oktext="bind:notification.okButtonText"
-        canceltext="bind:notification.cancelButtonText" on-close="notification.onClose()"></wm-confirmdialog>
 </wm-page>

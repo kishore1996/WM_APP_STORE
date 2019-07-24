@@ -45,11 +45,11 @@
                 </wm-gridrow>
             </wm-layoutgrid>
             <wm-layoutgrid name="layoutgrid3"><br><br>
-                <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="PrefabsList1" dataset="bind:Variables.Prefabs.dataSet" navigation="Scroll" height="500" horizontalalign="left" showrecordcount="false"
-                    padding="unset 100px">
+                <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" name="PrefabsList1" dataset="bind:Variables.Prefabs.dataSet" navigation="None" height="500" horizontalalign="left" showrecordcount="false"
+                    padding="unset 100px" pagesize="50">
                     <wm-listtemplate layout="media" name="listtemplate1">
-                        <wm-card name="card1" width="auto" on-click="card1Click($event, widget, item, currentItemWidgets)" imageheight="200px" margin="0%">
-                            <wm-card-content fontsize="0.8" fontunit="em" name="card_content1" overflow="hidden" padding="1% 4%">
+                        <wm-card name="card1" width="250px" on-click="card1Click($event, widget, item, currentItemWidgets)" imageheight="200px" margin="2% 10%" height="215">
+                            <wm-card-content fontsize="0.8" fontunit="em" name="card_content1" overflow="hidden">
                                 <wm-layoutgrid name="layoutgrid8">
                                     <wm-gridrow name="gridrow9_1">
                                         <wm-gridcolumn columnwidth="5" name="gridcolumn23"></wm-gridcolumn>

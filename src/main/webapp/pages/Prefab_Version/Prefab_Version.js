@@ -4,7 +4,7 @@
  */
 
 /* perform any action on widgets/variables within this block */
-var CurrentUser;
+
 Page.onReady = function() {
     /*
      * variables can be accessed through 'Page.Variables' property here
@@ -15,13 +15,13 @@ Page.onReady = function() {
      * e.g. to get value of text widget named 'username' use following script
      * 'Page.Widgets.username.datavalue'
      */
-    var id = Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID;
-    CurrentUser = Page.App.Variables.loggedInUser.dataSet.name
+    //var id = Page.App.Actions.goToPage_Prefab_Preview.dataSet.ID;
+    //CurrentUser = Page.App.Variables.loggedInUser.dataSet.name
 
-    Page.Variables.database_appinfo.setFilter({
-        "id": id
-    })
-    Page.Variables.database_appinfo.invoke()
+    // Page.Variables.database_appinfo.setFilter({
+    //     "id": id
+    // })
+    // Page.Variables.database_appinfo.invoke()
     Page.Variables.database_appsource.setFilter({
         "appInfoId": parseInt(Page.App.Variables.AppInfoID.dataSet)
     })

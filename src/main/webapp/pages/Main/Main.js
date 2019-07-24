@@ -66,7 +66,7 @@ Page.search2Submit = function($event, widget) {
     for (var i = 0; i < data.length; i++) {
         jsondata.push({
             "PrefabID": data[i]["id"],
-            "category": data[i]["categoryId"],
+            "category": data[i].mdCategory.label,
             "CreatedBy": data[i]["createdBy"],
             "CreatedOn": data[i]["creationDate"],
             "Icon": data[i]["image"],
@@ -128,7 +128,7 @@ Page.select_filteronSuccess = function(variable, data) {
     for (var i = 0; i < data.length; i++) {
         jsondata.push({
             "PrefabID": data[i]["id"],
-            "category": data[i]["categoryId"],
+            "category": data[i].mdCategory.label,
             "CreatedBy": data[i]["createdBy"],
             "CreatedOn": data[i]["creationDate"],
             "Icon": data[i]["image"],
