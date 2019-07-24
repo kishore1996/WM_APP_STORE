@@ -119,25 +119,26 @@ Page.submitClick = function($event, widget) {
     var year = dateObj.getUTCFullYear();
     var newdate = day + "/" + month + "/" + year;
     Page.Variables.stForReview.dataSet.selfreview.createddate = newdate
+    if (Page.Widgets.textarea1.datavalue != "") {
+        Page.Widgets.submit.display = "none";
+        Page.Widgets.textarea1.display = "none";
+        Page.Widgets.label3.display = "none";
+        Page.Widgets.userrating.display = "none";
+        Page.Widgets.stnewJsonList1_1.show = true;
 
-    Page.Widgets.submit.display = "none";
-    Page.Widgets.textarea1.display = "none";
-    Page.Widgets.label3.display = "none";
-    Page.Widgets.userrating.display = "none";
-    Page.Widgets.stnewJsonList1_1.display = "";
-
-    Page.Variables.AppRating_Update.createRecord({
-        row: {
-            "appInfoId": Page.Variables.Appinfo.dataSet[0]["id"],
-            "createdBy": CurrentUser,
-            "comments": Page.Widgets.textarea1.datavalue,
-            "creationDate": new Date(),
-            "lastUpdateDate": new Date(),
-            "rate": Page.Widgets.userrating.datavalue,
-            "updatedBy": CurrentUser
-        }
-    })
-
+        Page.Variables.AppRating_Update.createRecord({
+            row: {
+                "appInfoId": Page.Variables.Appinfo.dataSet[0]["id"],
+                "createdBy": CurrentUser,
+                "comments": Page.Widgets.textarea1.datavalue,
+                "creationDate": new Date(),
+                "lastUpdateDate": new Date(),
+                "rate": Page.Widgets.userrating.datavalue,
+                "updatedBy": CurrentUser
+            }
+        })
+        Page.Variables.AvgRating.invoke()
+    }
 
 };
 
@@ -162,6 +163,7 @@ Page.okprefabClick = function($event, widget, item, currentItemWidgets) {
     Page.Variables.AppRating_Update.updateRecord({
         row: data[i]
     })
+    Page.Variables.AvgRating.invoke()
 
 };
 
@@ -173,6 +175,8 @@ Page.closeprefabClick = function($event, widget, item, currentItemWidgets) {
     Page.Widgets.closeprefab.display = "none";
     Page.Widgets.editprefab.display = "";
     Page.Widgets.deleteprefab.display = "";
+    Page.Variables.AvgRating.invoke()
+
 };
 
 Page.editprefabClick = function($event, widget, item, currentItemWidgets) {
@@ -185,20 +189,23 @@ Page.editprefabClick = function($event, widget, item, currentItemWidgets) {
     comments = Page.Widgets.textarea12.datavalue;
     Page.Variables.stForReview.dataSet.selfreview.rate = Page.Widgets.rating.datavalue;
     Page.Variables.stForReview.dataSet.selfreview.comment = comments;
+
 };
 
 
 Page.deleteprefabClick = function($event, widget, item, currentItemWidgets) {
     Page.Widgets.stnewJsonList1_1.show = false;
-    Page.Variables.stForReview.dataSet.selfreview = {};
-    Page.Widgets.submit.display = "";
-    Page.Widgets.textarea1.display = "";
-    Page.Widgets.label3.display = "";
-    Page.Widgets.userrating.display = "";
+    Page.Variables.stForReview.dataSet.selfreview = {
+        "rate": 0,
+        "comment": "",
+        "createdby": "",
+        "createddate": ""
+    };
     Page.Widgets.textarea1.datavalue = "";
     Page.Widgets.userrating.datavalue = 0;
+    data = Page.Variables.AppRatings.dataSet
     for (var i = 0; i < data.length; i++) {
-        if (data[i]["appInfoId"] == Page.Variables.Appinfo.dataSet[0]["id"])
+        if (data[i]["createdBy"] == CurrentUser)
             break
     }
     Page.Variables.AppRating_Update.deleteRecord({
@@ -206,6 +213,11 @@ Page.deleteprefabClick = function($event, widget, item, currentItemWidgets) {
             "id": data[i]["id"]
         }
     })
+    Page.Variables.AvgRating.invoke()
+    Page.Widgets.submit.display = "";
+    Page.Widgets.textarea1.display = "";
+    Page.Widgets.label3.display = "";
+    Page.Widgets.userrating.display = "";
 };
 
 Page.PrefabSourceonSuccess = function(variable, data) {
