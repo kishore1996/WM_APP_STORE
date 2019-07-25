@@ -1218,8 +1218,8 @@
         "scale" : 0
       }, {
         "fieldName" : "creationDate",
-        "type" : "datetime",
-        "fullyQualifiedType" : "datetime",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
         "columnName" : "CREATION_DATE",
         "isPrimaryKey" : false,
         "notNull" : true,
@@ -1227,12 +1227,11 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
-        "type" : "datetime",
-        "fullyQualifiedType" : "datetime",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
         "columnName" : "LAST_UPDATE_DATE",
         "isPrimaryKey" : false,
         "notNull" : true,
@@ -1240,7 +1239,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "rate",
@@ -1492,8 +1490,8 @@
         "scale" : 0
       }, {
         "fieldName" : "creationDate",
-        "type" : "datetime",
-        "fullyQualifiedType" : "datetime",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
         "columnName" : "CREATION_DATE",
         "isPrimaryKey" : false,
         "notNull" : true,
@@ -1501,12 +1499,11 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
-        "type" : "datetime",
-        "fullyQualifiedType" : "datetime",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
         "columnName" : "LAST_UPDATE_DATE",
         "isPrimaryKey" : false,
         "notNull" : true,
@@ -1514,7 +1511,6 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
-        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "rate",
