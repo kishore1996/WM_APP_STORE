@@ -302,8 +302,8 @@
         "scale" : 0
       }, {
         "fieldName" : "creationDate",
-        "type" : "timestamp",
-        "fullyQualifiedType" : "timestamp",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
         "columnName" : "CREATION_DATE",
         "isPrimaryKey" : false,
         "notNull" : true,
@@ -311,6 +311,7 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "lastUpdateDate",
@@ -486,8 +487,8 @@
           "scale" : 0
         }, {
           "fieldName" : "creationDate",
-          "type" : "timestamp",
-          "fullyQualifiedType" : "timestamp",
+          "type" : "datetime",
+          "fullyQualifiedType" : "datetime",
           "columnName" : "CREATION_DATE",
           "isPrimaryKey" : false,
           "notNull" : true,
@@ -495,6 +496,7 @@
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
+          "defaultValue" : "",
           "scale" : 0
         }, {
           "fieldName" : "lastUpdateDate",
@@ -708,8 +710,8 @@
           "scale" : 0
         }, {
           "fieldName" : "creationDate",
-          "type" : "timestamp",
-          "fullyQualifiedType" : "timestamp",
+          "type" : "datetime",
+          "fullyQualifiedType" : "datetime",
           "columnName" : "CREATION_DATE",
           "isPrimaryKey" : false,
           "notNull" : true,
@@ -717,6 +719,7 @@
           "precision" : 0,
           "generator" : "assigned",
           "isRelated" : false,
+          "defaultValue" : "",
           "scale" : 0
         }, {
           "fieldName" : "lastUpdateDate",

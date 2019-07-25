@@ -113,6 +113,10 @@ Page.submitClick = function($event, widget) {
     Page.Variables.stForReview.dataSet.selfreview.createdby = CurrentUser;
     Page.Variables.stForReview.dataSet.selfreview.rate = Page.Widgets.userrating.datavalue;
     Page.Variables.stForReview.dataSet.selfreview.comment = Page.Widgets.textarea1.datavalue;
+
+    // Page.Widgets.okprefab.display = "none";
+    // Page.Widgets.closeprefab.display = "none";
+
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1;
     var day = dateObj.getUTCDate();
@@ -125,6 +129,7 @@ Page.submitClick = function($event, widget) {
         Page.Widgets.label3.display = "none";
         Page.Widgets.userrating.display = "none";
         Page.Widgets.stnewJsonList1_1.show = true;
+
 
         Page.Variables.AppRating_Update.createRecord({
             row: {
@@ -194,6 +199,7 @@ Page.editprefabClick = function($event, widget, item, currentItemWidgets) {
 
 
 Page.deleteprefabClick = function($event, widget, item, currentItemWidgets) {
+    //   Page.Variables.AvgRating.invoke()
     Page.Widgets.stnewJsonList1_1.show = false;
     Page.Variables.stForReview.dataSet.selfreview = {
         "rate": 0,
@@ -389,10 +395,7 @@ Page.Revert_updateonOk = function(variable, data) {
         Page.Variables.APP_SOURCE.deleteRecord({
             row: d[d.length - 1]["id"]
         })
-    else {
-        //info source ,screenshots downloadhistory rating
-        Page.Variables
-    }
+
 };
 
 Page.button14Click = function($event, widget) {
